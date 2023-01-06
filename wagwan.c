@@ -2,7 +2,8 @@
 
 int main(void) {
 
-printf("hello world\n");
+string car = get_string("what is ur whip fam? ");
+printf("a %s is fantastic mate")
 
 
 }
