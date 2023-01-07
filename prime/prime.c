@@ -37,9 +37,9 @@ bool prime(int i)
     {
         do
         {
-            d++
+            d++;
         }
-        while (i % d == 0)
+        while (i % d == 1);
     }
     return 0;
 }
