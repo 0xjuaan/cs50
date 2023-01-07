@@ -45,6 +45,7 @@ bool prime(int i)
         {
             return 1;
         }
+        else if ()
     }
     return 0;
 }
