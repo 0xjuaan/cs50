@@ -43,9 +43,6 @@ for (int d=2; d<i; d++)
     {
         return 1;
     }
-    else
-    {
-        printf("shush");
-    }
+    
  }
 }
