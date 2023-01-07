@@ -26,6 +26,10 @@ int main(void)
         {
             printf("%i\n", i);
         }
+        else
+        {
+            printf("composite\n");
+        }
 
     }
 }
@@ -33,15 +37,16 @@ int main(void)
 bool prime(int i)
 {
     // TODO
-for (int d=2; d<i; d++)
-{
-    if (i % d == 0)
+    for (int d=2; d<i; d++)
     {
-        return 0;
-    }
-    else if (i % d !=0)
-    {
-        return 1;
-    }
- }
+        if (i % d == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+
+}
 }
