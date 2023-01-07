@@ -33,12 +33,11 @@ bool prime(int i)
 {
     // TODO
 
-    do
-    {
-        return 0;
-    }
- while (i % 2 == 0);
- if (i % 2 != 0)
+if (i % 2 == 0)
+{
+    return 0;
+}
+ else
  {
     return 1;
  }
