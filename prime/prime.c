@@ -34,7 +34,7 @@ bool prime(int number)
     // TODO
     for (int n = min; n<=max; n++)
     {
-         
+     
     }
     return false;
 }
