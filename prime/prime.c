@@ -24,13 +24,9 @@ int main(void)
     {
         if (prime(i))
         {
-            printf("%i\n", i);
+            printf("%i: prime\n", i);
         }
-        else
-        {
-            printf("composite\n");
-        }
-
+        
     }
 }
 
@@ -47,6 +43,6 @@ bool prime(int i)
         {
             return 1;
         }
-
-}
+    }
+    return 0;
 }
