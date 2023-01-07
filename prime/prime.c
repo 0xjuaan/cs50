@@ -24,7 +24,7 @@ int main(void)
     {
         if (prime(i))
         {
-            printf("%i: prime\n", i);
+            printf("%i\n", i);
         }
 
     }
@@ -44,7 +44,7 @@ bool prime(int i)
         {
             return 1;
         }
-        else if (i % d == 0 && i==d)
+        else if (i % d == 0 && i==d && i%d !=0)
         {
             return 1;
         }
