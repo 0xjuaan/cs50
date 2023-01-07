@@ -39,12 +39,12 @@ bool prime(int i)
         {
             return 0;
         }
-        
-        do
+
+
+        else if (i % d !=0 && d==i-1)
         {
-            d++;
+            return 1;
         }
-        while (i % d == 1);
     }
     return 0;
 }
