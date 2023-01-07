@@ -39,10 +39,7 @@ bool prime(int i)
         {
             return 0;
         }
-        else if (i % d == 0 && i==d)
-        {
-            return 1;
-        }
+       
         else
         {
             return 1;
