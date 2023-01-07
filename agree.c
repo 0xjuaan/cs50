@@ -6,11 +6,11 @@ int main(void)
 
 char choice = get_char("Do you agree to the terms and conditions? ");
 
-if (choice == 'y')
+if (choice == 'y' || choice =='Y')
 {
     printf("good\n");
 }
-else if (choice == 'n')
+else if (choice == 'n'|| choice =='N')
 {
     printf("well u cant use the service then m8\n");
 }
