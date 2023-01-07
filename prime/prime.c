@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 //Pre-defining the function for the compiler
-bool prime(int number);
+bool prime(int i);
 
 int main(void)
 {
@@ -32,13 +32,15 @@ int main(void)
 bool prime(int i)
 {
     // TODO
-
-if (i % 2 == 0)
+for (int d=2; d<i; d++)
 {
-    return 0;
+    if (i % d == 0)
+{
+        return 0;
 }
- else
+    else
  {
-    return 1;
+        return 1;
+ }
  }
 }
