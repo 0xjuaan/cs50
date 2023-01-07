@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
+//Pre-defining the function for the compiler
 bool prime(int number);
 
 int main(void)
@@ -16,9 +17,9 @@ int main(void)
     do
     {
         max = get_int("Maximum: ");
-    } 
+    }
     while (min >= max);
-    
+
     for (int i = min; i <= max; i++)
     {
         if (prime(i))
