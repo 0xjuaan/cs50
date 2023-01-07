@@ -26,7 +26,7 @@ int main(void)
         {
             printf("%i: prime\n", i);
         }
-        
+
     }
 }
 
@@ -39,6 +39,7 @@ bool prime(int i)
         {
             return 0;
         }
+        else if (i % d == 0 || )
         else
         {
             return 1;
