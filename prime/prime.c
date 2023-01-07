@@ -33,7 +33,7 @@ int main(void)
 bool prime(int i)
 {
     // TODO
-    for (int d=2; d<i; d++)
+    for (int d=2; d<i; d++) 
     {
         if (i % d == 0 && i != d)
         {
