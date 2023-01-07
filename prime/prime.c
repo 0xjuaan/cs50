@@ -38,5 +38,8 @@ bool prime(int i)
         return 0;
     }
  while (i % 2 == 0);
- 
+ if (i % 2 != 0)
+ {
+    return 1;
+ }
 }
