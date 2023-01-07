@@ -35,14 +35,11 @@ bool prime(int i)
     // TODO
     for (int d=2; d<i; d++)
     {
-        if (i % d == 0)
+        do
         {
-            return 0;
+            d++
         }
-        else if (i % d != 0)
-        {
-            return 1;
-        }
+        while (i % d == 0)
     }
     return 0;
 }
