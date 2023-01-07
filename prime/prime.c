@@ -26,6 +26,7 @@ int main(void)
         {
             printf("%i\n", i);
         }
+
     }
 }
 
@@ -35,12 +36,12 @@ bool prime(int i)
 for (int d=2; d<i; d++)
 {
     if (i % d == 0)
-{
+    {
         return 0;
-}
+    }
     else
- {
+    {
         return 1;
- }
+    }
  }
 }
