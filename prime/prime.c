@@ -29,7 +29,7 @@ int main(void)
     }
 }
 
-bool prime(int number)
+bool prime(int i)
 {
     // TODO
 
@@ -37,5 +37,6 @@ bool prime(int number)
     {
         return 0;
     }
- while (number % 2 == 0);
+ while (i % 2 == 0);
+ 
 }
