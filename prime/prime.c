@@ -32,6 +32,10 @@ int main(void)
 bool prime(int number)
 {
     // TODO
-for ()
-    return false;
+
+    do
+    {
+        return 0;
+    }
+ while (number % 2 == 0);
 }
