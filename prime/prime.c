@@ -33,19 +33,21 @@ int main(void)
 bool prime(int i)
 {
     // TODO
-    for (int d=2; d<i; d++) 
+    for (int d=2; d<i; d++)
     {
         if (i % d == 0 && i != d)
         {
             return 0;
         }
 
-
         else if (i % d !=0 && d==i-1)
         {
             return 1;
         }
-        else if ()
+        else if (i % d == 0 && i==d)
+        {
+            return 1;
+        }
     }
     return 0;
 }
