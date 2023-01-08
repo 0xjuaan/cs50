@@ -14,11 +14,13 @@ int main(void)
     }
     while (height<1 || height>8);
 
-    int stage=1;
     int n=1;
     while (n<height)
     {
-        
+        for (n=1; n<height;n++)
+        {
+            printf("#")
+        }
 
     }
 }
