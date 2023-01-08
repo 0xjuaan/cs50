@@ -3,6 +3,7 @@
 
 
 //Pseudocode
+//Print 1, break 1, Print 1
 //
 int main(void)
 {
@@ -13,4 +14,9 @@ int main(void)
     }
     while (height<1 || height>8);
 
+    int n=1;
+    while (n<height)
+    {
+        printf("#");
+    }
 }
