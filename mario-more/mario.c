@@ -18,7 +18,7 @@ int main(void)
     int n=1;
     while(n<=height)
     {
-        for(int j=0; j<(height-n); j++ )
+        for(int j=0; j<(height-n); j++)
                 {
                     printf(" ");
                 }
