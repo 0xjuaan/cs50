@@ -29,12 +29,9 @@ int main(void)
 
                 printf("#"); //RATATATA!!
             }
-            do
-            {
-                printf("  "); //space
-            }
-            while (a<1);
+    
         }
+
         n++;
         printf("\n");
     }
