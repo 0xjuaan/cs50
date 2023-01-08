@@ -3,8 +3,15 @@
 
 
 //Pseudocode
-//Print 1, break 1, Print 1
-//
+//Let n=1
+//Print 1
+""
+bee
+
+""
+
+
+
 int main(void)
 {
     int height;
@@ -14,6 +21,6 @@ int main(void)
     }
     while (height<1 || height>8);
 
-    
+
 
 }
