@@ -21,10 +21,10 @@ do
 int t = 0;
 while (initial<final)
     {
-        (float) initial += (float) (initial/3) - (float) (initial/4);
+        initial += (float) (initial/3) - (float) (initial/4);
         t++;
         printf("Population after %i year(s) is %i\n", t, initial);
 
     }
-    printf("Years: %i\n", t-1);
+    printf("Years: %i\n", t);
 }
