@@ -18,15 +18,15 @@ int main(void)
     int n=1;
     while(n<=height)
     {
+        for(int j=0; j<(height-1); j++ )
+                {
+                    printf(" ");
+                }
         for (int a=0; a<2; a++) //REPEATS THE RATATA TWICE!!
         {
             for (int i=0; i<n; i++)
             {
-                for(int j=0; j<(height-1); j++ )
-                {
-                    
 
-                }
                 printf("#"); //RATATATA!!
             }
             printf(" "); //space
