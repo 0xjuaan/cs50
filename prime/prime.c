@@ -31,13 +31,16 @@ int main(void)
 bool prime(int n)
 {
     // TODO
-    for (int d = 1; d<n; d++)
+    for (int d = 2; d<n; d++)
     {
-    if ( n % d ==0)
+    if ( n % d ==0 && n!=d)
         {
             break;
         }
-
+    else if (n%d ==9 && n==d)
+        {
+            return 1;
+        }
     else if (n%d != 0 && d==n-1)
     {
         return 1;
