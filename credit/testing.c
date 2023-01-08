@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-long number = 378282246310005;
+int main(void)
+{
 long d1 = 378282246310005 % 10;
-printf( "%li\n", d1)
+printf("%li", d1);
+}
