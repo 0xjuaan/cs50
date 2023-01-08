@@ -21,7 +21,7 @@ do
 int t = 0;
 while (initial<final)
     {
-        initial += (float) initial/12;
+        (float) initial += (float) initial/12;
         t++;
         printf("Population after %i year(s) is %i\n", t, initial);
 
