@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool prime(int number);
+bool prime(int n);
 
 int main(void)
 {
@@ -19,18 +19,34 @@ int main(void)
     }
     while (min >= max);
 
-    for (int i = min; i <= max; i++)
+    for (int n = min; n <= max; n++)
     {
-        if (prime(i))
+        if (prime(n))
         {
-            printf("%i\n", i);
+            printf("%i\n", n);
         }
     }
 }
 
-bool prime(int number)
+bool prime(int i)
 {
     // TODO
+    for (int d = 1; d<n, d++)
+    {
+    if ( n % d ==0)
+        {
+            return 0;
+        }
 
+    else if (n%d != 0 && d=n-1)
+    {
+        return 1;
+    }
+    else if (n % d != 0)
+    {
+        continue;
+    }
+
+    }
     return false;
 }
