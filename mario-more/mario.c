@@ -16,11 +16,11 @@ int main(void)
     while (height<1 || height>8);
 
     int n=1;
-    while(n<height)
+    while(n<=height)
     {
         for (int a=0; a<2; a++) //REPEATS THE RATATA TWICE!!
         {
-            for (int i=0; i<=n; i++)
+            for (int i=0; i<n; i++)
             {
                 printf("#"); //RATATATA!!
             }
