@@ -2,5 +2,5 @@
 #include <stdio.h>
 
 long number = 378282246310005;
-int d1 = 378282246310005 % 10;
-printf("%i\n", d1)
+long d1 = 378282246310005 % 10;
+printf("%li\n", d1)
