@@ -1,8 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-//Pre-defining the function for the compiler
-bool prime(int i);
+bool prime(int number);
 
 int main(void)
 {
@@ -17,37 +16,20 @@ int main(void)
     do
     {
         max = get_int("Maximum: ");
-    }
+    } 
     while (min >= max);
-
+    
     for (int i = min; i <= max; i++)
     {
         if (prime(i))
         {
             printf("%i\n", i);
         }
-
     }
 }
 
-bool prime(int i)
+bool prime(int number)
 {
     // TODO
-    for (int d=2; d<i; d++)
-    {
-        if (i % d == 0 && i != d)
-        {
-            return 0;
-        }
-
-        else if (i % d !=0 && d==i-1)
-        {
-            return 1;
-        }
-        else if (i % d == 0 && i==d)
-        {
-            return 1;
-        }
-    }
-    return 0;
+    return false;
 }
