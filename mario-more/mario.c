@@ -34,7 +34,7 @@ int main(void)
                 printf("  "); //space
                 break;
             }
-            while(a<1);
+            while(a==0);
         }
 
         n++;
