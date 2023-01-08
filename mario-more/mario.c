@@ -21,6 +21,13 @@ int main(void)
     }
     while (height<1 || height>8);
 
-
-
+    int n=1;
+    for (int a=0; a<2; a++)
+    {
+        for (int i=0; i<n; i++)
+        {
+            printf("#");
+        }
+        printf(" ");
+    }
 }
