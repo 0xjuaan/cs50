@@ -28,17 +28,17 @@ int main(void)
     }
 }
 
-bool prime(int i)
+bool prime(int n)
 {
     // TODO
-    for (int d = 1; d<n, d++)
+    for (int d = 1; d<n; d++)
     {
     if ( n % d ==0)
         {
             return 0;
         }
 
-    else if (n%d != 0 && d=n-1)
+    else if (n%d != 0 && d==n-1)
     {
         return 1;
     }
