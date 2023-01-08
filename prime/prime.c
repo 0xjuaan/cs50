@@ -35,7 +35,7 @@ bool prime(int n)
     {
     if ( n % d ==0)
         {
-            return 0;
+            break;
         }
 
     else if (n%d != 0 && d==n-1)
