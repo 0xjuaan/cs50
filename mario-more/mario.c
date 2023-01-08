@@ -5,12 +5,6 @@
 //Pseudocode
 //Let n=1
 //Print 1
-""
-bee
-
-""
-
-
 
 int main(void)
 {
@@ -22,12 +16,17 @@ int main(void)
     while (height<1 || height>8);
 
     int n=1;
-    for (int a=0; a<2; a++)
+    while(n<height)
     {
-        for (int i=0; i<n; i++)
+        for (int a=0; a<2; a++) //REPEATS THE RATATA TWICE!!
         {
-            printf("#");
+            for (int i=0; i<=n; i++)
+            {
+                printf("#"); //RATATATA!!
+            }
+            printf(" "); //space
         }
-        printf(" ");
+        n++;
+        printf("\n");
     }
 }
