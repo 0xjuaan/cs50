@@ -29,7 +29,7 @@ int main(void)
 
                 printf("#"); //RATATATA!!
             }
-    
+            printf("  "); //space
         }
 
         n++;
