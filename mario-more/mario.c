@@ -18,5 +18,6 @@ int main(void)
     while (n<height)
     {
         printf("#");
+        n++;
     }
 }
