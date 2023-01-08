@@ -1,7 +1,10 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(void) 
+
+//Pseudocode
+//
+int main(void)
 {
-    
+
 }
