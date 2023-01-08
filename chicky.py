@@ -1,2 +1,0 @@
-print("shush")
-print("fam")
