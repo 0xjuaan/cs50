@@ -17,10 +17,6 @@ int main(void)
     int n=1;
     while (n<height)
     {
-        for (n=1; n<2*n;n++)
-        {
-            printf("#");
-        }
-
+        
     }
 }
