@@ -15,6 +15,7 @@ int main(void)
 
 bool validate(number)
 {
-
+    int d1 = number % 10
+    printf("%i", d1)
 
 }
