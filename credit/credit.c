@@ -10,12 +10,7 @@ int main(void)
     {
         printf("INVALID\n");
     }
-
-}
-
-bool validate(number)
-{
     int d1 = number % 10
     printf("%i", d1)
-
 }
+
