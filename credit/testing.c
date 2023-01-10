@@ -23,7 +23,7 @@ int main(void)
 
         if (a%2==0)
         {
-        printf("%i\n", d);
+        printf("%i\n", 2*d);
         }
     }
 
