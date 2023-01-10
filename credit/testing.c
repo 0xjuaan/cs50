@@ -39,6 +39,10 @@ int main(void)
     if ((sum1 + sum2)%10==0)
     {
         printf("Approved Checksum\n");
+        if (number>=34)
+        {
+
+        }
     }
     else
     {
