@@ -73,6 +73,12 @@ int main(void)
         else if (i==16)
         {
             if (number >=5100000000000000)
+            {
+                if (number <= 5599999999999999)
+                {
+                    printf("Issa )
+                }
+            }
         }
     }
     else
