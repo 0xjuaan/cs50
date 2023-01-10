@@ -36,6 +36,15 @@ int main(void)
     printf("\n%i\n", sum1);
     printf("%i\n", sum2);
 
+    if ((sum1 + sum2)%10=0)
+    {
+        
+    }
+    else
+    {
+        printf("INVALID")
+    }
+
 }
 
 
