@@ -56,10 +56,6 @@ int main(void)
                     printf("issa AMEX fam\n");
                 }
             }
-            else
-            {
-                printf("INVALID\n");
-            }
 
         }
         else if (i==13 && number <=4999999999999)
@@ -76,9 +72,17 @@ int main(void)
             {
                 if (number <= 5599999999999999)
                 {
-                    printf("Issa )
+                    printf("Mastercard mad ting\n");
                 }
             }
+            else if (number <=4999999999999999)
+            {
+                if (number >=4000000000000000)
+                {
+                    printf("VISA ting\n");
+                }
+            }
+
         }
     }
     else
