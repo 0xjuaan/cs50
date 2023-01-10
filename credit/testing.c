@@ -28,7 +28,7 @@ int main(void)
             printf("%i", d);
             sum1 += (2*d)%10 + 0.1*((2*d)-((2*d)%10));
         }
-        else if (a%2!=0)
+        else if (a%2!=0 || a==0)
         {
             sum2 += d;
         }
