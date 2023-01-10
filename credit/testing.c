@@ -13,10 +13,11 @@ int main(void)
         i++;
     }
     n = number;
-    int d = n % 10;
+
 
     for (int a=0; a < i; a++)
     {
+        int d = n%10;
         n = 0.1*(n-d);
         d=n%10;
 
