@@ -14,7 +14,7 @@ int main(void)
     }
     n = number;
 
-    int sum1 = -1;
+    int sum1 = 0;
     int sum2 =0;
     int d = n%10;
 
