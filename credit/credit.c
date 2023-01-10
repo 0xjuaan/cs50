@@ -46,6 +46,10 @@ int main(void)
                 {
                     printf("AMEX\n");
                 }
+                else
+                {
+                    printf("INVALID\n");
+                }
             }
             else if (number >= 340000000000000)
             {
@@ -53,6 +57,11 @@ int main(void)
                 {
                     printf("AMEX\n");
                 }
+                else
+                {
+                    printf("INVALID\n");
+                }
+
             }
 
         }
