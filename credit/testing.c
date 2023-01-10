@@ -13,6 +13,7 @@ int main(void)
         i++;
     }
     n = number;
+    printf("size = %i\n", i);
 
     int sum1 = 0;
     int sum2 =0;
@@ -43,9 +44,13 @@ int main(void)
         {
             printf("issa AMEX fam\n");
         }
-        else if (i==13 || (number >=4000000000000 && number <=499999999999))
+        else if (i==13 && number <=4999999999999)
         {
-            printf("VISA ting\n");
+            if (number >=4000000000000)
+            {
+                printf("VISA ting\n");
+            }
+
         }
         else if (i==16)
         {
