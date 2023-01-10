@@ -15,9 +15,10 @@ int main(void)
     n = number;
 
     int sum1 = 0;
-    for (int a=0; a < i-1; a++)
+    int d = n%10;
+
+    for (int a=0; a < i; a++)
     {
-        int d = n%10;
         n = 0.1*(n-d);
         d=n%10;
 
