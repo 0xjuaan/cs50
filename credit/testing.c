@@ -43,9 +43,9 @@ int main(void)
         {
             printf("issa AMEX fam\n");
         }
-        else if (i==13)
+        else if (i==13 || (number >=4000000000000 && number <=499999999999))
         {
-            
+            printf("VISA ting\n");
         }
         else if (i==16)
         {
