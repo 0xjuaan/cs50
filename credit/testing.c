@@ -23,7 +23,7 @@ int main(void)
 
         if (a%2==0)
         {
-        printf("%i\n", 2*d);
+        int sum1 = (2*d)%10 + 0.1*((2*d)-((2*d)%10)
         }
     }
 
