@@ -21,9 +21,7 @@ int main(void)
     for (int a=0; a < i; a++)
     {
         n = 0.1*(n-d);
-        d=n%10;
-
-        if (a%2==0)
+        if (a%2!=0)
         {
             printf("%i", d);
             sum1 += (2*d)%10 + 0.1*((2*d)-((2*d)%10));
@@ -32,6 +30,7 @@ int main(void)
         {
             sum2 += d;
         }
+        d=n%10;
     }
 
     printf("\n%i\n", sum1);
