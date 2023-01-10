@@ -38,12 +38,19 @@ int main(void)
 
     if ((sum1 + sum2)%10==0)
     {
-        printf("Approved Checksum\n");
+        printf("Approved Checksum g\n");
         if (i==15)
         {
             printf("issa AMEX fam\n");
         }
         else if (i==13)
+        {
+            
+        }
+        else if (i==16)
+        {
+
+        }
     }
     else
     {
