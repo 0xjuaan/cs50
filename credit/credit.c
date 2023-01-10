@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool checksum(long number)
+int checksum(long number);
 
 int main(void)
 {
@@ -14,16 +14,23 @@ int main(void)
         n= n/10;
         i++;
     }
-
+    checksum(number);
 
 }
 
-bool checksum(long number)
+int checksum(long number)
 {
-    int d1 = number%10
-    for (a=0; a<n; a++)
+    long n = number
+    int d = n % 10;
+    for (a=0; a<i; a++)
     {
-        
+        n = 0.1*(n-d);
+        d=n%10;
+
+        if (a%2>0)
+        {
+        printf("d");
+        }
     }
 }
 
