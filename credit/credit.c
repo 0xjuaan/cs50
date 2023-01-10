@@ -20,9 +20,9 @@ int main(void)
 
 int checksum(long number)
 {
-    long n = number
+    long n = number;
     int d = n % 10;
-    for (a=0; a<i; a++)
+    for (int a=0; a<i; a++)
     {
         n = 0.1*(n-d);
         d=n%10;
