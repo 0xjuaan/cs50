@@ -36,13 +36,13 @@ int main(void)
     printf("\n%i\n", sum1);
     printf("%i\n", sum2);
 
-    if ((sum1 + sum2)%10=0)
+    if ((sum1 + sum2)%10==0)
     {
-        
+        printf("Approved Checksum\n");
     }
     else
     {
-        printf("INVALID")
+        printf("INVALID\n");
     }
 
 }
