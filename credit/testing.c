@@ -72,7 +72,7 @@ int main(void)
         }
         else if (i==16)
         {
-            if ()
+            if (number >=5100000000000000)
         }
     }
     else
