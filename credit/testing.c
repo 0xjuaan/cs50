@@ -11,6 +11,7 @@ int main(void)
     {
         n= n/10;
         i++;
+        return i;
     }
     int d = n % 10;
     for (int a=0; a<i; a++)
@@ -20,7 +21,7 @@ int main(void)
 
         if (a%2>0)
         {
-        printf("d");
+        printf("%i\n", d);
         }
     }
 
