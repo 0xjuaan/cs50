@@ -45,8 +45,22 @@ int main(void)
             if (number >= 370000000000000)
             {
                 if (number <= 379999999999999)
+                {
+                    printf("issa AMEX fam\n");
+                }
             }
-            printf("issa AMEX fam\n");
+            else if (number >= 340000000000000)
+            {
+                if (number <= 349999999999999)
+                {
+                    printf("issa AMEX fam\n");
+                }
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
+
         }
         else if (i==13 && number <=4999999999999)
         {
@@ -58,7 +72,7 @@ int main(void)
         }
         else if (i==16)
         {
-
+            if ()
         }
     }
     else
