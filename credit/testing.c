@@ -21,7 +21,7 @@ int main(void)
         n = 0.1*(n-d);
         d=n%10;
 
-        if (a%2!=0)
+        if (a%2==0)
         {
         printf("%i\n", d);
         }
