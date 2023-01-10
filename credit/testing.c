@@ -42,6 +42,10 @@ int main(void)
         printf("Approved Checksum g\n");
         if (i==15)
         {
+            if (number >= 370000000000000)
+            {
+                if (number <=)
+            }
             printf("issa AMEX fam\n");
         }
         else if (i==13 && number <=4999999999999)
@@ -54,7 +58,7 @@ int main(void)
         }
         else if (i==16)
         {
-            
+
         }
     }
     else
