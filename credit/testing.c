@@ -15,7 +15,7 @@ int main(void)
     n = number;
 
     int sum1 = 0;
-    for (int a=0; a < i; a++)
+    for (int a=0; a < i-1; a++)
     {
         int d = n%10;
         n = 0.1*(n-d);
@@ -27,7 +27,7 @@ int main(void)
         sum1 += (2*d)%10 + 0.1*((2*d)-((2*d)%10));
         }
     }
-    printf("%i", sum1);
+    printf("\n%i\n", sum1);
 }
 
 
