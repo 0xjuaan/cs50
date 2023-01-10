@@ -88,10 +88,11 @@ int main(void)
                 {
                     printf("VISA\n");
                 }
-                if (number >=4000000000000)
+                else
                 {
-                    printf("VISA\n");
+                    printf("INVALID\n");
                 }
+
             }
         }
         else
