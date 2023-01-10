@@ -81,6 +81,10 @@ int main(void)
                 {
                     printf("MASTERCARD\n");
                 }
+                else
+                {
+                    printf("INVALID\n");
+                }
             }
             else if (number <=4999999999999999)
             {
