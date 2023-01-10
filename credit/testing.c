@@ -3,11 +3,10 @@
 
 int main(void)
 {
-    do
-    {
+   // do
+   // {
     long number = get_long("Insert credit card number: ");
-    }
-    while(number>)
+
 
     int i = 0; //Number of digits
     long n = number;
