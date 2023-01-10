@@ -29,7 +29,7 @@ int checksum(long number)
 
         if (a%2>0)
         {
-        printf("d");
+            printf("d");
         }
     }
 }
