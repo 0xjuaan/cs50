@@ -44,14 +44,14 @@ int main(void)
             {
                 if (number <= 379999999999999)
                 {
-                    printf("AMEX");
+                    printf("AMEX\n");
                 }
             }
             else if (number >= 340000000000000)
             {
                 if (number <= 349999999999999)
                 {
-                    printf("AMEX");
+                    printf("AMEX\n");
                 }
             }
 
@@ -60,7 +60,7 @@ int main(void)
         {
             if (number >=4000000000000)
             {
-                printf("VISA");
+                printf("VISA\n");
             }
 
         }
@@ -70,21 +70,21 @@ int main(void)
             {
                 if (number <= 5599999999999999)
                 {
-                    printf("MASTERCARD");
+                    printf("MASTERCARD\n");
                 }
             }
             else if (number <=4999999999999999)
             {
                 if (number >=4000000000000000)
                 {
-                    printf("VISA");
+                    printf("VISA\n");
                 }
             }
         }
     }
     else
     {
-        printf("INVALID");
+        printf("INVALID\n");
     }
 
 }
