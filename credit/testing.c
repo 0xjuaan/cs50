@@ -28,14 +28,14 @@ int main(void)
             printf("%i", d);
             sum1 += (2*d)%10 + 0.1*((2*d)-((2*d)%10));
         }
-        else if (a%2!=0 || a==0)
+        else
         {
             sum2 += d;
         }
     }
 
     printf("\n%i\n", sum1);
-    printf("%i", sum2);
+    printf("%i\n", sum2);
 
 }
 
