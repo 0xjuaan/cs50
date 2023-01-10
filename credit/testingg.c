@@ -3,10 +3,7 @@
 
 int main(void)
 {
-long number = 378282246310525;
-
-long ting = number - number%10;
-
-printf("%li\n", ting);
-
+ int d =12;
+ int sum1 = (2*d)%10 + 0.1*((2*d)-((2*d)%10));
+ printf("i\n", sum1);
 }
