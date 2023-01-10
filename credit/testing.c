@@ -44,7 +44,7 @@ int main(void)
         {
             if (number >= 370000000000000)
             {
-                if (number <=)
+                if (number <= 379999999999999)
             }
             printf("issa AMEX fam\n");
         }
