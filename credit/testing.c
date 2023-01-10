@@ -11,9 +11,8 @@ int main(void)
     {
         n= n/10;
         i++;
-        return i;
     }
-    
+
     int d = n % 10;
     for (int a=0; a < i; a++)
     {
