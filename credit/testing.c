@@ -39,10 +39,11 @@ int main(void)
     if ((sum1 + sum2)%10==0)
     {
         printf("Approved Checksum\n");
-        if (number>=34)
+        if (i==15)
         {
-
+            printf("issa AMEX fam\n");
         }
+        else if (i==13)
     }
     else
     {
