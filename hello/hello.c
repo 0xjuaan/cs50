@@ -3,6 +3,5 @@
 
 int main(int argc, string argv[])
 {
-    string name = get_string("what is ur name? ");
-    printf("hello, %s\n", name);
+    printf("hello, %s\n", argv[1]);
 }
