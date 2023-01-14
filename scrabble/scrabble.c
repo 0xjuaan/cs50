@@ -28,10 +28,12 @@ int compute_score(string words)
     for (int i = 0; i<strlen(words[0]); i++)
     {
         if (isalpha(words[1]))
-        {\}
-        int n = tolower(words[0][i]);
-        return POINTS[n-97]
-
+        {
+            int n = tolower(words[0][i]);
+            return POINTS[n-97]
+        }
+        else
+        
     }
 
 }
