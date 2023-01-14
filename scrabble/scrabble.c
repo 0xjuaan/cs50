@@ -27,6 +27,7 @@ int compute_score(string words)
     // TODO: Compute and return score for string
     for (int i = 0; i<strlen(words[0]); i++)
     {
-        
+        tolower(words[0][i]);
+        int n = words[0][i]-
     }
 }
