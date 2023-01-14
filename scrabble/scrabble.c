@@ -6,13 +6,14 @@
 // Points assigned to each letter of the alphabet
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
-int compute_score(string word);
+int compute_score(string words);
 
 int main(void)
 {
     // Get input words from both players
-    string word1 = get_string("Player 1: ");
-    string word2 = get_string("Player 2: ");
+    string words[2];
+    words[0] = get_string("Player 1: ");
+    words[1] = get_string("Player 2: ");
 
     // Score both words
     int score1 = compute_score(word1);
@@ -21,10 +22,10 @@ int main(void)
     // TODO: Print the winner
 }
 
-int compute_score(string word)
+int compute_score(string words)
 {
     // TODO: Compute and return score for string
-    for (int i = 0; i<strlen(word1); i++)
+    for (int i = 0; i<strlen(words[0]); i++)
     {
         
     }
