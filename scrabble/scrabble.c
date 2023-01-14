@@ -28,7 +28,7 @@ int main(void)
     }
     else
     {
-        printf("DRAW!\n");
+        printf("Tie!\n");
     }
 
     // TODO: Print the winner
@@ -37,19 +37,19 @@ int compute_score(string word)
 {
     // TODO: Compute and return score for string
     int n=0;
-
+    int x=0;
     for (int i = 0; i<strlen(word); i++)
     {
         if (isalpha(word[i]))
         {
             n = tolower(word[i]);
-            n += POINTS[n-97];
+            x += POINTS[n-97];
         }
         else
         {
-            n+=0;
+            x+=0;
         }
 
     }
-    return n;
+    return x;
 }
