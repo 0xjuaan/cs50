@@ -17,20 +17,22 @@ int main(void)
 
     // Score both words
     int score0 = compute_score(words[0]);
-    int score1 = compute_score(words[0]);
+    int score1 = compute_score(words[1]);
 
     // TODO: Print the winner
 }
 
-int compute_score(string words)
+int compute_score(string words[k])
 {
     // TODO: Compute and return score for string
     int n=0;
-    for (int i = 0; i<strlen(words[0]); i++)
+    int k;
+    
+    for (int i = 0; i<strlen(words[k]); i++)
     {
-        if (isalpha(words[0]))
+        if (isalpha(words[k]))
         {
-            int n = tolower(words[0][i]);
+            int n = tolower(words[k][i]);
             n += POINTS[n-97];
         }
         else
