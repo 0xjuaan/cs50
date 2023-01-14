@@ -16,8 +16,8 @@ int main(void)
     words[1] = get_string("Player 2: ");
 
     // Score both words
-    int score1 = compute_score(word1);
-    int score2 = compute_score(word2);
+    int score0 = compute_score(words[0]);
+    int score1 = compute_score(words[0]);
 
     // TODO: Print the winner
 }
@@ -25,15 +25,20 @@ int main(void)
 int compute_score(string words)
 {
     // TODO: Compute and return score for string
+    int n=0;
     for (int i = 0; i<strlen(words[0]); i++)
     {
-        if (isalpha(words[1]))
+        if (isalpha(words[0]))
         {
             int n = tolower(words[0][i]);
-            return POINTS[n-97]
+            n += POINTS[n-97];
         }
         else
-        
+        {
+            n+=0;
+        }
+
     }
+
 
 }
