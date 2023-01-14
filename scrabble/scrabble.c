@@ -22,12 +22,11 @@ int main(void)
     // TODO: Print the winner
 }
 
-int compute_score(string words[k])
+int compute_score(string words[int k])
 {
     // TODO: Compute and return score for string
     int n=0;
-    int k;
-    
+
     for (int i = 0; i<strlen(words[k]); i++)
     {
         if (isalpha(words[k]))
