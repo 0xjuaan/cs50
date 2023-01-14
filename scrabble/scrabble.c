@@ -31,7 +31,6 @@ int main(void)
         printf("Tie!\n");
     }
 
-    // TODO: Print the winner
 }
 int compute_score(string word)
 {
