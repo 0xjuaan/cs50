@@ -21,8 +21,8 @@ int main(void)
 
     // TODO: Print the winner
 }
-
-int compute_score(string words[int k])
+int k;
+int compute_score(string words[k])
 {
     // TODO: Compute and return score for string
     int n=0;
