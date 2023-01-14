@@ -5,8 +5,8 @@
 
 // Points assigned to each letter of the alphabet
 int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
-
-int compute_score(string words);
+int k;
+int compute_score(string words[k]);
 
 int main(void)
 {
@@ -21,7 +21,6 @@ int main(void)
 
     // TODO: Print the winner
 }
-int k;
 int compute_score(string words[k])
 {
     // TODO: Compute and return score for string
