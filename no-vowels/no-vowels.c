@@ -45,4 +45,5 @@ void replace(string array[1])
             printf("%c", array[1][i]);
         }
     }
+    printf("\n");
 }
