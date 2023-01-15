@@ -25,22 +25,22 @@ char replace(string array[1])
         switch (array[1][i])
         {
             case 97:
-                printf('6');
+                printf("6");
                 break;
 
             case 101:
-                printf('3');
+                printf("3");
                 break;
 
             case 105:
-                printf('0');
+                printf("1");
                 break;
 
             case 111:
-                printf('0');
+                printf("0");
                 break;
 
-            case array[1][i]:
+            case int array[1][i]:
                 printf("%c", array[1][i]);
                 break;
         }
