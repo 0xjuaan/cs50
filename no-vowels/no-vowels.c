@@ -24,20 +24,20 @@ char replace(string array[1])
     {
         switch (array[1][i])
         {
-            case array[1][i] == 'a':
-                printf(6);
+            case array[1][i] == 97:
+                printf('6');
                 break;
 
-            case array[1][i] == 'e':
-                printf(3);
+            case array[1][i] == 101:
+                printf('3');
                 break;
 
-            case array[1][i] == 'i':
-                printf(1);
+            case array[1][i] == 105:
+                printf('0');
                 break;
 
-            case array[1][i] == 'o':
-                printf(0);
+            case array[1][i] == 111:
+                printf('0');
                 break;
 
             case array[1][i]:
