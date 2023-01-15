@@ -12,13 +12,15 @@ void replace(string array[1]);
 int main(int argc, string argv[])
 {
 
-if (argc != 2)
-{
-    printf("Usage: ./no-vowels word\n");
-    return 1;
-}
+    if (argc != 2)
+    {
+        printf("Usage: ./no-vowels word\n");
+        return 1;
+    }
 
-replace (argv);
+    replace (argv);
+    return 0;
+
 }
 
 void replace(string array[1])
