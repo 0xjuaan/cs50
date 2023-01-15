@@ -27,7 +27,7 @@ void replace(string array[1])
 {
     for (int i=0; i<strlen(array[1]); i++)
     {
-        switch (array[1][i])
+        switch (tolower(array[1][i]))
         {
             case 97:
                 printf("6");
