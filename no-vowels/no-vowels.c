@@ -6,21 +6,21 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-char replace(string array[1]);
+void replace(string array[1]);
 
 
 int main(int argc, string argv[])
 {
-do
+
+if (argc != 2)
 {
     printf("Usage: ./no-vowels word\n");
 }
-while (argc != 2);
 
 replace (argv);
 }
 
-char replace(string array[1])
+void replace(string array[1])
 {
     for (int i=0; i<strlen(array[1]); i++)
     {
