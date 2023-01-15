@@ -37,7 +37,7 @@ bool check(string password)
         {
             if (password[i]<=64)
             {
-                symbol = true
+                symbol = true;
             }
         }
         else if (isupper(password[i]))
@@ -49,5 +49,13 @@ bool check(string password)
             lower = true;
         }
     }
-    return false;
+    if (upper == true && lower == true && symbol == true && number == true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
 }
