@@ -24,19 +24,19 @@ char replace(string array[1])
     {
         switch (array[1][i])
         {
-            case array[1][i] == 97:
+            case 97:
                 printf('6');
                 break;
 
-            case array[1][i] == 101:
+            case 101:
                 printf('3');
                 break;
 
-            case array[1][i] == 105:
+            case 105:
                 printf('0');
                 break;
 
-            case array[1][i] == 111:
+            case 111:
                 printf('0');
                 break;
 
