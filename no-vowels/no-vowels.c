@@ -21,27 +21,27 @@ char replace(string argv[])
 {
     for (i=0; i<strlen(argv[1]); i++)
     {
-    switch (argv[1][i])
-    {
-        case argv[1][i] == a:
-            printf(6);
-            break;
+        switch (argv[1][i])
+        {
+            case argv[1][i] == a:
+                printf(6);
+                break;
 
-        case argv[1][i] == e:
-            printf(3);
-            break;
+            case argv[1][i] == e:
+                printf(3);
+                break;
 
-        case argv[1][i] == i:
-            printf(1);
-            break;
+            case argv[1][i] == i:
+                printf(1);
+                break;
 
-        case argv[1][i] == o:
-            printf(0);
-            break;
+            case argv[1][i] == o:
+                printf(0);
+                break;
 
-        case argv[1][i]:
-            printf("%c", argv[1][i]);
-            break;
-    }
+            case argv[1][i]:
+                printf("%c", argv[1][i]);
+                break;
+        }
     }
 }
