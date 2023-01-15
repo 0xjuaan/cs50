@@ -5,42 +5,42 @@
 #include <ctype.h>
 #include <cs50.h>
 #include <stdio.h>
-char replace(string argv[1]);
+char replace(string array[1]);
 
 
 int main(int argc, string argv[])
 {
 do
 {
-    replace(argv[1])
+    replace(argv);
 }
-while (argc != 2)
+while (argc != 2);
 }
 
-char replace(string argv[1])
+char replace(string array[1])
 {
-    for (int i=0; i<strlen(argv[1]); i++)
+    for (int i=0; i<strlen(array[1]); i++)
     {
-        switch (argv[1][i])
+        switch (array[1][i])
         {
-            case argv[1][i] == 'a':
+            case array[1][i] == 'a':
                 printf(6);
                 break;
 
-            case argv[1][i] == 'e':
+            case array[1][i] == 'e':
                 printf(3);
                 break;
 
-            case argv[1][i] == 'i':
+            case array[1][i] == 'i':
                 printf(1);
                 break;
 
-            case argv[1][i] == 'o':
+            case array[1][i] == 'o':
                 printf(0);
                 break;
 
-            case argv[1][i]:
-                printf("%c", argv[1][i]);
+            case array[1][i]:
+                printf("%c", array[1][i]);
                 break;
         }
     }
