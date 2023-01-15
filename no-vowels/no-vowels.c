@@ -24,19 +24,19 @@ char replace(string argv[])
     switch (argv[1][i])
     {
         case argv[1][i] == a:
-            printf();
+            printf(6);
             break;
 
         case argv[1][i] == e:
-            printf();
+            printf(3);
             break;
 
         case argv[1][i] == i:
-            printf();
+            printf(1);
             break;
 
         case argv[1][i] == o:
-            printf();
+            printf(0);
             break;
 
         case argv[1][i] == u:
