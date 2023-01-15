@@ -33,16 +33,17 @@ bool check(string password)
         {
             number = true;
         }
-        else if (password[i]<=64)
+        else if (password[i]>=33)
         {
-            if (password[i]>=33)
+            if (password[i]<=64)
             {
                 symbol = true;
             }
             else
             {
-                symbol = false;
+                return;
             }
+            return;
         }
         else if (isupper(password[i]))
         {
