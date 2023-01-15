@@ -42,7 +42,11 @@ bool check(string password)
         }
         else if (isupper(password[i]))
         {
-            if (password[i]<=)
+            upper = true;
+        }
+        else if (islower(password[i]))
+        {
+            lower = true;
         }
     }
     return false;
