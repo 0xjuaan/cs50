@@ -4,13 +4,15 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
-bool valid(string password);
+bool check(string password);
 
 int main(void)
 {
     string password = get_string("Enter your password: ");
-    if (valid(password))
+    if (check(password))
     {
         printf("Your password is valid!\n");
     }
@@ -21,7 +23,7 @@ int main(void)
 }
 
 // TODO: Complete the Boolean function below
-bool valid(string password)
+bool check(string password)
 {
     return false;
 }
