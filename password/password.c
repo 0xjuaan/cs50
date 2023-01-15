@@ -29,7 +29,7 @@ bool check(string password)
 
     for (int i = 0; i < strlen(password); i++)
     {
-
+        if (isalnum(password[i]))
     }
     return false;
 }
