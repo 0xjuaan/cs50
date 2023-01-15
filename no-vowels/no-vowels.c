@@ -5,8 +5,19 @@
 
 #include <cs50.h>
 #include <stdio.h>
+char replace(string argv[]);
+
 
 int main(int argc, string argv[])
 {
-    
+do
+{
+    replace(argv[])
+}
+while (argc != 2)
+}
+
+char replace(string argv[])
+{
+    switch
 }
