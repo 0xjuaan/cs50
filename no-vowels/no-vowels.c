@@ -42,9 +42,7 @@ char replace(string array[1])
                 printf("0");
                 break;
 
-            case array[1][i]:
-                printf("%c", array[1][i]);
-                break;
+            printf("%c", array[1][i]);
         }
     }
 }
