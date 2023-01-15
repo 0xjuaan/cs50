@@ -39,6 +39,10 @@ bool check(string password)
             {
                 symbol = true;
             }
+            else
+            {
+                break;
+            }
         }
         else if (isupper(password[i]))
         {
