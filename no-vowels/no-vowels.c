@@ -13,9 +13,11 @@ int main(int argc, string argv[])
 {
 do
 {
-    replace(argv);
+    printf("Usage: ./no-vowels word\n");
 }
 while (argc != 2);
+
+replace (argv);
 }
 
 char replace(string array[1])
@@ -40,7 +42,7 @@ char replace(string array[1])
                 printf("0");
                 break;
 
-            case int array[1][i]:
+            case array[1][i]:
                 printf("%c", array[1][i]);
                 break;
         }
