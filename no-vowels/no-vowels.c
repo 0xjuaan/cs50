@@ -2,7 +2,7 @@
 // Get practice with strings
 // Get practice with command line
 // Get practice with switch
-
+#include <ctype.h>
 #include <cs50.h>
 #include <stdio.h>
 char replace(string argv[]);
@@ -12,12 +12,21 @@ int main(int argc, string argv[])
 {
 do
 {
-    replace(argv[])
+    replace(argv[1])
 }
 while (argc != 2)
 }
 
 char replace(string argv[])
 {
-    switch
+    for (i=0; i<strlen(argv[1]); i++)
+    {
+    switch (argv[1][i])
+    {
+        case argv[1][i] == a:
+            printf(
+            
+            )
+    }
+    }
 }
