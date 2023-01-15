@@ -25,5 +25,9 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool check(string password)
 {
+    for (int i = 0; i < strlen(password); i++)
+    {
+        
+    }
     return false;
 }
