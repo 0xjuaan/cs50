@@ -25,9 +25,11 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool check(string password)
 {
+    bool upper, lower, number, symbol;
+
     for (int i = 0; i < strlen(password); i++)
     {
-        Í
+
     }
     return false;
 }
