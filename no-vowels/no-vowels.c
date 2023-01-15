@@ -39,8 +39,8 @@ char replace(string argv[])
             printf(0);
             break;
 
-        case argv[1][i] == u:
-            printf();
+        case argv[1][i]:
+            printf("%c", argv[1][i]);
             break;
     }
     }
