@@ -41,9 +41,8 @@ void replace(string array[1])
             case 111:
                 printf("0");
                 break;
-
-            printf("%c", array[1][i]);
         }
+        printf("%c", array[1][i]);
     }
     printf("\n");
 }
