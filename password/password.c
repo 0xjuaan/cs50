@@ -25,11 +25,15 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool check(string password)
 {
-    bool upper, lower, number, symbol;
+    bool upper, lower, number, symbol = false;
 
     for (int i = 0; i < strlen(password); i++)
     {
         if (isalnum(password[i]))
+        {
+            number = true;
+        }
+        else if ()
     }
     return false;
 }
