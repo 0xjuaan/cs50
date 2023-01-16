@@ -27,7 +27,11 @@ int main(int argc, string argv[])
             }
             if (isupper(plain[i]))
             {
-
+                cipher[i]=argv[1][j];
+            }
+            else
+            {
+                cipher[i]=argv[1][j];
             }
         }
 
