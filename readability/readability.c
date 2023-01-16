@@ -3,7 +3,8 @@
 #include <ctype.h>
 #include <string.h>
 
-int sentences, words, letters = 0;
+int sentences, letters = 0;
+int words = 1;
 
 int main(void)
 {
