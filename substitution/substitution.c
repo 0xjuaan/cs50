@@ -8,9 +8,10 @@ int main(int argc, string argv[])
     int index;
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
-    string cipher = "";
+    int size = strlen(plain);
+    char cipher[size];
 
-    for (int i = 0; i < strlen(plain); i++)
+    for (int i = 0; i < size; i++)
     {
         if (isalpha(plain[i]))
         {
@@ -41,5 +42,5 @@ int main(int argc, string argv[])
         }
 
     }
-    printf("Ciphertext: %s", cipher);
+    printf("Ciphertext: %s\n", cipher);
 }
