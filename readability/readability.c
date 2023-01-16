@@ -25,6 +25,10 @@ int main(void)
         {
             sentences++;
         }
+        else
+        {
+            continue;
+        }
     }
 
         double L = (letters / words) * 100.000;
