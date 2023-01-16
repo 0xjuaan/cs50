@@ -5,6 +5,7 @@ int main(int argc, string argv[])
 {
     if (argc == 2)
     {
+        string plaintext = get_string("Plaintext: ");
         
         return 0;
     }
