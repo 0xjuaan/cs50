@@ -13,11 +13,20 @@ int main(int argc, string argv[])
         string plaintext = get_string("Plaintext: ");
         char ciphertext[strlen(plaintext)];
         int index;
+        bool upper;
 
         for (int i=0; i<strlen(plaintext); i++)
         {
             if (isalpha(plaintext[i]))
             {
+                if (isupper(plaintext[i]))
+                {
+                    upper = true;
+                }
+                else
+                {
+                    upper = false;
+                }
                 for (int j=0; j<26; j++)
                 {
                     if (tolower(plaintext[i]) == alphabet[j])
@@ -30,11 +39,18 @@ int main(int argc, string argv[])
                     }
                 }
             }
+                else
+                {
+                    ciphertext[i]= plaintext[i];
+                }
+            if (upper)
+            {
+                ciphertext[i] = argv[1][index];
+            }
             else
             {
-                ciphertext[i]= plaintext[i];
+                ciphertext[i] = tolower(argv[1][index]);
             }
-            ciphertext[i] = argv[1][index];
 
         }
         printf("ciphertext: %s\n", ciphertext);
