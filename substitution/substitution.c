@@ -16,6 +16,7 @@ int main(int argc, string argv[])
 
         for (int i=0; i<strlen(plaintext); i++)
         {
+            
             for (int j=0; j<26; j++)
             {
                 if (tolower(plaintext[i]) == alphabet[j])
