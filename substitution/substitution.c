@@ -5,9 +5,10 @@
 
 int main(int argc, string argv[])
 {
-    
+    int index;
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
+    string cipher;
 
     for (int i = 0; i < strlen(plain); i++)
     {
@@ -17,9 +18,18 @@ int main(int argc, string argv[])
             {
                 if (plain[i]==alphabet[j])
                 {
-                    int index = j;
+                    index = j;
+                }
+                else
+                {
+                    continue;
                 }
             }
+            if (isupper(plain[i]))
+            {
+
+            }
         }
+
     }
 }
