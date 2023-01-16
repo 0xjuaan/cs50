@@ -9,7 +9,7 @@ int main(void)
 
 
 
-int b = round(7.22);
+
 
 printf("%i\n", b);
 
