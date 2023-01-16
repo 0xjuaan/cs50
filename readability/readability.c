@@ -27,10 +27,6 @@ int main(void)
         }
     }
 
-    printf("letters %i\n", letters);
-    printf("words %i\n", words);
-    printf("sentences %i\n", sentences);
-
 
     double index = (double) 0.0588 * (100 * letters/ words) - 0.296 * (100 * sentences / words) - 15.8;
 
@@ -47,6 +43,6 @@ int main(void)
     else
     {
 
-    printf("Grade %i %f\n", grade, index);
+    printf("Grade %i\n", grade);
     }
 }
