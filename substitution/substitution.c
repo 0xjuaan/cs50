@@ -18,9 +18,14 @@ int main(int argc, string argv[])
             {
                 if (plaintext[i] == alphabet[j])
                 {
-                    printf(")
+                    int index = j;
+                }
+                else
+                {
+                    continue;
                 }
             }
+            
         }
         return 0;
     }
