@@ -6,19 +6,19 @@
 int main(int argc, string argv[])
 {
 
-    char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
     if (argc == 2 && strlen(argv[1])==26)
     {
         //Defining a couple of things (variables and array)
-
         string plaintext = get_string("Plaintext: ");
-        char ciphertext[strlen(plaintext)];
+        int size = strlen(plaintext);
+        char ciphertext[size];
         int index;
         bool upper;
 
         //Looping the check of the plaintext characters (1 by 1)
-        for (int i=0; i<strlen(plaintext); i++)
+        for (int i=0; i<size; i++)
         {
             if (isalpha(plaintext[i]))
             {
@@ -48,6 +48,7 @@ int main(int argc, string argv[])
                 ciphertext[i]= plaintext[i];
             }
 
+            //Giving values to ciphertext (based off the index of plaintext)
             if (upper)
             {
                 ciphertext[i] = argv[1][index];
