@@ -37,7 +37,7 @@ int main(int argc, string argv[])
         }
         else
         {
-            cipher[i] = 
+            cipher[i] = plain[i];
         }
 
     }
