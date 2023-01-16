@@ -17,7 +17,7 @@ int main(int argc, string argv[])
         {
             for (int j = 0; j < strlen(alphabet); j++)
             {
-                if (plain[i]==alphabet[j])
+                if (plain[i] == alphabet[j])
                 {
                     index = j;
                     break;
