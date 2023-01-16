@@ -8,7 +8,7 @@ int main(int argc, string argv[])
 
     char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
 
-    if (argc == 2)
+    if (argc == 2 && strlen(argv[1])==26)
     {
         string plaintext = get_string("Plaintext: ");
         char ciphertext[strlen(plaintext)];
@@ -18,7 +18,7 @@ int main(int argc, string argv[])
         {
             for (int j=0; j<26; j++)
             {
-                if (plaintext[i] == alphabet[j])
+                if (tolower(plaintext[i]) == alphabet[j])
                 {
                     index = j;
                 }
