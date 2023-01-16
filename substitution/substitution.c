@@ -28,12 +28,16 @@ int main(int argc, string argv[])
             }
             if (isupper(plain[i]))
             {
-                cipher[i]=argv[1][index];
+                cipher[i] = argv[1][index];
             }
             else
             {
-                cipher[i]=tolower(argv[1][index]);
+                cipher[i] = tolower(argv[1][index]);
             }
+        }
+        else
+        {
+            cipher[i] = 
         }
 
     }
