@@ -31,7 +31,7 @@ int main(int argc, string argv[])
             }
             else
             {
-                cipher[i]=argv[1][j];
+                cipher[i]=tolower(argv[1][j]);
             }
         }
 
