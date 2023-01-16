@@ -1,5 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int main(int argc, string argv[])
 {
@@ -9,7 +11,10 @@ int main(int argc, string argv[])
     {
         string plaintext = get_string("Plaintext: ");
 
-        for (int i=0;)
+        for (int i=0; i<strlen(plaintext); i++)
+        {
+            
+        }
         return 0;
     }
     else
