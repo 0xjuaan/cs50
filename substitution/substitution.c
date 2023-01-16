@@ -30,7 +30,11 @@ int main(int argc, string argv[])
                     }
                 }
             }
-            ciphertext[i]=argv[1][index];
+            else
+            {
+                ciphertext[i]= plaintext[i];
+            }
+            ciphertext[i] = argv[1][index];
 
         }
         printf("ciphertext: %s\n", ciphertext);
