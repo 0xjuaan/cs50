@@ -26,8 +26,6 @@ int main(void)
             sentences++;
         }
     }
-
-
     double index = (double) 0.0588 * (100 * letters/ words) - 0.296 * (100 * sentences / words) - 15.8;
 
     int grade = round(index);
@@ -42,7 +40,6 @@ int main(void)
     }
     else
     {
-
-    printf("Grade %i\n", grade);
+        printf("Grade %i\n", grade);
     }
 }
