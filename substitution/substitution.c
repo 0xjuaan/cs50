@@ -14,7 +14,13 @@ int main(int argc, string argv[])
 
         for (int i=0; i<strlen(plaintext); i++)
         {
-            
+            for (int j=0; j<26; j++)
+            {
+                if (plaintext[i] == alphabet[j])
+                {
+                    printf(")
+                }
+            }
         }
         return 0;
     }
