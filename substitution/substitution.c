@@ -10,11 +10,14 @@ int main(int argc, string argv[])
 
     if (argc == 2 && strlen(argv[1])==26)
     {
+        //Defining a couple of things (variables and array)
+
         string plaintext = get_string("Plaintext: ");
         char ciphertext[strlen(plaintext)];
         int index;
         bool upper;
 
+        //Looping the check of the plaintext characters (1 by 1)
         for (int i=0; i<strlen(plaintext); i++)
         {
             if (isalpha(plaintext[i]))
@@ -27,6 +30,7 @@ int main(int argc, string argv[])
                 {
                     upper = false;
                 }
+                //Finding the index of the plaintext character
                 for (int j=0; j<26; j++)
                 {
                     if (tolower(plaintext[i]) == alphabet[j])
@@ -39,10 +43,11 @@ int main(int argc, string argv[])
                     }
                 }
             }
-                else
-                {
-                    ciphertext[i]= plaintext[i];
-                }
+            else
+            {
+                iphertext[i]= plaintext[i];
+            }
+            
             if (upper)
             {
                 ciphertext[i] = argv[1][index];
