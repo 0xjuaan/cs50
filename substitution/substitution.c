@@ -5,5 +5,10 @@
 
 int main(int argc, string argv[])
 {
-   
+   string plain = get_string ("Plaintext: ");
+
+    for (int i = 0; i < strlen(plain); i++)
+    {
+        
+    }
 }
