@@ -13,14 +13,20 @@ int main(void)
     {
         if (isalpha(text[i]))
         {
-            continue;
+            letters++;
         }
         else if (isspace(text[i]))
         {
             words++;
         }
-        else if (text[i]=)
+        else if (text[i]==33 || text[i]==46 ||text[i]==63)
+        {
+            sentences++;
+        }
     }
+    printf("Letters: %i\n", letters);
+    printf("Words: %i\n", words);
+    printf("Sentences: %i\n", sentences);
 
 
 }
