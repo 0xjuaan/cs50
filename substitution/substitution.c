@@ -36,6 +36,7 @@ int main(int argc, string argv[])
                     if (tolower(plaintext[i]) == alphabet[j])
                     {
                         index = j;
+                        break;
                     }
                     else
                     {
