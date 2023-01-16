@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <math.h>
 
-float a = 7.22;
+
+
+
+int main(void)
+{
+
+
 
 int b = round(7.22);
 
-printf("%i", b);
+printf("%i\n", b);
+
+}

@@ -33,7 +33,7 @@ int main(void)
 
     double index = (double) 0.0588 * 100 * (letters/words) - 0.296 * 100 * (sentences/words) - 15.8;
 
-
+    printf("Index:%f\n", index);
     printf("Grade %i!\n", (int) round(index));
 
 }
