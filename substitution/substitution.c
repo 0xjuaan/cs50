@@ -19,6 +19,7 @@ int main(int argc, string argv[])
                 if (plain[i]==alphabet[j])
                 {
                     index = j;
+                    break;
                 }
                 else
                 {
