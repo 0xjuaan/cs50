@@ -4,8 +4,8 @@
 #include <string.h>
 #include <math.h>
 
-int sentences, letters = 0;
-int words = 1;
+double sentences, letters = 0.00;
+double words = 1.00;
 
 int main(void)
 {
