@@ -12,6 +12,15 @@ int main(void)
     for (int i=0; i < strlen(text); i++)
     {
         if (isalpha(text[i]))
+        {
+            continue;
+        }
+        else if (isspace(text[i]))
+        {
+            words++;
+        }
+        else if (is)
     }
+
 
 }
