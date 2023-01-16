@@ -8,7 +8,7 @@ int main(int argc, string argv[])
     int index;
     string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
-    string cipher;
+    string cipher = "";
 
     for (int i = 0; i < strlen(plain); i++)
     {
@@ -36,4 +36,5 @@ int main(int argc, string argv[])
         }
 
     }
+    printf("Ciphertext: %s", cipher);
 }
