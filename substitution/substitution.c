@@ -5,10 +5,17 @@
 
 int main(int argc, string argv[])
 {
+   string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
    string plain = get_string ("Plaintext: ");
 
     for (int i = 0; i < strlen(plain); i++)
     {
-        
+        if (alpha(plain[i]))
+        {
+            for (int j = 0; j < strlen(alphabet); j++)
+            {
+                
+            }
+        }
     }
 }
