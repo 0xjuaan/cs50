@@ -12,7 +12,7 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < strlen(plain); i++)
     {
-        if (alpha(plain[i]))
+        if (isalpha(plain[i]))
         {
             for (int j = 0; j < strlen(alphabet); j++)
             {
@@ -27,11 +27,11 @@ int main(int argc, string argv[])
             }
             if (isupper(plain[i]))
             {
-                cipher[i]=argv[1][j];
+                cipher[i]=argv[1][index];
             }
             else
             {
-                cipher[i]=tolower(argv[1][j]);
+                cipher[i]=tolower(argv[1][index]);
             }
         }
 
