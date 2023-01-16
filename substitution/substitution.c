@@ -45,9 +45,9 @@ int main(int argc, string argv[])
             }
             else
             {
-                iphertext[i]= plaintext[i];
+                ciphertext[i]= plaintext[i];
             }
-            
+
             if (upper)
             {
                 ciphertext[i] = argv[1][index];
