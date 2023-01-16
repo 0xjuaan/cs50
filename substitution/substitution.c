@@ -5,8 +5,9 @@
 
 int main(int argc, string argv[])
 {
-   string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   string plain = get_string ("Plaintext: ");
+    
+    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string plain = get_string ("Plaintext: ");
 
     for (int i = 0; i < strlen(plain); i++)
     {
@@ -14,7 +15,10 @@ int main(int argc, string argv[])
         {
             for (int j = 0; j < strlen(alphabet); j++)
             {
-                
+                if (plain[i]==alphabet[j])
+                {
+                    int index = j;
+                }
             }
         }
     }
