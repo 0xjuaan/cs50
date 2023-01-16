@@ -35,18 +35,18 @@ int main(void)
         double S = (sentences / words) * 100.000;
         double index = 0.0588 * L - 0.296 * S - 15.8;
 
-    int grade = round(index);
+        int grade = round(index);
 
-    if (index>=16)
-    {
-        printf("Grade 16+\n");
-    }
-    else if (index<1)
-    {
-        printf("Before Grade 1\n");
-    }
-    else
-    {
-        printf("Grade %i\n", grade);
-    }
+        if (index>=16)
+        {
+            printf("Grade 16+\n");
+        }
+        else if (index<1)
+        {
+            printf("Before Grade 1\n");
+        }
+        else
+        {
+            printf("Grade %i\n", grade);
+        }
 }
