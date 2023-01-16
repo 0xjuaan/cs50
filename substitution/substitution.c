@@ -16,16 +16,18 @@ int main(int argc, string argv[])
 
         for (int i=0; i<strlen(plaintext); i++)
         {
-            
-            for (int j=0; j<26; j++)
+            if (isalpha(plaintext[i]))
             {
-                if (tolower(plaintext[i]) == alphabet[j])
+                for (int j=0; j<26; j++)
                 {
-                    index = j;
-                }
-                else
-                {
-                    continue;
+                    if (tolower(plaintext[i]) == alphabet[j])
+                    {
+                        index = j;
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
             }
             ciphertext[i]=argv[1][index];
