@@ -26,7 +26,10 @@ int main(void)
             sentences++;
         }
     }
-    double index = (double) 0.0588 * (100 * letters/ words) - 0.296 * (100 * sentences / words) - 15.8;
+
+        double L = (letters / words) * 100.000
+        double S = (sentences / words) * 100.000
+        double index = 0.0588 * L - 0.296 * S - 15.8;
 
     int grade = round(index);
 
