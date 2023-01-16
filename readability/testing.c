@@ -3,4 +3,6 @@
 
 float a = 7.22;
 
-printf("%i", round(a));
+int b = round(7.22);
+
+printf("%i", b);
