@@ -5,19 +5,19 @@
 
 int main(int argc, string argv[])
 {
-    int index;
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
     char cipher[size];
 
     for (int i = 0; i < size; i++)
     {
+        int index;
         if (isalpha(plain[i]))
         {
             for (int j = 0; j < strlen(alphabet); j++)
             {
-                if (plain[i] == alphabet[j])
+                if (toupper(plain[i]) == alphabet[j])
                 {
                     index = j;
                     break;
@@ -30,16 +30,20 @@ int main(int argc, string argv[])
             if (isupper(plain[i]))
             {
                 cipher[i] = argv[1][index];
+                continue;
             }
             else
             {
                 cipher[i] = tolower(argv[1][index]);
+                continue;
             }
         }
         else
         {
             cipher[i] = plain[i];
+            continue;
         }
+
 
     }
     printf("Ciphertext: %s\n", cipher);
