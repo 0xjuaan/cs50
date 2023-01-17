@@ -105,7 +105,7 @@ int main(int argc, string argv[])
                         continue;
                     }
                 }
-
+                break;
             }
 
 
