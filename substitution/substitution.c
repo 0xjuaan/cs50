@@ -15,9 +15,9 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("false");
+        printf("false\n");
     }
-    
+
 
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
