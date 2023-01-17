@@ -99,6 +99,7 @@ int main(int argc, string argv[])
                     {
                         c++;
                         break;
+                        printf("%i", c);
                     }
                     else
                     {
