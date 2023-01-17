@@ -36,7 +36,7 @@ int main(int argc, string argv[])
             }
             if (isupper(plain[i]))
             {
-                cipher[i] = argv[1][index];
+                cipher[i] = toupper(argv[1][index]);
                 continue;
             }
             else
@@ -58,13 +58,13 @@ int main(int argc, string argv[])
 
 
 
-bool argcheck(string argv[])
+/* bool argcheck(string argv[])
 {
     if (argc==2)
     {
         if (strlen(argv[1])==26)
         {
-            
+
         }
     }
     else
@@ -72,3 +72,4 @@ bool argcheck(string argv[])
         return false;
     }
 }
+*/
