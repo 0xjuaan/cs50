@@ -3,16 +3,12 @@
 #include <string.h>
 #include <ctype.h>
 bool wemadeit;
-bool argcheck(string argv[], int argc, string alphabet);
-
+bool argcheck(string argv[], int argc);
+char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
-
-    argcheck(argv[], argc, alphabet);
-
-    if (argcheck(argv[], argc, alphabet)==true)
+    if (argcheck(argv[], argc)==true)
     {
         printf("true");
     }
@@ -22,7 +18,7 @@ int main(int argc, string argv[])
     }
 }
 
-bool argcheck(string argv[], int argc, string alphabet)
+bool argcheck(string argv[], int argc)
 {
     int c = 0;
     if (argc!=2)
