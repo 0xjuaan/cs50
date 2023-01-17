@@ -10,7 +10,7 @@ int main(int argc, string argv[])
 {
     if (argcheck(argv, argc)==true)
     {
-        printf("true");
+        printf("true\n");
     }
     else
     {
@@ -52,9 +52,4 @@ bool argcheck(string argv[], int argc)
     {
         return false;
     }
-
-
-
-
-
 }
