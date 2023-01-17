@@ -50,7 +50,7 @@ int main(int argc, string argv[])
         }
 
     }
-        printf("Ciphertext: %s\n", cipher);
+        printf("ciphertext: %s\n", cipher);
         return 0;
     }
 
@@ -69,6 +69,7 @@ int main(int argc, string argv[])
     else if (am_here == 1)
     {
         printf("Key must contain only one of each alphabet\n");
+        return 1;
     }
 }
 
