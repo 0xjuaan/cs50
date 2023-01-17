@@ -119,7 +119,6 @@ bool argcheck(string argv[], int argc)
     }
     else
     {
-        am_here = true;
         return false;
     }
 }
