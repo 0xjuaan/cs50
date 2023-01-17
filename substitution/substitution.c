@@ -9,14 +9,39 @@ char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    string plain = get_string ("Plaintext: ");
-    int size = strlen(plain);
-    char cipher[size-1];
-    cipher[size] = '\0';
+
+
+
+  //INVALID KEY)
+
+    if (argc!=2)
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
+    else if (strlen(argv[1])!=26)
+    {
+        printf("Key must contain 26 characters\n");
+        return 1;
+    }
+    else if (am_here == 1)
+    {
+        printf("Key must contain only one of each alphabet\n");
+        return 1;
+    }
+
+
+
 
     //WHAT HAPPENS WHEN KEY IS VALID
-    if (argcheck(argv, argc) == true)
+    else if (argcheck(argv, argc) == true)
     {
+        
+        string plain = get_string ("Plaintext: ");
+        int size = strlen(plain);
+        char cipher[size-1];
+        cipher[size] = '\0';
+
         for (int i = 0; i < size; i++)
         {
         if (isalpha(plain[i]))
@@ -52,24 +77,6 @@ int main(int argc, string argv[])
     }
         printf("ciphertext: %s\n", cipher);
         return 0;
-    }
-
-    //OTHER POSSIBILITIES (INVALID KEY)
-
-    else if (argc!=2)
-    {
-        printf("Usage: ./substitution key\n");
-        return 1;
-    }
-    else if (strlen(argv[1])!=26)
-    {
-        printf("Key must contain 26 characters\n");
-        return 1;
-    }
-    else if (am_here == 1)
-    {
-        printf("Key must contain only one of each alphabet\n");
-        return 1;
     }
 }
 
