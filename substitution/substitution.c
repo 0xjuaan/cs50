@@ -5,12 +5,20 @@
 bool am_here;
 bool argcheck(string argv[], int argc);
 int j;
+int c;
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
 
-
+    if (argcheck(argv, argc)==true)
+    {
+        printf("true\n");
+    }
+    else
+    {
+        printf("false\n");
+    }
 
   //INVALID KEY)
 
@@ -24,7 +32,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters\n");
         return 1;
     }
-    else if (am_here == true)
+    else if (c>0 && c<26)
     {
         printf("Key must contain only one of each alphabet\n");
         return 1;
@@ -84,7 +92,7 @@ int main(int argc, string argv[])
 
 bool argcheck(string argv[], int argc)
 {
-    int c = 0;
+    c = 0;
     if (argc!=2)
     {
         return false;
@@ -99,7 +107,7 @@ bool argcheck(string argv[], int argc)
         {
             if (tolower(argv[1][a]) == alphabet[b])
             {
-                am_here = true;
+
                 c++;
                 alphabet[b] = '#';
                 break;
