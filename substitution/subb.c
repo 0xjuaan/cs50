@@ -14,7 +14,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("false");
+        printf("false\n");
     }
 }
 
@@ -33,7 +33,7 @@ bool argcheck(string argv[], int argc)
     {
         for (int b = 0; b < 26; b++)
         {
-            if (argv[1][a] == alphabet[b])
+            if (tolower(argv[1][a]) == alphabet[b])
             {
                 c++;
                 break;
