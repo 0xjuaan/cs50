@@ -3,8 +3,15 @@
 #include <string.h>
 #include <ctype.h>
 
+bool argcheck(string argv[]);
+
 int main(int argc, string argv[])
 {
+
+
+
+
+
     char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
@@ -47,4 +54,21 @@ int main(int argc, string argv[])
 
     }
     printf("Ciphertext: %s\n", cipher);
+}
+
+
+
+bool argcheck(string argv[])
+{
+    if (argc==2)
+    {
+        if (strlen(argv[1])==26)
+        {
+            
+        }
+    }
+    else
+    {
+        return false;
+    }
 }
