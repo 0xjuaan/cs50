@@ -76,6 +76,8 @@ int main(int argc, string argv[])
 
  bool argcheck(string argv[])
 {
+    int c = 0;
+
     if (argc==2)
     {
         if (strlen(argv[1])==26)
@@ -86,9 +88,15 @@ int main(int argc, string argv[])
                 {
                     if (argv[1][a] == alphabet[b])
                     {
-                        
+                        c++;
+                        break;
+                    }
+                    else
+                    {
+                        continue;
                     }
                 }
+        
             }
 
 
