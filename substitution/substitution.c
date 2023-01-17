@@ -115,6 +115,7 @@ bool argcheck(string argv[], int argc)
             }
         }
     }
+    printf("%i\n", c);
     if (c==26)
     {
         return true;
