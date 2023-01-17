@@ -18,7 +18,6 @@ int main(int argc, string argv[])
     {
         for (int i = 0; i < size; i++)
         {
-        int index;
         if (isalpha(plain[i]))
         {
             for (j = 0; j < strlen(alphabet); j++)
