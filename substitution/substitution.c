@@ -29,7 +29,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-        if (argcheck(argv, argc)==true)
+    if (argcheck(argv, argc)==true)
     {
         printf("true\n");
     }
