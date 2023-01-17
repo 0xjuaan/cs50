@@ -80,7 +80,10 @@ int main(int argc, string argv[])
     {
         if (strlen(argv[1])==26)
         {
-            
+            for (int a = 0; a < 26; a++)
+            {
+                if 
+            }
 
 
         }
