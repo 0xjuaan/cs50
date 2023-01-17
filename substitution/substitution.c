@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-bool wemadeit;
+bool am_here;
 bool argcheck(string argv[], int argc);
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int main(int argc, string argv[])
@@ -66,7 +66,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters\n");
         return 1;
     }
-    else if ( == 1)
+    else if (am_here == 1)
     {
         printf("Key must contain only one of each alphabet\n");
     }
@@ -108,6 +108,7 @@ bool argcheck(string argv[], int argc)
     }
     else
     {
+        am_here = true;
         return false;
     }
 }
