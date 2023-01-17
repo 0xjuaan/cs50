@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-
+bool wemadeit;
 bool argcheck(string argv[]);
 
 int main(int argc, string argv[])
@@ -62,10 +62,13 @@ int main(int argc, string argv[])
     }
     else if (strlen(argv[1])!=26)
     {
-        printf("Key must contain 26 characters");
+        printf("Key must contain 26 characters\n");
         return 1;
     }
-    else if ()
+    else if (wemadeit == 1;)
+    {
+        printf("Key must contain only one of each alphabet\n");
+    }
 
 
 
@@ -82,6 +85,7 @@ int main(int argc, string argv[])
     {
         if (strlen(argv[1])==26)
         {
+            wemadeit = true;
             for (int a = 0; a < 26; a++)
             {
                 for (int b = 0; b < 26; b++)
@@ -101,7 +105,7 @@ int main(int argc, string argv[])
 
 
         }
-        
+
         else
         {
             return false;
@@ -110,6 +114,10 @@ int main(int argc, string argv[])
     else
     {
         return false;
+    }
+    if (c == 26)
+    {
+        return true;
     }
 
 }
