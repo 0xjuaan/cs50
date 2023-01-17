@@ -107,6 +107,14 @@ int main(int argc, string argv[])
                 }
                 break;
             }
+            if (c == 26)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         else
@@ -118,10 +126,7 @@ int main(int argc, string argv[])
     {
         return false;
     }
-    if (c == 26)
-    {
-        return true;
-    }
+
 
 
 }
