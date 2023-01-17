@@ -69,11 +69,9 @@ int main(int argc, string argv[])
     {
         printf("Key must contain only one of each alphabet\n");
     }
-
-
-
-
 }
+
+//Defining the key-checker function
 
 bool argcheck(string argv[], int argc)
 {
