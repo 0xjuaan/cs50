@@ -8,7 +8,7 @@ char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-    if (argcheck(argv[], argc)==true)
+    if (argcheck(argv, argc)==true)
     {
         printf("true");
     }
