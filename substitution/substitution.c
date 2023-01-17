@@ -4,7 +4,7 @@
 #include <ctype.h>
 bool am_here;
 bool argcheck(string argv[], int argc);
-char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
