@@ -3,21 +3,17 @@
 #include <string.h>
 #include <ctype.h>
 bool wemadeit;
-bool argcheck(string key, int argc, string alphabet);
-
-
+bool argcheck(string argv[], int argc);
+char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int main(int argc, string argv[])
 {
-
-    string key = argv[1];
-    char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
     char cipher[size];
 
-    argcheck(key, argc, alphabet);
+    argcheck(argv, argc);
     //WHAT HAPPENS WHEN KEY IS VALID
-    if (argcheck(key, argc, alphabet) == true)
+    if (argcheck(argv, argc) == true)
     {
         for (int i = 0; i < size; i++)
         {
@@ -70,7 +66,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters\n");
         return 1;
     }
-    else if (wemadeit == 1)
+    else if ( == 1)
     {
         printf("Key must contain only one of each alphabet\n");
     }
@@ -80,54 +76,38 @@ int main(int argc, string argv[])
 
 }
 
-
-
- bool argcheck(string key, int argc, string alphabet)
+bool argcheck(string argv[], int argc)
 {
     int c = 0;
-
-    if (argc==2)
+    if (argc!=2)
     {
-        if (strlen(key)==26)
+        return false;
+    }
+    else if (strlen(argv[1])!=26)
+    {
+        return false;
+    }
+    for (int a = 0; a < 26; a++)
+    {
+        for (int b = 0; b < 26; b++)
         {
-            wemadeit = true;
-            for (int a = 0; a < 26; a++)
+            if (argv[1][a] == alphabet[b])
             {
-                for (int b = 0; b < 26; b++)
-                {
-                    if (key[a] == alphabet[b])
-                    {
-                        c++;
-                        break;
-                        printf("%i", c);
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
+                c++;
                 break;
-            }
-            if (c == 26)
-            {
-                return true;
             }
             else
             {
-                return false;
+                continue;
             }
         }
-
-        else
-        {
-            return false;
-        }
+    }
+    if (c==26)
+    {
+        return true;
     }
     else
     {
         return false;
     }
-
-
-
 }
