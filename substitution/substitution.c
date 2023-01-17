@@ -5,6 +5,7 @@
 bool am_here;
 bool argcheck(string argv[], int argc);
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 int main(int argc, string argv[])
 {
 

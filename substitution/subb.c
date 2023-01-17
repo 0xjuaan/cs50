@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-bool wemadeit;
+bool am_here;
 bool argcheck(string argv[], int argc);
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
