@@ -80,7 +80,9 @@ int main(int argc, string argv[])
     {
         if (strlen(argv[1])==26)
         {
-            break;
+            
+
+
         }
         else
         {
@@ -91,5 +93,5 @@ int main(int argc, string argv[])
     {
         return false;
     }
-    
+
 }
