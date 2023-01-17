@@ -11,7 +11,7 @@ int main(int argc, string argv[])
 {
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
-    char cipher[size];
+    char cipher[size-1];
 
     //WHAT HAPPENS WHEN KEY IS VALID
     if (argcheck(argv, argc) == true)
