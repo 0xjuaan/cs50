@@ -80,11 +80,16 @@ int main(int argc, string argv[])
     {
         if (strlen(argv[1])==26)
         {
-
+            break;
+        }
+        else
+        {
+            return false;
         }
     }
     else
     {
         return false;
     }
+    
 }
