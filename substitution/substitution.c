@@ -24,7 +24,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters\n");
         return 1;
     }
-    else if (am_here == 1)
+    else if (am_here == true)
     {
         printf("Key must contain only one of each alphabet\n");
         return 1;
