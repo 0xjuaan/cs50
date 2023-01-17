@@ -82,7 +82,13 @@ int main(int argc, string argv[])
         {
             for (int a = 0; a < 26; a++)
             {
-                
+                for (int b = 0; b < 26; b++)
+                {
+                    if (argv[1][a] == alphabet[b])
+                    {
+                        
+                    }
+                }
             }
 
 
