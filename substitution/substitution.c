@@ -4,22 +4,11 @@
 #include <ctype.h>
 bool am_here;
 bool argcheck(string argv[], int argc);
+int j;
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-
-
-     if (argcheck(argv, argc)==true)
-    {
-        printf("true\n");
-    }
-    else
-    {
-        printf("false\n");
-    }
-
-
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
     char cipher[size];
@@ -32,11 +21,10 @@ int main(int argc, string argv[])
         int index;
         if (isalpha(plain[i]))
         {
-            for (int j = 0; j < strlen(alphabet); j++)
+            for (j = 0; j < strlen(alphabet); j++)
             {
                 if (toupper(plain[i]) == alphabet[j])
                 {
-                    index = j;
                     break;
                 }
                 else
@@ -46,12 +34,12 @@ int main(int argc, string argv[])
             }
             if (isupper(plain[i]))
             {
-                cipher[i] = toupper(argv[1][index]);
+                cipher[i] = toupper(argv[1][j]);
                 continue;
             }
             else
             {
-                cipher[i] = tolower(argv[1][index]);
+                cipher[i] = tolower(argv[1][j]);
                 continue;
             }
         }
