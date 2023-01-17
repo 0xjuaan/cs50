@@ -22,7 +22,7 @@ int main(int argc, string argv[])
         {
             for (j = 0; j < strlen(alphabet); j++)
             {
-                if (toupper(plain[i]) == alphabet[j])
+                if (tolower(plain[i]) == alphabet[j])
                 {
                     break;
                 }
