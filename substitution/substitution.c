@@ -11,16 +11,7 @@ char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 int main(int argc, string argv[])
 {
 
-    if (argcheck(argv, argc)==true)
-    {
-        printf("true\n");
-    }
-    else
-    {
-        printf("false\n");
-    }
-
-  //INVALID KEY)
+  //INVALID KEY
 
     if (argc!=2)
     {
@@ -37,9 +28,6 @@ int main(int argc, string argv[])
         printf("Key must contain only one of each alphabet\n");
         return 1;
     }
-
-
-
 
     //WHAT HAPPENS WHEN KEY IS VALID
     else if (argcheck(argv, argc) == true)
