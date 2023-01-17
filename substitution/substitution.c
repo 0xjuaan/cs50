@@ -7,17 +7,16 @@ bool argcheck(string argv[]);
 
 int main(int argc, string argv[])
 {
-
-
-
-
-
     char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
     char cipher[size];
 
-    for (int i = 0; i < size; i++)
+    argcheck(argv[]);
+    //WHAT HAPPENS WHEN KEY IS VALID
+    if (argcheck())
+    {
+        for (int i = 0; i < size; i++)
     {
         int index;
         if (isalpha(plain[i]))
@@ -51,14 +50,30 @@ int main(int argc, string argv[])
             continue;
         }
 
-
     }
-    printf("Ciphertext: %s\n", cipher);
+        printf("Ciphertext: %s\n", cipher);
+        return 0;
+    }
+    //OTHER POSSIBILITIES (INVALID KEY)
+    else if (argc!=2)
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
+    else if (stren(argv[1])!=26)
+    {
+        printf("Key must contain 26 characters");
+        return 1;
+    }
+
+
+
+
 }
 
 
 
-/* bool argcheck(string argv[])
+ bool argcheck(string argv[])
 {
     if (argc==2)
     {
@@ -72,4 +87,3 @@ int main(int argc, string argv[])
         return false;
     }
 }
-*/
