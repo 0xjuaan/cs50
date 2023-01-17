@@ -36,7 +36,7 @@ int main(int argc, string argv[])
     //WHAT HAPPENS WHEN KEY IS VALID
     else if (argcheck(argv, argc) == true)
     {
-        
+
         string plain = get_string ("Plaintext: ");
         int size = strlen(plain);
         char cipher[size-1];
@@ -100,6 +100,7 @@ bool argcheck(string argv[], int argc)
             if (tolower(argv[1][a]) == alphabet[b])
             {
                 c++;
+                alphabet[b] = '#';
                 break;
             }
             else

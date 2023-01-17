@@ -36,6 +36,7 @@ bool argcheck(string argv[], int argc)
             if (tolower(argv[1][a]) == alphabet[b])
             {
                 c++;
+                alphabet[b] = '#';
                 break;
             }
             else
