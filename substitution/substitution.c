@@ -5,7 +5,6 @@
 bool am_here;
 bool argcheck(string argv[], int argc);
 int j;
-int c;
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
@@ -89,7 +88,7 @@ int main(int argc, string argv[])
 
 bool argcheck(string argv[], int argc)
 {
-    c = 0;
+    int c = 0;
     if (argc!=2)
     {
         return false;
