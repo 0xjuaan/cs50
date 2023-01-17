@@ -7,10 +7,22 @@ bool argcheck(string argv[], int argc);
 char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int main(int argc, string argv[])
 {
+
+
+     if (argcheck(argv, argc)==true)
+    {
+        printf("true\n");
+    }
+    else
+    {
+        printf("false");
+    }
+    
+
     string plain = get_string ("Plaintext: ");
     int size = strlen(plain);
     char cipher[size];
-    
+
     //WHAT HAPPENS WHEN KEY IS VALID
     if (argcheck(argv, argc) == true)
     {
