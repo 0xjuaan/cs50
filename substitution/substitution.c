@@ -29,6 +29,15 @@ int main(int argc, string argv[])
         return 1;
     }
 
+        if (argcheck(argv, argc)==true)
+    {
+        printf("true\n");
+    }
+    else
+    {
+        printf("false\n");
+    }
+
     //WHAT HAPPENS WHEN KEY IS VALID
     if (argcheck(argv, argc) == true)
     {
