@@ -119,13 +119,13 @@ int main(int argc, string argv[])
     // Print the game's result
     if (won)
     {
-        printf("You Won!");
+        printf("You Won!\n");
     }
     else
     {
         printf("You ran out of your %i guesses. The word was %s\n",guesses, choice);
     }
-    // that's all folks!
+
     return 0;
 }
 
