@@ -96,7 +96,7 @@ int main(int argc, string argv[])
         // array to hold guess status, initially set to zero
         int status[wordsize];
 
-    
+
         // Calculate score for the guess
         int score = check_word(guess, wordsize, status, choice);
 
@@ -114,8 +114,14 @@ int main(int argc, string argv[])
     }
 
     // Print the game's result
-    // TODO #7
-
+    if (won)
+    {
+        printf("You Won!");
+    }
+    else
+    {
+        printf("You ran out of your %i guesses. The word was %s",guesses, choice);
+    }
     // that's all folks!
     return 0;
 }
