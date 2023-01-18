@@ -100,11 +100,12 @@ int main(int argc, string argv[])
 
 string get_guess(int wordsize)
 {
+    string guess;
     do
     {
-    string guess = get_string ("Input a %i-letter word: ", wordsize);
+    guess = get_string ("Input a %i-letter word: ", wordsize);
     }
-    while (strlen(guess) != wordsize)
+    while (strlen(guess) != wordsize);
     return guess;
 }
 
