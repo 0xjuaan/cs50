@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <stdlib.h>
 
 // each of our text files contains 1000 words
 #define LISTSIZE 1000
@@ -30,8 +31,8 @@ int main(int argc, string argv[])
         printf("Usage: ./wordle wordsize\n");
     }
     int wordsize = 0;
-    
-    switch (int argv[1])
+
+    switch (strtoimax(argv[1]))
     {
         case 5:
             wordsize = 5;
