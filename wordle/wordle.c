@@ -154,6 +154,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 if (a==b)
                 {
                     status[a] = EXACT;
+                    choice[b] = '#';
                     score += EXACT;
                 }
                 else
