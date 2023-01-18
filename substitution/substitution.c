@@ -34,6 +34,7 @@ int main(int argc, string argv[])
         int size = strlen(plain);
         char cipher[size];
         cipher[size] = '\0';
+        alphabet = "abcdefghijklmnopqrstuvwxyz";
 
         for (int i = 0; i < size; i++)
         {
