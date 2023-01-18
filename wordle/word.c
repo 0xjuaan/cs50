@@ -171,9 +171,18 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
 void print_word(string guess, int wordsize, int status[])
 {
-    // print word character-for-character with correct color coding, then reset terminal font to normal
-    // TODO #6
-
+    for (int x = 0; x < wordsize; x++)
+    {
+        switch (status[x])
+        {
+            case 0:
+                printf(RED"%c", guess[x]);
+            case 1:
+                printf(YELLOW"%c", guess[x]);
+            case 2:
+                printf(GREEN"%c", guess[x]);
+        }
+    }
     printf("\n");
     return;
 }
