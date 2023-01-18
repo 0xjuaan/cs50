@@ -32,21 +32,28 @@ int main(int argc, string argv[])
     }
     int wordsize = 0;
 
-    switch (atoi(argv[1]))
+    if (atoi(argv[1]) == 5)
     {
-        case 5:
-            wordsize = 5;
-        case 6:
-            wordsize = 6;
-        case 7:
-            wordsize = 7;
-        case 8:
-            wordsize = 8;
-        default:
-            printf("Error: wordsize must be either 5, 6, 7, or 8\n");
+        wordsize = 5;
+    }
+    else if (atoi(argv[1]) == 6)
+    {
+          wordsize = 6;
+    }
+    else if (atoi(argv[1]) == 7)
+    {
+         wordsize = 7;
+    }
+    else if (atoi(argv[1]) == 8)
+    {
+          wordsize = 8;
+    }
+    else
+    {
+        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
     }
 
-
+}
     // TODO #2
     // open correct file, each file has exactly LISTSIZE words
     char wl_filename[6];
