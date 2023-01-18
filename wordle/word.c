@@ -32,7 +32,7 @@ int main(int argc, string argv[])
     }
     int wordsize = 0;
 
-    switch (strtoimax(argv[1]))
+    switch (atoi(argv[1]))
     {
         case 5:
             wordsize = 5;
@@ -43,7 +43,7 @@ int main(int argc, string argv[])
         case 8:
             wordsize = 8;
         default:
-            printf("Error: wordsize must be either 5, 6, 7, or 8");
+            printf("Error: wordsize must be either 5, 6, 7, or 8\n");
     }
 
 
