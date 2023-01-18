@@ -37,30 +37,30 @@ int main(int argc, string argv[])
 
         for (int i = 0; i < size; i++)
         {
-        if (isalpha(plain[i]))
-        {
-            for (j = 0; j < strlen(alphabet); j++)
+            if (isalpha(plain[i]))
             {
-                if (tolower(plain[i]) == alphabet[j])
+                for (j = 0; j < strlen(alphabet); j++)
                 {
-                    break;
+                    if (tolower(plain[i]) == alphabet[j])
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                if (isupper(plain[i]))
+                {
+                    cipher[i] = toupper(argv[1][j]);
+                    continue;
                 }
                 else
                 {
+                    cipher[i] = tolower(argv[1][j]);
                     continue;
                 }
             }
-            if (isupper(plain[i]))
-            {
-                cipher[i] = toupper(argv[1][j]);
-                continue;
-            }
-            else
-            {
-                cipher[i] = tolower(argv[1][j]);
-                continue;
-            }
-        }
         else
         {
             cipher[i] = plain[i];
