@@ -25,8 +25,10 @@ void print_word(string guess, int wordsize, int status[]);
 
 int main(int argc, string argv[])
 {
-    // ensure proper usage
-    // TODO #1
+    if (argc !=2)
+    {
+        
+    }
 
     int wordsize = 0;
 
