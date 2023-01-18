@@ -133,11 +133,30 @@ string get_guess(int wordsize)
 
 int check_word(string guess, int wordsize, int status[], string choice)
 {
+    //Compare guess VS choice
     int score = 0;
-
     for (int a = 0; a < wordsize; a++)
     {
-        
+        for (int b = 0; b < wordsize; b++)
+        {
+            if (tolower(guess[a]) == choice[b])
+            {
+                if (a==b)
+                {
+                    status[a] == EXACT
+                }
+                else
+                {
+                    status[a] == CLOSE
+                }
+                break;
+
+            }
+            else
+            {
+                continue;
+            }
+        }
     }
 
     return score;
