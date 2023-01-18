@@ -35,15 +35,15 @@ int main(int argc, string argv[])
         int size = strlen(plain);
         char cipher[size];
         cipher[size] = '\0';
-        alphabet = "abcdefghijklmnopqrstuvwxyz";
+
 
         for (int i = 0; i < size; i++)
         {
             if (isalpha(plain[i]))
             {
-                for (j = 0; j < strlen(alphabet); j++)
+                for (j = 0; j < strlen(alphabet1); j++)
                 {
-                    if (tolower(plain[i]) == alphabet[j])
+                    if (tolower(plain[i]) == alphabet1[j])
                     {
                         break;
                     }
