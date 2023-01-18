@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 // each of our text files contains 1000 words
 #define LISTSIZE 1000
@@ -25,14 +27,35 @@ void print_word(string guess, int wordsize, int status[]);
 
 int main(int argc, string argv[])
 {
-    // ensure proper usage
-    // TODO #1
-
+    if (argc !=2)
+    {
+        printf("Usage: ./wordle wordsize\n");
+    }
     int wordsize = 0;
 
-    // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
-    // TODO #2
+    if (atoi(argv[1]) == 5)
+    {
+        wordsize = 5;
+    }
+    else if (atoi(argv[1]) == 6)
+    {
+          wordsize = 6;
+    }
+    else if (atoi(argv[1]) == 7)
+    {
+         wordsize = 7;
+    }
+    else if (atoi(argv[1]) == 8)
+    {
+          wordsize = 8;
+    }
+    else
+    {
+        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
+    }
 
+
+    // TODO #2
     // open correct file, each file has exactly LISTSIZE words
     char wl_filename[6];
     sprintf(wl_filename, "%i.txt", wordsize);
@@ -59,7 +82,8 @@ int main(int argc, string argv[])
     int guesses = wordsize + 1;
     bool won = false;
 
-    // print greeting, using ANSI color codes to demonstrate
+
+    //GREETING (BEGINNING)
     printf(GREEN"This is WORDLE50"RESET"\n");
     printf("You have %i tries to guess the %i-letter word I'm thinking of\n", guesses, wordsize);
 
@@ -71,9 +95,6 @@ int main(int argc, string argv[])
 
         // array to hold guess status, initially set to zero
         int status[wordsize];
-
-        // set all elements of status array initially to 0, aka WRONG
-        // TODO #4
 
         // Calculate score for the guess
         int score = check_word(guess, wordsize, status, choice);
@@ -89,41 +110,86 @@ int main(int argc, string argv[])
             won = true;
             break;
         }
+        else
+        {
+            continue;
+        }
     }
 
     // Print the game's result
-    // TODO #7
+    if (won)
+    {
+        printf("You Won!\n");
+    }
+    else
+    {
+        printf("You ran out of your %i guesses. The word was %s\n",guesses, choice);
+    }
 
-    // that's all folks!
     return 0;
 }
 
 string get_guess(int wordsize)
 {
-    string guess = "";
-
-    // ensure users actually provide a guess that is the correct length
-    // TODO #3
-
+    string guess;
+    do
+    {
+    guess = get_string ("Input a %i-letter word: ", wordsize);
+    }
+    while (strlen(guess) != wordsize);
     return guess;
 }
 
 int check_word(string guess, int wordsize, int status[], string choice)
 {
+    //Compare guess VS choice     [Fishy]       Mafey
     int score = 0;
-
-    // compare guess to choice and score points as appropriate, storing points in status
-    // TODO #5
-
+    for (int a = 0; a < wordsize; a++)
+    {
+        for (int b = 0; b < wordsize; b++)
+        {
+            if (tolower(guess[a]) == choice[b])
+            {
+                if (a==b)
+                {
+                    status[a] = EXACT;
+                    score += EXACT;
+                }
+                else
+                {
+                    status[a] = CLOSE;
+                    score += CLOSE;
+                }
+                break;
+            }
+            else
+            {
+                status[a] = 0;
+                continue;
+            }
+        }
+    }
 
     return score;
 }
 
 void print_word(string guess, int wordsize, int status[])
 {
-    // print word character-for-character with correct color coding, then reset terminal font to normal
-    // TODO #6
-
+    for (int x = 0; x < wordsize; x++)
+    {
+        switch (status[x])
+        {
+            case 0:
+                printf(RED"%c"RESET"", guess[x]);
+                break;
+            case 1:
+                printf(YELLOW"%c"RESET"", guess[x]);
+                break;
+            case 2:
+                printf(GREEN"%c"RESET"", guess[x]);
+                break;
+        }
+    }
     printf("\n");
     return;
 }
