@@ -9,9 +9,7 @@ char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
-
   //INVALID KEY
-
     if (argc!=2)
     {
         printf("Usage: ./substitution key\n");
@@ -28,14 +26,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    if (argcheck(argv, argc)==true)
-    {
-        printf("true\n");
-    }
-    else
-    {
-        printf("false\n");
-    }
+
 
     //WHAT HAPPENS WHEN KEY IS VALID
     if (argcheck(argv, argc) == true)
@@ -114,7 +105,6 @@ bool argcheck(string argv[], int argc)
             }
         }
     }
-    printf("%i\n", c);
     if (c==26)
     {
         return true;
