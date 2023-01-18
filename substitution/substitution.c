@@ -32,7 +32,7 @@ int main(int argc, string argv[])
 
         string plain = get_string ("Plaintext: ");
         int size = strlen(plain);
-        char cipher[size-1];
+        char cipher[size];
         cipher[size] = '\0';
 
         for (int i = 0; i < size; i++)
