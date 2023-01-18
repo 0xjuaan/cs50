@@ -30,8 +30,8 @@ int main(int argc, string argv[])
         printf("Usage: ./wordle wordsize\n");
     }
     int wordsize = 0;
-
-    switch (argv[1])
+    
+    switch (int argv[1])
     {
         case 5:
             wordsize = 5;
