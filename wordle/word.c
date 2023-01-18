@@ -74,7 +74,8 @@ int main(int argc, string argv[])
     int guesses = wordsize + 1;
     bool won = false;
 
-    // print greeting, using ANSI color codes to demonstrate
+
+    //GREETING (BEGINNING)
     printf(GREEN"This is WORDLE50"RESET"\n");
     printf("You have %i tries to guess the %i-letter word I'm thinking of\n", guesses, wordsize);
 
