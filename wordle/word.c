@@ -180,10 +180,13 @@ void print_word(string guess, int wordsize, int status[])
         {
             case 0:
                 printf(RED"%c"RESET"", guess[x]);
+                continue;
             case 1:
                 printf(YELLOW"%c"RESET"", guess[x]);
+                continue;
             case 2:
                 printf(GREEN"%c"RESET"", guess[x]);
+                continue;
         }
     }
     printf("\n");
