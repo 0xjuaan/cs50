@@ -149,7 +149,12 @@ int check_word(string guess, int wordsize, int status[], string choice)
     {
         for (int b = 0; b < wordsize; b++)
         {
-            if (tolower(guess[a]) == choice[b])
+            if (tolower(guess[a]) == choice[a])
+            {
+                 status[a] = EXACT;
+                    score += EXACT;
+            }
+            else if (tolower(guess[a]) == choice[b])
             {
                 if (a==b)
                 {
