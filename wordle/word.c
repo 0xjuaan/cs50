@@ -135,9 +135,10 @@ int check_word(string guess, int wordsize, int status[], string choice)
 {
     int score = 0;
 
-    // compare guess to choice and score points as appropriate, storing points in status
-    // TODO #5
-
+    for (int a = 0; a < wordsize; a++)
+    {
+        
+    }
 
     return score;
 }
