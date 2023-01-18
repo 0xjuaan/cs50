@@ -26,10 +26,8 @@ int main(int argc, string argv[])
         return 1;
     }
 
-
-
      //WHAT HAPPENS WHEN KEY IS VALID
-    else if (argcheck(argv, argc) == true)
+    else
     {
 
         string plain = get_string ("Plaintext: ");
