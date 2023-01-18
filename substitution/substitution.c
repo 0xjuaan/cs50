@@ -6,6 +6,7 @@
 bool argcheck(string argv[], int argc);
 int j;
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+char alphabet1[]= "abcdefghijklmnopqrstuvwxyz";
 
 int main(int argc, string argv[])
 {
