@@ -134,7 +134,7 @@ string get_guess(int wordsize)
 
 int check_word(string guess, int wordsize, int status[], string choice)
 {
-    //Compare guess VS choice
+    //Compare guess VS choice     [Fishy]       Mafey
     int score = 0;
     for (int a = 0; a < wordsize; a++)
     {
@@ -153,7 +153,6 @@ int check_word(string guess, int wordsize, int status[], string choice)
                     score += CLOSE;
                 }
                 break;
-
             }
             else
             {
