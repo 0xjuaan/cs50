@@ -120,7 +120,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        printf("You ran out of your %i guesses. The word was %s",guesses, choice);
+        printf("You ran out of your %i guesses. The word was %s\n",guesses, choice);
     }
     // that's all folks!
     return 0;
@@ -176,11 +176,11 @@ void print_word(string guess, int wordsize, int status[])
         switch (status[x])
         {
             case 0:
-                printf(RED"%c", guess[x]);
+                printf(RED"%c"RESET"", guess[x]);
             case 1:
-                printf(YELLOW"%c", guess[x]);
+                printf(YELLOW"%c"RESET"", guess[x]);
             case 2:
-                printf(GREEN"%c", guess[x]);
+                printf(GREEN"%c"RESET"", guess[x]);
         }
     }
     printf("\n");
