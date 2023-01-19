@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 void draw(int height);
-
+void drraw(int height);
 
 int main(void)
 {
@@ -27,6 +27,7 @@ void drraw(int height)
 {
     for (int i = 0; i < height; i++)
     {
-        
+        printf("#");
+        drraw(height+1)
     }
 }
