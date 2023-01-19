@@ -4,12 +4,12 @@
 #include <ctype.h>
 
 void draw(int height);
-void drraw(int height);
+void drraw(int height, int i);
 
 int main(void)
 {
     int height = get_int("Height: ");
-    drraw(height);
+    drraw(height,1);
 }
 void draw(int height)
 {
@@ -23,12 +23,12 @@ for (int i = 0; i < height; i++)
     }
 }
 
-void drraw(int height)
+void drraw(int height, int i)
 {
-    for (int i = 0; i < height; i++)
+    for (i = 0; i < height; i++)
     {
         printf("#");
-        drraw(height + 1);
+        drraw(height, i+1);
     }
 
 }
