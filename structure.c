@@ -12,12 +12,12 @@ person;
 
 int main(void)
 {
-    person people[2]
-    people[0].name = "Carter"
-    people[0].number = "0416682599"
+    person people[2];
+    people[0].name = "Carter";
+    people[0].number = "0416682599";
 
-    people[1].name = "David"
-    people[1].number = "04104124444"
+    people[1].name = "David";
+    people[1].number = "04104124444";
 
     string name_in = get_string("Name: ");
 
@@ -25,7 +25,7 @@ int main(void)
     {
         if (strcmp(people[i].name, name_in)==0)
         {
-            printf("Found! %s\n", people[i].number)
+            printf("Found! %s\n", people[i].number);
             return 0;
         }
     }
