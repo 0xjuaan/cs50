@@ -1,7 +1,7 @@
  #include <cs50.h>
  #include <stdio.h>
 
-void draw(int n);
+void factorial(int n);
 
 int main(void)
 {
@@ -14,13 +14,12 @@ factorial(number);
 }
 
 
-void factorial(n)
+void factorial(int n)
 {
-    if (n <=0)
+    if (n <=1)
     {
         return;
     }
-    factorial(n-1)
+    n * factorial(n-1)
 
-    n*(n-1);
 }
