@@ -9,7 +9,7 @@ void drraw(int height);
 int main(void)
 {
     int height = get_int("Height: ");
-    drraw(height);
+    draw(height);
 }
 void draw(int height)
 {
@@ -29,7 +29,7 @@ void drraw(int height)
     {
         printf("#");
     }
-        printf("\n";)
-        
+        printf("\n");
+
 
 }
