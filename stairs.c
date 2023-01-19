@@ -29,4 +29,6 @@ void drraw(int height)
     {
         printf("#");
     }
+    printf("\n");
+    drraw(height + 1)
 }
