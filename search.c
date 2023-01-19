@@ -6,5 +6,16 @@ int main(void)
     int numbers[] = {20, 500, 10, 100, 1, 50};
 
     int n = get_int("Number: ");
+
+    for (int i = 0; i < 7: i++)
+    {
+        if (numbers[i] == n)
+        {
+            printf("FOUND!\n");
+            return 0;
+        }
+    }
+    printf("NOT FOUND!\n");
+    return 1;
 }
 
