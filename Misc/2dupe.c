@@ -22,8 +22,6 @@ bool fd(string s)
     return false;
 }
 
-
-
 int main(void)
 {
 
@@ -37,5 +35,4 @@ int main(void)
     {
         printf("Clean\n");
     }
-
 }
