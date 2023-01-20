@@ -24,10 +24,14 @@ sort1: 0.991s
 sort2: 0.331s
 sort3: 3.26s
 
-REVERSED FILES
-sort1:
-sort2:
+RANDOM 5k
+sort1: 0.1s
+sort2: 0.048s
 sort3: NO NEED
+
+RANDOM 10k
+sort1: 7.45s
+sort2: 0.529s
 
 
 
