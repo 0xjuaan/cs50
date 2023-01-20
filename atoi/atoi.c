@@ -1,4 +1,4 @@
-lear
+
 #include <cs50.h>
 #include <ctype.h>
 #include <math.h>
@@ -26,9 +26,11 @@ int main(void)
 
 int convert(string input)
 {
+    int a = 0;
     if (a == strlen(input))
     {
-        return;
+        return 0;
     }
-    input[a] - 48
+    return input[a+1] - 48;
+
 }
