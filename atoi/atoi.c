@@ -34,7 +34,7 @@ int convert(string s)
 /*
 Pseudocode
 
-
+int number = 
 
 
 
