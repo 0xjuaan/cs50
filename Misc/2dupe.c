@@ -4,26 +4,38 @@
 #include <stdio.h>
 #include <string.h>
 
-bool fd(array[])
+bool fd(char array[])
 {
     bool seen[26];
     for (int i = 0; i < 26; i++)
     {
-        if (seen[i] == true)
+        if (seen[i - array[i]] == true)
         {
             return true;
         }
         else
         {
-            seen[i] = true;
+            seen[i - array[i]] = true;
             continue;
         }
     }
+    return false;
 }
 
 
 
 int main(void)
 {
-    char sub[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    char sub[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    if (fd(sub[]))
+    {
+        printf("Dupe");
+    }
+    else
+    {
+        printf("Clean");
+    }
+
 }
