@@ -11,7 +11,7 @@ int main(void)
     do
     {
         n = get_int("Number of elements: ");
-    } 
+    }
     while (n < 1);
 
     int arr[n];
@@ -27,5 +27,19 @@ int main(void)
 // TODO: return the max value
 int max(int array[], int n)
 {
-    return 0;
+    int max;
+    for (int a = 0; a < n ; a++)
+    {
+        if (array[a] <= array[a+1])
+        {
+            max = array[a+1];
+            continue;
+        }
+        else
+        {
+            max = array[a];
+            continue;
+        }
+    }
+    return max;
 }
