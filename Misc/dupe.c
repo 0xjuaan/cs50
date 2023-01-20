@@ -13,7 +13,7 @@ int main(void)
 
     for (int i = 0; i < 26; i++)
     {
-        for (int j = 1; j++)
+        for (int j = i + 1; j < 26; j++)
         {
         if (sub[i]==sub[j])
         {
