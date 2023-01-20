@@ -27,6 +27,14 @@ int main(void)
 int convert(string s)
 {
 
+if (strlen(s) == 0)
+{
+    return 0;
+}
+
+int a = s[strlen(s)-1]-'0';
+s[strlen(s)-1] = '\0';
+return a + 10*convert(s);
 }
 
 
