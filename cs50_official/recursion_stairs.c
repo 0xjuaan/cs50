@@ -19,7 +19,7 @@ void draw(int n)
     {
     return;
     }
-        // Draw pyramid of height n - 1
+        // Draw pyramid of height == (n - 1)
     draw(n - 1);
         // Draw one more row of width n
     for (int i = 0; i < n; i++)
