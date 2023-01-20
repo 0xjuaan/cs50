@@ -32,9 +32,9 @@ if (strlen(s) == 0)
     return 0;
 }
 
-int a = s[strlen(s)-1]-'0';
-s[strlen(s)-1] = '\0';
-return a + 10*convert(s);
+int a = s[strlen(s)-1]-'0'; //Subracting ASCII '0' OR 48 is the same thing.
+s[strlen(s)-1] = '\0'; //Practically shortening the string from the right-end
+return a + 10 * convert(s); //Return the last digit + 10*(next digit)
 }
 
 
