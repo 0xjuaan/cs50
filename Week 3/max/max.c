@@ -30,14 +30,14 @@ int max(int array[], int n)
     int max;
     for (int a = 0; a < n ; a++)
     {
-        if (array[a] <= array[a+1])
+        if (array[a] >= array[a+1])
         {
-            max = array[a+1];
+            max = array[a];
             continue;
         }
         else
         {
-            max = array[a];
+            max = array[a+1];
             continue;
         }
     }
