@@ -32,6 +32,7 @@ if (s[a] == '\0')
 {
     return 0;
 }
+int n = 0;
 
 
 return 10*(s[a-1]-48);
