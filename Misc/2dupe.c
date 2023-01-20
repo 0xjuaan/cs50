@@ -4,7 +4,22 @@
 #include <stdio.h>
 #include <string.h>
 
-bool fd(g)
+bool fd(array[])
+{
+    bool seen[26];
+    for (int i = 0; i < 26; i++)
+    {
+        if (seen[i] == true)
+        {
+            return true;
+        }
+        else
+        {
+            seen[i] = true;
+            continue;
+        }
+    }
+}
 
 
 
