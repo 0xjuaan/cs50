@@ -6,7 +6,7 @@
 
 bool fd(string s)
 {
-    bool seen[26];
+    bool seen[26] = {false};
     for (int i = 0; i < 26; i++)
     {
         if (seen[i - s[i]] == true)
