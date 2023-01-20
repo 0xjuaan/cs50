@@ -9,3 +9,19 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+
+SORTED FILES
+sort1: 0.054s
+sort2: 0.09s
+sort3: 0.076s
+
+REVERSED FILES
+sort1:
+sort2:
+sort3:
+
+SHUFFLED FILES
+sort1:
+sort2:
+sort3:
