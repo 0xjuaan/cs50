@@ -1,0 +1,22 @@
+SORTED 5k
+sort1: 0.054s
+sort2: 0.09s
+sort3: 0.076s
+
+SORTED 50k
+sort1: 0.991s
+sort2: 0.331s
+sort3: 3.26s
+
+RANDOM 5k
+sort1: 0.1s
+sort2: 0.048s
+sort3: NO NEED
+
+RANDOM 10k
+sort1: 7.45s
+sort2: 0.529s
+
+
+
+time ./sort1 sorted50000.txt

@@ -1,10 +1,11 @@
-sort1 uses: TODO
+sort1 uses: Bubble Sort
 
-How do you know?: TODO
+How do you know?: When increasing 'n', going from random5k to random10k, the running time
+increased much more with sort1 than sort2. Thus sort2 is faster --> Sort1 is bubble sort.
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: Quickest. As N increases, running time does not increase too significantly.
 
 sort3 uses: Selection Sort
 
@@ -14,26 +15,4 @@ but sort3 increased by over 20x. This must be a linear search algorithm since it
 SO increasing 'n' increases the time taken for 50k to sort.
 
 
-SORTED 5k
-sort1: 0.054s
-sort2: 0.09s
-sort3: 0.076s
-
-SORTED 50k
-sort1: 0.991s
-sort2: 0.331s
-sort3: 3.26s
-
-RANDOM 5k
-sort1: 0.1s
-sort2: 0.048s
-sort3: NO NEED
-
-RANDOM 10k
-sort1: 7.45s
-sort2: 0.529s
-
-
-
-time ./sort1 sorted50000.txt
 
