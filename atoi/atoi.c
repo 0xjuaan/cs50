@@ -27,7 +27,7 @@ int main(void)
 int convert(string input)
 {
     int a = 0;
-    if (a == strlen(input))
+    if (a == strlen(input)-1)
     {
         return 0;
     }
