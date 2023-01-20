@@ -4,18 +4,18 @@
 #include <stdio.h>
 #include <string.h>
 
-bool fd(char array[])
+bool fd(string s)
 {
     bool seen[26];
     for (int i = 0; i < 26; i++)
     {
-        if (seen[i - array[i]] == true)
+        if (seen[i - s[i]] == true)
         {
             return true;
         }
         else
         {
-            seen[i - array[i]] = true;
+            seen[i - s[i]] = true;
             continue;
         }
     }
@@ -27,15 +27,15 @@ bool fd(char array[])
 int main(void)
 {
 
-    char sub[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string sub = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    if (fd(sub[]))
+    if (fd(sub))
     {
-        printf("Dupe");
+        printf("Dupe\n");
     }
     else
     {
-        printf("Clean");
+        printf("Clean\n");
     }
 
 }
