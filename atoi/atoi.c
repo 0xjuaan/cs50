@@ -27,6 +27,7 @@ int main(void)
 int convert(string s)
 {
 
+return s[strlen(s)-1]-48
 }
 
 
@@ -34,7 +35,9 @@ int convert(string s)
 /*
 Pseudocode
 
-int number = 
+input = 123;
+
+int n = (s[2]-48) + 10*(s[2-1]-48) + 10*10*(s[2-1-1]-48)
 
 
 
