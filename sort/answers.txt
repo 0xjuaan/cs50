@@ -6,22 +6,30 @@ sort2 uses: TODO
 
 How do you know?: TODO
 
-sort3 uses: TODO
+sort3 uses: Selection Sort
 
-How do you know?: TODO
+How do you know?: With the sorted.txt files, I compared sorted 5,000 and sorted 50,000.
+Since the files were already sorted, the increase in time taken for sort1 and sort2 was not that much
+but sort3 increased by over 20x. This must be a linear search algorithm since it does not terminate until every value is checked.
+SO increasing 'n' increases the time taken for 50k to sort.
 
 
-SORTED FILES
+SORTED 5k
 sort1: 0.054s
 sort2: 0.09s
 sort3: 0.076s
+
+SORTED 50k
+sort1: 0.991s
+sort2: 0.331s
+sort3: 3.26s
 
 REVERSED FILES
 sort1:
 sort2:
 sort3:
 
-SHUFFLED FILES
-sort1:
-sort2:
-sort3:
+
+
+time ./sort1 sorted50000.txt
+
