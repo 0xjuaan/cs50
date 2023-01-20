@@ -28,4 +28,4 @@ void draw(int n)
     }
     printf("\n");
 }
-time ./sort1 sort
+time ./sort1 sort2 sorted5000.txt
