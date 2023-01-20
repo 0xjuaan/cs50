@@ -28,3 +28,4 @@ void draw(int n)
     }
     printf("\n");
 }
+time ./sort1 sort
