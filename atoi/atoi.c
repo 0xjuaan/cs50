@@ -31,6 +31,6 @@ int convert(string n)
     {
         return 0;
     }
-    return convert(n[strlen(n)-1] - 48);
+    return convert(n[strlen(n)-1]) - 48;
 
 }
