@@ -26,5 +26,9 @@ int main(void)
 
 int convert(string input)
 {
-    
+    if (a == strlen(input))
+    {
+        return;
+    }
+    input[a] - 48
 }
