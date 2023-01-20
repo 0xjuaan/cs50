@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int convert(string input);
+int convert(string n);
 
 int main(void)
 {
@@ -24,13 +24,13 @@ int main(void)
     printf("%i\n", convert(input));
 }
 
-int convert(string input)
+int convert(string n)
 {
-    int a = 0;
-    if (a == strlen(input)-1)
+
+    if (n == 0)
     {
         return 0;
     }
-    return input[a+1] - 48;
+    return n[strlen(n)-1] - 48;
 
 }
