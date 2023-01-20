@@ -24,13 +24,18 @@ int main(void)
     printf("%i\n", convert(input));
 }
 
-int convert(string n)
+int convert(string s)
 {
 
-    if (n == 0)
-    {
-        return 0;
-    }
-    return convert(n[strlen(n)-1]) - 48;
-
 }
+
+
+
+/*
+Pseudocode
+
+
+
+
+
+*/
