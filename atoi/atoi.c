@@ -26,8 +26,15 @@ int main(void)
 
 int convert(string s)
 {
+int a = strlen(s)-1;
 
-return s[strlen(s)-1]-48
+if (s[a] == '\0')
+{
+    return 0;
+}
+
+
+return 10*(s[a-1]-48);
 }
 
 
