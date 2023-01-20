@@ -62,5 +62,12 @@ int main(void)
 // TODO: Sort cities by temperature in descending order
 void sort_cities(void)
 {
-    // Add your code here
+
+    for (int a = 0; a < NUM_CITIES; a++)
+    {
+        if (temps[a].temp < temps[a+1].temp)
+        {
+            int max = temps[a+1].temp
+        }
+    }
 }
