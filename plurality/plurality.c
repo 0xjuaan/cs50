@@ -88,7 +88,7 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes == max(candidates[].votes, candidate_count))
+        if (candidates[i].votes == max(votes, candidate_count))
         {
             printf("%s", candidates[i].name)
         }
@@ -97,7 +97,7 @@ void print_winner(void)
     return
 }
 
-int max(candidate candidates[], int candidates.votes, int n)
+int max(int votes, int n)
 {
     int max = candidates[0].votes;
     for (int a = 0; a < n ; a++)
