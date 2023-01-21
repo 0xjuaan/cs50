@@ -67,7 +67,7 @@ void sort_cities(void)
     {
         if (temps[a].temp < temps[a+1].temp)
         {
-            int max = temps[a+1].temp
+        
         }
     }
 }
