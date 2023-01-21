@@ -71,9 +71,9 @@ void sort_cities(void)
         }
         else
         {
-            int swap = temps[a].temp
-            temps[a].temp = temps[a+1]
-            temps[a+1]
+            int swap = temps[a].temp;
+            temps[a].temp = temps[a+1];
+            temps[a+1] = swap;
         }
     }
 }
