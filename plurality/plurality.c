@@ -22,7 +22,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
-int max(candidate candidates[MAX], int votes, int n);
+int max(candidate candidates[MAX]*, int n);
 
 int main(int argc, string argv[])
 {
@@ -60,7 +60,7 @@ int main(int argc, string argv[])
         }
     }
 
-    int top = max(candidates[MAX], candidates[].votes, candidate_count);
+    int top = max(candidates[MAX], candidate_count);
 
     // Display winner of election
     print_winner();
@@ -99,7 +99,7 @@ void print_winner(void)
     return
 }
 
-int max(candidate candidates[MAX], int votes, int n)
+int max(candidate candidates[MAX]*, int n)
 {
     int max = candidates[0].votes;
     for (int a = 0; a < n ; a++)
