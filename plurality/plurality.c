@@ -97,7 +97,7 @@ void print_winner(void)
     return
 }
 
-int max(int candidates[].votes, int n)
+int max(candidate candidates[], int candidates.votes, int n)
 {
     int max = candidates[0].votes;
     for (int a = 0; a < n ; a++)
