@@ -106,7 +106,7 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(name, candidates[rank]) == 0)
         {
-            ranks[rank] = candidates[rank];
+            ranks[rank] ;
             return true;
         }
         else
