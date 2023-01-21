@@ -4,7 +4,7 @@
 
 // Max number of candidates
 #define MAX 9
-
+int top;
 // Candidates have name and vote count
 typedef struct
 {
@@ -60,7 +60,7 @@ int main(int argc, string argv[])
         }
     }
 
-    int top = max(candidates[MAX], candidate_count);
+    top = max(candidates, candidate_count);
 
     // Display winner of election
     print_winner();
@@ -92,7 +92,7 @@ void print_winner(void)
     {
         if (candidates[i].votes == top)
         {
-            printf("%s", candidates[i].name)
+            printf("%s", candidates[i].name);
         }
         continue;
     }
