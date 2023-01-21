@@ -22,7 +22,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
-int max(candidate candidates[], int n);
+int max(candidate arr_candidates[], int n);
 
 int main(int argc, string argv[])
 {
@@ -92,14 +92,14 @@ void print_winner(void)
     {
         if (candidates[i].votes == top)
         {
-            printf("%s", candidates[i].name);
+            printf("%s\n", candidates[i].name);
         }
         continue;
     }
     return;
 }
 
-int max(candidate candidates[], int n)
+int max(candidate arr_candidates[], int n)
 {
     int max = candidates[0].votes;
     for (int a = 0; a < n ; a++)
