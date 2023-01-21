@@ -22,7 +22,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
-int max(int array[], int n);
+int max(candidate candidates[MAX], int votes, int n);
 
 int main(int argc, string argv[])
 {
@@ -60,6 +60,8 @@ int main(int argc, string argv[])
         }
     }
 
+    int max = max(candidates[MAX], candidates[].votes, candidate_count);
+
     // Display winner of election
     print_winner();
 }
@@ -88,7 +90,7 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes == max(votes, candidate_count))
+        if (candidates[i].votes == max)
         {
             printf("%s", candidates[i].name)
         }
@@ -97,7 +99,7 @@ void print_winner(void)
     return
 }
 
-int max(candidate candidates[], int votes, int n)
+int max(candidate candidates[MAX], int votes, int n)
 {
     int max = candidates[0].votes;
     for (int a = 0; a < n ; a++)
