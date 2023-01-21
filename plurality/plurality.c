@@ -93,8 +93,9 @@ void print_winner(void)
         if (candidates[i].votes == top)
         {
             printf("%s\n", candidates[i].name);
+            continue;
         }
-        continue;
+
     }
     return;
 }
