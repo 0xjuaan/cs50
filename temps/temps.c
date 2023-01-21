@@ -67,7 +67,7 @@ void sort_cities(void)
     {
         for (int a = 0; a < NUM_CITIES; a++)
         {
-            if (temps[a].temp <= temps[a+1].temp)
+            if (temps[a].temp >= temps[a+1].temp)
             {
                 c++;
                 continue;
@@ -76,9 +76,9 @@ void sort_cities(void)
             {
                 //Switch the 2
                 c = 0;
-                avg_temp swap = temps[a];
-                temps[a] = temps[a+1];
-                temps[a+1] = swap;
+                avg_temp swap = temps[a+1];
+                temps[a+1] = temps[a];
+                temps[a] = swap;
                 continue;
             }
         }
