@@ -77,14 +77,14 @@ void add_items(void)
     menu[0].item = "Burger";
     menu[0].price = 9.5;
 
-    menu[0].item = "Vegan Burger";
-    menu[0].price = 11;
+    menu[1].item = "Vegan Burger";
+    menu[1].price = 11;
 
-    menu[0].item = "Hot Dog";
-    menu[0].price = 5;
+    menu[2].item = "Hot Dog";
+    menu[2].price = 5;
 
-    menu[0].item = "Cheese Dog";
-    menu[0].price = 7;
+    menu[3].item = "Cheese Dog";
+    menu[3].price = 7;
 
     return;
 }
