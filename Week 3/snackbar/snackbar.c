@@ -97,6 +97,7 @@ float get_cost(string item)
         if (strcmp(item, menu[i].item) == 0)
         {
             return menu[i].price;
+            continue;
         }
         else
         {
