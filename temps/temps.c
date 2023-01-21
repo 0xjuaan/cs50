@@ -62,21 +62,26 @@ int main(void)
 // TODO: Sort cities by temperature in descending order
 void sort_cities(void)
 {
-
-    for (int a = 0; a < NUM_CITIES; a++)
+    int c = 0;
+    while (c < NUM_CITIES)
     {
-        if (temps[a].temp <= temps[a+1].temp)
-        {
 
-            continue;
-        }
-        else
+        for (int a = 0; a < NUM_CITIES; a++)
         {
-            //Switch the 2
-            avg_temp swap = temps[a];
-            temps[a] = temps[a+1];
-            temps[a+1] = swap;
-            continue;
+            if (temps[a].temp <= temps[a+1].temp)
+            {
+                c++;
+                continue;
+            }
+            else
+            {
+                //Switch the 2
+                c = 0;
+                avg_temp swap = temps[a];
+                temps[a] = temps[a+1];
+                temps[a+1] = swap;
+                continue;
+            }
         }
     }
 }
