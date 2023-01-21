@@ -67,6 +67,7 @@ void sort_cities(void)
     {
         for (int a = 0; a < NUM_CITIES; a++)
         {
+            //Compare 2 values (whether L > R)
             if (temps[a].temp >= temps[a+1].temp)
             {
                 c++;
