@@ -51,7 +51,7 @@ int main(void)
 
     for (int i = 0; i < NUM_ITEMS; i++)
     {
-        printf("%s: $%.2f\n", menu[i].item, menu[i]. price);
+        printf("%s: $%.2f\n", menu[i].item, menu[i].price);
     }
     printf("\n");
 
@@ -71,9 +71,21 @@ int main(void)
     printf("Your total cost is: $%.2f\n", total);
 }
 
-// Add at least the first for items to the menu array
+// Add at least the first four items to the menu array
 void add_items(void)
 {
+    menu[0].item = "Burger"
+    menu[0].price = 9.5
+
+    menu[0].item = "Vegan Burger"
+    menu[0].price = 11
+
+    menu[0].item = "Hot Dog"
+    menu[0].price = 5
+
+    menu[0].item = "Cheese Dog"
+    menu[0].price = 7
+
     return;
 }
 
