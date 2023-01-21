@@ -72,10 +72,10 @@ void sort_cities(void)
         }
         else
         {
-
-            int swap = temps[a].temp;
-            temps[a].temp = temps[a+1].temp;
-            temps[a+1].temp = swap;
+            //Switch the 2
+            avg_temp swap = temps[a];
+            temps[a] = temps[a+1];
+            temps[a+1] = swap;
             continue;
         }
     }
