@@ -22,6 +22,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
+int max(int array[], int n);
 
 int main(int argc, string argv[])
 {
@@ -85,6 +86,24 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    
+    max(candidates[i].votes, candidate_count)
     return;
+}
+
+int max(int array[], int n)
+{
+    int max = array[0];
+    for (int a = 0; a < n ; a++)
+    {
+        if (array[a] >= max)
+        {
+            max = array[a];
+            continue;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    return max;
 }
