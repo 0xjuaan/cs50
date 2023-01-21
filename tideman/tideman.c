@@ -41,7 +41,7 @@ int main(int argc, string argv[])
     // Check for invalid usage
     if (argc < 2)
     {
-        printf("Usage: tideman [candidate ...]\n");
+        printf("Usage: ./tideman [candidate ...]\n");
         return 1;
     }
 
