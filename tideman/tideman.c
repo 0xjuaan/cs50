@@ -18,7 +18,6 @@ typedef struct
 {
     int winner;
     int loser;
-    int diff;
 }
 pair;
 
@@ -152,7 +151,6 @@ void add_pairs(void)
                 pair_count ++ ;
                 pairs[z].winner = c;
                 pairs[z].loser = b;
-                pairs[z].diff =
                 z++;
 
             }
