@@ -128,7 +128,7 @@ void record_preferences(int ranks[])
 
             if (ranks[c] < ranks[b])
             {
-                preferences[c][b] ++ ;
+                preferences[c][b]++ ;
 
             }
             else
