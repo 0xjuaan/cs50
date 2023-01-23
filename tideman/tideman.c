@@ -198,8 +198,16 @@ void print_winner(void)
     {
         for (int g = 0; g < pair_count; g++)
         {
-            if (candidates[f])
+            if (f = pairs[g].loser)
+            {
+                break;
+            }
+            else
+            {
+                continue;
+            }
         }
+        printf("%s", candidates[f])
     }
     return;
 }
