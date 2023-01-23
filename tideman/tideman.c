@@ -18,6 +18,7 @@ typedef struct
 {
     int winner;
     int loser;
+    int diff;
 }
 pair;
 
@@ -149,7 +150,7 @@ void add_pairs(void)
             {
                 pairs[pair_count].winner = c;
                 pairs[pair_count].loser = b;
-                pairs
+                pairs[pair_count].diff = preferences[c][b];
                 pair_count ++ ;
             }
             else
@@ -166,7 +167,12 @@ void sort_pairs(void)
 {
     for (int d = 0; d < pair_count; d++)
     {
-
+        if(pairs[d].diff < pairs[d+1].diff)
+        {
+            int temp = pairs[d+1].diff
+            pairs[d].diff = temp;
+            pairs[d+1].diff = 
+        }
     }
     return;
 }
