@@ -196,7 +196,10 @@ void print_winner(void)
 {
     for (int f = 0; f < candidate_count; f++)
     {
-        if ()
+        for (int g = 0; g < pair_count; g++)
+        {
+            if (candidates[f])
+        }
     }
     return;
 }
