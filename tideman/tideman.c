@@ -125,11 +125,8 @@ void record_preferences(int ranks[])
     {
         for (int c = 0; c < candidate_count; c++)
         {
-            if (c == b)
-            {
-                continue;
-            }
-            else if (ranks[c] < ranks[b])
+
+            if (ranks[c] < ranks[b])
             {
                 preferences[c][b] ++ ;
 
