@@ -194,6 +194,7 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
+    int z;
     int topp;
     for (int f = 0; f < candidate_count; f++)
     {
@@ -203,12 +204,17 @@ void print_winner(void)
             {
                 break;
             }
+            else if (g == pair_count - 1)
+            {
+                printf("%s", candidates[f])
+                return 1;
+            }
             else
             {
                 continue;
             }
         }
-        printf("%s", candidates[f])
+
     }
     return;
 }
