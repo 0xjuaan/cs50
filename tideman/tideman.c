@@ -186,7 +186,7 @@ void lock_pairs(void)
 {
     for (int e = 0; e < pair_count; e++)
     {
-        locked [pairs[e].winner][pairs[e].loser] = true
+        locked [pairs[e].winner][pairs[e].loser] = true;
     }
     return;
 }
@@ -200,18 +200,18 @@ void print_winner(void)
     {
         for (int g = 0; g < pair_count; g++)
         {
-            if (f = pairs[g].loser)
+            if (f == pairs[g].loser)
             {
-                break;
+                break; //Goes on to the next candidate
             }
-            else if (g == pair_count - 1)
+            else if (f != pairs[g].loser && g == pair_count - 1 && locked [pairs[g].winner][pairs[g].loser] == true)
             {
-                printf("%s", candidates[f])
-                return 1;
+                printf("%s\n", candidates[f]);
+                return;
             }
             else
             {
-                continue;
+                continue; //Check next pair for L
             }
         }
 
