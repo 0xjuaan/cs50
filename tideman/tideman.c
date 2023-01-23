@@ -70,13 +70,13 @@ int main(int argc, string argv[])
     int voter_count = get_int("Number of voters: ");
 
     // Query for votes
-    for (int i = 0; i < voter_count; i++)
+    for (int i = 0; i < voter_count; i++) //Loop over each voter
     {
         // ranks[i] is voter's ith preference
         int ranks[candidate_count];
 
         // Query for each rank
-        for (int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++) //Loop over each preference (note: nested)
         {
             string name = get_string("Rank %i: ", j + 1);
 
