@@ -165,13 +165,17 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    for (int d = 0; d < pair_count; d++)
+    for (int d = 0; d < pair_count-1; d++)
     {
-        if(pairs[d].diff < pairs[d+1].diff)
+        if (pairs[d].diff < pairs[d+1].diff)
         {
-            int temp = pairs[d+1].diff
+            int temp = pairs[d+1].diff;
+            pairs[d+1].diff = pairs[d].diff;
             pairs[d].diff = temp;
-            pairs[d+1].diff = 
+        }
+        else
+        {
+            continue;
         }
     }
     return;
