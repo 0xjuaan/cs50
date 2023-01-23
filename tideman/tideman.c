@@ -196,7 +196,7 @@ void print_winner(void)
 {
     for (int f = 0; f < candidate_count; f++)
     {
-        
+        if ()
     }
     return;
 }
