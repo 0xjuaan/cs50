@@ -125,7 +125,11 @@ void record_preferences(int ranks[])
     {
         for (int c = 0; c < candidate_count; c++)
         {
-            if (ranks[c]<ranks[b])
+            if (c == b)
+            {
+                continue;
+            }
+            else if (ranks[c] < ranks[b])
             {
                 preferences[c][b] ++ ;
 
@@ -146,11 +150,8 @@ void add_pairs(void)
     {
         for (int c = 0; c < candidate_count; c++)
         {
-            if (c == b)
-            {
-                continue;
-            }
-            else if (preferences[c][b] > 0)
+
+            if (preferences[c][b] > 0)
             {
                 pairs[pair_count].winner = c;
                 pairs[pair_count].loser = b;
