@@ -9,7 +9,6 @@
 
 // preferences[i][j] is number of voters who prefer i over j
 int preferences[MAX][MAX];
-int pref[MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
@@ -109,7 +108,6 @@ bool vote(int rank, string name, int ranks[])
         if (strcmp(name, candidates[a]) == 0)
         {
             ranks[rank] = a;
-            pref[a] = rank;
             return true;
         }
         else
@@ -127,22 +125,11 @@ void record_preferences(int ranks[])
     {
         for (int c = 0; c < candidate_count; c++)   //Iterate over the candidates again
         {
-            if (pref[c] < pref[b])
-            {
                 preferences[c][b]++;
                 printf("preferences[%i][%i] = %i\n", c, b, preferences[c][b]);
                 continue;
-            }
-            else
-            {
-                continue;
-            }
         }
     }
-    for (int i = 0; i < candidate_count; i++)
-    for (int j = 0; j < candidate_count; j++)
-        printf("%i ", preferences[i][j]);
-
     return;
 }
 
