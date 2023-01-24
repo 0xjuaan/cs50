@@ -142,7 +142,7 @@ void add_pairs(void)
             {
                 pairs[pair_count].winner = c;
                 pairs[pair_count].loser = b;
-                pair_count += preferences[c][b];
+                pair_count += 1;
             }
             else
             {
