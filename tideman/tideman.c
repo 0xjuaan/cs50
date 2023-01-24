@@ -125,7 +125,6 @@ void record_preferences(int ranks[])
         for (int c = b+1; c < candidate_count; c++) //Iterate over the candidates above this one
         {
             preferences[ranks[b]][ranks[c]]++;
-            printf("preferences[%i][%i] = %i\n", ranks[b], ranks[c], preferences[ranks[b]][ranks[c]]);
         }
     }
     return;
@@ -157,7 +156,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    for (int d = 0; d < pair_count-1; d++)
+   /* for (int d = 0; d < pair_count-1; d++)
     {
         if (pairs[d].diff < pairs[d+1].diff)
         {
@@ -171,6 +170,7 @@ void sort_pairs(void)
         }
     }
     return;
+    */
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
