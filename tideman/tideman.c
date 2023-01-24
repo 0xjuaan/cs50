@@ -144,7 +144,7 @@ void add_pairs(void)
                 printf("Pair %i: [%i][%i]\n", pair_count, b, c);
                 pair_count++;
             }
-     
+
         }
     }
     return;
@@ -203,7 +203,6 @@ void print_winner(void)
                 continue; //Check next pair for L
             }
         }
-
     }
     return;
 }
