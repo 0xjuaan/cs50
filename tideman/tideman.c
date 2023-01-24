@@ -25,7 +25,7 @@ pair;
 string candidates[MAX];
 pair pairs[MAX * (MAX - 1) / 2];
 
-int pair_count;
+int pair_count = 1;
 int candidate_count;
 
 // Function prototypes
@@ -65,8 +65,6 @@ int main(int argc, string argv[])
             locked[i][j] = false;
         }
     }
-
-    pair_count = 1;
     int voter_count = get_int("Number of voters: ");
 
     // Query for votes
