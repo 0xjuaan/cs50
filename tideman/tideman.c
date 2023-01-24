@@ -154,9 +154,9 @@ void sort_pairs(void)
     {
         if (preferences[pairs[d].winner][pairs[d].winner] < preferences[pairs[d+1].winner][pairs[d+1].winner])
         {
-            int temp = pairs[d+1].diff;
-            pairs[d+1].diff = pairs[d].diff;
-            pairs[d].diff = temp;
+            pair temp = pairs[d+1];
+            pairs[d+1] = pairs[d];
+            pairs[d] = temp;
         }
         else
         {
