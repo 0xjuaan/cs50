@@ -130,7 +130,7 @@ void record_preferences(int ranks[])
             if (pref[c] < pref[b])
             {
                 preferences[c][b]++;
-                printf("preferences[%i][%i] = %i\n", c, b, preferences[c][b] = 1);
+                printf("preferences[%i][%i] = %i\n", c, b, preferences[c][b]);
                 continue;
             }
             else
