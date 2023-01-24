@@ -137,18 +137,12 @@ void add_pairs(void)
     {
         for (int c = 0; c < candidate_count; c++)
         {
-
             if (preferences[b][c] > 0)
             {
                 pairs[pair_count].winner = c;
                 pairs[pair_count].loser = b;
                 printf("Pair %i: [%i][%i]\n", pair_count, c, b);
                 pair_count++;
-
-            }
-            else
-            {
-                continue;
             }
         }
     }
