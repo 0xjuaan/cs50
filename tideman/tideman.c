@@ -204,7 +204,7 @@ void print_winner(void)
             }
             else
             {
-                continue; //Check next pair for L
+                continue; //Check next pair for loser
             }
         }
     }
