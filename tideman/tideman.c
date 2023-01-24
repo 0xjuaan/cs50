@@ -125,7 +125,7 @@ void record_preferences(int ranks[])
 {
     for (int b = 0; b < candidate_count; b++)   //Iterate over the candidates
     {
-        for (int c = 0; c < candidate_count; c++)   //Iterate over the candidates
+        for (int c = 0; c < candidate_count; c++)   //Iterate over the candidates again
         {
             if (pref[c] < pref[b])
             {
