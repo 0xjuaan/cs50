@@ -9,6 +9,7 @@
 
 // preferences[i][j] is number of voters who prefer i over j
 int preferences[MAX][MAX];
+int pref[MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
@@ -108,6 +109,7 @@ bool vote(int rank, string name, int ranks[])
         if (strcmp(name, candidates[a]) == 0)
         {
             ranks[rank] = a;
+            pref[a] = rank;
             return true;
         }
         else
