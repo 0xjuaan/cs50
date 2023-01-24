@@ -152,7 +152,7 @@ void sort_pairs(void)
 {
     for (int d = 0; d < pair_count-1; d++)
     {
-        if (pairs[d].diff < pairs[d+1].diff)
+        if (preferences[pairs[d].winner][pairs[d].winner] < preferences[pairs[d+1].winner][pairs[d+1].winner])
         {
             int temp = pairs[d+1].diff;
             pairs[d+1].diff = pairs[d].diff;
@@ -164,7 +164,7 @@ void sort_pairs(void)
         }
     }
     return;
-    
+
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
