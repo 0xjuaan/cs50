@@ -138,7 +138,7 @@ void add_pairs(void)
         for (int c = 0; c < candidate_count; c++)
         {
 
-            if (preferences[c][b] > 0)
+            if (preferences[b][c] > 0)
             {
                 pairs[pair_count].winner = c;
                 pairs[pair_count].loser = b;
