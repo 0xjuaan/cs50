@@ -184,7 +184,7 @@ void lock_pairs(void)
             {
                 continue;
             }
-            else if (h == pair_count - 1)
+            else if (pairs[e].loser == pairs[h].winner && h == pair_count - 1)
             {
                 locked[pairs[e].winner][pairs[e].loser] = false;
             }
