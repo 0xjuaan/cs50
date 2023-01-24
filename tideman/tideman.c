@@ -125,10 +125,7 @@ void record_preferences(int ranks[])
     {
         for (int c = 0; c < candidate_count; c++)
         {
-            if ()
-            {
-
-            }
+            break;
         }
     }
     return;
