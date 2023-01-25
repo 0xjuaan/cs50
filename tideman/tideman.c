@@ -34,7 +34,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-void check_cycle(pair duo[n]);
+void check_cycle(pair duo[int a]);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -178,7 +178,7 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     n = 0;
-    check_cycle(pairs[n]);
+    check_cycle(pairs[0]);
 
 }
 
