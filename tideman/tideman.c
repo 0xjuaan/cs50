@@ -176,11 +176,16 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
+/*
+Pseudocode
+take first pair
+if pair[n].loser == pair[n+1].winner &&
+if -----> then continue that chain
 
-    for (int e = 0; e < pair_count; e++)
-    {
-        
-    }
+
+
+
+*/
 return;
 }
 
