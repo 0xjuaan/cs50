@@ -215,8 +215,8 @@ void check_cycle(pair duo[])
             locked[duo[n+1].winner][duo[n+1].loser] = false;
         }
         else if (duo[n].loser == duo[n+1].winner)
-        {
-            check_cycle(duo[n+1])
+        {            check_cycle(duo[n+1])
+
         }
         else
         {
