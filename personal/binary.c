@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
+bool bsearch (int array[], int size_, int search_);
+
 
 int main(void)
 {
@@ -11,5 +13,12 @@ int main(void)
 
 bool bsearch (int array[], int size_, int search_)
 {
-    if (numbers[size_ / ])
+    if (numbers[size_  / 2 - 1] == search_)
+    {
+        printf("Found!");
+    }
+    else if (numbers[size_  / 2 - 1] >= search_)
+    {
+        bsearch()
+    }
 }
