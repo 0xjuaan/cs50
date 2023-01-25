@@ -27,7 +27,10 @@ bool bsearch (int array[], int size, int search)
     }
     else
     {
-
+        for (int i = 0; i < size  / 2 - 1; i++)
+        {
+            numbers[i] = '\0';
+        }
         bsearch(numbers,, search)
     }
 }
