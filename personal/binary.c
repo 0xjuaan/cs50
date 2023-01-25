@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
-bool bsearch (int array[], int size_, int search_);
+bool bsearch (int array[], int size, int search);
 
 
 int main(void)
@@ -25,6 +25,6 @@ bool bsearch (int array[], int size, int search)
     else
     {
         size = size  / 2 - 1;
-        bsearch(numbers, 0.75 * size - 1, search)
+        bsearch(numbers,, search)
     }
 }
