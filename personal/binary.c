@@ -23,6 +23,6 @@ bool bsearch (int array[], int size_, int search_)
     }
     else
     {
-        bsearch(numbers, size/2 - 1, search)
+        bsearch(numbers, 0.75 * size - 1, search)
     }
 }
