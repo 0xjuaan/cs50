@@ -178,7 +178,7 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     n = 0;
-    check_cycle(pairs);
+    check_cycle(pairs[n]);
 
 }
 
@@ -208,7 +208,7 @@ void print_winner(void)
     }
     return;
 }
-void check_cycle(pair duo[])
+void check_cycle(pair duo[n])
     {
         if (duo[n].loser == duo[n+1].winner && n + 1 == pair_count - 1)
         {
