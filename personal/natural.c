@@ -4,8 +4,8 @@ int natural(int n);
 
 int main(void)
 {
-    printf("%i\n", natural(5));
-
+    printf("The natural numbers are: ");
+    natural(50);
 }
 
 
@@ -15,5 +15,7 @@ int natural(int n)
     {
         return 0;
     }
-    return natural(n-1);
+    natural(n-1);
+    printf("%i ", n);
+    return 1;
 }
