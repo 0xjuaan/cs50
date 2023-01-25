@@ -19,12 +19,15 @@ bool bsearch (int array[], int size, int search)
     }
     else if (numbers[size  / 2 - 1] > search)
     {
-        size = size  / 2 - 1;
+        for (int i = 0; i < size  / 2 - 1; i++)
+        {
+            numbers[i] = '\0';
+        }
         bsearch(numbers, size/2 - 1, search)
     }
     else
     {
-        size = size  / 2 - 1;
+
         bsearch(numbers,, search)
     }
 }
