@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <cs50.h>
-void natural(int n);
+int natural(int n);
 
 int main(void)
 {
-    natural(50);
+    printf("%i\n", natural(50));
 
 }
 
 
-void natural(int n)
+int natural(int n)
 {
     if (n == 0)
     {
-        return;
+        return '\0';
     }
-    printf("%i", natural(n-1));
-
+    return natural(n-1);
 }
