@@ -13,21 +13,21 @@ int main(void)
 
 bool bsearch (int array[], int size, int search)
 {
-    if (numbers[size_  / 2 - 1] == search)
+    if (numbers[size/2] == search)
     {
         printf("Found!");
     }
-    else if (numbers[size  / 2 - 1] > search)
+    else if (numbers[size/2] > search)
     {
-        for (int i = 0; i < size  / 2 - 1; i++)
+        for (int i = 0; i < size/2; i++)
         {
             numbers[i] = '\0';
         }
-        bsearch(numbers, size/2 - 1, search)
+        bsearch(numbers, size/2, search)
     }
     else
     {
-        for (int i = 0; i < size  / 2 - 1; i++)
+        for (int i = 0; i < size/2; i++)
         {
             numbers[i] = '\0';
         }
