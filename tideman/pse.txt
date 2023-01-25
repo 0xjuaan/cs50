@@ -1,0 +1,6 @@
+LOCK_PAIRS()
+Pseudocode
+take first pair
+if pairs[n].loser == pairs[n+1].winner && n+1 == pair_count-1 --> LEAVE pairs[N+1] unlocked!!!
+if pairs[n].loser == pairs[n+1].winner-----> then continue that chain (lock_pairs)
+if pairs[n].loser != pairs[n+1].winner -----> then happily lock pairs[n], and pairs[n+1]
