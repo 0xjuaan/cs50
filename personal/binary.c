@@ -3,5 +3,8 @@
 
 int main(void)
 {
-    
+
 }
+
+
+bool bsearch ()
