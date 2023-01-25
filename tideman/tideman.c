@@ -179,7 +179,7 @@ void lock_pairs(void)
 /*
 Pseudocode
 take first pair
-if pair[n].loser == pair[n+1].winner &&
+if pair[n].loser == pair[n+1].winner && n+1 == pair_count-1 --> LEAVE PAIR[N]
 if pair[n].loser == pair[n+1].winner-----> then continue that chain (lock_pairs)
 
 
