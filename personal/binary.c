@@ -29,7 +29,7 @@ bool bsearch (int array[], int size_, int search_)
     }
     else if (numbers[size_/2] > search_)
     {
-        for (int i = size_/2 + 1; i < size_-2; i++)
+        for (int i = size_/2 + 1; i < size_-1; i++)
         {
             numbers[i] = '\0';
         }
