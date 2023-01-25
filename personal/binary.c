@@ -17,7 +17,11 @@ bool bsearch (int array[], int size_, int search_)
     {
         printf("Found!");
     }
-    else if (numbers[size_  / 2 - 1] >= search_)
+    else if (numbers[size_  / 2 - 1] > search_)
+    {
+        bsearch(numbers, size/2 - 1, search)
+    }
+    else
     {
         bsearch(numbers, size/2 - 1, search)
     }
