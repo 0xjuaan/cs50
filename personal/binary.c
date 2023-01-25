@@ -11,5 +11,5 @@ int main(void)
 
 bool bsearch (int array[], int size_, int search_)
 {
-    
+    if (numbers[size_ / ])
 }
