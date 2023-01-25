@@ -11,18 +11,20 @@ int main(void)
 }
 
 
-bool bsearch (int array[], int size_, int search_)
+bool bsearch (int array[], int size, int search)
 {
-    if (numbers[size_  / 2 - 1] == search_)
+    if (numbers[size_  / 2 - 1] == search)
     {
         printf("Found!");
     }
-    else if (numbers[size_  / 2 - 1] > search_)
+    else if (numbers[size  / 2 - 1] > search)
     {
+        size = size  / 2 - 1;
         bsearch(numbers, size/2 - 1, search)
     }
     else
     {
+        size = size  / 2 - 1;
         bsearch(numbers, 0.75 * size - 1, search)
     }
 }
