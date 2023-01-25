@@ -177,8 +177,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    n = 0;
-    check_cycle(&pairs[n]);
+   
 
 }
 
@@ -208,19 +207,4 @@ void print_winner(void)
     }
     return;
 }
-void check_cycle(pair duo[n])
-{
-    if (duo[n].loser == duo[n+1].winner && n + 1 == pair_count - 1)
-    {
-        locked[duo[n+1].winner][duo[n+1].loser] = false;
-    }
-    else if (duo[n].loser == duo[n+1].winner)
-    {
-        check_cycle(&duo[n+1]);
-    }
-    else
-    {
-        locked[duo[n].winner][duo[n].loser] = true;
-        check_cycle(&duo[n+1]);
-    }
-}
+
