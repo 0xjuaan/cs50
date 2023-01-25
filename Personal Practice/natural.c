@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
+void natural(int n);
 
 int main(void)
 {
@@ -14,6 +15,6 @@ void natural(int n)
     {
         return;
     }
-    printf("%i", natural(n-1))
+    printf("%i", natural(n-1));
 
 }
