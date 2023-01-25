@@ -4,3 +4,26 @@ take first pair
 if pairs[n].loser == pairs[n+1].winner && n+1 == pair_count-1 --> LEAVE pairs[N+1] unlocked!!!
 if pairs[n].loser == pairs[n+1].winner-----> then re-iterate the function
 if pairs[n].loser != pairs[n+1].winner -----> then happily lock pairs[n], and pairs[n+1]
+
+
+EXAMPLE ATTEMPT #1
+
+
+  for (int e = 0; e < pair_count-1; e++)
+    {
+        if (pairs[e].loser == pairs[e+1].winner && e+1 == pair_count-1)
+        {
+            locked[pairs[e+1].winner][pairs[e+1].loser] = false;
+            continue;
+        }
+        else if (pairs[e].loser == pairs[e+1].winner)
+        {
+            lock_pairs();
+        }
+        else
+        {
+            locked[pairs[e].winner][pairs[e].loser] = true;
+            continue;
+        }
+    }
+    return;
