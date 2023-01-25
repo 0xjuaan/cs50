@@ -4,7 +4,7 @@ int natural(int n);
 
 int main(void)
 {
-    printf("%i\n", natural(50));
+    printf("%i\n", natural(5));
 
 }
 
