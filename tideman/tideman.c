@@ -208,7 +208,7 @@ void print_winner(void)
     }
     return;
 }
-void check_cycle(pair pairs[])
+void check_cycle(int pairs[].winner, int pairs[].loser)
     {
         if (pairs[n].loser == pairs[n+1].winner && n + 1 == pair_count - 1)
         {
