@@ -27,14 +27,14 @@ pair pairs[MAX * (MAX - 1) / 2];
 
 int pair_count = 1;
 int candidate_count;
-
+int n; //For the locking algorithm's pair_counter
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-void check_cycle(pair pairs[]);
+void check_cycle(pair duo[]);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -177,7 +177,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    int n = 0;
+    n = 0;
     check_cycle(pairs);
 
 }
@@ -210,16 +210,16 @@ void print_winner(void)
 }
 void check_cycle(pair duo[])
     {
-        if (pairs[n].loser == pairs[n+1].winner && n + 1 == pair_count - 1)
+        if (duo[n].loser == duo[n+1].winner && n + 1 == pair_count - 1)
         {
-            locked[pairs[n+1].winner][pairs[n+1].loser] = false;
+            locked[duo[n+1].winner][duo[n+1].loser] = false;
         }
-        else if (pairs[n].loser == pairs[n+1].winner)
+        else if (duo[n].loser == duo[n+1].winner)
         {
-            check_cycle(pairs[n+1])
+            check_cycle(duo[n+1])
         }
         else
         {
-            locked[pairs[n].winner][pairs[n].loser] = true;
+            locked[duo[n].winner][duo[n].loser] = true;
         }
     }
