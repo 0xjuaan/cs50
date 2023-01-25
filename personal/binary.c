@@ -19,6 +19,6 @@ bool bsearch (int array[], int size_, int search_)
     }
     else if (numbers[size_  / 2 - 1] >= search_)
     {
-        bsearch()
+        bsearch(numbers, size/2 - 1, search)
     }
 }
