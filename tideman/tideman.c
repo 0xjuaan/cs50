@@ -215,7 +215,13 @@ bool check(pair duos[])
     {
         visited[duos[i].winner] = false;
     }
-    
+    for (int j = 0; j < pair_count; j++)
+    {
+        for (int k = 0; k < pair_count; k++)
+        {
+            if (duos[j].winner == duos[j].loser)
+        }
+    }
 
 }
 
