@@ -219,7 +219,10 @@ bool check(pair duos[])
     {
         for (int k = 0; k < pair_count; k++)
         {
-            if (duos[j].winner == duos[j].loser)
+            if (duos[j].winner == duos[k].loser)
+            {
+                locked[k][j] == false;
+            }
         }
     }
 
