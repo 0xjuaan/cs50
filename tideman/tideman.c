@@ -174,6 +174,10 @@ void sort_pairs(void)
     }
     return;
     }
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("Pair %i: (%i, %i)", i, pairs[i].winner, pairs[i].loser);
+    }
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
@@ -251,24 +255,5 @@ bool check(pair duos[], int x, int starter)
         return false;
     }
 }
-void lock_pairs(void)
-{
-    for (int i = 0; i < 2; i++)
-    {
-        locked[pairs[i].winner][pairs[i].loser] = true;
-    }
-    for (int p = 2; p < pair_count; p++)
-    {
-        if (check(pairs, p, pairs[0].winner))
-        {
-            locked[pairs[p].winner][pairs[p].loser] = false;
-            break;
-        }
-        else
-        {
-            locked[pairs[p].winner][pairs[p].loser] = true;
-            continue;
-        }
-    }
-}
+
 //check50 cs50/problems/2023/x/tideman
