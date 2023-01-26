@@ -225,9 +225,9 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[])
+bool check(pair duos[], int x)
 {
-    if (locked[duos[].winner][duos[].loser])
+    if (locked[duos[x].winner][duos[x].loser])
     {
         return false;
     }
