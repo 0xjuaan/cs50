@@ -213,3 +213,8 @@ bool check(pair duos[])
         duos[i].winner =
     }
 }
+
+bool visited (int v)
+{
+    
+}
