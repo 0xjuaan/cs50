@@ -231,9 +231,13 @@ bool check(pair duos[], int x, int starter)
     {
         return false;
     }
-    else if (
+    else if (duos[x+1].loser == starter)
+    {
+        return true;
+    }
+    else if (duos[x].loser)
 
-    )
+
 }
 
 //check50 cs50/problems/2023/x/tideman
