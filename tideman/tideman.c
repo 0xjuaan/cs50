@@ -206,4 +206,7 @@ void print_winner(void)
     return;
 }
 
-bool check()
+bool check(duos[])
+{
+    
+}
