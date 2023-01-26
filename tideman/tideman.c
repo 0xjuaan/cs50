@@ -185,7 +185,7 @@ void lock_pairs(void)
     }
     for (int p = 2; p < pair_count; p++)
     {
-        if (check(pairs[p].winner, pairs[p].loser))
+        if (check(pairs, p, pairs[0].winner))
         {
             locked[pairs[p].winner][pairs[p].loser] = false;
             break;
@@ -225,7 +225,7 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[], int x)
+bool check(pair duos[], int x, int starter)
 {
     if (locked[duos[x].winner][duos[x].loser])
     {
