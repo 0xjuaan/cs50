@@ -231,7 +231,9 @@ bool check(int winner, int loser)
     {
         return false;
     }
-    else if ()
+    else if (
+        
+    )
 }
 
 //check50 cs50/problems/2023/x/tideman
