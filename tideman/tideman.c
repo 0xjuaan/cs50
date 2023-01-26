@@ -185,14 +185,14 @@ void lock_pairs(void)
     }
     for (int p = 2; p < pair_count; p++)
     {
-        if (check)
+        if (check(pairs[p].winner, pairs[p].loser))
         {
-            locked[pairs[i].winner][pairs[i].loser] = false;
+            locked[pairs[p].winner][pairs[p].loser] = false;
             break;
         }
         else
         {
-            locked[pairs[i].winner][pairs[i].loser] = true;
+            locked[pairs[p].winner][pairs[p].loser] = true;
             continue;
         }
     }
@@ -227,7 +227,11 @@ void print_winner(void)
 
 bool check(int winner, int loser)
 {
-
+    if (locked[winner][loser])
+    {
+        return false;
+    }
+    else if ()
 }
 
 //check50 cs50/problems/2023/x/tideman
