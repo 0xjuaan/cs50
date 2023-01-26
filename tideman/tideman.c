@@ -231,11 +231,20 @@ bool check(pair duos[], int x, int starter)
     {
         return false;
     }
-    else if (duos[x+1].loser == starter)
+    else if (duos[x].loser == starter)
     {
         return true;
     }
-    else if (duos[x].loser )
+    else
+    {
+        for (int y = x+1; y < pair_count)
+        {
+            if (duos[x].loser == duos[y].winner)
+            {
+                check(pairs, p, pairs[0].winner)
+            }
+        }
+    }
 
 
 }
