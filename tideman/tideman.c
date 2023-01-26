@@ -14,7 +14,7 @@ int preferences[MAX][MAX];
 bool locked[MAX][MAX];
 
 //Visitation/for locking
-bool visited[MAX];
+bool visited[MAX] = {false};
 
 // Each pair has a winner, loser
 typedef struct
@@ -213,7 +213,9 @@ bool check(pair duos[])
 {
     for (int i = 0; i < pair_count; i++)
     {
-        duos[i].winner
+        visited[duos[i].winner] = false;
     }
+    
+
 }
 
