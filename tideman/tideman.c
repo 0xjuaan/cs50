@@ -37,7 +37,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-void check_cycle(pair duo[n]);
+bool check(pair duos[]);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -179,7 +179,20 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-
+ for (int j = 0; j < pair_count; j++)
+    {
+        for (int k = 0; k < pair_count; k++)
+        {
+            if (duos[j].winner == duos[k].loser)
+            {
+                locked[duos[k].loser][duos[j].winner] = false;
+            }
+            else if (k == pair_count - 1)
+            {
+                locked[duos[j].winner][duos[j].loser] = true;
+            }
+        }
+    }
 }
 
 // Print the winner of the election
@@ -215,20 +228,7 @@ bool check(pair duos[])
     {
         visited[duos[i].winner] = false;
     }
-    for (int j = 0; j < pair_count; j++)
-    {
-        for (int k = 0; k < pair_count; k++)
-        {
-            if (duos[j].winner == duos[k].loser)
-            {
-                locked[k][j] == false;
-            }
-            else if (k == pair_count - 1)
-            {
-                locked[j][];
-            }
-        }
-    }
+
 
 }
 
