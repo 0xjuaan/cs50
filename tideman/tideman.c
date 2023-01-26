@@ -183,13 +183,13 @@ void lock_pairs(void)
     {
         for (int k = 0; k < pair_count; k++)
         {
-            if (duos[j].winner == duos[k].loser)
+            if (pairs[j].winner == pairs[k].loser)
             {
-                locked[duos[k].loser][duos[j].winner] = false;
+                locked[pairs[k].loser][pairs[j].winner] = false;
             }
             else if (k == pair_count - 1)
             {
-                locked[duos[j].winner][duos[j].loser] = true;
+                locked[pairs[j].winner][pairs[j].loser] = true;
             }
         }
     }
@@ -229,6 +229,7 @@ bool check(pair duos[])
         visited[duos[i].winner] = false;
     }
 
-
+    return true;
 }
 
+//check50 cs50/problems/2023/x/tideman
