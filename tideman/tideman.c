@@ -223,6 +223,10 @@ bool check(pair duos[])
             {
                 locked[k][j] == false;
             }
+            else if (k == pair_count - 1)
+            {
+                locked[j][];
+            }
         }
     }
 
