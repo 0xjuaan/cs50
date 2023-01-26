@@ -235,7 +235,7 @@ bool check(pair duos[], int x, int starter)
     {
         return true;
     }
-    else if (duos[x].loser)
+    else if (duos[x].loser )
 
 
 }
