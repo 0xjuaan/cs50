@@ -206,7 +206,10 @@ void print_winner(void)
     return;
 }
 
-bool check(duos[])
+bool check(pair duos[])
 {
-    
+    for (int i = 0; i < pair_count; i++)
+    {
+        duos[i].winner =
+    }
 }
