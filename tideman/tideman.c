@@ -179,7 +179,10 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-
+    for (int i = 0; i < 2; i++)
+    {
+        locked[pairs[i].winner][pairs[i].loser] = true;
+    }
 }
 
 // Print the winner of the election
@@ -211,7 +214,7 @@ void print_winner(void)
 
 bool check(int winner, int loser)
 {
-    
+
 }
 
 //check50 cs50/problems/2023/x/tideman
