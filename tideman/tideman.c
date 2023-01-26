@@ -183,6 +183,19 @@ void lock_pairs(void)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
+    for (int p = 2; p < pair_count; p++)
+    {
+        if (check)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = false;
+            break;
+        }
+        else
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+            continue;
+        }
+    }
 }
 
 // Print the winner of the election
