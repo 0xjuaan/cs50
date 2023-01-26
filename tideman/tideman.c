@@ -209,14 +209,9 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[])
+bool check(int winner, int loser)
 {
-    for (int i = 0; i < pair_count; i++)
-    {
-        visited[duos[i].winner] = false;
-    }
-
-    return true;
+    
 }
 
 //check50 cs50/problems/2023/x/tideman
