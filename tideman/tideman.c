@@ -248,10 +248,6 @@ bool check(pair duos[], int x, int starter)
             {
                 return check(pairs, y, duos[x].winner);
             }
-            else
-            {
-                continue;
-            }
         }
         return false;
     }
