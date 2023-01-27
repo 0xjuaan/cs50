@@ -242,7 +242,7 @@ bool check(pair duos[], int x, int starter)
         {
             if (duos[x].loser == duos[y].winner)
             {
-                return check(pairs, y, duos[x].winner);
+                return check(pairs, y, tempy);
             }
             else
             {
