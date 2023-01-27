@@ -230,7 +230,7 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[], int x, int starter)
+bool check(pair duos[], int x, int starter[])
 {
     if (duos[x].loser == starter)
     {
@@ -243,12 +243,12 @@ bool check(pair duos[], int x, int starter)
     else
     {
         int tempy[pair_count];
-        int tempy[x-2]
+        tempy[x-2] = duos[x].winner;
         for (int y = 0; y < pair_count; y++)
         {
             if (duos[x].loser == duos[y].winner)
             {
-                return check(pairs, y, tempy);
+                return check(pairs, y, tempy[x-2]);
             }
         }
         return false;
