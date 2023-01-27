@@ -148,12 +148,9 @@ void add_pairs(void)
             }
         }
     }
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
-        for (int m = 0; m < candidate_count; m++)
-        {
-            printf("Pair %i: [%i][%i]\n", pair_count-1, i, m);
-        }
+        printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
     }
 
     return;
