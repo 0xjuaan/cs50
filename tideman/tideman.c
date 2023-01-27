@@ -232,11 +232,7 @@ void print_winner(void)
 
 bool check(pair duos[], int x, int starter)
 {
-    if (locked[duos[x].winner][duos[x].loser])
-    {
-        return false;
-    }
-    else if (duos[x].loser == starter)
+    if (duos[x].loser == starter)
     {
         return true;
     }
