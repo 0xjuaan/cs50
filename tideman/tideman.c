@@ -235,6 +235,10 @@ bool check(pair duos[], int x, int starter)
     {
         return true;
     }
+    else if (duos[pair_count-1].loser == duos[0].winner)
+    {
+        return true;
+    }
     else
     {
         for (int y = 0; y < pair_count; y++)
