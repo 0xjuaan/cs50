@@ -231,10 +231,10 @@ bool check(pair duos[], int x, int starter)
     {
         return false;
     }
-    /*else if (duos[x].loser == starter)
+    else if (duos[x].loser == starter && x == pair_count - 1)
     {
         return true;
-    }*/
+    }
     else
     {
         int tempy = duos[x].winner;
