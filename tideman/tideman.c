@@ -236,7 +236,7 @@ bool check(pair duos[], int x, int starter)
     {
         return true;
     }
-    else if (duos[pair_count-1].loser == duos[0].winner)
+    else if (duos[x].loser == duos[0].winner && x == pair_count - 1)
     {
         return true;
     }
