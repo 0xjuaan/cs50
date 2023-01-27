@@ -148,11 +148,11 @@ void add_pairs(void)
             }
         }
     }
-    for (int b = 0; b < candidate_count; b++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int c = 0; c < candidate_count; c++)
+        for (int m = 0; m < candidate_count; m++)
         {
-            printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
+            printf("Pair %i: [%i][%i]\n", pair_count-1, i, m);
         }
     }
 
