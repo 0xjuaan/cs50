@@ -242,11 +242,12 @@ bool check(pair duos[], int x, int starter)
     }
     else
     {
+        int tempy = duos[x].winner;
         for (int y = 0; y < pair_count; y++)
         {
             if (duos[x].loser == duos[y].winner)
             {
-                return check(pairs, y, duos[x].winner);
+                return check(pairs, y, tempy);
             }
         }
         return false;
