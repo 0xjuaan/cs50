@@ -185,7 +185,7 @@ void lock_pairs(void)
     }
     for (int p = 2; p < pair_count; p++)
     {
-        if (check(pairs, p, pairs[0].winner))
+        if (check(pairs, p, pairs[2].winner))
         {
             locked[pairs[p].winner][pairs[p].loser] = false;
             continue;
@@ -231,10 +231,10 @@ bool check(pair duos[], int x, int starter)
     {
         return false;
     }
-    //else if (duos[x].loser == starter && x == pair_count - 1)
-    //{
-     //   return true;
-    //}
+    else if (duos[x].loser == starter)
+    {
+        return true;
+    }
     else
     {
         for (int y = 0; y < pair_count; y++)
