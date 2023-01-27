@@ -28,7 +28,7 @@ pair;
 string candidates[MAX];
 pair pairs[MAX * (MAX - 1) / 2];
 
-int pair_count = 1;
+int pair_count = 0;
 int candidate_count;
 int n; //For the locking algorithm's pair_counter
 // Function prototypes
