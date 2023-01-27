@@ -143,11 +143,19 @@ void add_pairs(void)
             {
                 pairs[pair_count-1].winner = b;
                 pairs[pair_count-1].loser = c;
-                printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
+                //printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
                 pair_count++;
             }
         }
     }
+    for (int b = 0; b < candidate_count; b++)
+    {
+        for (int c = 0; c < candidate_count; c++)
+        {
+            printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
+        }
+    }
+
     return;
 }
 
