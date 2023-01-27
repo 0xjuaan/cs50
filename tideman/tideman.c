@@ -141,10 +141,11 @@ void add_pairs(void)
         {
             if (preferences[b][c] > preferences[c][b])
             {
+                pair_count++;
                 pairs[pair_count-1].winner = b;
                 pairs[pair_count-1].loser = c;
                 //printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
-                pair_count++;
+
             }
         }
     }
