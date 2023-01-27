@@ -242,7 +242,8 @@ bool check(pair duos[], int x, int starter)
     }
     else
     {
-        int tempy = duos[x].winner;
+        int tempy[pair_count];
+        int tempy[x-2]
         for (int y = 0; y < pair_count; y++)
         {
             if (duos[x].loser == duos[y].winner)
