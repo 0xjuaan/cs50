@@ -251,7 +251,7 @@ bool check(pair duos[], int x, int starter, int binarity)
     {
         if (binarity == 1)
         {
-            for (int y = x+1; y < pair_count+1; y++)
+            for (int y = 0; y < pair_count; y++)
             {
                 if (duos[x].loser == duos[y].winner)
                 {
