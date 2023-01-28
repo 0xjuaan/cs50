@@ -242,6 +242,10 @@ bool check(pair duos[], int x, int starter, int binarity)
     {
         return true;
     }
+    else if (x == pair_count-1 && duos[x].loser == starter)
+    {
+        return true;
+    }
 
     else
     {
