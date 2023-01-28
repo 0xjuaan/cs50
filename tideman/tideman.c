@@ -235,7 +235,7 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[], int x, int starter)
+bool check(pair duos[], int x, int starter, int binarity)
 {
     //If the loser of this pair == starter, then there is a cycle
     if (duos[x].loser == starter)
@@ -245,15 +245,28 @@ bool check(pair duos[], int x, int starter)
 
     else
     {
-        //starter = duos[x].winner;
-        for (int y = x+1; y < pair_count+1; y++)
+        if (binarity = 1)
         {
-            if (duos[x].loser == duos[y].winner)
+            for (int y = x+1; y < pair_count+1; y++)
             {
-                return check(pairs, y, starter);
+                if (duos[x].loser == duos[y].winner)
+                {
+                    return check(pairs, y, starter);
+                }
             }
+            return false;
         }
-        return false;
+        else if (binarity = 0)
+        {
+            for (int y = x+1; y < pair_count+1; y++)
+            {
+                if (duos[x].loser == duos[y].winner)
+                {
+                    return check(pairs, y, starter);
+                }
+            }
+            return false;
+        }
     }
 }
 
