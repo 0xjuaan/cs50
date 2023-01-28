@@ -37,7 +37,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-bool check(pair duos[], int x, int starter[]);
+bool check(pair duos[], int x, int starter);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -149,10 +149,7 @@ void add_pairs(void)
             }
         }
     }
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
-    }
+
     return;
 }
 
@@ -177,6 +174,10 @@ void sort_pairs(void)
             continue;
         }
     }
+    for (int i = 0; i < pair_count; i++)
+    {
+        printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
+    }
     return;
     }
 }
@@ -184,15 +185,17 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    int starters[pair_count];
-    starters[0] = pairs[2].winner;
+        //Locking the first 2 pairs (confirmed safe)
     for (int i = 0; i < 2; i++)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
     }
+
     for (int p = 2; p < pair_count; p++)
     {
-        if (check(pairs, p, starters))
+        int origin = pairs[p].winner;
+
+        if (check(pairs, p, origin))
         {
             locked[pairs[p].winner][pairs[p].loser] = false;
             continue;
@@ -232,29 +235,22 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[], int x, int starter[])
+bool check(pair duos[], int x, int starter)
 {
-    for (int h = 0; h < pair_count; h++)
-    {
-        if (duos[x].loser == starter[h])
-        {
-            return true;
-        }
-    }
-
-    if (duos[x].loser == duos[0].winner && x == pair_count - 1)
+    //If the loser of this pair == starter, then there is a cycle
+    if (duos[x].loser == starter)
     {
         return true;
     }
+
     else
     {
-        int tempy[pair_count];
-        tempy[x-2] = duos[x].winner;
-        for (int y = 0; y < pair_count; y++)
+        //starter = duos[x].winner;
+        for (int y = x+1; y < pair_count+1; y++)
         {
             if (duos[x].loser == duos[y].winner)
             {
-                return check(pairs, y, tempy);
+                return check(pairs, y, starter);
             }
         }
         return false;
