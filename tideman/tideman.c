@@ -267,6 +267,7 @@ bool check(pair duos[], int x, int starter, int binarity)
             }
             return false;
         }
+         return false;
     }
 }
 
