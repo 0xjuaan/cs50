@@ -12,7 +12,7 @@ int preferences[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
-int locks; // (how many locked pairs in the end)
+int locks = 0; // (how many locked pairs in the end)
 //Visitation/for locking
 bool visited[MAX] = {false};
 
