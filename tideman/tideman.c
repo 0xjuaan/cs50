@@ -254,6 +254,7 @@ bool check(pair duos[], int x, int starter)
         {
             if (duos[x].loser == duos[y].winner)
             {
+                if (locked[duos[y].winner][duos[y].loser])
                 cont[y] = y; //Populate cont[] with the continuation path values (pair index)
             }
         }
