@@ -195,7 +195,7 @@ void lock_pairs(void)
     {
         int origin = pairs[p].winner;
 
-        if (check(pairs, p, origin, 1))
+        if (check(pairs, p, origin, 0))
         {
             locked[pairs[p].winner][pairs[p].loser] = false;
             continue;
@@ -237,10 +237,16 @@ void print_winner(void)
 
 bool check(pair duos[], int x, int starter, int binarity)
 {
-    //If the loser of this pair == starter, then there is a cycle
+    int cont[pair_count];
+    for (int i = 0;  < pair_count; i++)
+    {
+        cont[i] = 10;
+    }
+
+
     if (duos[x].loser == starter)
     {
-        return true;
+        return true; //If the loser of this pair == starter, then there is a cycle
     }
     else if (x == pair_count-1 && duos[x].loser == starter)
     {
@@ -255,7 +261,7 @@ bool check(pair duos[], int x, int starter, int binarity)
             {
                 if (duos[x].loser == duos[y].winner)
                 {
-                    return check(pairs, y, starter, 1);
+                    return check(pairs, y, starter, 0);
                 }
             }
             return false;
@@ -266,7 +272,8 @@ bool check(pair duos[], int x, int starter, int binarity)
             {
                 if (duos[x].loser == duos[y].winner)
                 {
-                    return check(pairs, y, starter, 1);
+                    cont[y] = y;
+                    return check(pairs, y, starter, 0);
                 }
             }
             return false;
