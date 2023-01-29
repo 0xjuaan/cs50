@@ -12,7 +12,7 @@ int preferences[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
-
+int locks; // (how many locked pairs in the end)
 //Visitation/for locking
 bool visited[MAX] = {false};
 
@@ -145,7 +145,6 @@ void add_pairs(void)
                 pairs[pair_count-1].winner = b;
                 pairs[pair_count-1].loser = c;
                 //printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
-
             }
         }
     }
@@ -203,6 +202,7 @@ void lock_pairs(void)
         else
         {
             locked[pairs[p].winner][pairs[p].loser] = true;
+            locks++;
             continue;
         }
     }
@@ -215,13 +215,13 @@ void print_winner(void)
     int topp;
     for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
-        for (int g = 0; g < pair_count; g++) //Iterate over each pair
+        for (int g = 0; g < locks; g++) //Iterate over each pair
         {
             if (f == pairs[g].loser)
             {
                 break; //Goes on to the next candidate if this candidate lost any pair
             }
-            else if (f != pairs[g].loser && g == pair_count - 1) //If this is the last checked pair and f is not a loser
+            else if (f != pairs[g].loser && g == locks - 1) //If this is the last checked pair and f is not a loser
             {
                 printf("%s\n", candidates[f]);
                 return;
