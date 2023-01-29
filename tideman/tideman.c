@@ -211,8 +211,6 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    int z;
-    int topp;
     for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
         for (int g = 0; g < locks; g++) //Iterate over each pair
