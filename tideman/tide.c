@@ -1,3 +1,5 @@
+//PRESERVATION TING
+
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -265,10 +267,7 @@ bool check(pair duos[], int x, int starter)
         {
             if (cont[y] != 10)
             {
-                if(check(pairs, cont[y], starter))
-                {
-                    return true;
-                }
+                return check(pairs, cont[y], starter);
             }
         }
         return false;
