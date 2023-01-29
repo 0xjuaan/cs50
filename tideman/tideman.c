@@ -278,7 +278,7 @@ bool check(pair duos[], int x, int starter, int binarity)
             }
             for (int y = 0; y < pair_count; y++)
             {
-                return check(pairs, y, starter, 0);
+                return check(pairs, cont[y], starter, 0);
             }
 
             return false;
