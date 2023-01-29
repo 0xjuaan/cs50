@@ -37,7 +37,7 @@ void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
-bool check(pair duos[], int x, int starter, int binarity);
+bool check(pair duos[], int x, int starter);
 void print_winner(void);
 
 int main(int argc, string argv[])
@@ -195,7 +195,7 @@ void lock_pairs(void)
     {
         int origin = pairs[p].winner;
 
-        if (check(pairs, p, origin, 0))
+        if (check(pairs, p, origin))
         {
             locked[pairs[p].winner][pairs[p].loser] = false;
             continue;
@@ -235,7 +235,7 @@ void print_winner(void)
     return;
 }
 
-bool check(pair duos[], int x, int starter, int binarity)
+bool check(pair duos[], int x, int starter)
 {
     int cont[pair_count];
     for (int i = 0; i < pair_count; i++)
@@ -260,7 +260,10 @@ bool check(pair duos[], int x, int starter, int binarity)
         }
         for (int y = 0; y < pair_count; y++)
         {
+            if (y != 10)
+            {
             return check(pairs, cont[y], starter);
+            }
         }
         return false;
     }
