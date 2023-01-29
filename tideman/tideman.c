@@ -238,7 +238,7 @@ void print_winner(void)
 bool check(pair duos[], int x, int starter, int binarity)
 {
     int cont[pair_count];
-    for (int i = 0;  < pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
         cont[i] = 10;
     }
