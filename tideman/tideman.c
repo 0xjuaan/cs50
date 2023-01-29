@@ -259,7 +259,7 @@ bool check(pair duos[], int x, int starter)
         }
         for (int y = 0; y < pair_count; y++)
         {
-            if (y != 10)
+            if (cont[y] != 10)
             {
                 return check(pairs, cont[y], starter);
             }
