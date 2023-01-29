@@ -240,9 +240,8 @@ bool check(pair duos[], int x, int starter)
     int cont[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        cont[i] = 10;
+        cont[i] = 10; //Setting it to a value that none of the candidates have
     }
-
 
     if (duos[x].loser == starter)
     {
@@ -255,14 +254,14 @@ bool check(pair duos[], int x, int starter)
         {
             if (duos[x].loser == duos[y].winner)
             {
-                cont[y] = y;
+                cont[y] = y; //Populate cont[] with the continuation path values (pair index)
             }
         }
         for (int y = 0; y < pair_count; y++)
         {
             if (y != 10)
             {
-            return check(pairs, cont[y], starter);
+                return check(pairs, cont[y], starter);
             }
         }
         return false;
