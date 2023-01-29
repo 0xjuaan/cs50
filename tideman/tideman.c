@@ -221,7 +221,7 @@ void print_winner(void)
             {
                 break; //Goes on to the next candidate if this candidate lost any pair
             }
-            else if (f != pairs[g].loser && g == pair_count - 1 && locked[pairs[g].winner][pairs[g].loser] == true)
+            else if (f != pairs[g].loser && g == pair_count - 1)
             {
                 printf("%s\n", candidates[f]);
                 return;
