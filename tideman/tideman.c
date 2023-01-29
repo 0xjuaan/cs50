@@ -273,7 +273,6 @@ bool check(pair duos[], int x, int starter, int binarity)
                 if (duos[x].loser == duos[y].winner)
                 {
                     cont[y] = y;
-                    return check(pairs, y, starter, 0);
                 }
             }
             for (int y = 0; y < pair_count; y++)
