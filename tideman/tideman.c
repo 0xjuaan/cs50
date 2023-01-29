@@ -211,22 +211,27 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
+    if (locked[pairs[g].winner][pairs[g].loser] == 1)
     {
-        for (int g = 0; g < locks; g++) //Iterate over each pair
+
+
+        for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
         {
-            if (f == pairs[g].loser)
+            for (int g = 0; g < locks; g++) //Iterate over each pair
             {
-                break; //Goes on to the next candidate if this candidate lost any pair
-            }
-            else if (f != pairs[g].loser && g == locks - 1) //If this is the last checked pair and f is not a loser
-            {
-                printf("%s\n", candidates[f]);
-                return;
-            }
-            else
-            {
-                continue; //Check next pair for loser
+                if (f == pairs[g].loser)
+                {
+                    break; //Goes on to the next candidate if this candidate lost any pair
+                }
+                else if (f != pairs[g].loser && g == locks - 1) //If this is the last checked pair and f is not a loser
+                {
+                    printf("%s\n", candidates[f]);
+                    return;
+                }
+                else
+                {
+                    continue; //Check next pair for loser
+                }
             }
         }
     }
