@@ -195,7 +195,7 @@ void lock_pairs(void)
     {
         int origin = pairs[p].winner;
 
-        if (check(pairs, p, origin, 0))
+        if (check(pairs, p, origin, 1))
         {
             locked[pairs[p].winner][pairs[p].loser] = false;
             continue;
