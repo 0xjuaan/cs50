@@ -213,15 +213,15 @@ void print_winner(void)
 {
     int z;
     int topp;
-    for (int f = 0; f < candidate_count; f++)
+    for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
-        for (int g = 0; g < pair_count; g++)
+        for (int g = 0; g < pair_count; g++) //Iterate over each pair
         {
             if (f == pairs[g].loser)
             {
                 break; //Goes on to the next candidate if this candidate lost any pair
             }
-            else if (f != pairs[g].loser && g == pair_count - 1)
+            else if (f != pairs[g].loser && g == pair_count - 1) //If this is the last checked pair and f is not a loser
             {
                 printf("%s\n", candidates[f]);
                 return;
