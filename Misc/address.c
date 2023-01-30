@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
@@ -6,7 +7,7 @@ int main(void)
     int *p = &n;
 
     string s = "shush";
-    int *t = &s;
+    string *t = &s;
     printf("%p\n", t);
     return 0;
 }
