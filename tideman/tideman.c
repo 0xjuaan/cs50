@@ -158,26 +158,22 @@ void sort_pairs(void)
     int e = 0;
     while (e < pair_count)
     {
-    for (int d = 0; d < pair_count-1; d++)
-    {
-        if (preferences[pairs[d].winner][pairs[d].loser] < preferences[pairs[d+1].winner][pairs[d+1].loser])
+        for (int d = 0; d < pair_count-1; d++)
         {
-            pair temp = pairs[d+1];
-            pairs[d+1] = pairs[d];
-            pairs[d] = temp;
-            e++;
+            if (preferences[pairs[d].winner][pairs[d].loser] < preferences[pairs[d+1].winner][pairs[d+1].loser])
+            {
+                pair temp = pairs[d+1];
+                pairs[d+1] = pairs[d];
+                pairs[d] = temp;
+                e++;
+            }
+            else
+            {
+                e = 0;
+                continue;
+            }
         }
-        else
-        {
-            e = 0;
-            continue;
-        }
-    }
-    //for (int i = 0; i < pair_count; i++)
-   // {
-        //printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
-   // }
-    return;
+        return;
     }
 }
 
