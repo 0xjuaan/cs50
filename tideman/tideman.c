@@ -215,7 +215,7 @@ void print_winner(void)
     {
         for (int g = 0; g < pair_count; g++) //Iterate over each pair
         {
-            if (locked[pairs[g].winner][pairs[g].loser] == 1)
+            if (locked[pairs[g].winner][pairs[g].loser])
             {
                 if (f == pairs[g].loser)
                 {
