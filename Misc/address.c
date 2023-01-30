@@ -4,6 +4,9 @@ int main(void)
 {
     int n = 50;
     int *p = &n;
-    printf("%p\n", p);
+
+    string s = "shush";
+    int *t = &s;
+    printf("%p\n", t);
     return 0;
 }
