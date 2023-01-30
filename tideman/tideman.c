@@ -188,6 +188,7 @@ void lock_pairs(void)
     for (int i = 0; i < 2; i++)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
+        locks++;
     }
 
     for (int p = 2; p < pair_count; p++)
@@ -213,7 +214,7 @@ void print_winner(void)
 {
     for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
-        for (int g = 0; g < pair_count; g++) //Iterate over each pair
+        for (int g = 0; g < locks; g++) //Iterate over each pair
         {
             if (locked[pairs[g].winner][pairs[g].loser])
             {
@@ -221,7 +222,7 @@ void print_winner(void)
                 {
                     break; //Goes on to the next candidate if this candidate lost any pair
                 }
-                else if (f != pairs[g].loser && g == pair_count-1) //If this is the last checked pair and f is not a loser
+                else if (f != pairs[g].loser && g == locks-1) //If this is the last checked pair and f is not a loser
                 {
                     printf("%s\n", candidates[f]);
                     return;
