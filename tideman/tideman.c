@@ -222,7 +222,7 @@ void print_winner(void)
             }
             else if (!locked[g][f] && g == candidate_count-1)
             {
-                printf("%s", candidates[f]);
+                printf("%s\n", candidates[f]);
                 return;
             }
         }
