@@ -214,7 +214,7 @@ void print_winner(void)
 {
     for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
-        for (int g = 0; g < locks; g++) //Iterate over each pair
+        for (int g = 0; g < locks; g++) //Iterate over each locked pair
         {
             if (locked[pairs[g].winner][pairs[g].loser])
             {
@@ -234,6 +234,7 @@ void print_winner(void)
              }
             else
             {
+                g--;
             continue;
             }
         }
