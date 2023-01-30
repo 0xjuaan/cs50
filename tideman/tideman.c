@@ -234,7 +234,7 @@ void print_winner(void)
              }
             else
             {
-                g--;
+                g--; //Not a locked pair, so leave 'g' unchanged
             continue;
             }
         }
