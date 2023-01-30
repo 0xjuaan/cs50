@@ -173,10 +173,10 @@ void sort_pairs(void)
             continue;
         }
     }
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
-    }
+    //for (int i = 0; i < pair_count; i++)
+   // {
+        //printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
+   // }
     return;
     }
 }
