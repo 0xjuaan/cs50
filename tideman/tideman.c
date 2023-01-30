@@ -214,28 +214,16 @@ void print_winner(void)
 {
     for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
-        for (int g = 0; g < locks; g++) //Iterate over each locked pair
+        for (int g = 0; g < candidate_count; g++) //Iterate over each candidate
         {
-            if (locked[pairs[g].winner][pairs[g].loser])
+            if (locked[g][f]) //F is a loser in a locked pair
             {
-                if (f == pairs[g].loser)
-                {
-                    break; //Goes on to the next candidate if this candidate lost any pair
-                }
-                else if (f != pairs[g].loser && g == locks-1) //If this is the last checked pair and f is not a loser
-                {
-                    printf("%s\n", candidates[f]);
-                    return;
-                }
-                else
-                {
-                    continue; //Check next pair for loser
-                }
-             }
-            else
+                break; //Move on to next f
+            }
+            else if (!locked[g][f] && g == candidate_count-1)
             {
-                g--; //Not a locked pair, so leave 'g' unchanged
-            continue;
+                printf("%s", candidates[f]);
+                return;
             }
         }
     }

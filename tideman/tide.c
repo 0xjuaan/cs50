@@ -14,7 +14,7 @@ int preferences[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
-
+int locks = 0; // (how many locked pairs in the end)
 //Visitation/for locking
 bool visited[MAX] = {false};
 
@@ -147,7 +147,6 @@ void add_pairs(void)
                 pairs[pair_count-1].winner = b;
                 pairs[pair_count-1].loser = c;
                 //printf("Pair %i: [%i][%i]\n", pair_count-1, b, c);
-
             }
         }
     }
@@ -176,10 +175,10 @@ void sort_pairs(void)
             continue;
         }
     }
-    for (int i = 0; i < pair_count; i++)
-    {
-        printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
-    }
+    //for (int i = 0; i < pair_count; i++)
+   // {
+        //printf("Pair %i: [%i][%i]\n", i, pairs[i].winner, pairs[i].loser);
+   // }
     return;
     }
 }
@@ -191,6 +190,7 @@ void lock_pairs(void)
     for (int i = 0; i < 2; i++)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
+        locks++;
     }
 
     for (int p = 2; p < pair_count; p++)
@@ -205,6 +205,7 @@ void lock_pairs(void)
         else
         {
             locked[pairs[p].winner][pairs[p].loser] = true;
+            locks++;
             continue;
         }
     }
@@ -213,24 +214,30 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    int z;
-    int topp;
-    for (int f = 0; f < candidate_count; f++)
+    for (int f = 0; f < candidate_count; f++) //Iterate over each candidate
     {
-        for (int g = 0; g < pair_count; g++)
+        for (int g = 0; g < locks; g++) //Iterate over each locked pair
         {
-            if (f == pairs[g].loser)
+            if (locked[pairs[g].winner][pairs[g].loser])
             {
-                break; //Goes on to the next candidate
-            }
-            else if (f != pairs[g].loser && g == pair_count - 1 && locked [pairs[g].winner][pairs[g].loser] == true)
-            {
-                printf("%s\n", candidates[f]);
-                return;
-            }
+                if (f == pairs[g].loser)
+                {
+                    break; //Goes on to the next candidate if this candidate lost any pair
+                }
+                else if (f != pairs[g].loser && g == locks-1) //If this is the last checked pair and f is not a loser
+                {
+                    printf("%s\n", candidates[f]);
+                    return;
+                }
+                else
+                {
+                    continue; //Check next pair for loser
+                }
+             }
             else
             {
-                continue; //Check next pair for loser
+                g--; //Not a locked pair, so leave 'g' unchanged
+            continue;
             }
         }
     }
@@ -267,7 +274,10 @@ bool check(pair duos[], int x, int starter)
         {
             if (cont[y] != 10)
             {
-                return check(pairs, cont[y], starter);
+                if(check(pairs, cont[y], starter))
+                {
+                    return true;
+                }
             }
         }
         return false;
