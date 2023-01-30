@@ -230,7 +230,7 @@ void print_winner(void)
                 {
                     continue; //Check next pair for loser
                 }
-            }
+             }
             else
             {
             continue;
