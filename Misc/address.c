@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <cs50.h>
+#include<stdlib.h>
 
 int main(void)
 {
-    char *s = "shush";
-    printf("%c\n", *s);
-    printf("%s\n", s);
+    int *x = malloc(5*sizeof(int));
+    x[0] = 4;
+    x[1]= 5;
+    printf("%i\n", *(x+1));
 }
