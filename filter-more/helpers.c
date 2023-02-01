@@ -23,7 +23,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++) //Iterate vertically
     {
-        for (int j = 0; j < (float) width/2; j++) //Iterate horizontally
+        for (int j = 0; j < round((float) width/2 - 1); j++) //Iterate horizontally
         {
             RGBTRIPLE temp;
             temp = image[i][j];
