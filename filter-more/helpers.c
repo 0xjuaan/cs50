@@ -50,7 +50,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
                 else
                 {
-                    image[i][j].rgbtRed = (image[i+1][j].rgbtRed + image[i][j+1].rgbtRed) / 2;
+                    image[i][j].rgbtRed = (image[i+1][j].rgbtRed + image[i][j+1].rgbtRed + ) / 2;
                     image[i][j].rgbtGreen = (image[i+1][j].rgbtGreen + image[i][j+1].rgbtGreen) / 2;
                     image[i][j].rgbtBlue = (image[i+1][j].rgbtBlue + image[i][j+1].rgbtBlue) / 2;
                 }
