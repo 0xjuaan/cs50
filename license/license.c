@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Create buffer to read into (array of characters)
+    // Create buffer to read into (array of characters)---> buffer is an address!!
     char buffer[7];
 
     // Create array of strings to store plate numbers
