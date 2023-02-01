@@ -11,9 +11,8 @@ void colorize(int height, int width, RGBTRIPLE image[height][width])
             if (image[i][j] == 0)
             {
                 image[i][j].Red = 66;
-                image[i][j].Green = ;
-                image[i][j].Blue = ;
-
+                image[i][j].Green = 231;
+                image[i][j].Blue = 215;
             }
         }
     }
