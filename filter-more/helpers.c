@@ -12,10 +12,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++) //Iterate vertically
     {
-        for (int j = 0; j < width; j++) //Iterate horizontally
+        for (int j = 0; j < width/2; j++) //Iterate horizontally
         {
-            image
-            image[i][j] = image[i][width-j];
+            RGBTRIPLE temp;
+            temp = image[i][j];
+
+            image[i][width-j] = temp;
         }
     }
     return;
