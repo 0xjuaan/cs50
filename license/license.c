@@ -9,10 +9,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Create buffer to read into
-    char *buffer[7];
+    // Create buffer to read into (array of characters)
+    char buffer[7];
 
-    // Create array to store plate numbers
+    // Create array of strings to store plate numbers
     char *plates[8];
 
     FILE *infile = fopen(argv[1], "r");
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        plates[idx] = *buffer;
+        plates[idx] = buffer;
         idx++;
     }
 
