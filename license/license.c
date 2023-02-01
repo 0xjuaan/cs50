@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     // Create buffer to read into (array of characters)---> buffer is an address!!
     char buffer[7];
-
+    int j = strlen(buffer)+1;
     // Create array of strings to store plate numbers
     char *plates[8];
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        for (int i = 0; int j = strlen(buffer)+1; i < j; i++)
+        for (int i = 0; i < j; i++)
         {
             plates[idx][i] = *(buffer+i);
             idx++;
