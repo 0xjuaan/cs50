@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +16,7 @@ int main(int argc, char *argv[])
     char buffer[7];
 
     // Create array of strings to store plate numbers
-    char *plates[8][6];
+    char *plates[8];
 
     FILE *infile = fopen(argv[1], "r");
 
@@ -25,8 +28,11 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        plates[idx] = *buffer;
-        idx++;
+        for (int i = 0; j = strlen(buffer)+1; i < j; i++)
+        {
+            plates[idx][i] = *(buffer+i);
+            idx++;
+        }
     }
 
     for (int i = 0; i < 8; i++)
