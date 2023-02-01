@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
         // Save plate number in array
         for (int i = 0; i < j; i++)
         {
-            plates[idx][i] = *(buffer+i);
+            plates[idx] = buffer;
             idx++;
         }
     }
