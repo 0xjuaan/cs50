@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
             // Write RGB triple to outfile
-            fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
+            fwrite(&triple, sizeof(RGBTRIPLE), 1, biHeight - outptr);
         }
 
         // Skip over padding, if any
