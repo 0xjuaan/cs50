@@ -85,6 +85,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE Gx;
+    RGBTRIPLE Gy;
     //Defining the 2 kernels as 1D arrays
     int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
     int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
@@ -103,10 +105,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++) //Iterate horizontally
         {
-            RGBTRIPLE Gx;
-            RGBTRIPLE Gy;
-            int n = 0;
+            Gx.rgbtRed = 0;
+            Gx.rgbtGreen = 0;
+            Gx.rgbtBlue = 0;
 
+            Gy.rgbtRed = 0;
+            Gy.rgbtGreen = 0;
+            Gy.rgbtBlue = 0;
+            
+            int n = 0;
             for (int k = i-1; k < i+2; k++) //vertical iteration of 3x3
             {
                 for (int l = j-1; l < j+2; l++) //horizontal iteration of 3x3
