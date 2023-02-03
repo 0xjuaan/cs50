@@ -43,6 +43,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sumr;
             int sumg;
             int sumb;
+            int n = 0;
 
             for (int k = i-1; k < i+2; k++) //vertical iteration of 3x3
             {
@@ -59,9 +60,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     sumr += image[k][l].rgbtRed;
                     sumg += image[k][l].rgbtGreen;
                     sumb += image[k][l].rgbtBlue;
+                    n++;
                 }
             }
-                
+
+            image[i][j].rgbtRed = sumr / n;
+            image[i][j].rgbtGreen = sumg / n;
+            image[i][j].rgbtBlue = sumb / n;
+
         }
     }
     return;
