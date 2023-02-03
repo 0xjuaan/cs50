@@ -44,11 +44,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sumg;
             int sumb;
 
-            for (int k = 0; k < 3; k++) //Note that image[height][width]
+            for (int k = 0; k < 3; k++) //vertical iteration of 3x3
             {
-                for (int l = 0; l < 3; l++)
+                for (int l = 0; l < 3; l++) //horizontal iteration of 3x3
                 {
-                    
+
                 }
             }
         }
