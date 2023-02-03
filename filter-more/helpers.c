@@ -121,13 +121,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                         n++;
                     }
-                    Gx.rgbtRed = kernelX[n] * temp[k][l].rgbtRed;
-                    Gx.rgbtGreen = kernelX[n] * temp[k][l].rgbtGreen;
-                    Gx.rgbtBlue = kernelX[n] * temp[k][l].rgbtBlue;
+                    Gx.rgbtRed += kernelX[n] * temp[k][l].rgbtRed;
+                    Gx.rgbtGreen += kernelX[n] * temp[k][l].rgbtGreen;
+                    Gx.rgbtBlue += kernelX[n] * temp[k][l].rgbtBlue;
 
-                    Gy.rgbtRed = kernelY[n] * temp[k][l].rgbtRed;
-                    Gy.rgbtGreen = kernelY[n] * temp[k][l].rgbtGreen;
-                    Gy.rgbtBlue = kernelY[n] * temp[k][l].rgbtBlue;
+                    Gy.rgbtRed += kernelY[n] * temp[k][l].rgbtRed;
+                    Gy.rgbtGreen += kernelY[n] * temp[k][l].rgbtGreen;
+                    Gy.rgbtBlue += kernelY[n] * temp[k][l].rgbtBlue;
 
                 }
             }
