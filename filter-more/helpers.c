@@ -120,13 +120,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (l < 0 || l >= width)
                     {
-                        continue;
                         n++;
+                        continue;
                     }
                     else if (k < 0 || k >= height)
                     {
-                        continue;
                         n++;
+                        continue;
                     }
                     Gx.rgbtRed += kernelX[n] * temp[k][l].rgbtRed;
                     Gx.rgbtGreen += kernelX[n] * temp[k][l].rgbtGreen;
