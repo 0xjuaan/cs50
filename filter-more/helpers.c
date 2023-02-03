@@ -36,6 +36,15 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE temp[height][width];
+    for (int a = 0; a < height; a++) //Copying the image to a temp
+    {
+        for (int b = 0; b < height; b++)
+        {
+            temp[a][b] = image[a][b];
+        }
+    }
+
     for (int i = 0; i < height; i++) //Iterate vertically
     {
         for (int j = 0; j < width; j++) //Iterate horizontally
@@ -57,9 +66,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    sumr += image[k][l].rgbtRed;
-                    sumg += image[k][l].rgbtGreen;
-                    sumb += image[k][l].rgbtBlue;
+                    sumr += temp[k][l].rgbtRed;
+                    sumg += temp[k][l].rgbtGreen;
+                    sumb += temp[k][l].rgbtBlue;
                     n++;
                 }
             }
