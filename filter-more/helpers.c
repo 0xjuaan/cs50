@@ -86,7 +86,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     //Defining the 2 kernels as 1D arrays
-    int kernelX[] = {-1, 0 1, -2, 0, 2, -1, 0, 1};
+    int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
     int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
 
     //Copying the image to a temp[][]
@@ -114,27 +114,27 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     if (l < 0 || l >= width)
                     {
                         continue;
-                        n++
+                        n++;
                     }
                     else if (k < 0 || k >= height)
                     {
                         continue;
-                        n++
+                        n++;
                     }
-                    Gx.rgbtRed = kernelX[n] * temp[k][l].rgbtRed
-                    Gx.rgbtGreen = kernelX[n] * temp[k][l].rgbtGreen
-                    Gx.rgbtBlue = kernelX[n] * temp[k][l].rgbtBlue
+                    Gx.rgbtRed = kernelX[n] * temp[k][l].rgbtRed;
+                    Gx.rgbtGreen = kernelX[n] * temp[k][l].rgbtGreen;
+                    Gx.rgbtBlue = kernelX[n] * temp[k][l].rgbtBlue;
 
-                    Gy.rgbtRed = kernelY[n] * temp[k][l].rgbtRed
-                    Gy.rgbtGreen = kernelY[n] * temp[k][l].rgbtGreen
-                    Gy.rgbtBlue = kernelY[n] * temp[k][l].rgbtBlue
+                    Gy.rgbtRed = kernelY[n] * temp[k][l].rgbtRed;
+                    Gy.rgbtGreen = kernelY[n] * temp[k][l].rgbtGreen;
+                    Gy.rgbtBlue = kernelY[n] * temp[k][l].rgbtBlue;
 
                 }
             }
 
-            image[i][j].rgbtBlue = sqrt()
-
-
+            image[i][j].rgbtRed = sqrt(pow(Gx.rgbtRed, 2)+pow(Gy.rgbtRed, 2));
+            image[i][j].rgbtGreen = sqrt(pow(Gx.rgbtGreen, 2)+pow(Gy.rgbtGreen, 2));
+            image[i][j].rgbtBlue = sqrt(pow(Gx.rgbtBlue, 2)+pow(Gy.rgbtBlue, 2));
 
         }
     }
