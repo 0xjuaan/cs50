@@ -112,7 +112,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gy.rgbtRed = 0;
             Gy.rgbtGreen = 0;
             Gy.rgbtBlue = 0;
-            
+
             int n = 0;
             for (int k = i-1; k < i+2; k++) //vertical iteration of 3x3
             {
@@ -135,13 +135,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     Gy.rgbtRed += kernelY[n] * temp[k][l].rgbtRed;
                     Gy.rgbtGreen += kernelY[n] * temp[k][l].rgbtGreen;
                     Gy.rgbtBlue += kernelY[n] * temp[k][l].rgbtBlue;
+                    n++;
 
                 }
             }
 
-            image[i][j].rgbtRed = sqrt(pow(Gx.rgbtRed, 2)+pow(Gy.rgbtRed, 2));
-            image[i][j].rgbtGreen = sqrt(pow(Gx.rgbtGreen, 2)+pow(Gy.rgbtGreen, 2));
-            image[i][j].rgbtBlue = sqrt(pow(Gx.rgbtBlue, 2)+pow(Gy.rgbtBlue, 2));
+            image[i][j].rgbtRed = sqrt(pow(Gx.rgbtRed, 2) + pow(Gy.rgbtRed, 2));
+            image[i][j].rgbtGreen = sqrt(pow(Gx.rgbtGreen, 2) + pow(Gy.rgbtGreen, 2));
+            image[i][j].rgbtBlue = sqrt(pow(Gx.rgbtBlue, 2) + pow(Gy.rgbtBlue, 2));
 
         }
     }
