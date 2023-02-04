@@ -140,9 +140,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            image[i][j].rgbtRed = sqrt(pow(Gx.rgbtRed, 2) + pow(Gy.rgbtRed, 2));
-            image[i][j].rgbtGreen = sqrt(pow(Gx.rgbtGreen, 2) + pow(Gy.rgbtGreen, 2));
-            image[i][j].rgbtBlue = sqrt(pow(Gx.rgbtBlue, 2) + pow(Gy.rgbtBlue, 2));
+            image[i][j].rgbtRed = round(sqrt(pow((float) Gx.rgbtRed, 2) + pow(Gy.rgbtRed, 2)));
+            image[i][j].rgbtGreen = round(sqrt(pow((float) Gx.rgbtGreen, 2) + pow(Gy.rgbtGreen, 2)));
+            image[i][j].rgbtBlue = round(sqrt(pow((float) Gx.rgbtBlue, 2) + pow(Gy.rgbtBlue, 2)));
 
         }
     }
