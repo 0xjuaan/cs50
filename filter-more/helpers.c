@@ -106,11 +106,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gy.rgbtGreen = 0;
             Gy.rgbtBlue = 0;
 
-            for (int k = i -1; k < i + 2; k++)
+            int kindex = 0;
+
+            for (int k = i - 1; k < i + 2; k++) //3x3 Collumns
             {
-                for (int l = j - 1; l < j + 2; l++)
+                for (int l = j - 1; l < j + 2; l++) //3x3 Rows
                 {
-                    
+                    if (l < 0 || l >= width)
+                    {
+                        kindex++
+                        continue;
+                    }
+                    else if (k < 0 || k >= height)
+                    {
+                        
+                    }
                 }
             }
 
