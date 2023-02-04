@@ -86,12 +86,22 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     //Defining the kernels (3x3)
-    int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1}
-    int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1}
+    int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
+    int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
 
     //Defining the Gx,Gy
     RGBTRIPLE Gx;
     RGBTRIPLE Gy;
+
+    //Copying the image to a temp[][]
+    RGBTRIPLE temp[height][width];
+    for (int a = 0; a < height; a++)
+    {
+        for (int b = 0; b < width; b++)
+        {
+            temp[a][b] = image[a][b];
+        }
+    }
 
     for (int i = 0; i < height; i++) //Vertical
     {
@@ -114,15 +124,29 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (l < 0 || l >= width)
                     {
-                        kindex++
+                        kindex++;
                         continue;
                     }
                     else if (k < 0 || k >= height)
                     {
-                        
+                        kindex++;
+                        continue;
                     }
+                    Gx.rgbtRed += kernelX[kindex] * temp[i][j].rgbtRed;
+                    Gx.rgbtGreen += kernelX[kindex] * temp[i][j].rgbtGreen;
+                    Gx.rgbtBlue += kernelX[kindex] * temp[i][j].rgbtBlue;
+
+                    Gy.rgbtRed += kernelY[kindex] * temp[i][j].rgbtRed;
+                    Gy.rgbtGreen += kernelY[kindex] * temp[i][j].rgbtGreen;
+                    Gy.rgbtBlue += kernelY[kindex] * temp[i][j].rgbtBlue;
+
+                    kindex++;
+                    continue;
                 }
             }
+            image[i][j].rgbtRed =
+            image[i][j].rgbtGreen =
+            image[i][j].rgbtBlue = 
 
 
         }
