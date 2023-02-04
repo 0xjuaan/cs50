@@ -113,7 +113,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gy.rgbtRed = 0;
             Gy.rgbtGreen = 0;
             Gy.rgbtBlue = 0;
-
+            
+            //Kernel counter
             int n = 0;
             for (int k = i-1; k < i+2; k++) //vertical iteration of 3x3
             {
