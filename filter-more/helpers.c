@@ -93,11 +93,28 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     RGBTRIPLE Gx;
     RGBTRIPLE Gy;
 
-    for (int i = 0; i < height; i++)
+    for (int i = 0; i < height; i++) //Vertical
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < width; j++) //Horizontal
         {
-            
+            //Let Gx,Gy start at 0, before we start adding to it
+            Gx.rgbtRed = 0;
+            Gx.rgbtGreen = 0;
+            Gx.rgbtBlue = 0;
+
+            Gy.rgbtRed = 0;
+            Gy.rgbtGreen = 0;
+            Gy.rgbtBlue = 0;
+
+            for (int k = i -1; k < i + 2; k++)
+            {
+                for (int l = j - 1; l < j + 2; l++)
+                {
+                    
+                }
+            }
+
+
         }
     }
     return;
