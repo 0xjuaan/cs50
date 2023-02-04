@@ -159,8 +159,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 image[i][j].rgbtGreen = 255;
             }
-
-
         }
     }
     return;
