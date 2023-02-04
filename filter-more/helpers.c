@@ -128,7 +128,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     else if (k < 0 || k >= height) //Check if out of bounds
                     {
                         n++;
-                        break;
+                        continue;
                     }
                     //If not out of bounds:
                     Gx.rgbtRed += kernelX[n] * temp[k][l].rgbtRed;
