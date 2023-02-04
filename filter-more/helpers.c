@@ -113,23 +113,24 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             Gy.rgbtRed = 0;
             Gy.rgbtGreen = 0;
             Gy.rgbtBlue = 0;
-            
+
             //Kernel counter
             int n = 0;
             for (int k = i-1; k < i+2; k++) //vertical iteration of 3x3
             {
                 for (int l = j-1; l < j+2; l++) //horizontal iteration of 3x3
                 {
-                    if (l < 0 || l >= width)
+                    if (l < 0 || l >= width) //Check if out of bounds
                     {
                         n++;
                         continue;
                     }
-                    else if (k < 0 || k >= height)
+                    else if (k < 0 || k >= height) //Check if out of bounds
                     {
                         n++;
                         break;
                     }
+                    //If not out of bounds:
                     Gx.rgbtRed += kernelX[n] * temp[k][l].rgbtRed;
                     Gx.rgbtGreen += kernelX[n] * temp[k][l].rgbtGreen;
                     Gx.rgbtBlue += kernelX[n] * temp[k][l].rgbtBlue;
