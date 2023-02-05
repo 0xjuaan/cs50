@@ -86,7 +86,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     //Defining the kernels (3x3)
-    int kernelX[3][3] = {{-1, 0, 1}, {-2, 0, 2}, -{1, 0, 1}};
+    int kernelX[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int kernelY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     //Defining the Gx,Gy
@@ -117,9 +117,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             int kindex = 0;
 
-            for (int cy = 0; int k = i - 1; k < i + 2; k++; cy++) //3x3 Collumns
+
+            for (int k = i - 1, int cy=0; k < i + 2; k++, cy++) //3x3 Collumns
             {
-                for (int cx = 0; int l = j - 1; l < j + 2; l++; cx++) //3x3 Rows
+                for (int l = j - 1, int cx=0; l < j + 2; l++, cx++) //3x3 Rows
                 {
                     if (l < 0 || l >= width)
                     {
