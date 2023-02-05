@@ -120,12 +120,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = j-1; l < j+2; l++) //horizontal iteration of 3x3
                 {
-                    if (l < 0 || l >= width) //Check if out of bounds
-                    {
-                        n++;
-                        continue;
-                    }
-                    else if (k < 0 || k >= height) //Check if out of bounds
+                    if (l < 0 || l >= width || k < 0 || k >= height) //Check if out of bounds
                     {
                         n++;
                         continue;
@@ -161,7 +156,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else
             {
-                return;
+                continue;
             }
         }
     }
