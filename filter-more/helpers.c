@@ -90,7 +90,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
 
     //Defining the Gx,Gy
-    int Rx, Gx, Bx, Ry, Gy, By;
+    int Rx=0, Gx=0, Bx=0, Ry=0, Gy=0, By=0;
 
     //Copying the image to a temp[][]
     RGBTRIPLE temp[height][width];
@@ -148,9 +148,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            image[i][j].rgbtRed =   round(sqrt(pow((double) Gx.rgbtRed, 2) + pow((double) Gy.rgbtRed, 2)));
-            image[i][j].rgbtGreen = round(sqrt(pow((double) Gx.rgbtGreen, 2) + pow((double) Gy.rgbtGreen, 2)));
-            image[i][j].rgbtBlue =  round(sqrt(pow((double) Gx.rgbtBlue, 2) + pow((double) Gy.rgbtBlue, 2)));
+            image[i][j].rgbtRed =   round(sqrt(pow((double) Rx, 2) + pow((double) Ry, 2)));
+            image[i][j].rgbtGreen = round(sqrt(pow((double) Gx, 2) + pow((double) Gy, 2)));
+            image[i][j].rgbtBlue =  round(sqrt(pow((double) Bx, 2) + pow((double) By, 2)));
 
             //Capping at 255
             if (image[i][j].rgbtRed > 255)
