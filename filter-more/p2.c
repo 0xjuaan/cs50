@@ -85,11 +85,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE Gx;
-    RGBTRIPLE Gy;
-    //Defining the 2 kernels as 1D arrays
-    int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
-    int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
+    //Defining the kernels (3x3)
+    int kernelX[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int kernelY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+
+    //Defining the Gx,Gy
+    int Rx=0, Gx=0, Bx=0, Ry=0, Gy=0, By=0;
 
     //Copying the image to a temp[][]
     RGBTRIPLE temp[height][width];
@@ -101,52 +102,59 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    for (int i = 0; i < height; i++) //Iterate vertically
+    for (int i = 0; i < height; i++) //Vertical
     {
-        for (int j = 0; j < width; j++) //Iterate horizontally
+        for (int j = 0; j < width; j++) //Horizontal
         {
-            //Initialise the Gx,Gy to be zero
-            Gx.rgbtRed = 0;
-            Gx.rgbtGreen = 0;
-            Gx.rgbtBlue = 0;
+            //Let Gx,Gy start at 0, before we start adding to it
+            Rx = 0;
+            Gx = 0;
+            Bx = 0;
 
-            Gy.rgbtRed = 0;
-            Gy.rgbtGreen = 0;
-            Gy.rgbtBlue = 0;
+            Rx = 0;
+            Gx = 0;
+            Bx = 0;
 
-            //Kernel counter
-            int n = 0;
-            for (int k = i-1; k < i+2; k++) //vertical iteration of 3x3
+            int kindex = 0;
+            int k;
+            int l;
+            int cy;
+            int cx;
+
+            for (k = i - 1, cy=0; k < i + 2; k++, cy++) //3x3 Collumns
             {
-                for (int l = j-1; l < j+2; l++) //horizontal iteration of 3x3
+                for (l = j - 1, cx=0; l < j + 2; l++, cx++) //3x3 Rows
                 {
-                    if (l < 0 || l >= width) //Check if out of bounds
+                    if (l < 0 || l >= width)
                     {
-                        n++;
                         continue;
                     }
-                    else if (k < 0 || k >= height) //Check if out of bounds
+
+                    else if (k < 0 || k >= height)
                     {
-                        n++;
                         continue;
                     }
-                    //If not out of bounds:
-                    Gx.rgbtRed += kernelX[n] * temp[k][l].rgbtRed;
-                    Gx.rgbtGreen += kernelX[n] * temp[k][l].rgbtGreen;
-                    Gx.rgbtBlue += kernelX[n] * temp[k][l].rgbtBlue;
 
-                    Gy.rgbtRed += kernelY[n] * temp[k][l].rgbtRed;
-                    Gy.rgbtGreen += kernelY[n] * temp[k][l].rgbtGreen;
-                    Gy.rgbtBlue += kernelY[n] * temp[k][l].rgbtBlue;
-                    n++;
+                    else
+                    {
+                        Rx += kernelX[cy][cx] * temp[k][l].rgbtRed;
+                        Gx += kernelX[cy][cx] * temp[k][l].rgbtGreen;
+                        Bx += kernelX[cy][cx] * temp[k][l].rgbtBlue;
 
+                        Ry += kernelY[cy][cx] * temp[k][l].rgbtRed;
+                        Gy += kernelY[cy][cx] * temp[k][l].rgbtGreen;
+                        By += kernelY[cy][cx] * temp[k][l].rgbtBlue;
+
+                        kindex++;
+                        continue;
+                    }
                 }
             }
+            image[i][j].rgbtRed =   round(sqrt(pow((double) Rx, 2) + pow((double) Ry, 2)));
+            image[i][j].rgbtGreen = round(sqrt(pow((double) Gx, 2) + pow((double) Gy, 2)));
+            image[i][j].rgbtBlue =  round(sqrt(pow((double) Bx, 2) + pow((double) By, 2)));
 
-            image[i][j].rgbtRed = round(sqrt(pow((double) Gx.rgbtRed, 2) + pow(Gy.rgbtRed, 2)));
-            image[i][j].rgbtGreen = round(sqrt(pow((double) Gx.rgbtGreen, 2) + pow(Gy.rgbtGreen, 2)));
-            image[i][j].rgbtBlue = round(sqrt(pow((double) Gx.rgbtBlue, 2) + pow(Gy.rgbtBlue, 2)));
-
+            //Capping at 255
             if (image[i][j].rgbtRed > 255)
             {
                 image[i][j].rgbtRed = 255;
