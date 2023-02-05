@@ -86,8 +86,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     //Defining the kernels (3x3)
-    int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
-    int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
+    int kernelX[3][3] = {{-1, 0, 1}, {-2, 0, 2}, -{1, 0, 1}};
+    int kernelY[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     //Defining the Gx,Gy
     int Rx=0, Gx=0, Bx=0, Ry=0, Gy=0, By=0;
@@ -117,34 +117,32 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             int kindex = 0;
 
-            for (int k = i - 1; k < i + 2; k++) //3x3 Collumns
+            for (int cy = 0; int k = i - 1; k < i + 2; k++; cy++) //3x3 Collumns
             {
-                for (int l = j - 1; l < j + 2; l++) //3x3 Rows
+                for (int cx = 0; int l = j - 1; l < j + 2; l++; cx++) //3x3 Rows
                 {
                     if (l < 0 || l >= width)
                     {
-                        kindex++;
                         continue;
                     }
 
                     else if (k < 0 || k >= height)
                     {
-                        kindex++;
                         continue;
                     }
 
                     else
                     {
-                    Rx += kernelX[kindex] * temp[k][l].rgbtRed;
-                    Gx += kernelX[kindex] * temp[k][l].rgbtGreen;
-                    Bx += kernelX[kindex] * temp[k][l].rgbtBlue;
+                        Rx += kernelX[cy][cx] * temp[k][l].rgbtRed;
+                        Gx += kernelX[cy][cx] * temp[k][l].rgbtGreen;
+                        Bx += kernelX[cy][cx] * temp[k][l].rgbtBlue;
 
-                    Ry += kernelY[kindex] * temp[k][l].rgbtRed;
-                    Gy += kernelY[kindex] * temp[k][l].rgbtGreen;
-                    By += kernelY[kindex] * temp[k][l].rgbtBlue;
+                        Ry += kernelY[cy][cx] * temp[k][l].rgbtRed;
+                        Gy += kernelY[cy][cx] * temp[k][l].rgbtGreen;
+                        By += kernelY[cy][cx] * temp[k][l].rgbtBlue;
 
-                    kindex++;
-                    continue;
+                        kindex++;
+                        continue;
                     }
                 }
             }
