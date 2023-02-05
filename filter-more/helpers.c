@@ -90,8 +90,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
 
     //Defining the Gx,Gy
-    RGBTRIPLE Gx;
-    RGBTRIPLE Gy;
+    int Rx, Gx, Bx, Ry, Gy, By;
 
     //Copying the image to a temp[][]
     RGBTRIPLE temp[height][width];
@@ -108,13 +107,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++) //Horizontal
         {
             //Let Gx,Gy start at 0, before we start adding to it
-            Gx.rgbtRed = 0;
-            Gx.rgbtGreen = 0;
-            Gx.rgbtBlue = 0;
+            Rx = 0;
+            Gx = 0;
+            Bx = 0;
 
-            Gy.rgbtRed = 0;
-            Gy.rgbtGreen = 0;
-            Gy.rgbtBlue = 0;
+            Rx = 0;
+            Gx = 0;
+            Bx = 0;
 
             int kindex = 0;
 
@@ -136,13 +135,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                     else
                     {
-                    Gx.rgbtRed += kernelX[kindex] * temp[k][l].rgbtRed;
-                    Gx.rgbtGreen += kernelX[kindex] * temp[k][l].rgbtGreen;
-                    Gx.rgbtBlue += kernelX[kindex] * temp[k][l].rgbtBlue;
+                    Rx += kernelX[kindex] * temp[k][l].rgbtRed;
+                    Gx += kernelX[kindex] * temp[k][l].rgbtGreen;
+                    Bx += kernelX[kindex] * temp[k][l].rgbtBlue;
 
-                    Gy.rgbtRed += kernelY[kindex] * temp[k][l].rgbtRed;
-                    Gy.rgbtGreen += kernelY[kindex] * temp[k][l].rgbtGreen;
-                    Gy.rgbtBlue += kernelY[kindex] * temp[k][l].rgbtBlue;
+                    Ry += kernelY[kindex] * temp[k][l].rgbtRed;
+                    Gy += kernelY[kindex] * temp[k][l].rgbtGreen;
+                    By += kernelY[kindex] * temp[k][l].rgbtBlue;
 
                     kindex++;
                     continue;
