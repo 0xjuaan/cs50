@@ -132,6 +132,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         kindex++;
                         continue;
                     }
+                    else
+                    {
                     Gx.rgbtRed += kernelX[kindex] * temp[i][j].rgbtRed;
                     Gx.rgbtGreen += kernelX[kindex] * temp[i][j].rgbtGreen;
                     Gx.rgbtBlue += kernelX[kindex] * temp[i][j].rgbtBlue;
@@ -142,6 +144,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                     kindex++;
                     continue;
+                    }
                 }
             }
             image[i][j].rgbtRed = round(sqrt(pow((double) Gx.rgbtRed, 2) + pow((double) Gy.rgbtRed, 2)));
