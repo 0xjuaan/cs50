@@ -157,12 +157,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 tempred = 255;
             }
 
-            if (tempblue < 255)
+            if (tempblue > 255)
             {
                 tempblue = 255;
             }
 
-            if (tempgreen < 255)
+            if (tempgreen > 255)
             {
                 tempgreen = 255;
             }
