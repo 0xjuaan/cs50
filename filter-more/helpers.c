@@ -85,8 +85,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE Gx;
-    RGBTRIPLE Gy;
+
+    typedef struct
+    {
+        double red;
+        double green;
+        double blue;
+    }
+    C;
+
+    C Gx;
+    C Gy;
     //Defining the 2 kernels as 1D arrays
     int kernelX[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
     int kernelY[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
@@ -106,13 +115,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++) //Iterate horizontally
         {
             //Initialise the Gx,Gy to be zero
-            Gx.rgbtRed = 0;
-            Gx.rgbtGreen = 0;
-            Gx.rgbtBlue = 0;
+            Gx.red = 0;
+            Gx.green = 0;
+            Gx.blue = 0;
 
-            Gy.rgbtRed = 0;
-            Gy.rgbtGreen = 0;
-            Gy.rgbtBlue = 0;
+            Gy.red = 0;
+            Gy.green = 0;
+            Gy.blue = 0;
 
             //Kernel index counter
             int n = 0;
@@ -127,21 +136,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
                     //If not out of bounds:
-                    Gx.rgbtRed += kernelX[n] * temp[k][l].rgbtRed;
-                    Gx.rgbtGreen += kernelX[n] * temp[k][l].rgbtGreen;
-                    Gx.rgbtBlue += kernelX[n] * temp[k][l].rgbtBlue;
+                    Gx.red += kernelX[n] * temp[k][l].rgbtRed;
+                    Gx.green += kernelX[n] * temp[k][l].rgbtGreen;
+                    Gx.blue += kernelX[n] * temp[k][l].rgbtBlue;
 
-                    Gy.rgbtRed += kernelY[n] * temp[k][l].rgbtRed;
-                    Gy.rgbtGreen += kernelY[n] * temp[k][l].rgbtGreen;
-                    Gy.rgbtBlue += kernelY[n] * temp[k][l].rgbtBlue;
+                    Gy.red += kernelY[n] * temp[k][l].rgbtRed;
+                    Gy.green += kernelY[n] * temp[k][l].rgbtGreen;
+                    Gy.blue += kernelY[n] * temp[k][l].rgbtBlue;
                     n++;
 
                 }
             }
 
-            image[i][j].rgbtRed = round(sqrt(pow((double) Gx.rgbtRed, 2) + pow(Gy.rgbtRed, 2)));
-            image[i][j].rgbtGreen = round(sqrt(pow((double) Gx.rgbtGreen, 2) + pow(Gy.rgbtGreen, 2)));
-            image[i][j].rgbtBlue = round(sqrt(pow((double) Gx.rgbtBlue, 2) + pow(Gy.rgbtBlue, 2)));
+            image[i][j].rgbtRed = round(sqrt(pow((double) Gx.red, 2) + pow(Gy.red, 2)));
+            image[i][j].rgbtGreen = round(sqrt(pow((double) Gx.green, 2) + pow(Gy.green, 2)));
+            image[i][j].rgbtBlue = round(sqrt(pow((double) Gx.blue, 2) + pow(Gy.blue, 2)));
 
             if (image[i][j].rgbtRed > 255)
             {
