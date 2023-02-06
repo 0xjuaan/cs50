@@ -152,7 +152,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
             else if (image[i][j].rgbtGreen > 255)
             {
-                image[i][j].rgbtGreen = 255;k
+                image[i][j].rgbtGreen = 255
             }
             else
             {
