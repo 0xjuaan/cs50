@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     //Write the header into the output file
     fwrite(&header, sizeof(WAVHEADER), 1, output);
 
-    //Get the size of each block
+    //Get the size of each block, and the total size of audio chunk
     int blockSize = get_block_size(header);
     int dataSize = header.subchunk2Size;
 
