@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
         data2[dataSize-1-i] = data[i];
     }
 
-    fwrite(&data2, dataSize, 1, output);
+    fwrite(&data2, blockSize, dataSize/blockSize, output);
 
 
     fclose(input);
