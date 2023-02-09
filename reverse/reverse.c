@@ -59,10 +59,15 @@ int main(int argc, char *argv[])
 
     BYTE data[dataSize];
 
-    fseek(input, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
+    fseek(input, 0, SEEK_END); //Setting cursor after header
+
+    while(ftell(input) != 0)
+    {
+        
+    }
     fread(&data, blockSize, dataSize/blockSize, input); //Reading data to data[]
 
-    
+
 
 
 
