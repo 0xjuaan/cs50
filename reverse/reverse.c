@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
     while(ftell(input) != sizeof(WAVHEADER))
     {
-        fread(&data, blockSize, , input);
+        fread(&data, blockSize, 1, input);
         fseek(input, -blockSize, SEEK_CUR);
     }
 
