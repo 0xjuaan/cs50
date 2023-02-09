@@ -70,6 +70,8 @@ int main(int argc, char *argv[])
         data2[i] = data[dataSize-1-i];
     }
 
+    fseek(input, -dataSize, SEEK_END); //Setting cursor after header
+
     fwrite(&data2, blockSize, dataSize/blockSize, output);
 
 
