@@ -63,9 +63,9 @@ int main(int argc, char *argv[])
 
     fread(&data, blockSize, dataSize/blockSize, input);
 
-    BYTE data2[dataSize];
+    BYTE data2[dataSize]; //Creating the reversed array
 
-    for (int i = 0; i < dataSize; i++)
+    for (int i = 0; i < dataSize; i++) //Array reversal
     {
         data2[i] = data[dataSize-i];
     }
@@ -73,7 +73,8 @@ int main(int argc, char *argv[])
     fwrite(&data2, dataSize, 1, output);
 
 
-
+    fclose(input);
+    fclose(output);
 
 
 
