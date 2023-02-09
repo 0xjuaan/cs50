@@ -57,6 +57,9 @@ int main(int argc, char *argv[])
     int blockSize = get_block_size(header);
     int dataSize = header.subchunk2Size;
 
+    BYTE data[dataSize];
+
+    
 
 
 
