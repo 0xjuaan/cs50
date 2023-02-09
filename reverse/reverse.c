@@ -57,8 +57,8 @@ int main(int argc, char *argv[])
     int blockSize = get_block_size(header);
     int dataSize = header.subchunk2Size;
 
-    fseek()
-    //fread(&output, blockSize, dataSize/blockSize, input);
+    fread(&output, blockSize, dataSize/blockSize, input);
+    fclose(input);
 
 
 
