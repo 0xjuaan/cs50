@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
     BYTE data[dataSize];
 
-    fseek(input, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
+    fseek(input, sizeof(WAVHEADER)+1, SEEK_SET); //Setting cursor after header
 
     fread(&data, blockSize, dataSize/blockSize, input);
 
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < dataSize; i++) //Array reversal
     {
-        data2[dataSize-i] = data[i];
+        data2[i] = data[dataSize-1-i];
     }
 
     fwrite(&data2, dataSize, 1, output);
