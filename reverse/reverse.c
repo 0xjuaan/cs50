@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
 
     fseek(input, -dataSize, SEEK_END); //Setting cursor after header
 
-    fwrite(&data2, blockSize, dataSize/blockSize, output);
+    fwrite(&data2, sizeof(BYTE), dataSize, output);
 
 
     fclose(input);
