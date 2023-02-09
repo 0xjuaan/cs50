@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
 
     fseek(input, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
     fread(&data, blockSize, dataSize/blockSize, input); //Reading data to data[]
+
     
 
 
