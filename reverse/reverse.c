@@ -1,47 +1,88 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 
 #include "wav.h"
 
+//Function prototypes
 int check_format(WAVHEADER header);
 int get_block_size(WAVHEADER header);
 
 int main(int argc, char *argv[])
 {
-    // Ensure proper usage
-    // TODO #1
+    //Checking for proper CLI
+    if (argc != 3)
+    {
+        printf("Usage: ./reverse input.wav output.wav\n");
+        return 1;
+    }
 
-    // Open input file for reading
-    // TODO #2
+    //Generating a pointer to a new file in memory, the input file
+    FILE *input = fopen(argv[1], "r");
 
-    // Read header into an array
-    // TODO #3
+    //Checking validity of file (do we have it?)
+    if (input == NULL)
+    {
+        printf("Can't open file\n");
+        return 1;
+    }
 
-    // Use check_format to ensure WAV format
-    // TODO #4
+    //Initialising the header
+    WAVHEADER header;
 
-    // Open output file for writing
-    // TODO #5
+    //Reading the header from the input file, and saving it in header
+    fread(&header, sizeof(WAVHEADER), 1, input);
 
-    // Write header to file
-    // TODO #6
 
-    // Use get_block_size to calculate size of block
-    // TODO #7
+    //If the format is not .wav, give error message
+    if (check_format(header) == 0)
+    {
+        printf("Input is not a WAV file.\n");
+        return 1;
+    }
+    //Generate a pointer to the output file
+    FILE *output = fopen(argv[2], "w");
 
-    // Write reversed audio to file
-    // TODO #8
+    if (output == NULL) //CJecks if the memory address of the output file is NULL (0 address)
+    {
+        printf("Can't open file\n");
+        return 1;
+    }
+    //Write the header into the output file
+    fwrite(&header, sizeof(WAVHEADER), 1, output);
+
+    //Get the size of each block
+    int blockSize = get_block_size(header);
+    int dataSize = header.subchunk2Size;
+
+    fseek()
+    //fread(&output, blockSize, dataSize/blockSize, input);
+
+
+
 }
 
+
+
+
+
+
+//Function definitions
 int check_format(WAVHEADER header)
 {
-    // TODO #4
-    return 0;
+    if (header.format[0] == 'W' && header.format[1] == 'A' && header.format[2] == 'V' && header.format[3] == 'E')
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 int get_block_size(WAVHEADER header)
 {
-    // TODO #7
-    return 0;
+    return header.numChannels * header.bitsPerSample / 8;
 }
