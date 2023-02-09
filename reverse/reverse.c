@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
     BYTE data[dataSize];
 
-    
+    fread(&data, blockSize, dataSize/blockSize, )
 
 
 
