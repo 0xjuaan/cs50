@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     //Generate a pointer to the output file
-    FILE *output = fopen(argv[2], "w");
+    FILE *output = fopen(argv[2], "wb");
 
     if (output == NULL) //CJecks if the memory address of the output file is NULL (0 address)
     {
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
         data2[i] = data[dataSize-1-i];
     }
 
-    fwrite(&data2, dataSize, 1, output);
+    fwrite(&data2, blockSize, dataSize/blockSize, output);
 
 
     fclose(input);
