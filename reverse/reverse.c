@@ -67,10 +67,10 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < dataSize; i++) //Array reversal
     {
-        data2[dataSize-1-i] = data[i];
+        data2[dataSize-1] = data[i];
     }
 
-    fwrite(&data2, blockSize, dataSize/blockSize, output);
+    fwrite(&data2, dataSize, 1, output);
 
 
     fclose(input);
