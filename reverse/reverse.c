@@ -58,13 +58,7 @@ int main(int argc, char *argv[])
     int dataSize = header.subchunk2Size;
 
 
-    DWORD *buffer = malloc(dataSize + sizeof(WAVHEADER));
-    fread(&buffer, blockSize, dataSize/blockSize, input); //Reading from the entire input, into the buffer
 
-    fseek(output, sizeof(WAVHEADER)-1, SEEK_SET);
-    fwrite(&buffer, blockSize, dataSize/blockSize, output);
-
-    fclose(input);
 
 
 
