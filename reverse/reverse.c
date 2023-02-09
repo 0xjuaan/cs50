@@ -59,9 +59,11 @@ int main(int argc, char *argv[])
 
 
     DWORD *buffer = malloc(dataSize + sizeof(WAVHEADER));
+    fread(&buffer, blockSize, dataSize/blockSize, input); //Reading from the entire input, into the buffer
 
-    fseek*
-    fread(&buffer, blockSize, dataSize/blockSize, input);
+    fseek(output, sizeof(WAVHEADER)-1, SEEK_SET);
+    fwrite(&buffer, blockSize, dataSize/blockSize, output);
+
     fclose(input);
 
 
