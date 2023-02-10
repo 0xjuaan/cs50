@@ -77,17 +77,7 @@ int main(int argc, char *argv[])
 
     fclose(input);
     fclose(output);
-
-
-
-
-
 }
-
-
-
-
-
 
 //Function definitions
 int check_format(WAVHEADER header)
