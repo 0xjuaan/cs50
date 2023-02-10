@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
         data2[i] = data[dataSize-1-i];
     }
 
-    fseek(output, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
+    fseek(output, sizeof(WAVHEADER)+1, SEEK_SET); //Setting cursor after header
 
     fwrite(&data2, sizeof(BYTE), dataSize, output);
 
