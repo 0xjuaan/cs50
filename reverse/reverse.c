@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
     uint32_t data2[dataSize/blockSize]; //Creating the reversed array
 
-    for (int i = 0; i < dataSize/blockSize-1; i++) //Array reversal
+    for (int i = 0; i < dataSize/blockSize; i++) //Array reversal
     {
         data2[i] = data[dataSize/blockSize-1-i];
     }
