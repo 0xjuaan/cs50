@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     int blockSize = get_block_size(header);
     int dataSize = header.subchunk2Size;
 
-    DWORD data[dataSize/blockSize];
+    DWORD data[dataSize/blockSize]; //Array with 'n' blocks in it
 
     fseek(input, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
 
