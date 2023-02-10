@@ -57,13 +57,13 @@ int main(int argc, char *argv[])
     int blockSize = get_block_size(header);
     int dataSize = header.subchunk2Size;
 
-    BYTE data[dataSize/blockSize];
+    DWORD data[dataSize/blockSize];
 
     fseek(input, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
 
     fread(&data, blockSize, dataSize/blockSize, input);
 
-    BYTE data2[dataSize/blockSize]; //Creating the reversed array
+    DWORD data2[dataSize/blockSize]; //Creating the reversed array
 
     for (int i = 0; i < dataSize/blockSize; i++) //Array reversal
     {
