@@ -61,18 +61,18 @@ int main(int argc, char *argv[])
 
     fseek(input, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
 
-    //fread(&data, blockSize, dataSize/blockSize, input);
+    fread(&data, blockSize, dataSize/blockSize, input);
 
-    //uint32_t data2[dataSize/blockSize]; //Creating the reversed array
+    uint32_t data2[dataSize/blockSize]; //Creating the reversed array
 
-    for (int i = 0; i < dataSize/blockSize; i++) //Array reversal
-    {
-        data2[i] = data[dataSize-1-i];
-    }
+    //for (int i = 0; i < dataSize/blockSize; i++) //Array reversal
+    //{
+     //   data2[i] = data[dataSize-1-i];
+   // }
 
     fseek(output, sizeof(WAVHEADER), SEEK_SET); //Setting cursor after header
 
-    //fwrite(&data2, blockSize, dataSize/blockSize, output);
+    fwrite(&data2, blockSize, dataSize/blockSize, output);
 
 
     fclose(input);
