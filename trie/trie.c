@@ -113,7 +113,7 @@ bool check(char* word)
     node *cursor = root;
     int index = tolower(word[0]) - 'a';
     cursor = cursor->children[index];
-    for (int i = 0, n = strlen(word); i < n; i++)
+    for (int i = 1, n = strlen(word); i < n; i++)
         {
             index = tolower(word[i]) - 'a';
             if (cursor->is_word == true) //If we are at the last letter of a word
