@@ -114,13 +114,13 @@ bool check(char* word)
         {
             node *cursor = root;
             int index = tolower(word[i]) - 'a';
-            if (cursor->children[index] == NULL) //If this letter is not in the ting
-            {
-                return false;
-            }
-            else if (cursor->is_word == true)
+            if (cursor->is_word == true) //If this letter is not in the ting
             {
                 return true;
+            }
+            else if (cursor->children[index] == NULL)
+            {
+                return false;
             }
             else
             {
