@@ -114,7 +114,7 @@ bool check(char* word)
     for (int i = 0, n = strlen(word); i < n; i++)
         {
             int index = tolower(word[i]) - 'a';
-            if (cursor->is_word == true) //If this letter is not in the ting
+            if (cursor->is_word == true) //If we are at the last letter of a word
             {
                 return true;
             }
