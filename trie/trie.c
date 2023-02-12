@@ -111,9 +111,11 @@ int main(int argc, char *argv[])
 bool check(char* word)
 {
     node *cursor = root;
+    int index = tolower(word[0]) - 'a';
+    cursor = cursor->children[index];
     for (int i = 0, n = strlen(word); i < n; i++)
         {
-            int index = tolower(word[i]) - 'a';
+            index = tolower(word[i]) - 'a';
             if (cursor->is_word == true) //If we are at the last letter of a word
             {
                 return true;
