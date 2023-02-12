@@ -113,7 +113,14 @@ bool check(char* word)
     for (int i = 0, n = strlen(word); i < n; i++)
         {
             int index = tolower(word[i]) - 'a';
-            
+            if (cursor->children[index] == NULL) //If this letter is not in the ting
+            {
+                return false;
+            }
+            else
+            {
+                
+            }
 
         }
     return false;
