@@ -110,9 +110,9 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char* word)
 {
+    node *cursor = root;
     for (int i = 0, n = strlen(word); i < n; i++)
         {
-            node *cursor = root;
             int index = tolower(word[i]) - 'a';
             if (cursor->is_word == true) //If this letter is not in the ting
             {
