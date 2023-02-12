@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
                 new->is_word = false;
                 for (int j = 0; j < SIZE_OF_ALPHABET; j++)
                 {
-                    new->children[j] = NULL;
+                    new->children[j] = NULL; //Setting the children of all index (26) to be 0
                 }
                 cursor->children[index] = new;
             }
