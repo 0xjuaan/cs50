@@ -112,11 +112,15 @@ bool check(char* word)
 {
     for (int i = 0, n = strlen(word); i < n; i++)
         {
-            
+            node *cursor = root;
             int index = tolower(word[i]) - 'a';
             if (cursor->children[index] == NULL) //If this letter is not in the ting
             {
                 return false;
+            }
+            else if (cursor->is_word == true)
+            {
+                return true;
             }
             else
             {
@@ -124,8 +128,7 @@ bool check(char* word)
                 continue;
             }
         }
-        return true;
-
+        return false;
 }
 
 // Unload trie from memory
