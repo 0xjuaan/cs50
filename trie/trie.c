@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
                 cursor->children[index] = new;
             }
 
-            // Go to node which may have just been made
+            // Go to the next node in the chain (either just made, or already there)
             cursor = cursor->children[index];
         }
 
@@ -110,6 +110,7 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char* word)
 {
+    
     return false;
 }
 
