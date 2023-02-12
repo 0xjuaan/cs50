@@ -114,18 +114,19 @@ bool check(char* word)
 
     for (int i = 0, n = strlen(word); i < n; i++)
         {
-            index = tolower(word[i]) - 'a';
-            if (cursor->is_word == true) //If we are at the last letter of a word
-            {
-                return true;
-            }
-            else if (cursor->children[index] == NULL)
+            int index = tolower(word[i]) - 'a';
+
+            if (cursor->children[index] == NULL)
             {
                 return false;
             }
             else
             {
                 cursor = cursor->children[index]; //Go ahead in this direction
+                if (cursor->is_word == true) //If we are at the last letter of a word
+                {
+                    return true;
+                }
                 continue;
             }
         }
