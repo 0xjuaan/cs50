@@ -46,14 +46,9 @@ person *create_family(int generations)
     if (generations > 1)
     {
         // Create two new parents for current person by recursively calling create_family
-        struct person *parent0;
-        struct person *parent1;
 
-        parent0 = create_family(generations - 1);
-        parent1 = create_family(generations - 1);
-
-        person->parents[0] = parent0;
-        person->parents[1] = parent1;
+        person->parents[0] = create_family(generations - 1);
+        person->parents[1] = create_family(generations - 1);
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
         person->alleles[0] = AFP(person->parents[0]);
