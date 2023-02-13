@@ -75,8 +75,11 @@ person *create_family(int generations)
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-    // TODO: Handle base case
-
+    if (person *parent0 == NULL)
+    {
+        return;
+    }
+    
     // TODO: Free parents recursively
 
     // TODO: Free child
@@ -142,7 +145,7 @@ char AFP(person *parent)
 {
     int r = rand() % 2;
 
-    if (r = 0)
+    if (r == 0)
     {
         return parent->alleles[0]
     }
