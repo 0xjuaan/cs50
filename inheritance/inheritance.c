@@ -78,7 +78,7 @@ person *create_family(int generations)
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-    free(p);
+
 
     if (p->parents[0] == NULL) //If we reached the top generation
     {
@@ -89,7 +89,7 @@ void free_family(person *p)
 
     free_family(p->parents[1]);
 
-
+    free(p);
     return;
 }
 
