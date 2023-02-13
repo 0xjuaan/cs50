@@ -20,7 +20,7 @@ person *create_family(int generations);
 void print_family(person *p, int generation);
 void free_family(person *p);
 char random_allele();
-char random_allele(person *p)
+char AFP(person *parent);
 
 int main(void)
 {
@@ -53,8 +53,8 @@ person *create_family(int generations)
         person->parents[1] = parent1;
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
-        person->alleles[0] =
-
+        person->alleles[0] = AFP(parents[0])
+        person->alleles[1] = AFP(parents[1])
     }
 
     // If there are no generations left to create
@@ -69,7 +69,7 @@ person *create_family(int generations)
     }
 
     // TODO: Return newly created person
-    return NULL;
+    return person;
 }
 
 // Free `p` and all ancestors of `p`.
@@ -136,5 +136,18 @@ char random_allele()
     else
     {
         return 'O';
+    }
+}
+char AFP(person *parent)
+{
+    int r = rand() % 2;
+
+    if (r = 0)
+    {
+        return parent->alleles[0]
+    }
+    else
+    {
+        return parent->alleles[1]
     }
 }
