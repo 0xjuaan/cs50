@@ -20,6 +20,7 @@ person *create_family(int generations);
 void print_family(person *p, int generation);
 void free_family(person *p);
 char random_allele();
+char random_allele(person *p)
 
 int main(void)
 {
@@ -52,6 +53,7 @@ person *create_family(int generations)
         person->parents[1] = parent1;
 
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
+        person->alleles[0] =
 
     }
 
@@ -61,7 +63,8 @@ person *create_family(int generations)
         person *parent0 = NULL;
         person *parent1 = NULL;
 
-        // TODO: Randomly assign alleles
+        person->alleles[0] = random_allele()
+        person->alleles[1] = random_allele()
 
     }
 
