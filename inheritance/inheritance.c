@@ -63,11 +63,11 @@ person *create_family(int generations)
     // If there are no generations left to create
     else
     {
-        person *parent0 = NULL;
-        person *parent1 = NULL;
+        person->parents[0] = NULL;
+        person->parents[1] = NULL;
 
-        person->alleles[0] = random_allele()
-        person->alleles[1] = random_allele()
+        person->alleles[0] = random_allele();
+        person->alleles[1] = random_allele();
 
     }
 
@@ -78,7 +78,7 @@ person *create_family(int generations)
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-    if (person *parent0 == NULL)
+    if (p->parents[0] == NULL)
     {
         return;
     }
@@ -150,10 +150,10 @@ char AFP(person *parent)
 
     if (r == 0)
     {
-        return parent->alleles[0]
+        return parent->alleles[0];
     }
     else
     {
-        return parent->alleles[1]
+        return parent->alleles[1];
     }
 }
