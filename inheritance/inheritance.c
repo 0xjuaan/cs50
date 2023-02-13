@@ -40,7 +40,7 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
-    person *person = malloc(sizeof(person));
+    person *person = malloc(sizeof(struct person));
 
     // If there are still generations left to create
     if (generations > 1)
