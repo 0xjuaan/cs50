@@ -78,22 +78,18 @@ person *create_family(int generations)
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-    if (p->parents[0] == NULL) //If we reached the top generation
+    if (p == NULL) //If we reached the top generation
     {
-        free(p);
         return;
     }
-    
-    else
-    {
-    free(p);
 
     free_family(p->parents[0]);
 
     free_family(p->parents[1]);
 
+    free(p);
+
     return;
-    }
 }
 
 // Print each family member and their alleles.
