@@ -5,6 +5,7 @@
 
 #include "dictionary.h"
 
+FILE *dict;
 // Represents a node in a hash table
 typedef struct node
 {
@@ -30,7 +31,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    FILE *dict = fopen("dictionaries/large", "r");
+    dict = fopen("dictionaries/large", "r");
 
     if (dict == NULL)
     {
@@ -45,9 +46,30 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
+    char character;
     int counter = 0;
-    
-    return 0;
+
+    if (dict == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        while((character = fgetc(dict)) != EOF)
+        {
+            if (character == '\0')
+            {
+                counter++;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return counter;
+    }
+
+
 }
 
 // Returns true if word is in dictionary, else false
