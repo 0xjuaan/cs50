@@ -66,11 +66,9 @@ unsigned int size(void)
                 continue;
             }
         }
-        //printf("%i", counter);
+        printf("%i", counter);
         return counter;
     }
-
-
 }
 
 // Returns true if word is in dictionary, else false
