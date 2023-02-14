@@ -45,14 +45,15 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
+    int counter = 0;
+    
     return 0;
 }
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    
+
     return false;
 }
 
