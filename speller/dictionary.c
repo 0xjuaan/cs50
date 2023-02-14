@@ -34,7 +34,7 @@ bool load(const char *dictionary)
 
     if (dict == NULL)
     {
-        return false;%
+        return false;
     }
     else
     {
