@@ -8,8 +8,8 @@
 // Represents a node in a hash table
 typedef struct node
 {
-    char word[LENGTH + 1];
-    struct node *next;
+    char word[LENGTH + 1]; //The word
+    struct node *next; //Pointer to the next word
 }
 node;
 
@@ -30,7 +30,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
+    FILE *dict = fopen()
     return false;
 }
 
