@@ -19,12 +19,6 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
-// Returns true if word is in dictionary, else false
-bool check(const char *word)
-{
-    // TODO
-    return false;
-}
 
 // Hashes word to a number
 unsigned int hash(const char *word)
@@ -45,6 +39,13 @@ unsigned int size(void)
 {
     // TODO
     return 0;
+}
+
+// Returns true if word is in dictionary, else false
+bool check(const char *word)
+{
+    // TODO
+    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
