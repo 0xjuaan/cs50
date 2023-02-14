@@ -52,7 +52,7 @@ unsigned int size(void)
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    fs
+    
     return false;
 }
 
