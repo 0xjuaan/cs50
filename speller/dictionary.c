@@ -96,16 +96,10 @@ bool check(const char *word)
     {
         return true;
     }
-    else if (word->next->is_word == false)
-    {
-        return false;
-    }
     else
     {
-        check(table[hash_v]->next->word);
+        lcheck(*table[hash_v]);
     }
-
-    return false;
 
 }
 
@@ -120,4 +114,9 @@ bool unload(void)
     {
         return false;
     }
+}
+
+bool lcheck (struct node word_hashed)
+{
+    return true;
 }
