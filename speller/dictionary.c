@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -67,7 +68,7 @@ unsigned int size(void)
             }
         }
         //printf("Total words: %i\n", counter);
-       //return counter;
+       return counter;
     }
 }
 
@@ -81,6 +82,13 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    free(dict);
+    if (fclose(dict) == 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
     return false;
 }
