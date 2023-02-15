@@ -11,7 +11,7 @@ FILE *dict;
 typedef struct node
 {
     char word[LENGTH + 1]; //The word
-    struct node *next; //Pointer to the next word
+    struct node *next; //Pointer to the next word (linked list type connection)
 }
 node;
 
