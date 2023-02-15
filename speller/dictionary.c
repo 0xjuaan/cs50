@@ -14,6 +14,7 @@ FILE *dict;
 typedef struct node
 {
     char word[LENGTH + 1]; //The word
+    bool has_word;
     struct node *next; //Pointer to the next word (linked list type connection)
 }
 node;
@@ -88,15 +89,16 @@ unsigned int hash(const char *word)
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    if (word == EOF)
-    {
 
-    }
     int hash_v = hash(word);
 
     if (strcasecmp(table[hash_v]->word, word) == 0)
     {
         return true;
+    }
+    else if
+    {
+
     }
     else
     {
