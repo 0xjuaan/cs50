@@ -88,15 +88,19 @@ unsigned int hash(const char *word)
 // Returns true if word is in dictionary, else false
 bool check(char *word)
 {
+    if (word == EOF)
+    {
+        
+    }
     int hash_v = hash(word);
 
-    if (strcasecmp(*(table[hash_v]), word) == 0)
+    if (strcasecmp(table[hash_v]->word, word) == 0)
     {
         return true;
     }
     else
     {
-        check(table[hash_v]->next);
+        check(table[hash_v]->next->word);
     }
 
     return false;
