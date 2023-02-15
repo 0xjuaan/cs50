@@ -75,7 +75,7 @@ unsigned int hash(const char *word)
     {
         sum += toupper(word[i]) - 'A';
     }
-    double sigmoid = 1/((double) 1 + exp(-sum));
+    double sigmoid = 1/((double) 1 + exp(-0.05 * sum));
 
     int v = round(100*sigmoid);
     // TODO: Improve this hash function
