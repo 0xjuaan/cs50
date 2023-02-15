@@ -57,7 +57,7 @@ unsigned int size(void)
     {
         while((character = fgetc(dict)) != EOF)
         {
-            if (character == '\0')
+            if (character == '\n')
             {
                 counter++;
             }

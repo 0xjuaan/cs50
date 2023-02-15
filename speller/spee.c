@@ -5,10 +5,17 @@ int main(void)
     FILE *file = fopen("dictionaries/large", "r");
     if (file != NULL)
     {
-        char buffer[10];
-        while ((ch = fgetc(dict))
+        char ch;
+        int counter = 0;
+        while ((ch = fgetc(file)) != EOF)
+        {
+            if (ch == '\n')
+            {
+                counter++;
+            }
+        }
 
         fclose(file);
-        printf("%s\n", buffer);
+        printf("%i\n", counter);
     }
 }
