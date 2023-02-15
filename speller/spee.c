@@ -6,8 +6,8 @@ int main(void)
     if (file != NULL)
     {
         char buffer[10];
-        fscanf(file, "%s", buffer);
-        
+        while ((ch = fgetc(dict))
+
         fclose(file);
         printf("%s\n", buffer);
     }
