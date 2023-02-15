@@ -90,5 +90,4 @@ bool unload(void)
     {
         return false;
     }
-    return false;
 }
