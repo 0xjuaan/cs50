@@ -66,8 +66,8 @@ unsigned int size(void)
                 continue;
             }
         }
-        printf("%i\n", counter);
-        return counter;
+        //printf("Total words: %i\n", counter);
+       //return counter;
     }
 }
 
@@ -75,12 +75,12 @@ unsigned int size(void)
 bool check(const char *word)
 {
 
-    return false;
+    return true;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
+    free(dict);
     return false;
 }
