@@ -82,7 +82,7 @@ unsigned int hash(const char *word)
 
     int v = round(100*sigmoid);
     // TODO: Improve this hash function
-    printf("%i\n", v);
+    //printf("%i\n", v);
     return v;
 }
 
@@ -96,9 +96,9 @@ bool check(const char *word)
     {
         return true;
     }
-    else if
+    else if (word->next->is_word == false)
     {
-
+        return false;
     }
     else
     {
