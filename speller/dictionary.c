@@ -22,12 +22,6 @@ const unsigned int N = 26;
 node *table[N];
 
 
-// Hashes word to a number
-unsigned int hash(const char *word)
-{
-    // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
-}
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
@@ -70,6 +64,13 @@ unsigned int size(void)
         //printf("Total words: %i\n", counter);
        return counter;
     }
+}
+
+// Hashes word to a number
+unsigned int hash(const char *word)
+{
+    // TODO: Improve this hash function
+    return toupper(word[0]) - 'A';
 }
 
 // Returns true if word is in dictionary, else false
