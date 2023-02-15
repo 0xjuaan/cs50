@@ -116,7 +116,7 @@ bool unload(void)
     }
 }
 
-bool lcheck (node word_hashed)
+bool lcheck (struct node* word_hashed)
 {
     return true;
 }
