@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "dictionary.h"
 
@@ -69,15 +70,24 @@ unsigned int size(void)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+    int sum = 0;
+    for (int i = 0; i < 2; i++)
+    {
+        sum += toupper(word[i]) - 'A';
+    }
+    double sigmoid = 1/((double) 1 + exp(-sum));
+
+    int v = round(100*sigmoid);
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    printf("%i\n", v);
+    return v;
 }
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
     int hash_v = hash(word);
-    
+
     return true;
 }
 
