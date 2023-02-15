@@ -76,6 +76,7 @@ unsigned int hash(const char *word)
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    int hash_v = hash(word);
     
     return true;
 }
