@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -88,9 +90,17 @@ bool check(const char *word)
 {
     int hash_v = hash(word);
 
-    if (*table[hash_v] = )
+    if (strcasecmp(*(table[hash_v]), word) == 0)
+    {
+        return true;
+    }
+    else
+    {
+        check(table[hash_v]->next);
+    }
 
-    return true;
+    return false;
+
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
