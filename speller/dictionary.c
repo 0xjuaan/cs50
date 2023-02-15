@@ -66,7 +66,7 @@ unsigned int size(void)
                 continue;
             }
         }
-        printf("%i", counter);
+        printf("%i\n", counter);
         return counter;
     }
 }
