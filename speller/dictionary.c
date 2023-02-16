@@ -105,15 +105,15 @@ unsigned int hash(const char *word)
 bool check(const char *word)
 {
 
-    int hash_v = hash(word);
+    int v = hash(word);
 
-    if (strcasecmp(table[hash_v]->word, word) == 0) //Checking if the 1st word is equal to the input word
+    if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
     {
         return true;
     }
     else
     {
-        lcheck(table[hash_v]); //If not the 1st word, go forth in the list
+        lcheck(table[v]); //If not the 1st word, go forth in the list
     }
     return true;
 }
@@ -133,7 +133,11 @@ bool unload(void)
 
 bool lcheck (struct node* my_node)
 {
-    if (word)
+    if (!my_node->has_word)
+    {
+        return false;
+    }
+    else if (my_node->word,)
 }
 
 void add(struct node* my_node, char* word_dict)
