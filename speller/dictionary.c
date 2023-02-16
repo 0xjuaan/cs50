@@ -92,7 +92,7 @@ bool check(const char *word)
 
     int hash_v = hash(word);
 
-    if (strcasecmp(table[hash_v]->word, word) == 0)
+    if (strcasecmp(table[hash_v]->word, word) == 0) //Checking if the 1st word is equal to the input word
     {
         return true;
     }
