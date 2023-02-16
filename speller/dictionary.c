@@ -143,10 +143,14 @@ bool lcheck (struct node* word_hashed)
     return true;
 }
 
-bool add(struct node* starter, char* word_dict)
+bool add(struct node* node, char* word_dict)
 {
-    if (table[v]->next->has_word == false)
+    if (node->next->has_word == false)
     {
-        strcpy(table[v]->next->word, )
+        node->next->word = word_dict;
+    }
+    else
+    {
+        add(node->next);
     }
 }
