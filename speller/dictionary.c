@@ -49,7 +49,10 @@ bool load(const char *dictionary)
         buffer[strcspn(buffer, "\n")] = 0;
         v = hash(buffer);
 
-        if (table[v]->)
+        if (table[v]->has_word == false)
+        {
+            strcpy()
+        }
 
     }
 
