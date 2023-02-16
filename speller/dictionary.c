@@ -34,25 +34,26 @@ bool load(const char *dictionary)
     }
     else
     {
+        char *buffer = malloc(LENGTH * 1);
+        
+        while (fgets(buffer, LENGTH, dict))
+        {
+            buffer[strcspn(buffer, "\n")] = 0;
+            v = hash(buffer);
+
+            if (table[v]->has_word == false)
+            {
+                strcpy(table[v]->word, buffer);
+            }
+            else
+            {
+                add(table[v], buffer);
+            }
+
+        }
         return true;
     }
 
-    char *buffer = malloc(LENGTH * 1);
-    while (fgets(buffer, LENGTH, dict))
-     {
-        buffer[strcspn(buffer, "\n")] = 0;
-        v = hash(buffer);
-
-        if (table[v]->has_word == false)
-        {
-            strcpy(table[v]->word, buffer);
-        }
-        else
-        {
-            add(table[v], buffer);
-        }
-
-    }
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
