@@ -27,6 +27,6 @@ unsigned int size(void);
 bool unload(void);
 
 bool lcheck (struct node* word_hashed);
-bool add(struct node* node, char* word_dict);
+void add(struct node* node, char* word_dict);
 
 #endif // DICTIONARY_H

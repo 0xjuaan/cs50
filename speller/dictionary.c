@@ -137,11 +137,11 @@ bool lcheck (struct node* word_hashed)
     return true;
 }
 
-bool add(struct node* node, char* word_dict)
+void add(struct node* node, char* word_dict)
 {
     if (node->next->has_word == false)
     {
-        node->next->word = word_dict;
+        strcpy(node->next->word,word_dict);
     }
     else
     {
