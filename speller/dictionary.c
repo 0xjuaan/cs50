@@ -145,6 +145,6 @@ bool add(struct node* node, char* word_dict)
     }
     else
     {
-        add(node->next);
+        add(node->next, word_dict);
     }
 }
