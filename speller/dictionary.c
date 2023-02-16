@@ -40,8 +40,9 @@ bool load(const char *dictionary)
     {
         return true;
     }
-
     
+
+
 
 
 }
