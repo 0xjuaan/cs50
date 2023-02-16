@@ -41,9 +41,9 @@ bool load(const char *dictionary)
             buffer[strcspn(buffer, "\n")] = 0;
             v = hash(buffer);
 
-            table[v]->next = malloc(sizeof(struct node));
+            table[v] = malloc(sizeof(struct node));
 
-            if (table[v]->next->has_word == false)
+            if (table[v]->has_word == false)
             {
                 strcpy(table[v]->word, buffer);
             }
