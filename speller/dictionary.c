@@ -49,7 +49,7 @@ bool load(const char *dictionary)
         buffer[strcspn(buffer, "\n")] = 0;
         v = hash(buffer);
 
-        
+        if (table[v]->)
 
     }
 
