@@ -6,6 +6,7 @@
 #include <stdbool.h>
 
 #define LENGTH 45
+typedef struct node node;
 
 typedef struct node
 {
