@@ -11,13 +11,7 @@
 
 FILE *dict;
 // Represents a node in a hash table
-typedef struct node
-{
-    char word[LENGTH + 1]; //The word
-    bool has_word;
-    struct node *next; //Pointer to the next word (linked list type connection)
-}
-node;
+
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 100;
@@ -51,7 +45,7 @@ bool load(const char *dictionary)
 
         if (table[v]->has_word == false)
         {
-            strcpy(table[v]->word, buffer)
+            strcpy(table[v]->word, buffer);
         }
         else
         {
@@ -120,9 +114,9 @@ bool check(const char *word)
     }
     else
     {
-        lcheck(*table[hash_v]); //If not the 1st word, go forth in the list
+        lcheck(table[hash_v]); //If not the 1st word, go forth in the list
     }
-
+    return true;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
