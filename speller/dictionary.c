@@ -30,6 +30,8 @@ node *table[N];
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    int v;
+
     dict = fopen("dictionaries/large", "r");
 
     if (dict == NULL)
@@ -42,7 +44,14 @@ bool load(const char *dictionary)
     }
 
     char *buffer = malloc(LENGTH * 1);
-    
+    while (fgets(buffer, LENGTH, dict))
+     {
+        buffer[strcspn(buffer, "\n")] = 0;
+        v = hash(buffer);
+
+        
+
+    }
 
 
 
@@ -88,7 +97,6 @@ unsigned int hash(const char *word)
     double sigmoid = 1/((double) 1 + exp(-0.05 * sum));
 
     int v = round(100*sigmoid);
-    // TODO: Improve this hash function
     //printf("%i\n", v);
     return v;
 }
