@@ -131,9 +131,9 @@ bool unload(void)
     }
 }
 
-bool lcheck (struct node* word_hashed)
+bool lcheck (struct node* my_node)
 {
-    return true;
+    if (word)
 }
 
 void add(struct node* my_node, char* word_dict)
