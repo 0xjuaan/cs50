@@ -129,6 +129,10 @@ bool unload(void)
     {
         return false;
     }
+    for (int i = 0; i < N; i++)
+    {
+        free(table[i]);
+    }
 }
 
 bool lcheck (struct node* my_node, const char* word_dict)
@@ -143,8 +147,9 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next->has_word)
     {
-        lcheck (my_node->next, )
+        return lcheck (my_node->next, word_dict);
     }
+    return false;
 }
 
 void add(struct node* my_node, const char* word_dict)
