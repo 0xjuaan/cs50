@@ -51,7 +51,11 @@ bool load(const char *dictionary)
 
         if (table[v]->has_word == false)
         {
-            strcpy()
+            strcpy(table[v]->word, buffer)
+        }
+        else
+        {
+            add(buffer)
         }
 
     }
@@ -139,7 +143,7 @@ bool lcheck (struct node* word_hashed)
     return true;
 }
 
-bool add(struct node* word_dict)
+bool add(struct node* word_dict, char* )
 {
 
 }
