@@ -141,6 +141,7 @@ void add(struct node* my_node, char* word_dict)
     if (my_node->next->has_word == false)
     {
         strcpy(my_node->next->word,word_dict);
+        return;
     }
     else
     {
