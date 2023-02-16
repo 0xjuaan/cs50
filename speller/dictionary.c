@@ -113,7 +113,7 @@ bool check(const char *word)
     }
     else
     {
-        lcheck(table[v]); //If not the 1st word, go forth in the list
+        lcheck(table[v], word); //If not the 1st word, go forth in the list
     }
     return true;
 }
@@ -131,16 +131,19 @@ bool unload(void)
     }
 }
 
-bool lcheck (struct node* my_node)
+bool lcheck (struct node* my_node, const char* word_dict)
 {
     if (!my_node->has_word)
     {
         return false;
     }
-    else if (my_node->word,)
+    else if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the 1st word is equal to the input word
+    {
+        return true;
+    }
 }
 
-void add(struct node* my_node, char* word_dict)
+void add(struct node* my_node, const char* word_dict)
 {
     my_node->next = malloc(sizeof(struct node));
 
