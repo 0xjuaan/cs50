@@ -135,3 +135,8 @@ bool lcheck (struct node* word_hashed)
 {
     return true;
 }
+
+bool add(struct node* word_dict)
+{
+
+}
