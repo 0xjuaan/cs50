@@ -40,6 +40,8 @@ bool load(const char *dictionary)
     {
         return true;
     }
+
+    
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -98,7 +100,7 @@ bool check(const char *word)
     }
     else
     {
-        lcheck(*table[hash_v]);
+        lcheck(*table[hash_v]); //If not the 1st word, go forth in the list
     }
 
 }
