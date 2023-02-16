@@ -26,7 +26,7 @@ bool load(const char *dictionary)
 {
     int v;
 
-    dict = fopen("dictionaries/large", "r");
+    dict = fopen(dictionary, "r");
 
     if (dict == NULL)
     {
@@ -35,7 +35,7 @@ bool load(const char *dictionary)
     else
     {
         char *buffer = malloc(LENGTH * 1);
-        
+
         while (fgets(buffer, LENGTH, dict))
         {
             buffer[strcspn(buffer, "\n")] = 0;

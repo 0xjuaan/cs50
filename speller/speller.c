@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     // Load dictionary
     getrusage(RUSAGE_SELF, &before);
-    bool loaded = load(dictionary);
+    bool loaded = load(DICTIONARY);
     getrusage(RUSAGE_SELF, &after);
 
     // Exit if dictionary not loaded
