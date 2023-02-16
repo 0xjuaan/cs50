@@ -139,6 +139,8 @@ bool lcheck (struct node* word_hashed)
 
 void add(struct node* node, char* word_dict)
 {
+    node->next = malloc(sizeof(node));
+    
     if (node->next->has_word == false)
     {
         strcpy(node->next->word,word_dict);
