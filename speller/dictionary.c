@@ -134,16 +134,16 @@ bool lcheck (struct node* word_hashed)
     return true;
 }
 
-void add(struct node* node, char* word_dict)
+void add(struct node* my_node, char* word_dict)
 {
-    node->next = malloc(sizeof(node));
+    my_node->next = malloc(sizeof(struct node));
 
-    if (node->next->has_word == false)
+    if (my_node->next->has_word == false)
     {
-        strcpy(node->next->word,word_dict);
+        strcpy(my_node->next->word,word_dict);
     }
     else
     {
-        add(node->next, word_dict);
+        add(my_node->next, word_dict);
     }
 }
