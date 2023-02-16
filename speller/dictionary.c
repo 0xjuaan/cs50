@@ -40,6 +40,8 @@ bool load(const char *dictionary)
     {
         return true;
     }
+
+    char *buffer = malloc(LENGTH * 1);
     
 
 
