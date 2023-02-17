@@ -1,6 +1,6 @@
 # include <stdio.h>
 
-double fibsum(double *n1, double *n2);
+double fibsum(double *1st, double *2nd);
 
 
 
@@ -15,7 +15,7 @@ int main(void)
     double n = fibsum(n1, n2);
 }
 
-double fibsum(double *n1, double* n2)
+double fibsum(double *1st, double* 2nd)
 {
-    return fibsum(n1, n2);
+    return fibsum(1st, 2nd);
 }
