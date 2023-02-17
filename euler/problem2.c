@@ -1,12 +1,12 @@
 # include <stdio.h>
 
-double fibsum(double *1st, double *2nd);
+double fibsum(double *n, double *nn);
 
 
 
 int main(void)
 {
-    double *n1;
+    double *n1 = malloc;
     double *n2;
 
     *n1 = 1;
@@ -15,7 +15,7 @@ int main(void)
     double n = fibsum(n1, n2);
 }
 
-double fibsum(double *1st, double* 2nd)
+double fibsum(double *n, double* nn)
 {
-    return fibsum(1st, 2nd);
+    return fibsum(n, nn);
 }
