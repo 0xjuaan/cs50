@@ -78,8 +78,7 @@ int main(int argc, char *argv[])
             word[index] = c;
             index++;
 
-            // Ignore alphabetical strings too long to be words
-            if (index > LENGTH)
+            // Ignore alphabetical strings too long to be words            if (index > LENGTH)
             {
                 // Consume remainder of alphabetical string
                 while (fread(&c, sizeof(char), 1, file) && isalpha(c));
