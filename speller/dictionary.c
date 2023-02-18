@@ -126,7 +126,7 @@ bool check(const char *word)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
-    return true;
+    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
