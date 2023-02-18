@@ -45,7 +45,7 @@ bool load(const char *dictionary)
 
             table[v] = malloc(sizeof(struct node));
 
-            if (table[v] == NULL)
+            if (table[v]->has_word == false)
             {
                 strcpy(table[v]->word, buffer);
             }
@@ -123,7 +123,7 @@ bool check(const char *word)
     {
         return true;
     }
-    else if (table[v]->next != NULL && table[v]->next->has_word) //SEGGGGGGGGG
+    else if (table[v]->next != NULL)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
@@ -146,7 +146,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     {
         return true;
     }
-    else if (!my_node->next->has_word)
+    else if (my_node->next == NULL)
     {
         return false;
     }
@@ -155,6 +155,5 @@ bool lcheck (struct node* my_node, const char* word_dict)
         return lcheck (my_node->next, word_dict);
     }
     return false;
-
 }
 
