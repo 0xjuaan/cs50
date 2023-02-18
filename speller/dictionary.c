@@ -45,7 +45,7 @@ bool load(const char *dictionary)
 
             table[v] = malloc(sizeof(struct node));
 
-            if (table[v]->has_word == false)
+            if (table[v] == NULL)
             {
                 strcpy(table[v]->word, buffer);
             }
