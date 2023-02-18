@@ -114,7 +114,7 @@ unsigned int hash(const char *word)
 bool check(const char *word)
 {
     int v = hash(word);
-    if (table[v] == NULL)
+    if (table[v] == NULL) //If there is no ting for this hash_value
     {
         return false;
     }
@@ -122,11 +122,10 @@ bool check(const char *word)
     {
         return true;
     }
-    else if (table[v]->next != NULL && table[v]->next->has_word) //SEGMENTATION FAULT LOCATION
+    else if (table[v]->next != NULL && table[v]->next->has_word)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
-    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -153,6 +152,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     {
         return lcheck (my_node->next, word_dict);
     }
+    return false;
 
 }
 
