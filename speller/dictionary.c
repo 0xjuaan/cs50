@@ -100,7 +100,7 @@ unsigned int hash(const char *word)
 bool check(const char *word)
 {
     return false;
-    int v = hash(word);
+    /*int v = hash(word);
 
     if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
     {
@@ -109,11 +109,7 @@ bool check(const char *word)
     else if (table[v]->next->has_word)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
-    }
-
-    return false;
-
-
+    }*/
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
