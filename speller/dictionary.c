@@ -53,13 +53,27 @@ bool load(const char *dictionary)
             {
                 add(table[v], buffer);
             }
-
         }
         //After done loading the entire dictionary into the data structure
         return true;
     }
-
 }
+
+void add(struct node* my_node, const char* word_dict)
+{
+    my_node->next = malloc(sizeof(struct node));
+
+    if (my_node->next->has_word == false)
+    {
+        strcpy(my_node->next->word,word_dict);
+        return;
+    }
+    else
+    {
+        add(my_node->next, word_dict);
+    }
+}
+
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
@@ -135,17 +149,3 @@ bool lcheck (struct node* my_node, const char* word_dict)
 
 }
 
-void add(struct node* my_node, const char* word_dict)
-{
-    my_node->next = malloc(sizeof(struct node));
-
-    if (my_node->next->has_word == false)
-    {
-        strcpy(my_node->next->word,word_dict);
-        return;
-    }
-    else
-    {
-        add(my_node->next, word_dict);
-    }
-}
