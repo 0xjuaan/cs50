@@ -111,9 +111,13 @@ bool check(const char *word)
     {
         return true;
     }
-    else
+    else if (table[v]->next->has_word)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
+    }
+    else
+    {
+        return false;
     }
 
 }
@@ -137,19 +141,15 @@ bool unload(void)
 
 bool lcheck (struct node* my_node, const char* word_dict)
 {
-    if (!my_node->has_word) //If there is no word (we reached the end of the linked list)
-    {
-        return false;
-    }
-    else if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
+    if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
     {
         return true;
     }
-    else if (my_node->next->has_word)
+    else
     {
         return lcheck (my_node->next, word_dict);
     }
-    return false;
+
 }
 
 void add(struct node* my_node, const char* word_dict)
