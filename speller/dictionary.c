@@ -84,22 +84,13 @@ unsigned int size(void)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int sum = 0;
-    for (int i = 0; i < 2; i++)
-    {
-        sum += toupper(word[i]) - 'A';
-    }
-    double sigmoid = 1/((double) 1 + exp(-0.05 * sum));
-
-    int v = round(100*sigmoid);
-    //printf("%i\n", v);
-    return v;
+    return 0;
 }
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    return true;
+    return false;
     /*int v = hash(word);
 
     if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
