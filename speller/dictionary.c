@@ -122,7 +122,7 @@ bool check(const char *word)
     {
         return true;
     }
-    else if (table[v]->next != NULL && table[v]->next->has_word)
+    else if (table[v]->next->has_word)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
