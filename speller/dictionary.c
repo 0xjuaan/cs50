@@ -9,6 +9,8 @@
 
 #include "dictionary.h"
 
+#define DICTIONARY "dictionaries/large"
+
 FILE *dict;
 // Represents a node in a hash table
 
@@ -62,6 +64,8 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
+    dict = fopen(DICTIONARY, "r");
+
     char character;
     int counter = 0;
 
@@ -73,7 +77,6 @@ unsigned int size(void)
         }
     }
     //printf("Total words: %i\n", counter);
-    fclose(dict);
     return counter;
 }
 
