@@ -49,7 +49,6 @@ int main(int argc, char *argv[])
 
     // Calculate time to load dictionary
     time_load = calculate(&before, &after);
-
     // Try to open text
     char *text = (argc == 3) ? argv[2] : argv[1];
     FILE *file = fopen(text, "r");
@@ -69,6 +68,7 @@ int main(int argc, char *argv[])
 
     // Spell-check each word in text
     char c;
+    
     while (fread(&c, sizeof(char), 1, file))
     {
         // Allow only alphabetical characters and apostrophes
