@@ -64,7 +64,7 @@ void add(struct node* my_node, const char* word_dict)
 {
     my_node->next = malloc(sizeof(struct node));
 
-    if (my_node->next->has_word == false)
+    if (my_node->next->has_word == false && my_node->next != NULL)
     {
         strcpy(my_node->next->word,word_dict);
         //my_node->next->has_word = true;
@@ -108,7 +108,6 @@ unsigned int hash(const char *word)
     double sigmoid = 1/((double) 1 + exp(-0.05 * sum));
 
     int v = round(100*sigmoid);
-    //printf("%i\n", v);
     return v;
 }
 
@@ -124,7 +123,7 @@ bool check(const char *word)
     {
         return true;
     }
-    else if (table[v]->next->has_word)
+    else if (table[v]->next->has_word) //SEGGGGGGGGG
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
