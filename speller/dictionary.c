@@ -53,6 +53,7 @@ bool load(const char *dictionary)
             }
 
         }
+        //After done loading the entire dictionary into the data structure
         return true;
     }
 
