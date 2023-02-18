@@ -114,8 +114,11 @@ unsigned int hash(const char *word)
 bool check(const char *word)
 {
     int v = hash(word);
-
-    if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
+    if (table[v] == NULL)
+    {
+        return false;
+    }
+    else if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
     {
         return true;
     }
