@@ -142,6 +142,10 @@ bool lcheck (struct node* my_node, const char* word_dict)
     {
         return true;
     }
+    else if (!my_node->next->has_word)
+    {
+        return false;
+    }
     else
     {
         return lcheck (my_node->next, word_dict);
