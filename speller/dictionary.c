@@ -113,9 +113,9 @@ bool check(const char *word)
     }
     else
     {
-        lcheck(table[v], word); //If not the 1st word, go forth in the list
+        return lcheck(table[v], word); //If not the 1st word, go forth in the list
     }
-    return true;
+
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -137,11 +137,11 @@ bool unload(void)
 
 bool lcheck (struct node* my_node, const char* word_dict)
 {
-    if (!my_node->has_word)
+    if (!my_node->has_word) //If there is no word (we reached the end)
     {
         return false;
     }
-    else if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the 1st word is equal to the input word
+    else if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
     {
         return true;
     }
