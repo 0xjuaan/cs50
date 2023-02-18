@@ -51,6 +51,7 @@ bool load(const char *dictionary)
             }
             else
             {
+                //table[v]->has_word = true;
                 add(table[v], buffer);
             }
         }
@@ -66,6 +67,7 @@ void add(struct node* my_node, const char* word_dict)
     if (my_node->next->has_word == false)
     {
         strcpy(my_node->next->word,word_dict);
+        my_node->next->has_word = true;
         return;
     }
     else
@@ -126,6 +128,7 @@ bool check(const char *word)
     {
         return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
+    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
