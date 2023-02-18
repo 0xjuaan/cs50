@@ -71,12 +71,9 @@ unsigned int size(void)
         {
             counter++;
         }
-        else
-        {
-            continue;
-        }
     }
     //printf("Total words: %i\n", counter);
+    fclose(dict);
     return counter;
 }
 
