@@ -64,27 +64,21 @@ unsigned int size(void)
     char character;
     int counter = 0;
 
-    if (dict == NULL)
+    while((character = fgetc(dict)) != EOF)
     {
-        return 0;
-    }
-    else
-    {
-        while((character = fgetc(dict)) != EOF)
+        if (character == '\n')
         {
-            if (character == '\n')
-            {
-                counter++;
-            }
-            else
-            {
-                continue;
-            }
+            counter++;
         }
-        //printf("Total words: %i\n", counter);
-       return counter;
+        else
+        {
+            continue;
+        }
     }
+    //printf("Total words: %i\n", counter);
+    return counter;
 }
+
 
 // Hashes word to a number
 unsigned int hash(const char *word)
@@ -124,18 +118,11 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    if (fclose(dict) == 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
     for (int i = 0; i < N; i++)
     {
         free(table[i]);
     }
+    return true;
 }
 
 bool lcheck (struct node* my_node, const char* word_dict)
