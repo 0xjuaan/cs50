@@ -113,7 +113,7 @@ bool check(const char *word)
     }
     else
     {
-        return lcheck(table[v], word); //If not the 1st word, go forth in the list
+        return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
     }
 
 }
@@ -137,7 +137,7 @@ bool unload(void)
 
 bool lcheck (struct node* my_node, const char* word_dict)
 {
-    if (!my_node->has_word) //If there is no word (we reached the end)
+    if (!my_node->has_word) //If there is no word (we reached the end of the linked list)
     {
         return false;
     }
