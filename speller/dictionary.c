@@ -46,11 +46,10 @@ bool load(const char *dictionary)
             if (table[v]->has_word == false)
             {
                 strcpy(table[v]->word, buffer);
+                table[v]->has_word = true;
             }
             else
             {
-                table[v]->has_word = true;
-
                 table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd one
 
                 add(table[v]->next, buffer);
@@ -117,7 +116,7 @@ bool check(const char *word)
     }
     else if (table[v]->next == NULL) //If the next node was not made
     {
-    
+
         return false;
     }
     else
