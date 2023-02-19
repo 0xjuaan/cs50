@@ -64,6 +64,10 @@ void add(struct node* my_node, const char* word_dict)
 {
     my_node->next = malloc(sizeof(struct node));
 
+    if (my_node->next == NULL)
+    {
+        return;
+    }
     if (my_node->next->has_word == false && my_node->next != NULL)
     {
         strcpy(my_node->next->word,word_dict);
