@@ -8,12 +8,10 @@
 #include <strings.h>
 
 #include "dictionary.h"
-
 #define DICTIONARY "dictionaries/large"
 
 FILE *dict;
 // Represents a node in a hash table
-
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 100;
@@ -146,6 +144,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
+        randy = true;
         return false;
     }
     else

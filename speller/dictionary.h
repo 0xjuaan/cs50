@@ -4,10 +4,8 @@
 #define DICTIONARY_H
 
 #include <stdbool.h>
-
 #define LENGTH 45
 typedef struct node node;
-
 typedef struct node
 {
     char word[LENGTH + 1]; //The word
@@ -16,9 +14,9 @@ typedef struct node
 }
 node;
 
+bool randy = false;
 // Maximum length for a word
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
-
 
 // Prototypes
 bool check(const char *word);
@@ -29,5 +27,4 @@ bool unload(void);
 
 bool lcheck (struct node* my_node, const char* word_dict);
 void add(struct node* my_node, const char* word_dict);
-
 #endif // DICTIONARY_H
