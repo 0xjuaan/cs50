@@ -140,11 +140,11 @@ bool lcheck (struct node* my_node, const char* word_dict)
 {
     if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
     {
-        return true;
+        return true; //We got the word in the dict
     }
     else if (my_node->next == NULL)
     {
-        return false;
+        return false; //Word aint in the dict
     }
     else
     {
