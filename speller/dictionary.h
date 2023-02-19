@@ -14,7 +14,6 @@ typedef struct node
 }
 node;
 
-bool randy = false;
 // Maximum length for a word
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 

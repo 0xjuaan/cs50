@@ -144,7 +144,6 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
-        randy = true;
         return false;
     }
     else
