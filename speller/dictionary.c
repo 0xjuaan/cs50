@@ -71,7 +71,7 @@ void add(struct node* my_node, const char* word_dict)
     if (my_node->has_word == false)
     {
         strcpy(my_node->word,word_dict);
-        my_node->has_word = true;
+        my_node->has_word = true; // Fill this space with the word from the dictionary
         return;
     }
     else
@@ -156,7 +156,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
-        
+
         return false; //Word aint in the dict
     }
     else
