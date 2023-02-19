@@ -154,6 +154,5 @@ bool lcheck (struct node* my_node, const char* word_dict)
     {
         return lcheck (my_node->next, word_dict);
     }
-    return false;
 }
 
