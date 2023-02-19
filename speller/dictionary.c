@@ -53,7 +53,7 @@ bool load(const char *dictionary)
             {
                 table[v]->has_word = true;
 
-                table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd oneca
+                table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd one
 
                 add(table[v]->next, buffer);
             }
@@ -65,18 +65,15 @@ bool load(const char *dictionary)
 
 void add(struct node* my_node, const char* word_dict)
 {
-    if (my_node == NULL)
+    if (my_node->has_word == false)
     {
-        my_node = malloc(sizeof(struct node));
-    }
-    if (my_node->next->has_word == false)
-    {
-        strcpy(my_node->next->word,word_dict);
-        my_node->next->has_word = true;
+        strcpy(my_node->word,word_dict);
+        my_node->has_word = true;
         return;
     }
     else
     {
+        my_node->next = malloc(sizeof(struct node)); //Allocate RAM to next node
         add(my_node->next, word_dict);
     }
 }
@@ -105,15 +102,7 @@ unsigned int size(void)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int sum = 0;
-    for (int i = 0; i < 2; i++)
-    {
-        sum += toupper(word[i]) - 'A';
-    }
-    double sigmoid = 1/((double) 1 + exp(-0.05 * sum));
-
-    int v = round(100*sigmoid);
-    return v;
+    return toupper(word[0])-'A';
 }
 
 // Returns true if word is in dictionary, else false
@@ -128,9 +117,13 @@ bool check(const char *word)
     {
         return true;
     }
-    else if (table[v]->next != NULL)
+    else if (table[v]->next == NULL) //If the next node was not made
     {
-        return lcheck(table[v], word); //If not the 1st word, go forth in the list and return that result
+        return false;
+    }
+    else
+    {
+        return lcheck(table[v]->next, word);
     }
     return false;
 }
