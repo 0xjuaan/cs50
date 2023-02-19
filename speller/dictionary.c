@@ -156,7 +156,10 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
-
+        for (int i = 0; i < 10; i++)
+        {
+            printf("\n");
+        }
         return false; //Word aint in the dict
     }
     else
