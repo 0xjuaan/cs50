@@ -43,6 +43,8 @@ bool load(const char *dictionary)
 
             if (table[v] == NULL)
             {
+                //Allocate memory to store a node* in table[v]
+                
                 table[v] = malloc(sizeof(struct node));
                 table[v]->has_word = false;
                 table[v]->next = NULL;
@@ -71,7 +73,7 @@ void add(struct node* my_node, const char* word_dict)
     if (my_node->has_word == false)
     {
         strcpy(my_node->word,word_dict);
-        
+
         my_node->has_word = true; // Fill this space with the word from the dictionary
 
         my_node->next = malloc(sizeof(struct node)); //Allocate RAM to next node
