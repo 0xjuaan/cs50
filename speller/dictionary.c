@@ -133,8 +133,6 @@ bool check(const char *word)
     {
         return lcheck(table[v]->next, word);
     }
-
-    return false;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -149,7 +147,19 @@ bool unload(void)
 
 bool lcheck (struct node* my_node, const char* word_dict)
 {
-
+    if (strcasecmp(my_node->word, word_dict) == 0)
+    {
+        return true;
+    }
+    else if (my_node->next == NULL)
+    {
+        
+        return false;
+    }
+    else
+    {
+        return lcheck(my_node->next, word_dict);
+    }
 }
 
 
