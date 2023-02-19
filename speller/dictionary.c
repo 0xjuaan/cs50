@@ -45,8 +45,9 @@ bool load(const char *dictionary)
 
             if (table[v]->has_word == false)
             {
-                strcpy(table[v]->word, buffer);
-                table[v]->has_word = true;
+                strcpy(table[v]->word, buffer); //Fill in dis 1st value
+
+                table[v]->has_word = true; //Now set it to have a value since we just gave it one
             }
             else
             {
