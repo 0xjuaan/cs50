@@ -44,7 +44,7 @@ bool load(const char *dictionary)
             if (table[v] == NULL)
             {
                 //Allocate memory to store a node* in table[v]
-                
+
                 table[v] = malloc(sizeof(struct node));
                 table[v]->has_word = false;
                 table[v]->next = NULL;
@@ -156,7 +156,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
-        printf("*****%s*****", table[0]->next->next->word);
+        //printf("*****%s*****", table[0]->next->next->word);
         return false;
     }
     else
