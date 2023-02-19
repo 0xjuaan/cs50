@@ -51,19 +51,19 @@ bool load(const char *dictionary)
                 my_node->next = NULL;
             }
 
-            if (table[v]->has_word == false) //i.e , we just made this one
+            if (my_node->has_word == false) //i.e , we just made this one
             {
-                strcpy(table[v]->word, buffer); //Fill in dis 1st value
-                table[v]->has_word = true; //Now set it to have a value since we just gave it one
+                strcpy(my_node->word, buffer); //Fill in dis 1st value
+                my_node->has_word = true; //Now set it to have a value since we just gave it one
 
                 //Allocate and initialise the 2nd one
-                table[v]->next = malloc(sizeof(struct node));
-                table[v]->next->has_word = false;
-                table[v]->next->next = NULL;
+                my_node->next = malloc(sizeof(struct node));
+                my_node->next->has_word = false;
+                my_node->next->next = NULL;
             }
             else //If this one is filled up
             {
-                add(table[v]->next, buffer);
+               
             }
         }
         //After done loading the entire dictionary into the data structure
