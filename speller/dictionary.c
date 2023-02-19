@@ -54,7 +54,8 @@ bool load(const char *dictionary)
             else
             {
                 table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd one
-
+                table[v]->next->has_word = false;
+                table[v]->next->next = NULL;
                 add(table[v]->next, buffer);
             }
         }
@@ -74,6 +75,11 @@ void add(struct node* my_node, const char* word_dict)
     else
     {
         my_node->next = malloc(sizeof(struct node)); //Allocate RAM to next node
+
+        my_node->next->has_word = false;
+
+        my_node->next->next = NULL;
+        
         add(my_node->next, word_dict);
     }
 }
