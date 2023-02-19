@@ -44,8 +44,7 @@ bool load(const char *dictionary)
 
             if (my_node == NULL)
             {
-                //Allocate memory to store a node* in table[v]
-
+                //Allocate memory to store a node* in this node
                 my_node = malloc(sizeof(struct node));
                 my_node->has_word = false;
                 my_node->next = NULL;
@@ -63,7 +62,7 @@ bool load(const char *dictionary)
             }
             else //If this one is filled up
             {
-               
+
             }
         }
         //After done loading the entire dictionary into the data structure
