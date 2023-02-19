@@ -40,14 +40,15 @@ bool load(const char *dictionary)
         {
             buffer[strcspn(buffer, "\n")] = 0;
             v = hash(buffer);
+            node* my_node = table[v];
 
-            if (table[v] == NULL)
+            if (my_node == NULL)
             {
                 //Allocate memory to store a node* in table[v]
 
-                table[v] = malloc(sizeof(struct node));
-                table[v]->has_word = false;
-                table[v]->next = NULL;
+                my_node = malloc(sizeof(struct node));
+                my_node->has_word = false;
+                my_node->next = NULL;
             }
 
             if (table[v]->has_word == false) //i.e , we just made this one
