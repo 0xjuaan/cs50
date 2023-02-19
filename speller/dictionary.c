@@ -150,7 +150,22 @@ bool unload(void)
 
 bool lcheck (struct node* my_node, const char* word_dict)
 {
-    if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
+
+}
+
+
+
+
+
+
+
+
+
+
+//lcheck function saved
+
+
+   /*if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
     {
         return true; //We got the word in the dict
     }
@@ -166,5 +181,4 @@ bool lcheck (struct node* my_node, const char* word_dict)
     {
         return lcheck (my_node->next, word_dict);
     }
-}
-
+    */
