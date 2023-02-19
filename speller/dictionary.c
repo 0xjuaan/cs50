@@ -62,8 +62,8 @@ bool load(const char *dictionary)
 }
 
 void add(struct node* my_node, const char* word_dict)
-{
-    if (my_node->has_word == false)
+{my_node
+    if (->has_word == false)
     {
         strcpy(my_node->word,word_dict);
         my_node->has_word = true;
