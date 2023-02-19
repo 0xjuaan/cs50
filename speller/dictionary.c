@@ -119,7 +119,6 @@ bool check(const char *word)
     int v = hash(word);
     if (table[v] == NULL) //If there is no ting for this hash_value
     {
-
         return false;
     }
     else if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
