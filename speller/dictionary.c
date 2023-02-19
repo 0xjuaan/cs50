@@ -53,7 +53,7 @@ bool load(const char *dictionary)
             {
                 table[v]->has_word = true;
 
-                table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd one
+                table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd oneca
 
                 add(table[v]->next, buffer);
             }
