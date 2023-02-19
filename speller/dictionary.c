@@ -153,7 +153,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
-        
+        printf("*****%s*****", table[0]->next->word);
         return false;
     }
     else
