@@ -50,11 +50,13 @@ bool load(const char *dictionary)
                 table[v]->next = NULL;
             }
 
-            if (table[v]->has_word == false)
+            if (table[v]->has_word == false) //i.e , we just made this one
             {
                 strcpy(table[v]->word, buffer); //Fill in dis 1st value
                 table[v]->has_word = true; //Now set it to have a value since we just gave it one
-                table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd one
+
+                //Allocate and initialise the 2nd one
+                table[v]->next = malloc(sizeof(struct node));
                 table[v]->next->has_word = false;
                 table[v]->next->next = NULL;
             }
@@ -156,7 +158,6 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
-        //printf("*****%s*****", table[0]->next->next->word);
         return false;
     }
     else
