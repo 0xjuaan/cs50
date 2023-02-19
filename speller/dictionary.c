@@ -52,12 +52,12 @@ bool load(const char *dictionary)
             {
                 strcpy(table[v]->word, buffer); //Fill in dis 1st value
                 table[v]->has_word = true; //Now set it to have a value since we just gave it one
-            }
-            else
-            {
                 table[v]->next = malloc(sizeof(struct node)); //Allocating RAM to the 2nd one
                 table[v]->next->has_word = false;
                 table[v]->next->next = NULL;
+            }
+            else
+            {
                 add(table[v]->next, buffer);
             }
         }
