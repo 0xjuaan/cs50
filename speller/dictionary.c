@@ -51,7 +51,7 @@ bool load(const char *dictionary)
             }
             else
             {
-                //table[v]->has_word = true;
+                table[v]->has_word = true;
                 add(table[v], buffer);
             }
         }
@@ -67,7 +67,7 @@ void add(struct node* my_node, const char* word_dict)
     if (my_node->next->has_word == false && my_node->next != NULL)
     {
         strcpy(my_node->next->word,word_dict);
-        //my_node->next->has_word = true;
+        my_node->next->has_word = true;
         return;
     }
     else
