@@ -173,10 +173,7 @@ int main(int argc, char *argv[])
     printf("TIME IN unload:       %.2f\n", time_unload);
     printf("TIME IN TOTAL:        %.2f\n\n",
            time_load + time_check + time_size + time_unload);
-    if (randy == true)
-    {
-        printf("RANDYYYY");
-    }
+   
     // Success
     return 0;
 }
