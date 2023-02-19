@@ -119,7 +119,20 @@ unsigned int hash(const char *word)
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-   
+    int v = hash(word);
+    node *my_node = table[v];
+
+
+    while (my_node != NULL)
+    {
+        if (strcasecmp(my_node->word, word) == 0)
+        {
+            my_node = my_node->next;
+            return true;
+        }
+    }
+    return false;
+
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
