@@ -42,6 +42,8 @@ bool load(const char *dictionary)
             v = hash(buffer);
 
             table[v] = malloc(sizeof(struct node));
+            table[v]->has_word = false;
+            table[v]->next = NULL;
 
             if (table[v]->has_word == false)
             {
@@ -62,8 +64,8 @@ bool load(const char *dictionary)
 }
 
 void add(struct node* my_node, const char* word_dict)
-{my_node
-    if (->has_word == false)
+{
+    if (my_node->has_word == false)
     {
         strcpy(my_node->word,word_dict);
         my_node->has_word = true;
