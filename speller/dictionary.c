@@ -42,6 +42,8 @@ bool load(const char *dictionary)
             v = hash(buffer);
             node* my_node = table[v];
 
+            label:
+
             if (my_node == NULL)
             {
                 //Allocate memory to store a node* in this node
@@ -63,6 +65,7 @@ bool load(const char *dictionary)
             else //If this one is filled up
             {
                 my_node = my_node->next;
+                goto label;
             }
         }
         //After done loading the entire dictionary into the data structure
