@@ -119,7 +119,23 @@ unsigned int hash(const char *word)
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-   
+    int v = hash(word);
+    if (table[v] == NULL) //If there is no ting for this hash_value
+    {
+        return false;
+    }
+    else if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
+    {
+        return true;
+    }
+    else if (table[v]->next == NULL) //If the next node was not made
+    {
+        return false;
+    }
+    else
+    {
+        return lcheck(table[v]->next, word);
+    }
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -132,7 +148,48 @@ bool unload(void)
     return true;
 }
 
+bool lcheck (struct node* my_node, const char* word_dict)
+{
+    if (strcasecmp(my_node->word, word_dict) == 0)
+    {
+        return true;
+    }
+    else if (my_node->next == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        return lcheck(my_node->next, word_dict);
+    }
+}
 
 
 
 
+
+
+
+
+
+
+//lcheck function saved
+
+
+   /*if (strcasecmp(my_node->word, word_dict) == 0) //Checking if the word is equal to the input word
+    {
+        return true; //We got the word in the dict
+    }
+    else if (my_node->next == NULL)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            printf("\n");
+        }
+        return false; //Word aint in the dict
+    }
+    else
+    {
+        return lcheck (my_node->next, word_dict);
+    }
+    */
