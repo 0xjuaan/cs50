@@ -62,7 +62,7 @@ bool load(const char *dictionary)
             }
             else //If this one is filled up
             {
-
+                my_node = my_node->next;
             }
         }
         //After done loading the entire dictionary into the data structure
