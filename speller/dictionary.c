@@ -117,6 +117,7 @@ bool check(const char *word)
     }
     else if (table[v]->next == NULL) //If the next node was not made
     {
+    
         return false;
     }
     else
