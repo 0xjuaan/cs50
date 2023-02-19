@@ -48,7 +48,6 @@ bool load(const char *dictionary)
             if (table[v]->has_word == false)
             {
                 strcpy(table[v]->word, buffer); //Fill in dis 1st value
-
                 table[v]->has_word = true; //Now set it to have a value since we just gave it one
             }
             else
@@ -79,7 +78,7 @@ void add(struct node* my_node, const char* word_dict)
         my_node->next->has_word = false;
 
         my_node->next->next = NULL;
-        
+
         add(my_node->next, word_dict);
     }
 }
@@ -117,6 +116,7 @@ bool check(const char *word)
     int v = hash(word);
     if (table[v] == NULL) //If there is no ting for this hash_value
     {
+
         return false;
     }
     else if (strcasecmp(table[v]->word, word) == 0) //Checking if the 1st word is equal to the input word
@@ -125,7 +125,10 @@ bool check(const char *word)
     }
     else if (table[v]->next == NULL) //If the next node was not made
     {
-
+        for (int i = 0; i < 10; i++)
+        {
+            printf("\n");
+        }
         return false;
     }
     else
