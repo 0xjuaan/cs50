@@ -41,9 +41,12 @@ bool load(const char *dictionary)
             buffer[strcspn(buffer, "\n")] = 0;
             v = hash(buffer);
 
-            table[v] = malloc(sizeof(struct node));
-            table[v]->has_word = false;
-            table[v]->next = NULL;
+            if (table[v] == NULL)
+            {
+                table[v] = malloc(sizeof(struct node));
+                table[v]->has_word = false;
+                table[v]->next = NULL;
+            }
 
             if (table[v]->has_word == false)
             {
@@ -125,16 +128,13 @@ bool check(const char *word)
     }
     else if (table[v]->next == NULL) //If the next node was not made
     {
-        for (int i = 0; i < 10; i++)
-        {
-            printf("\n");
-        }
         return false;
     }
     else
     {
         return lcheck(table[v]->next, word);
     }
+
     return false;
 }
 
@@ -156,6 +156,7 @@ bool lcheck (struct node* my_node, const char* word_dict)
     }
     else if (my_node->next == NULL)
     {
+        
         return false; //Word aint in the dict
     }
     else
