@@ -122,7 +122,6 @@ bool check(const char *word)
     int v = hash(word);
     node *my_node = table[v];
 
-
     while (my_node != NULL)
     {
         if (strcasecmp(my_node->word, word) == 0)
