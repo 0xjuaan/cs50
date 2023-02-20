@@ -20,6 +20,7 @@ const unsigned int N = 26;
 node *table[N];
 
 
+unsigned int dict_word_count = 0;
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
@@ -43,6 +44,8 @@ bool load(const char *dictionary)
 
             my_node->next = table[v];
             table[v] = my_node;
+
+            dict_word_count++;
         }
         fclose(dict);
         return true;
