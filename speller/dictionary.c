@@ -81,17 +81,17 @@ bool check(const char *word)
 bool unload(void)
 {
 
-    for (int i = 0; i < N; i++)
+    for (int c = 0; c < N; c++)
     {
-        node *cursor = table[i];
-        while(cursor)
+        node *my_node = table[c];
+        while(my_node)
         {
-            node *tmp = cursor;
-            cursor = cursor->next;
+            node *tmp = my_node;
+            my_node = my_node->next;
             free(tmp);
         }
 
-        if (cursor == NULL && i == N-1)
+        if (my_node == NULL && c == N-1)
         {
             return true;
         }
