@@ -75,16 +75,24 @@ bool load(const char *dictionary)
     }
 }
 
-// Hashes word to a number
-unsigned int hash(const char *word)
-{
-    return toupper(word[0])-'A';
-}
+
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    int v = hash(word);
+    node* my_node = table[v];
 
+    if (my_node == NULL)
+    {
+        return false; //Empty 'bucket'
+    }
+
+    else if (strcasecmp(my_node->word, word) == 0)
+    {
+        return true; //This is da word
+    }
+    
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -96,6 +104,13 @@ bool unload(void)
     }
     return true;
 }
+
+
+
+
+
+//BELOW THIS ARE GOOD FUNCTIONS
+
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
@@ -120,5 +135,9 @@ unsigned int size(void)
     return counter;
 }
 
-
+// Hashes word to a number
+unsigned int hash(const char *word)
+{
+    return toupper(word[0])-'A';
+}
 
