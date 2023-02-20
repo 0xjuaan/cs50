@@ -24,6 +24,4 @@ bool load(const char *dictionary);
 unsigned int size(void);
 bool unload(void);
 
-bool lcheck (struct node* my_node, const char* word_dict);
-void add(struct node* my_node, const char* word_dict);
 #endif // DICTIONARY_H
