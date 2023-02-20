@@ -34,7 +34,7 @@ bool load(const char *dictionary)
     }
     else
     {
-        char *buffer = malloc(LENGTH * 1);
+        char *buffer = malloc(LENGTH);
 
         while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
         {
@@ -80,6 +80,7 @@ bool load(const char *dictionary)
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+
     int v = hash(word);
     node* my_node = table[v];
 
@@ -87,8 +88,7 @@ bool check(const char *word)
 
     if (my_node == NULL)
     {
-        printf("***%s***", my_node->word);
-        return false; //Empty 'bucket'
+        return false; //We reached the end but cant find a match
     }
 
     else if (strcasecmp(my_node->word, word) == 0)
