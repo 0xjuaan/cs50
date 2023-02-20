@@ -25,7 +25,7 @@ node *table[N];
  bool load(const char *dictionary)
 {
     int v;
-    struct node* my_node;
+    struct node* my_node = malloc(sizeof(struct node));
     char buffer[LENGTH+1];
 
     dict = fopen(dictionary, "r");
@@ -38,22 +38,13 @@ node *table[N];
     {
         while (fscanf(dict, "%s", buffer) != EOF)
         {
-            v = hash(buffer); //Getting the hash value
+            v = hash(buffer);
 
-            my_node = table[v]; //Putting cursor at the start
+            strcpy(my_node->word, buffer);
 
-            label:
-            if (my_node == NULL)
-            {
-                my_node = malloc(sizeof(struct node)); //Allocate node to this empty pointer
-                strcpy(my_node->word, buffer); //Put the word in
-                continue;
-            }
-            else
-            {
-                my_node = my_node->next; //Move cursor forward and check availability of next one
-                goto label;
-            }
+            my_node->next = table[v]->next;
+
+            table[v]->next = my_node;
         }
         return true;
     }
