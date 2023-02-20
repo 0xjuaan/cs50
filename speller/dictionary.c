@@ -24,7 +24,6 @@ node *table[N];
 // Loads dictionary into memory, returning true if successful, else false
  bool load(const char *dictionary)
 {
-    int v;
     struct node* my_node = malloc(sizeof(struct node));
     char buffer[LENGTH+1];
 
@@ -38,13 +37,13 @@ node *table[N];
     {
         while (fscanf(dict, "%s", buffer) != EOF)
         {
-            v = hash(buffer);
+            int v = hash(buffer);
 
             strcpy(my_node->word, buffer);
 
-            my_node->next = table[v]->next;
+            //my_node->next = table[v]->next;
 
-            table[v]->next = my_node;
+            //table[v]->next = my_node;
         }
         return true;
     }
