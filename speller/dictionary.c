@@ -25,7 +25,7 @@ node *table[N];
  bool load(const char *dictionary)
 {
     int v;
-    struct node* my_node = malloc(sizeof(struct node));
+    struct node* my_node;
     char buffer[LENGTH+1];
 
     dict = fopen(dictionary, "r");
@@ -38,8 +38,9 @@ node *table[N];
     {
         while (fscanf(dict, "%s", buffer) != EOF)
         {
-            v = hash(buffer);
-            my_node = table[v];
+            v = hash(buffer); //Getting the hash value
+
+            my_node = table[v]; //Putting cursor at the start
 
             if (my_node == NULL)
             {
