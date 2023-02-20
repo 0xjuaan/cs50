@@ -92,7 +92,11 @@ bool check(const char *word)
     {
         return true; //This is da word
     }
-    
+    else if (my_node->next != NULL)
+    {
+        my_node = my_node->next;
+    }
+
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
