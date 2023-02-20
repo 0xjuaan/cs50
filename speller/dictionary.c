@@ -83,8 +83,11 @@ bool check(const char *word)
     int v = hash(word);
     node* my_node = table[v];
 
+    label1:
+
     if (my_node == NULL)
     {
+        printf("***%s***", my_node->word);
         return false; //Empty 'bucket'
     }
 
@@ -95,7 +98,10 @@ bool check(const char *word)
     else if (my_node->next != NULL)
     {
         my_node = my_node->next;
+        goto label1;
     }
+
+    return false;
 
 }
 
