@@ -98,7 +98,7 @@ bool check(const char *word)
     {
         return true; //This is da word
     }
-    else if (my_node->next != NULL)
+    else
     {
         my_node = my_node->next;
         goto label1;
