@@ -41,11 +41,12 @@ node *table[N];
 
             strcpy(my_node->word, buffer);
 
-            my_node->next = table[v]->next;
-            table[v]->next = my_node;
+            my_node->next = table[v];
+            table[v] = my_node;
 
 
         }
+        fclose(dict);
         return true;
     }
 }
