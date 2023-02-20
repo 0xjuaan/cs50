@@ -54,6 +54,7 @@ bool load(const char *dictionary)
 
             dict_word_count++;
         }
+
         fclose(dict);
         return true;
     }
@@ -84,7 +85,7 @@ bool unload(void)
     for (int c = 0; c < N; c++)
     {
         node *my_node = table[c];
-        while(my_node)
+        while(my_node != NULL)
         {
             node *tmp = my_node;
             my_node = my_node->next;
