@@ -77,9 +77,12 @@ bool unload(void)
     return true;
 }
 
-bool kick(struct node* spot)
+void kick(struct node* spot)
 {
-    printf()
+    if (spot != NULL)
+    {
+        
+    }
 }
 
 
