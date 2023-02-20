@@ -90,9 +90,6 @@ void kick(struct node* spot)
     free(spot);
 }
 
-
-
-
 //BELOW THIS ARE GOOD FUNCTIONS
 
 
