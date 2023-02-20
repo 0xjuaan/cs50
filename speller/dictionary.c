@@ -35,7 +35,6 @@ node *table[N];
     else
     {
         char *buffer = malloc(LENGTH);
-        struct node *my_node;
 
         while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
         {
@@ -43,16 +42,7 @@ node *table[N];
 
             v = hash(buffer); //Hash the word
 
-            if (table[v] == NULL)
-            {
-                table[v] = malloc(sizeof(node));
-
-                strcpy(table[v]->word, buffer);
-                table[v]->has_word = true;
-
-                my_node = table[v];
-                break;
-            }
+            node* my_node = table[v];
 
             label:
 
@@ -62,6 +52,8 @@ node *table[N];
                 my_node = malloc(sizeof(struct node));
                 my_node->has_word = false;
                 //my_node->next = NULL;
+
+                table[v] = my_node;
             }
 
             if (my_node->has_word == false) //Reached an empty node
