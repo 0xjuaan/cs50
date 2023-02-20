@@ -22,7 +22,7 @@ node *table[N];
 
 
 // Loads dictionary into memory, returning true if successful, else false
- bool load(const char *dictionary)
+bool load(const char *dictionary)
 {
     struct node* my_node = malloc(sizeof(struct node));
     char buffer[LENGTH+1];
