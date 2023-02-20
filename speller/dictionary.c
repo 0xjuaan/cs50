@@ -85,24 +85,18 @@ bool check(const char *word)
     int v = hash(word);
     struct node* my_node = table[v];
 
-    label1:
-
-    if (my_node == NULL)
+    while(my_node != NULL)
     {
-        printf("***%s***", my_node->word);
-        return false; //We reached the end but cant find a match
+        if (strcasecmp(my_node->word, word) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            my_node = my_node->next;
+            continue;
+        }
     }
-
-    else if (strcasecmp(my_node->word, word) == 0)
-    {
-        return true; //This is da word
-    }
-    else
-    {
-        my_node = my_node->next;
-        goto label1;
-    }
-
     return false;
 }
 
