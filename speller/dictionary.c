@@ -56,8 +56,8 @@ bool load(const char *dictionary)
 
             if (my_node->has_word == false) //i.e , we just made this one
             {
-                strcpy(my_node->word, buffer); //Fill in dis 1st value
-                my_node->has_word = true; //Now set it to have a value since we just gave it one
+                strcpy(my_node->word, buffer); //Fill in dis value
+                my_node->has_word = true;
 
                 //Allocate and initialise the 2nd one
                 my_node->next = malloc(sizeof(struct node));
