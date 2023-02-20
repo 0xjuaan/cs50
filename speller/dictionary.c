@@ -34,47 +34,10 @@ node *table[N];
     }
     else
     {
-        char *buffer = malloc(LENGTH);
-
-        while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
+        while (fscanf(dict, "%s", word))
         {
-            buffer[strcspn(buffer, "\n")] = 0; //Remove the \n from it
-
-            v = hash(buffer); //Hash the word
-
-            node* my_node = table[v];
-
-            label:
-
-            if (my_node == NULL)
-            {
-                //Allocate memory to store a node* in this node
-                my_node = malloc(sizeof(struct node));
-                my_node->has_word = false;
-                //my_node->next = NULL;
-
-                table[v] = my_node;
-            }
-
-            if (my_node->has_word == false) //Reached an empty node
-            {
-                strcpy(my_node->word, buffer); //Fill in dis value
-                my_node->has_word = true;
-
-                //Allocate and initialise the 2nd one
-                my_node->next = malloc(sizeof(struct node));
-                my_node->next->has_word = false;
-                //my_node->next->next = NULL;
-            }
-
-            else //If this one is filled up
-            {
-                my_node = my_node->next;
-                goto label;
-            }
+            
         }
-        //After done loading the entire dictionary into the data structure
-        return true;
     }
 }
 
