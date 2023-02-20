@@ -41,8 +41,7 @@ node *table[N];
 
             strcpy(my_node->word, buffer);
 
-            struct node* tmp = table[v]->next;
-            my_node->next = tmp;
+            my_node->next = table[v]->next;
             table[v]->next = my_node;
 
 
