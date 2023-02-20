@@ -14,7 +14,7 @@ FILE *dict;
 // Represents a node in a hash table
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 100;
+const unsigned int N = 26;
 
 // Hash table
 node *table[N];
@@ -46,8 +46,6 @@ node *table[N];
             {
                 my_node = malloc(sizeof(struct node)); //Allocate node to this empty pointer
                 strcpy(my_node->word, buffer); //Put the word in
-
-                my_node = my_node->next;
                 continue;
             }
             else
