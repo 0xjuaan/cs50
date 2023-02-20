@@ -35,7 +35,7 @@ bool load(const char *dictionary)
     else
     {
         char *buffer = malloc(LENGTH);
-        node *my_node;
+        struct node *my_node;
 
         while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
         {
