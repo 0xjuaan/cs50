@@ -43,9 +43,6 @@ node *table[N];
 
             my_node->next = table[v];
             table[v] = my_node;
-
-
-
         }
         fclose(dict);
         return true;
@@ -74,6 +71,10 @@ bool check(const char *word)
 bool unload(void)
 {
 
+    for (int i = 0; i < N; i++)
+    {
+        kick(table[i]);
+    }
     return true;
 }
 
@@ -81,8 +82,12 @@ void kick(struct node* spot)
 {
     if (spot != NULL)
     {
-        
+        return;
     }
+
+    kick(spot);
+
+    free(spot);
 }
 
 
