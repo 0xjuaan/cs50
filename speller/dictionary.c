@@ -99,24 +99,7 @@ void kick(struct node* spot)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    dict = fopen(DICTIONARY, "r");
-
-    if (dict == NULL)
-    {
-        return 0;
-    }
-
-    char character;
-    int counter = 0;
-
-    while((character = fgetc(dict)) != EOF)
-    {
-        if (character == '\n')
-        {
-            counter++;
-        }
-    }
-    return counter;
+    return dict_word_count;
 }
 
 // Hashes word to a number
