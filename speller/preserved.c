@@ -193,3 +193,124 @@ bool lcheck (struct node* my_node, const char* word_dict)
         return lcheck (my_node->next, word_dict);
     }
     */
+
+   bool load(const char *dictionary)
+{
+    int v;
+
+    dict = fopen(dictionary, "r");
+
+    if (dict == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        char *buffer = malloc(LENGTH);
+
+        while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
+        {
+            buffer[strcspn(buffer, "\n")] = 0; //Remove the \n from it
+
+            v = hash(buffer); //Hash the word
+
+            node* my_node = table[v]; //table[v] is a pointer to a node (also the cursor rn)
+
+            label:
+
+            if (my_node == NULL)
+            {
+                //Allocate memory to store a node* in this node
+                my_node = malloc(sizeof(struct node));
+                my_node->has_word = false;
+                //my_node->next = NULL;
+
+                // Set the corresponding element in the table to point to the new node
+                table[v] = my_node;
+            }
+
+            if (my_node->has_word == false) //Reached an empty node
+            {
+                strcpy(my_node->word, buffer); //Fill in dis value
+                my_node->has_word = true;
+
+                //Allocate and initialise the 2nd one
+                my_node->next = malloc(sizeof(struct node));
+                my_node->next->has_word = false;
+                //my_node->next->next = NULL;
+            }
+
+            else //If this one is filled up
+            {
+                my_node = my_node->next;
+                goto label;
+            }
+        }
+        //After done loading the entire dictionary into the data structure
+        return true;
+    }
+}
+
+bool load(const char *dictionary)
+{
+    int v;
+
+    dict = fopen(dictionary, "r");
+
+    if (dict == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        char *buffer = malloc(LENGTH);
+        struct node *my_node;
+
+        while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
+        {
+            buffer[strcspn(buffer, "\n")] = 0; //Remove the \n from it
+
+            v = hash(buffer); //Hash the word
+
+            if (table[v] == NULL)
+            {
+                table[v] = malloc(sizeof(node));
+
+                strcpy(table[v]->word, buffer);
+                table[v]->has_word = true;
+
+                my_node = table[v];
+                break;
+            }
+
+            label:
+
+            if (my_node == NULL)
+            {
+                //Allocate memory to store a node* in this node
+                my_node = malloc(sizeof(struct node));
+                my_node->has_word = false;
+                //my_node->next = NULL;
+            }
+
+            if (my_node->has_word == false) //Reached an empty node
+            {
+                strcpy(my_node->word, buffer); //Fill in dis value
+                my_node->has_word = true;
+
+                //Allocate and initialise the 2nd one
+                my_node->next = malloc(sizeof(struct node));
+                my_node->next->has_word = false;
+                //my_node->next->next = NULL;
+            }
+
+            else //If this one is filled up
+            {
+                my_node = my_node->next;
+                goto label;
+            }
+        }
+        //After done loading the entire dictionary into the data structure
+        return true;
+    }
+}
