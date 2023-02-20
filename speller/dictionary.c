@@ -26,6 +26,7 @@ node *table[N];
 {
     int v;
     struct node* my_node;
+    char * buffer = malloc(LENGTH);
 
     dict = fopen(dictionary, "r");
 
@@ -48,8 +49,13 @@ node *table[N];
                 my_node = my_node->next;
                 continue;
             }
-            else if ()
+            else
+            {
+                my_node = my_node->next;
+                continue;
+            }
         }
+        return true;
     }
 }
 
