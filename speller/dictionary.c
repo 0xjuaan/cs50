@@ -25,7 +25,7 @@ unsigned int dict_word_count = 0;
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    struct node* my_node = malloc(sizeof(struct node));
+
     char buffer[LENGTH+1];
 
     dict = fopen(dictionary, "r");
@@ -38,6 +38,13 @@ bool load(const char *dictionary)
     {
         while (fscanf(dict, "%s", buffer) != EOF)
         {
+            struct node* my_node = malloc(sizeof(struct node));
+
+            if (my_node == NULL)
+            {
+                return false;
+            }
+
             int v = hash(buffer);
 
             strcpy(my_node->word, buffer);
