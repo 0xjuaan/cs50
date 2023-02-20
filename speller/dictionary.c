@@ -22,7 +22,7 @@ node *table[N];
 
 
 // Loads dictionary into memory, returning true if successful, else false
-   bool load(const char *dictionary)
+ bool load(const char *dictionary)
 {
     int v;
 
@@ -35,6 +35,7 @@ node *table[N];
     else
     {
         char *buffer = malloc(LENGTH);
+        struct node *my_node;
 
         while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
         {
@@ -42,7 +43,16 @@ node *table[N];
 
             v = hash(buffer); //Hash the word
 
-            node* my_node = table[v]; //table[v] is a pointer to a node (also the cursor rn)
+            if (table[v] == NULL)
+            {
+                table[v] = malloc(sizeof(node));
+
+                strcpy(table[v]->word, buffer);
+                table[v]->has_word = true;
+
+                my_node = table[v];
+                break;
+            }
 
             label:
 
@@ -52,9 +62,6 @@ node *table[N];
                 my_node = malloc(sizeof(struct node));
                 my_node->has_word = false;
                 //my_node->next = NULL;
-
-                // Set the corresponding element in the table to point to the new node
-                table[v] = my_node;
             }
 
             if (my_node->has_word == false) //Reached an empty node
@@ -78,7 +85,6 @@ node *table[N];
         return true;
     }
 }
-
 
 
 // Returns true if word is in dictionary, else false
