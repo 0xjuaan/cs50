@@ -91,12 +91,12 @@ bool unload(void)
             free(tmp);
         }
 
-        if (cursor == NULL)
+        if (cursor == NULL && i == N-1)
         {
             return true;
         }
     }
-    return true;
+    return false;
 }
 
 void kick(struct node* spot)
