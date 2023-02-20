@@ -51,10 +51,10 @@ bool load(const char *dictionary)
                 //Allocate memory to store a node* in this node
                 my_node = malloc(sizeof(struct node));
                 my_node->has_word = false;
-                my_node->next = NULL;
+                //my_node->next = NULL;
             }
 
-            if (my_node->has_word == false) //i.e , we just made this one
+            if (my_node->has_word == false) //Reached an empty node
             {
                 strcpy(my_node->word, buffer); //Fill in dis value
                 my_node->has_word = true;
@@ -62,8 +62,9 @@ bool load(const char *dictionary)
                 //Allocate and initialise the 2nd one
                 my_node->next = malloc(sizeof(struct node));
                 my_node->next->has_word = false;
-                my_node->next->next = NULL;
+                //my_node->next->next = NULL;
             }
+            
             else //If this one is filled up
             {
                 my_node = my_node->next;
