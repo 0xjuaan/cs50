@@ -93,12 +93,13 @@ bool check(const char *word)
 {
 
     int v = hash(word);
-    node* my_node = table[v];
+    struct node* my_node = table[v];
 
     label1:
 
     if (my_node == NULL)
     {
+        printf("***%s***", my_node->word);
         return false; //We reached the end but cant find a match
     }
 

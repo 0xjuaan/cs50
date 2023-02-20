@@ -5,7 +5,7 @@
 
 #include <stdbool.h>
 #define LENGTH 45
-typedef struct node node;
+
 typedef struct node
 {
     char word[LENGTH + 1]; //The word
