@@ -35,6 +35,7 @@ bool load(const char *dictionary)
     else
     {
         char *buffer = malloc(LENGTH);
+        node *my_node;
 
         while (fgets(buffer, LENGTH, dict)) //Get a string from the dictionary (1 word)
         {
@@ -48,8 +49,8 @@ bool load(const char *dictionary)
 
                 strcpy(table[v]->word, buffer);
                 table[v]->has_word = true;
-                
-                node *my_node = table[v];
+
+                my_node = table[v];
                 break;
             }
 
