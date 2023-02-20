@@ -72,11 +72,7 @@ bool check(const char *word)
         {
             return true;
         }
-        else
-        {
-            my_node = my_node->next;
-            continue;
-        }
+        my_node = my_node->next;
     }
     return false;
 }
