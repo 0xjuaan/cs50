@@ -50,7 +50,7 @@ node *table[N];
             }
             else
             {
-                my_node = my_node->next;
+                my_node = my_node->next; //Move cursor forward and check availability of next one
                 continue;
             }
         }
