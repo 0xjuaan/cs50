@@ -82,7 +82,6 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-
     int v = hash(word);
     struct node* my_node = table[v];
 
@@ -105,7 +104,6 @@ bool check(const char *word)
     }
 
     return false;
-
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
