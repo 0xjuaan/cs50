@@ -83,7 +83,18 @@ bool unload(void)
 
     for (int i = 0; i < N; i++)
     {
-        kick(table[i]);
+        node *cursor = table[i];
+        while(cursor)
+        {
+            node *tmp = cursor;
+            cursor = cursor->next;
+            free(tmp);
+        }
+
+        if (cursor == NULL)
+        {
+            return true;
+        }
     }
     return true;
 }
