@@ -42,6 +42,7 @@ node *table[N];
 
             my_node = table[v]; //Putting cursor at the start
 
+            label:
             if (my_node == NULL)
             {
                 my_node = malloc(sizeof(struct node)); //Allocate node to this empty pointer
@@ -51,7 +52,7 @@ node *table[N];
             else
             {
                 my_node = my_node->next; //Move cursor forward and check availability of next one
-                continue;
+                goto label;
             }
         }
         return true;
