@@ -24,4 +24,6 @@ bool load(const char *dictionary);
 unsigned int size(void);
 bool unload(void);
 
+bool kick(struct node* spot)
+
 #endif // DICTIONARY_H

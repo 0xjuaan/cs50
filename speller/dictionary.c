@@ -42,7 +42,7 @@ node *table[N];
             strcpy(my_node->word, buffer);
 
             my_node->next = table[v];
-            my_node
+            table[v] = my_node;
 
 
 
@@ -77,6 +77,10 @@ bool unload(void)
     return true;
 }
 
+bool kick(struct node* spot)
+{
+    printf()
+}
 
 
 
