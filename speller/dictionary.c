@@ -42,7 +42,7 @@ bool load(const char *dictionary)
 
             v = hash(buffer); //Hash the word
 
-            node* my_node = table[v]; //table[v] is a pointer to a node (also the cursor rn)
+            if (table[v])
 
             label:
 
@@ -64,7 +64,7 @@ bool load(const char *dictionary)
                 my_node->next->has_word = false;
                 //my_node->next->next = NULL;
             }
-            
+
             else //If this one is filled up
             {
                 my_node = my_node->next;
