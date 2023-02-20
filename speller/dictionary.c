@@ -133,6 +133,7 @@ bool check(const char *word)
             return true;
         }
     }
+    printf("***%s***", table[v]->word);
     return false;
 
 }
