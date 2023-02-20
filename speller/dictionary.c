@@ -36,7 +36,7 @@ node *table[N];
     }
     else
     {
-        while (fscanf(dict, "%s", buffer))
+        while (fscanf(dict, "%s", buffer) != EOF)
         {
             v = hash(buffer);
             my_node = table[v];
@@ -84,7 +84,7 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    
+
     return true;
 }
 
