@@ -42,7 +42,7 @@ bool load(const char *dictionary)
 
             v = hash(buffer); //Hash the word
 
-            node* my_node = table[v]; //table[v] is a pointer to a node
+            node* my_node = table[v]; //table[v] is a pointer to a node (also the cursor rn)
 
             label:
 
