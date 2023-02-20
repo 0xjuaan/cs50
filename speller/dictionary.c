@@ -48,6 +48,7 @@ bool load(const char *dictionary)
 
                 strcpy(table[v]->word, buffer);
                 table[v]->has_word = true;
+                
                 node *my_node = table[v];
                 break;
             }
