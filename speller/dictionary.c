@@ -25,7 +25,7 @@ node *table[N];
  bool load(const char *dictionary)
 {
     int v;
-    struct node* my_node;
+    struct node* my_node = malloc(sizeof(struct node));
     char buffer[LENGTH+1];
 
     dict = fopen(dictionary, "r");
