@@ -42,7 +42,15 @@ bool load(const char *dictionary)
 
             v = hash(buffer); //Hash the word
 
-            if (table[v])
+            if (table[v] == NULL)
+            {
+                table[v] = malloc(sizeof(node));
+
+                strcpy(table[v]->word, buffer);
+                table[v]->has_word = true;
+                node *my_node = table[v];
+                break;
+            }
 
             label:
 
