@@ -26,7 +26,7 @@ node *table[N];
 {
     int v;
     struct node* my_node;
-    char * buffer = malloc(LENGTH);
+    char buffer[LENGTH+1];
 
     dict = fopen(dictionary, "r");
 
@@ -84,10 +84,7 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (int i = 0; i < N; i++)
-    {
-        free(table[i]);
-    }
+    
     return true;
 }
 
