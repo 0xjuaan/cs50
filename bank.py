@@ -1,7 +1,7 @@
 
 greeting = input("Greeting: ")
 
-if greeting.split()[0].lower() == "hello":
+if greeting.split()[0].lower() in ["hello", "hello,", "hello!"]:
      x = 0
 elif greeting[0].lower() == "h":
      x = 20
