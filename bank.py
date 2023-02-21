@@ -6,6 +6,6 @@ if greeting.lower() == "hello":
 elif greeting[0].lower() == "h":
      x = 20
 else:
-    x = 0
+     x = 0
 
 print("$" + str(x))
