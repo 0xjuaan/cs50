@@ -5,4 +5,4 @@ answer = get_string("whats ye naame? ")
 
 
 
-print("wagwan " + answer)
+print(f"wagwan {answer}")
