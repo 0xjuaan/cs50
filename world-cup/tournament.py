@@ -16,9 +16,9 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
-    with 
-    for i in range(len("2018m.csv")):
-        teams.append(team[i])
+    with open("2018m.csv", "r") as dict:
+        for i in range(len("2018m.csv")):
+            teams.append(dict.team[i])
 
     print(teams)
 
