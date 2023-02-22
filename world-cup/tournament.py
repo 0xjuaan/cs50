@@ -16,7 +16,7 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
-    with open("2018m.csv", "r") as dict:
+    dict = open("2018m.csv", "r"):
         for line in csv.DictReader(dict):
             teams.append(dict.line["team"])
 
