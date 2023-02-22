@@ -6,6 +6,6 @@ def main():
             break
 
     for i in range(n):
-        print("#")
+        print("#" * (i+1))
 
 main()
