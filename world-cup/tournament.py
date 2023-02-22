@@ -59,10 +59,18 @@ def simulate_tournament(teams):
     left = dict(teams.items()[len(teams)/2:])
     right = dict(teams.items()[:len(teams)/2]
 
-    simulate_round(left)
-    simulate_round(right)
+    for i in range(3):
 
-    simulate_tournament()
+        #Calling the simulation of the two sides
+        simulate_round(left)
+        simulate_round(right)
+
+        #Readjusting the values for each side
+        
+
+
+
+
 
 
 if __name__ == "__main__":
