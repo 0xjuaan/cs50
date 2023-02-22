@@ -16,7 +16,7 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
-
+    with 
     for i in range(len("2018m.csv")):
         teams.append(team[i])
 
