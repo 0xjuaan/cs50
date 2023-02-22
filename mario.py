@@ -1,9 +1,12 @@
 
 def main():
     while True:
-        n = int(input("Height: "))
-        if n > 0:
-            break
+        try:
+            n = int(input("Height: "))
+            if n > 0:
+                break
+        except: ValueError
+            print("Not an integer")
 
     for i in range(n):
         print(" " * (n-(i+1))  +  "#" * (i+1)  +  " "  +  "#" * (i+1))
