@@ -56,7 +56,13 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    teams.split()
+    left = dict(teams.items()[len(teams)/2:])
+    right = dict(teams.items()[:len(teams)/2]
+
+    simulate_round(left)
+    simulate_round(right)
+
+    simulate_tournament()
 
 
 if __name__ == "__main__":
