@@ -3,6 +3,14 @@ from cs50 import get_int
 def main():
     number = get_int("Number: ")
 
+    spare = number
+    len_number = 0
+    while (spare > 10):
+        spare = counter/10
+        len_number += 1
+
+    print(len_number)
+
 
 
 def first(number):
