@@ -26,14 +26,18 @@ def main():
     # : Simulate N tournaments and keep track of win counts
 
     #First populating the counts dict
-    for j in range(len(teams)):
-        counts[teams[j]["team"]] = int(0)
+   # for j in range(len(teams)):
+        #counts[teams[j]["team"]] = int(0)
 
     print(counts)
-    
+
     for i in range(N):
         winner = simulate_tournament(teams)
-        counts[winner] += 1
+
+        if winner in counts:
+            counts[winner] += 1
+        else:
+            counts[winner] = 0
 
 
 
