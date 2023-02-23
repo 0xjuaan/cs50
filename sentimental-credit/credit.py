@@ -20,7 +20,7 @@ def main():
         if i % 2 == 0:
             sum2 += int(number % 10) #First sum
         elif i % 2 == 1:
-            sum1.append(int(2 * number % 10))
+            sum1.insert(0, int(2 * number % 10))
 
         number = (number - number % 10) / 10
 
