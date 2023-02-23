@@ -67,7 +67,7 @@ def simulate_tournament(teams):
         else:
             right.append(teams[i])
 
-    #print(left)
+
 
 
 
