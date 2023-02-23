@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 45
+N = 1000
 
 def main():
 
@@ -35,7 +35,7 @@ def main():
         if winner in counts:
             counts[winner] += 1
         else:
-            counts[winner] = 0
+            counts[winner] = int(0)
 
 
 
