@@ -61,11 +61,14 @@ def simulate_tournament(teams):
     left = []
     right = []
 
+    #Splitting the teams into left and right of tree
     for i in range(len(teams)):
         if i < len(teams) / 2:
             left.append(teams[i])
         else:
             right.append(teams[i])
+
+    
 
 
 
