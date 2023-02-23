@@ -29,6 +29,8 @@ def main():
     for j in range(len(teams)):
         counts[teams[j]["team"]] = int(0)
 
+    print(counts)
+    
     for i in range(N):
         winner = simulate_tournament(teams)
         counts[winner] += 1
