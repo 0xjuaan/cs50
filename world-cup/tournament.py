@@ -68,8 +68,8 @@ def simulate_tournament(teams):
         else:
             right.append(teams[i])
 
-    left_finalist = dict(simulate_round(simulate_round(simulate_round(left))))
-    right_finalist = dict(simulate_round(simulate_round(simulate_round(right))))
+    left_finalist = simulate_round(simulate_round(simulate_round(left)))
+    right_finalist = simulate_round(simulate_round(simulate_round(right)))
 
 
     print(left_finalist)
