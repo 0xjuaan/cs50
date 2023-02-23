@@ -18,12 +18,13 @@ def main():
     for i in range(len_number):
 
         if i % 2 == 0:
-            sum2 += number % 10
+            sum2 += number % 10 #First sum
         else:
             sum1.append(2 * number % 10)
 
         number = (number - number % 10) / 10
 
+    # Second sum
     for sum in sum1:
         if sum < 10:
             sum3 += sum
@@ -32,6 +33,7 @@ def main():
 
     sum = sum2 + sum3
 
+    # Evaluating based on sum
     if sum % 10 == 0:
         checksum = True
     else:
@@ -39,7 +41,12 @@ def main():
         print("INVALID")
         exit(1)
 
-
+    if first2(number) in [34,37] and len_number == 15:
+        print("AMEX")
+    elif first2(number) in [51, 52, 53, 54, 55] and len_number == 16:
+        print("MASTERCARD")
+    elif first(number) == 4 and len_number in [13,16]:
+        print("VISA")
 
 
 
