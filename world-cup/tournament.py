@@ -15,13 +15,11 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
+    
     with open("2018m.csv") as dict:
         dict_reader = csv.DictReader(dict)
         for line in dict_reader:
             teams.append(line["team"])
-
-
-
 
 
     counts = {}
