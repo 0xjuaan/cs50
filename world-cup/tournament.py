@@ -21,6 +21,9 @@ def main():
             #print(f'{type(line["team"])}')
             teams.append(line["team"])
 
+    print(teams[2])
+
+
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
