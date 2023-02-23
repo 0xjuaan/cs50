@@ -9,7 +9,7 @@ Times:
 
 Questions:
 
-Which predictions, if any, proved incorrect as you increased the number of simulations?:
+Which predictions, if any, proved incorrect as you increased the number of simulations?: TODO
 
 With a small number of simulations (10), the randomness of the simulations had a much greater effect on the result.
 This is evident since when using this number of simulations, portugal and argentina were given a 20% chance of winning each.
@@ -17,7 +17,7 @@ These high predictions for portugal and argentina gradually decrease as the numb
 Hence these findings are incorrect/inaccurate.
 
 Suppose you're charged a fee for each second of compute time your program uses.
-After how many simulations would you call the predictions "good enough"?:
+After how many simulations would you call the predictions "good enough"?: TODO
 
 It seems like the predictions stabilized after about 50000 simulations. This means that
 any further increase in the number of simulations would only provide a marginal increase in
