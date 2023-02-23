@@ -6,5 +6,6 @@ def main():
 
 
 def first(number):
-    while(number%10)
+    while(number > 10):
+        
 
