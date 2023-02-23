@@ -8,7 +8,7 @@ def main():
             print("Not an integer")
 
     for i in range(n):
-        print(" " * (n-(i+1))  +  "#" * (i+1)  +  " "  +  "#" * (i+1))
+        print(" " * (n-(i+1))  +  "#" * (i+1)  +  "  "  +  "#" * (i+1))
 
 
 main()
