@@ -11,7 +11,7 @@ def main():
         spare = spare/10
         len_number += 1
 
-    print(first(number))
+    print(first2(number))
 
 
 
@@ -21,7 +21,7 @@ def first(number):
     return int(number)
 
 def first2(number):
-    while(number > 10):
+    while(number > 100):
         number = (number - number % 10) / 10
     return int(number)
 
