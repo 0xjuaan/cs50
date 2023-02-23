@@ -77,7 +77,7 @@ def simulate_tournament(teams):
         else:
             right.append(teams[i])
 
-    while len(left_finalist) != 1:
+    while len(left) != 1:
         left = simulate_round(left)
         right = simulate_round(right)
 
@@ -87,23 +87,6 @@ def simulate_tournament(teams):
     else:
         return (right[0]["team"])
 
-
-
-
-
-
-
-
-
-
-
-    #left_finalist = simulate_round(simulate_round(teams[:int(len(teams) / 2)]))
-    #right_finalist = simulate_round(simulate_round(teams[int(len(teams) / 2):]))
-
-    #if simulate_game(left_finalist, right_finalist):
-        #return left_finalist
-    #else:
-        #return right_finalist
 
 
 if __name__ == "__main__":
