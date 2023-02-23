@@ -25,7 +25,8 @@ def main():
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
-        simulate_tournament(teams)
+        winner = simulate_tournament(teams)
+        
 
 
     # Print each team's chances of winning, according to simulation
@@ -72,10 +73,10 @@ def simulate_tournament(teams):
     right_finalist = simulate_round(simulate_round(simulate_round(right)))
 
 
-    if simulate_game(left_finalist, right_finalist) == true:
-        return (left_finalist[0])
+    if simulate_game(left_finalist[0], right_finalist[0]):
+        return (left_finalist[0]["team"])
     else:
-        return (right_finalist[0])
+        return (right_finalist[0]["team"])
 
 
 
