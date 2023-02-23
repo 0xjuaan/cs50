@@ -24,12 +24,15 @@ def main():
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
-    for team in teams:
-        counts.appen
+
+    #First populating the counts dict
+    for j in range(len(teams)):
+        counts[teams[j]["team"]].append(int(0))
+
     for i in range(N):
         winner = simulate_tournament(teams)
         if winner in counts:
-            counts[winner]++
+            counts[winner] += 1
 
 
 
