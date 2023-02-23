@@ -23,8 +23,6 @@ def main():
 
 
 
-
-
 def first(number):
     while(number > 10):
         number = (number - number % 10) / 10
