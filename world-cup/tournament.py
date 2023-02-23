@@ -19,7 +19,7 @@ def main():
     with open("2018m.csv") as dict:
         dict_reader = csv.DictReader(dict)
         for line in dict_reader:
-            teams.append(line["team"])
+            teams.append(line)
 
 
     counts = {}
@@ -37,7 +37,7 @@ def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
     rating1 = team1["rating"]
     rating2 = team2["rating"]
-    probability = 1 / (1 + 10 ** ((rating2 - rating1) / 600))
+    probability = 1 / (1 + 10 ** ((int(rating2) - int(rating1)) / 600))
     return random.random() < probability
 
 
@@ -71,10 +71,10 @@ def simulate_tournament(teams):
     left_finalist = simulate_round(simulate_round(simulate_round(left)))
     right_finalist = simulate_round(simulate_round(simulate_round(right)))
 
-    #if simulate_game(left_finalist, right_finalist):
-      #  return left_finalist
-    #else:
-      #  return right_finalist
+    if simulate_game(left_finalist, right_finalist):
+        return left_finalist
+    else:
+        return right_finalist
 
 
 
