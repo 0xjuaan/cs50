@@ -18,12 +18,9 @@ def main():
     with open("2018m.csv") as dict:
         dict_reader = csv.DictReader(dict)
         for line in dict_reader:
-            #print(f'{type(line["team"])}')
             teams.append(line["team"])
-            print("Team: " + line["team"] + "  |  Rating: " + line["rating"])
 
-        for line in dict_reader: # line is an individual dict
-            print(line["team"])
+
 
 
 
