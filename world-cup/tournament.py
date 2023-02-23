@@ -61,10 +61,14 @@ def simulate_tournament(teams):
     left = []
     right = []
 
-    for i in int(len(teams)/2):
-        left.append(teams[i])
+    for i in range(len(teams)):
+        if i < len(teams) / 2:
+            left.append(teams[i])
+        else:
+            right.append(teams[i])
 
-
+    print(left)
+    print(right)
 
 
 
