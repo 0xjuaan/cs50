@@ -20,9 +20,12 @@ def main():
         for line in dict_reader:
             #print(f'{type(line["team"])}')
             teams.append(line["team"])
+            #print(line["team"])
 
-    for i in dict_reader:
-        print(dict_reader[i]["rating"])
+        for line in dict_reader: # line is an individual dict
+            print(line["team"])
+
+
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
