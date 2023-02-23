@@ -21,6 +21,8 @@ def main():
         else:
             sum1.append(2 * number % 10)
 
+        number = (number - number % 10) / 10
+
 
 
 def first(number):
