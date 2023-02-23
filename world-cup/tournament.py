@@ -72,12 +72,10 @@ def simulate_tournament(teams):
     right_finalist = simulate_round(simulate_round(simulate_round(right)))
 
 
-    print(left_finalist)
-
-    #if simulate_game(left_finalist, right_finalist) == true:
-        #return left_finalist
-   #else:
-        #return right_finalist
+    if simulate_game(left_finalist, right_finalist) == true:
+        return (left_finalist[0])
+    else:
+        return (right_finalist[0])
 
 
 
