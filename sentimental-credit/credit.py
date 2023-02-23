@@ -12,9 +12,13 @@ def main():
         len_number += 1
 
     # Calculating Checksum
-
+    sum1 = 0
+    sum 2 = 0
     for i in range(len_number):
-        
+
+        if i % 2 == 0:
+
+
 
 
 def first(number):
