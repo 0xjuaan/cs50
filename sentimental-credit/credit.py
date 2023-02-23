@@ -11,8 +11,10 @@ def main():
         spare = spare/10
         len_number += 1
 
-    print(first2(number))
+    # Calculating Checksum
 
+    for i in range(len_number):
+        
 
 
 def first(number):
