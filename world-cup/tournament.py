@@ -57,11 +57,9 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    left = dict(list(teams)[len(teams)/2:])
-    right = dict(list(teams)[:len(teams)/2])
 
-    left_finalist = simulate_round(simulate_round(left))
-    right_finalist = simulate_round(simulate_round(right))
+    left_finalist = simulate_round(simulate_round(teams[: len(teams) / 2]))
+    right_finalist = simulate_round(simulate_round(teams[len(teams) / 2:]))
 
     if simulate_game(left_finalist, right_finalist):
         return left_finalist
