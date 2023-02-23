@@ -6,19 +6,19 @@ Times:
 10000 simulations: 0m0.163s
 100000 simulations: 0m0.198s
 1000000 simulations: 0m14.514
+
 Questions:
 
-Which predictions, if any, proved incorrect as you increased the number of simulations?: TODO
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
 
 With a small number of simulations (10), the randomness of the simulations had a much greater effect on the result.
 This is evident since when using this number of simulations, portugal and argentina were given a 20% chance of winning each.
 These high predictions for portugal and argentina gradually decrease as the number of simulations increases. This shows that
-these findings are inaccurate.
-
+Hence these findings are incorrect/inaccurate.
 
 Suppose you're charged a fee for each second of compute time your program uses.
 After how many simulations would you call the predictions "good enough"?:
 
-It seems like the predictions stabilised after about 50,000 simulations, and further increasing the number of
-simulations would provide only a marginal increase in accuracy of the predictions.
-Hence after 50000, I would say this is enough simulations.
+It seems like the predictions stabilized after about 50000 simulations. This means that
+any further increase in the number of simulations would only provide a marginal increase in
+the accuracy of results. Hence 50000 simulations is good enough.
