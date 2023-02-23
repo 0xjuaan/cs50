@@ -13,10 +13,14 @@ def main():
 
     # Calculating Checksum
     sum1 = 0
-    sum 2 = 0
+    sum2 = 0
     for i in range(len_number):
 
         if i % 2 == 0:
+            sum2 += number % 10
+        else:
+            sum1 += 2 * number % 10
+        
 
 
 
