@@ -20,5 +20,10 @@ def first(number):
         number = (number - number % 10) / 10
     return int(number)
 
+def first2(number):
+    while(number > 10):
+        number = (number - number % 10) / 10
+    return int(number)
+
 
 main()
