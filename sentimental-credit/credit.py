@@ -30,7 +30,9 @@ def main():
             sum3 += sum
         else:
             sum3 += (sum - sum % 10) / 10 + sum % 10
-
+    print(sum1)
+    print(sum2)
+    print(sum3)
     sum = sum2 + sum3
 
     # Evaluating based on sum
