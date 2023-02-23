@@ -3,7 +3,7 @@ def main():
     while True:
         try:
             n = int(input("Height: "))
-            if n > 0:
+            if n > 0 and n < 9:
                 break
         except ValueError:
             print("Not an integer")
