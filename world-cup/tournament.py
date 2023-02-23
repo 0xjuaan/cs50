@@ -7,6 +7,7 @@ import random
 # Number of simluations to run
 N = 1000
 
+
 def main():
 
     # Ensure correct usage
@@ -21,11 +22,10 @@ def main():
         for line in dict_reader:
             teams.append(line)
 
-
     counts = {}
     # : Simulate N tournaments and keep track of win counts
 
-    #First populating the counts dict
+    # First populating the counts dict
     for j in range(len(teams)):
         counts[teams[j]["team"]] = int(0)
 
@@ -33,14 +33,12 @@ def main():
         winner = simulate_tournament(teams)
         counts[winner] += 1
 
-
-
-
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
         print(f"{team}: {counts[team] * 100 / N:.1f}% chance of winning")
 
     return 0
+
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
@@ -66,11 +64,11 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    #
+
     left = []
     right = []
 
-    #Splitting the teams into left and right of tree
+    # Splitting the teams into left and right of tree
     for i in range(len(teams)):
         if i < len(teams) / 2:
             left.append(teams[i])
@@ -81,12 +79,10 @@ def simulate_tournament(teams):
         left = simulate_round(left)
         right = simulate_round(right)
 
-
     if simulate_game(left[0], right[0]):
         return (left[0]["team"])
     else:
         return (right[0]["team"])
-
 
 
 if __name__ == "__main__":
