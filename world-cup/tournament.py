@@ -16,12 +16,13 @@ def main():
     teams = []
     # TODO: Read teams into memory from file
     with open("2018m.csv") as dict:
-        for line in csv.DictReader(dict):
+        dict_reader = csv.DictReader(dict)
+        for line in dict_reader:
             #print(f'{type(line["team"])}')
             teams.append(line["team"])
 
-    for i in teams:
-        print("team")
+    for i in dict_reader:
+        print(dict_reader[i]["rating"])
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
