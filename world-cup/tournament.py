@@ -15,7 +15,7 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
-    
+
     with open("2018m.csv") as dict:
         dict_reader = csv.DictReader(dict)
         for line in dict_reader:
@@ -58,6 +58,11 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
+    left = []
+    right = []
+    
+    for i in len(team)/2:
+
 
 
 
