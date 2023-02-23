@@ -12,15 +12,15 @@ def main():
         len_number += 1
 
     # Calculating Checksum
-    sum1 = 0
+    sum1 = []
     sum2 = 0
     for i in range(len_number):
 
         if i % 2 == 0:
             sum2 += number % 10
         else:
-            sum1 += 2 * number % 10
-        
+            sum1.append(2 * number % 10)
+
 
 
 
