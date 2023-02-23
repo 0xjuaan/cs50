@@ -18,9 +18,9 @@ def main():
     for i in range(len_number):
 
         if i % 2 == 0:
-            sum2 += number % 10 #First sum
+            sum2 += int(number % 10) #First sum
         else:
-            sum1.append(2 * number % 10)
+            sum1.append(int(2 * number % 10))
 
         number = (number - number % 10) / 10
 
@@ -29,7 +29,7 @@ def main():
         if sum < 10:
             sum3 += sum
         else:
-            sum3 += (sum - sum % 10) / 10 + sum % 10
+            sum3 += int((sum - sum % 10) / 10 + sum % 10)
     print(sum1)
     print(sum2)
     print(sum3)
