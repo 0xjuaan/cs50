@@ -14,7 +14,7 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    # TODO: Read teams into memory from file
+    # : Read teams into memory from file
 
     with open("2018m.csv") as dict:
         dict_reader = csv.DictReader(dict)
@@ -23,7 +23,7 @@ def main():
 
 
     counts = {}
-    # TODO: Simulate N tournaments and keep track of win counts
+    # : Simulate N tournaments and keep track of win counts
 
     #First populating the counts dict
     for j in range(len(teams)):
@@ -65,7 +65,7 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
-    # TODO
+    # 
     left = []
     right = []
 
