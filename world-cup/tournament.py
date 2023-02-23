@@ -18,7 +18,7 @@ def main():
     # TODO: Read teams into memory from file
     with open("2018m.csv") as dict:
         for line in csv.DictReader(dict):
-            print(f'{type(line["team"])}')
+            #print(f'{type(line["team"])}')
             teams.append(line["team"])
 
     counts = {}
@@ -57,8 +57,8 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    left = dict(teams[len(teams)/2:])
-    right = dict(teams[:len(teams)/2])
+    left = dict(list(teams)[len(teams)/2:])
+    right = dict(list(teams)[:len(teams)/2])
 
     left_finalist = simulate_round(simulate_round(left))
     right_finalist = simulate_round(simulate_round(right))
