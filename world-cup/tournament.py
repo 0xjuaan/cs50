@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1
+N = 20000
 
 def main():
 
@@ -27,7 +27,7 @@ def main():
 
     #First populating the counts dict
     for j in range(len(teams)):
-        counts[teams[j]["team"]].append(int(0))
+        counts[teams[j]["team"]] = int(0)
 
     for i in range(N):
         winner = simulate_tournament(teams)
