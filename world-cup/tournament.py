@@ -20,7 +20,7 @@ def main():
         for line in dict_reader:
             #print(f'{type(line["team"])}')
             teams.append(line["team"])
-            #print(line["team"])
+            print(line["team"])
 
         for line in dict_reader: # line is an individual dict
             print(line["team"])
