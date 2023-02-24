@@ -4,10 +4,11 @@ import sys
 
 def main():
 
+    # Ensuring correct usage with Command Line Arguments
     if len(sys.argv) != 3:
         print("Usage: python dna.py data.csv sequence.txt")
         exit(1)
-        
+
     # TODO: Read database file into a variable
 
     # TODO: Read DNA sequence file into a variable
