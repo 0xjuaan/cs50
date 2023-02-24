@@ -9,9 +9,14 @@ def main():
         print("Usage: python dna.py data.csv sequence.txt")
         exit(1)
 
-    # Read database file into a variable
+    # Open database as dict
     database = open(sys.argv[1], "r")
     data_reader = csv.DictReader(database)
+
+    # Transfer each person(dict) into a list of people
+    people = []
+    for person in data_reader:
+        people.append(person)
 
     # Read DNA sequence file into a variable
     sequence_file = open(sys.argv[2], "r")
