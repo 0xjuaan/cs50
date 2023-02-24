@@ -16,9 +16,13 @@ for i in text:
 
 score = (100 * 0.0588 * (L / W) - 0.296 * (S / W) * 100 - 15.8)
 
+print(L)
+print(W)
+print(S)
+
 if score > 16:
     print("Grade 16+")
 elif score < 1:
     print("Before Grade 1")
 else:
-    print(f"Grade {int(score)}")
+    print(f"Grade {score}")
