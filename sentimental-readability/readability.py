@@ -14,6 +14,11 @@ for i in text:
     elif i.isalpha():
         L +=1
 
-score = int((0.0588 * L - 0.296 * S - 15.8) / W)
+score = (100 * 0.0588 * (L / W) - 0.296 * (S / W) * 100 - 15.8)
 
-print(f"Grade {score}")
+if score > 16:
+    print("Grade 16+")
+elif score < 1:
+    print("Before Grade 1")
+else:
+    print(f"Grade {int(score)}")
