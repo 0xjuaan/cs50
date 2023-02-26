@@ -14,7 +14,6 @@ def main():
         # Copy the first line into a list
         strings = list(next(csv.reader(database)))
         strings.pop(0)
-        print(strings)
     #Again open database, this time to transfer into people (list of dicts)
     with open(sys.argv[1], "r") as database:
         data_reader = csv.DictReader(database)
@@ -32,19 +31,19 @@ def main():
     for string in strings:
         matches[string] = longest_match(sequence, string)
 
-    print(f"matches: {matches}")
-    print(f"people: {people}")
+    #print(f"matches: {matches}")
+    #print(f"people: {people}")
     #print(f"strings: {strings}")
 
     # TODO: Check database for matching profiles
 
-    for person in people: # Iterate across all people
+    for idx in range(len(people)): # Iterate across all people
         for string in strings: #Iterate across all strings of this person, and check it with 'sequence'
 
-            if matches[string] == people[person][string] and string == strings[len(strings)]:
-                print(person["name"])
+            if matches[string] == people[idx][string] and string == strings[len(strings)]:
+                print(people[idx]["name"])
 
-            elif matches[person][string] == people[person][string]:
+            elif matches[string] == people[idx][string]:
                 continue
 
             else:
