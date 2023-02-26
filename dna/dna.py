@@ -10,17 +10,18 @@ def main():
         exit(1)
 
     # Open database as dict
-    database = open(sys.argv[1], "r")
+    with open(sys.argv[1], "r") as database:
+        # Copy the first line into a list
+        strings = list(next(csv.reader(database)))
+        strings.
+        print(strings)
 
-    strings = list(csv.reader(database))[0]
-    print(strings)
-
-    data_reader = csv.DictReader(database)
-    database.close()
-    # Transfer each person(dict) into a list of people
-    people = []
-    for person in data_reader:
-        people.append(person)
+    with open(sys.argv[1], "r") as database:
+        data_reader = csv.DictReader(database)
+        # Transfer each person(dict) into a list of people
+        people = []
+        for person in data_reader:
+            people.append(person)
 
     # Read DNA sequence file into a variable
     sequence_file = open(sys.argv[2], "r")
