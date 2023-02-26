@@ -37,7 +37,7 @@ def main():
     # TODO: Check database for matching profiles
 
     for value in matches[]:
-        
+        with csv.DictReader(open(sys.argv[1], "r"))
     return
 
 
