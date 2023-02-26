@@ -32,12 +32,20 @@ def main():
     for string in strings:
         matches[string] = longest_match(sequence, string)
 
-    print(matches)
+    #print(matches)
+    #print(matches["AGATC"])
 
     # TODO: Check database for matching profiles
+    with csv.DictReader(open(sys.argv[1], "r")) as database:
 
-    for value in matches[]:
-        with csv.DictReader(open(sys.argv[1], "r"))
+        for string in strings:
+            for name in database:
+                if matches[string] = database
+
+
+
+
+
     return
 
 
