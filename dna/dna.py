@@ -33,7 +33,9 @@ def main():
         matches[string] = longest_match(sequence, string)
 
     print(matches)
+
     # TODO: Check database for matching profiles
+    
 
     return
 
