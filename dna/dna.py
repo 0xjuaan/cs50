@@ -15,7 +15,7 @@ def main():
         strings = list(next(csv.reader(database)))
         strings.pop(0)
         print(strings)
-
+    #Again open database, this time to transfer into people (list of dicts)
     with open(sys.argv[1], "r") as database:
         data_reader = csv.DictReader(database)
         # Transfer each person(dict) into a list of people
@@ -33,6 +33,7 @@ def main():
         matches[string] = longest_match(sequence, string)
 
     print(f"matches: {matches}")
+    print(f"people: {people}")
     #print(f"strings: {strings}")
 
     # TODO: Check database for matching profiles
