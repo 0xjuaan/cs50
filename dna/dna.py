@@ -35,8 +35,9 @@ def main():
     print(matches)
 
     # TODO: Check database for matching profiles
-    
 
+    for value in matches[]:
+        
     return
 
 
