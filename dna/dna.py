@@ -37,17 +37,17 @@ def main():
 
     # TODO: Check database for matching profiles
 
-        for person in people: # Iterate across all people
-            for string in strings: #Iterate across all strings of this person, and check it with 'sequence'
+    for person in people: # Iterate across all people
+        for string in strings: #Iterate across all strings of this person, and check it with 'sequence'
 
-                if matches[person][string] == people[person][string] and string == strings[len(strings)]:
-                    print(person["name"])
+            if matches[string] == people[person][string] and string == strings[len(strings)]:
+                print(person["name"])
 
-                elif matches[person][string] == people[person][string]:
-                    continue
+            elif matches[person][string] == people[person][string]:
+                continue
 
-                else:
-                    break
+            else:
+                break
 
 
     return
