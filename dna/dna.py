@@ -40,7 +40,7 @@ def main():
     for idx in range(len(people)): # Iterate across all people
         for string in strings: #Iterate across all strings of this person, and check it with 'sequence'
 
-            if matches[string] == people[idx][string] and string == strings[len(strings)]:
+            if matches[string] == people[idx][string] and string == strings[len(strings)-1]:
                 print(people[idx]["name"])
 
             elif matches[string] == people[idx][string]:
