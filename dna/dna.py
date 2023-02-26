@@ -12,7 +12,7 @@ def main():
     # Open database as dict
     database = open(sys.argv[1], "r")
     data_reader = csv.DictReader(database)
-
+    database.close()
     # Transfer each person(dict) into a list of people
     people = []
     for person in data_reader:
@@ -24,9 +24,10 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     matches = {}
-    strings = csv.reader(database, delimiter= ",")
+
+    strings = list(open(sys.argv[1], "r"))
     print(strings)
-    
+
 
     # TODO: Check database for matching profiles
 
