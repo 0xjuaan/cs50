@@ -45,6 +45,7 @@ def main():
 
             elif matches[string] == int(people[idx][string]):
                 continue
+            elif idx = len(people) - 1 and 
 
             else:
                 break
