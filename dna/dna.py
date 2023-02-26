@@ -26,31 +26,26 @@ def main():
     sequence_file = open(sys.argv[2], "r")
     sequence = sequence_file.read()
 
-    # TODO: Find longest match of each STR in DNA sequence
+    #Find longest match of each STR in DNA sequence
     matches = {}
     for string in strings:
         matches[string] = longest_match(sequence, string)
 
-    #print(f"matches: {matches}")
-    #print(f"people: {people}")
-    #print(f"strings: {strings}")
-
-    # TODO: Check database for matching profiles
-
+    #Check database for matching profiles
     for idx in range(len(people)): # Iterate across all people
         for string in strings: #Iterate across all strings of this person, and check it with 'sequence'
 
             if matches[string] == int(people[idx][string]) and string == strings[len(strings)-1]:
                 print(people[idx]["name"])
+                exit(0)
 
             elif matches[string] == int(people[idx][string]):
                 continue
-            elif idx = len(people) - 1 and 
 
             else:
                 break
 
-
+    print("No match")
     return
 
 
