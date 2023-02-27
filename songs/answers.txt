@@ -1,2 +1,3 @@
 Question 1: If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
-Answer:
+Answer: THeir audio aura is pretty fast tempo, danceable music which has decent energy but is not very loud.
+Question 2: Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
