@@ -21,3 +21,12 @@ AND month = 7
 AND day >=28
 ORDER BY day, hour, minute;
 
+
+--Passport number of everyone from the above flights
+SELECT passport_number FROM passengers WHERE flight_id IN (SELECT id FROM flights
+   ...> WHERE origin_airport_id = 8
+   ...> AND year = 2021
+   ...> AND month = 7
+   ...> AND day >=28
+   ...> ORDER BY day, hour, minute);
+
