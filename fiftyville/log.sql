@@ -13,4 +13,11 @@ AND month = 7
 AND day >=28
 ORDER BY day, hour, minute;
 
+--IF WANTING JUST ID
+SELECT id FROM flights
+WHERE origin_airport_id = 8
+AND year = 2021
+AND month = 7
+AND day >=28
+ORDER BY day, hour, minute;
 
