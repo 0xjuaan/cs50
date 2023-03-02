@@ -1,6 +1,6 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
---My idea: Intersect all people who (WENT ON PLANE-CALLED ON PHONE- )
+--My idea: Intersect all people who (WENT ON PLANE-CALLED ON PHONE-USED ATM)- ALL AFTER THE CRIME
 
 
 SELECT city FROM airports; --Finding list of cities
