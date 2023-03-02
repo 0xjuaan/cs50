@@ -55,9 +55,7 @@ AND receiver IN (
     AND year = 2021
     AND month = 7
     AND day >=28
-    ORDER BY day, hour, minute)));
-
-
+    ORDER BY day, hour, minute)))
 
 INTERSECT --with flight phone numbers
 
