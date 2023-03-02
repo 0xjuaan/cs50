@@ -54,8 +54,7 @@ AND receiver IN ( --CHANGE THIS: Make it the caller's own flight rather than any
     WHERE origin_airport_id = 8
     AND year = 2021
     AND month = 7
-    AND day >=28
-    ORDER BY day, hour, minute)))
+    AND day >=28)))
 
 INTERSECT --with flight phone numbers
 
