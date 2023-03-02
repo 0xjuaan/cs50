@@ -42,9 +42,21 @@ AND month = 7
 AND day >=28
 ORDER BY day, hour, minute));
 
-SELECT caller, receiver FROM phone_calls
+--Phone numbers of all calls after event
+SELECT caller FROM phone_calls
 WHERE year = 2021
 AND month = 7
-AND day >=28;
+AND day >=28
+
+INTERSECT --with flight phone numbers
+
+SELECT phone_number FROM people WHERE passport_number IN (
+SELECT DISTINCT(passport_number) FROM passengers WHERE flight_id IN (SELECT id FROM flights
+WHERE origin_airport_id = 8
+AND year = 2021
+AND month = 7
+AND day >=28
+ORDER BY day, hour, minute));
+
 
 
