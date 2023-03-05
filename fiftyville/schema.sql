@@ -87,4 +87,3 @@ CREATE TABLE bakery_security_logs (
     activity TEXT,
     license_plate TEXT,
     PRIMARY KEY(id)
-);
