@@ -50,11 +50,12 @@ ORDER BY day, hour, minute));
 --
 --
 
---Phone numbers of all callers after event
+--Passport number of all callers after event
+SELECT passport_number FROM people WHERE phone_number IN (
 SELECT caller FROM phone_calls
 WHERE year = 2021
 AND month = 7
-AND day >=28
+AND day >=28)
 
 INTERSECT --with phone numbers of all departees' after the event
 
