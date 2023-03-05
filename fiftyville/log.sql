@@ -53,11 +53,10 @@ AND receiver IN (--The same flight as the caller
     SELECT DISTINCT(passport_number) FROM passengers
     WHERE flight_id IN(
     SELECT flight_id FROM passengers
-    WHERE passport_number = (
+    WHERE passport_number IN (
         SELECT passport_number FROM people
         WHERE phone_number = caller
-    )
-    )))
+    ))))
 
 INTERSECT --with flight phone numbers of all departees' after the event
 
