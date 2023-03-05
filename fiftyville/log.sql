@@ -70,9 +70,7 @@ INTERSECT
 
 SELECT caller FROM phone_calls
 WHERE ID in (
-
-SELECT id FROM JOIN phone_calls on phone_calls.caller = people.phone_number
-WHERE
+-----I WAS HEREEEEEEEEEEEE TRY TO DO THE PERFECT JOIN TO LINK CALLER-RECEIVER
 
 )
 
