@@ -71,7 +71,8 @@ INTERSECT
 SELECT caller FROM phone_calls
 WHERE ID in (
 
-SELECT id FROM phone_calls WHERE
+SELECT id FROM phone_calls
+
 
 )
 
