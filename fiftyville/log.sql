@@ -48,7 +48,7 @@ WHERE year = 2021
 AND month = 7
 AND day >=28
 
-AND receiver IN ( --CHANGE THIS: Make it the caller's own flight rather than any flight
+AND receiver IN (--The same flight as the caller
     SELECT phone_number FROM people WHERE passport_number IN (
     SELECT DISTINCT(passport_number) FROM passengers
     WHERE flight_id IN(
