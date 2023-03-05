@@ -58,7 +58,7 @@ AND receiver IN ( --CHANGE THIS: Make it the caller's own flight rather than any
     AND month = 7
     AND day >=28)))
 
-INTERSECT --with flight phone numbers
+INTERSECT --with flight phone numbers of all departees' after the event
 
 SELECT phone_number FROM people WHERE passport_number IN (
 SELECT DISTINCT(passport_number) FROM passengers WHERE flight_id IN (SELECT id FROM flights
