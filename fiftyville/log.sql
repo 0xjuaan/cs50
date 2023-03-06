@@ -70,8 +70,10 @@ ORDER BY day, hour, minute);
 
 
 SELECT DISTINCT(flight_id) FROM passengers WHERE passport_number IN(
-SELECT passport_number FROM people WHERE phone_number IN (
+SELECT COUNT(passport_number) FROM people WHERE phone_number IN (
 SELECT caller FROM phone_calls
 WHERE year = 2021
 AND month = 7
 AND day >=28));
+
+SELECT id FROM flights;
