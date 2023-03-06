@@ -66,13 +66,12 @@ AND month = 7
 AND day >=28
 ORDER BY day, hour, minute);
 
-INTERSECT
+---
 
-SELECT caller FROM phone_calls
-WHERE ID in (
------I WAS HEREEEEEEEEEEEE TRY TO DO THE PERFECT JOIN TO LINK CALLER-RECEIVER
-
-)
-
-
+SELECT id FROM flights
+WHERE origin_airport_id = 8
+AND year = 2021
+AND month = 7
+AND day >=28
+ORDER BY day, hour, minute;
 
