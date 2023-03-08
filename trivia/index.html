@@ -72,9 +72,15 @@
                 {
                     if (response.toLowerCase() = 'water')
                     {
-                        feedback_fr.append('Correct!')
-                        feedback_fr.style.Color = 'green';
+                        feedback_fr.append('Correct!');
+                        feedback_fr.style.color = 'green';
                     }
+                    else
+                    {
+                        feedback_fr.append('Incorrect');
+                        feedback_fr.style.color = 'red';
+                    }
+                    check.disabled = true;
                 })
             })
 
