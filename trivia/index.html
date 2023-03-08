@@ -77,7 +77,7 @@
                     }
                     else
                     {
-                        feedback_fr.append(`${response}`);
+                        feedback_fr.append(`${response.trim().toLowerCase()}` + "is the wrong answer");
                         feedback_fr.style.color = 'red';
                     }
                     check.disabled = true;
