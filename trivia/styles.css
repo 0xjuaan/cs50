@@ -50,6 +50,11 @@ button, input[type="submit"] {
     vertical-align: middle;
 }
 
+button[id="retry"]{
+border: 4px solid;
+border-radius: 0.25rem;
+}
+
 
 input[type="text"] {
     line-height: 1.8;
