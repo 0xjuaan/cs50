@@ -10,19 +10,35 @@
                 let mcq1 = document.getElementById("1");
                 mcq1.addEventListener('click', function(){
                     mcq1.style.backgroundColor = 'green';
-                    
+                    let feedback = document.getElementById("feedback");
+                    feedback.append("Correct!");
+                    feedback.style.textColor = mcq1.style.backgroundColor;
+
                 })
                 let mcq2 = document.getElementById("2");
                 mcq2.addEventListener('click', function(){
                     mcq2.style.backgroundColor = 'red';
+
+                    let feedback = document.getElementById("feedback");
+                    feedback.append("Incorrect");
+                    feedback.style.textColor = mcq1.style.backgroundColor;
+
                 })
                 let mcq3 = document.getElementById("3");
                 mcq3.addEventListener('click', function(){
                     mcq3.style.backgroundColor = 'red';
+
+                    let feedback = document.getElementById("feedback");
+                    feedback.append("Incorrect");
+                    feedback.style.textColor = mcq1.style.backgroundColor;
                 })
                 let mcq4 = document.getElementById("4");
                 mcq4.addEventListener('click', function(){
                     mcq4.style.backgroundColor = 'red';
+
+                    let feedback = document.getElementById("feedback");
+                    feedback.append("Incorrect");
+                    feedback.style.textColor = mcq1.style.backgroundColor;
                 })
             })
 
@@ -40,6 +56,7 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                     <h3>How many people are on earth as of 7th March 2023?</h3>
+                    <h3 id = "feedback"></h3>
                     <button id = "1"> 8,020,524,385 </button>
                     <button id = "2"> 7,737,205,151 </button>
                     <button id = "3"> 8,095,391,569 </button>
