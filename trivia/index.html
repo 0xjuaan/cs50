@@ -63,13 +63,12 @@
                 })
 
                 //FREE RESPONSE SECTION
-
-                let response = document.getElementById("response").value;
                 let check = document.getElementById("check");
                 let feedback_fr = document.getElementById("feedback_fr");
 
                 check.addEventListener("click", function()
                 {
+                    let response = document.getElementById("response").value;
                     if (response.trim().toLowerCase() === 'water')
                     {
                         feedback_fr.append('Correct!');
