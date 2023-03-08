@@ -38,7 +38,7 @@
                     mcq2.style.backgroundColor = 'rgba(255, 0, 0, 0.62)';
                     let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Incorrect");
-                    feedback.style.textColor = mcq1.style.backgroundColor;
+                    feedback.style.Color = 'blue';
                     end_mcq();
                 })
 
@@ -48,7 +48,7 @@
                     mcq3.style.backgroundColor = 'rgba(255, 0, 0, 0.62)';
                     let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Incorrect");
-                    feedback.style.textColor = mcq1.style.backgroundColor;
+                    feedback.style.Color = 'red';
                     end_mcq();
                 })
 
@@ -58,7 +58,7 @@
                     mcq4.style.backgroundColor = 'rgba(255, 0, 0, 0.62)';
                     let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Incorrect");
-                    feedback.style.textColor = mcq1.style.backgroundColor;
+                    feedback.style.Color = 'red';
                     end_mcq();
                 })
 
@@ -73,13 +73,9 @@
                     if (response.toLowerCase() = 'water')
                     {
                         feedback_fr.append('Correct!')
-                        feedback_fr.style.textColor = mcq1.style.backgroundColor;
+                        feedback_fr.style.Color = 'green';
                     }
-                }
-
-
-
-
+                })
             })
 
 
