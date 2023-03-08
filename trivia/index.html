@@ -68,16 +68,18 @@
 
                 check.addEventListener("click", function()
                 {
-                    let response = document.getElementById("response").value;
-                    if (response.trim().toLowerCase() === 'water')
+                    let response = document.getElementById("response");
+                    if (response.value.trim().toLowerCase() === 'water')
                     {
                         feedback_fr.append('Correct!');
                         feedback_fr.style.color = 'green';
+                        response.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                     }
                     else
                     {
                         feedback_fr.append('Incorrect');
                         feedback_fr.style.color = 'red';
+                        response.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
                     }
                     check.disabled = true;
                 })
