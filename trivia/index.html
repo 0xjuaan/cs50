@@ -70,6 +70,7 @@
 
                 check.addEventListener("click", function()
                 {
+
                     if (response.trim().toLowerCase() === 'water')
                     {
                         feedback_fr.append('Correct!');
@@ -77,7 +78,7 @@
                     }
                     else
                     {
-                        feedback_fr.append('Incorrect');
+                        feedback_fr.append(`${response}`);
                         feedback_fr.style.color = 'red';
                     }
                     check.disabled = true;
