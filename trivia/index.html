@@ -70,7 +70,7 @@
 
                 check.addEventListener("click", function()
                 {
-                    if (response == 'water')
+                    if (response.trim().toLowerCase() == 'water')
                     {
                         feedback_fr.append('Correct!');
                         feedback_fr.style.color = 'green';
