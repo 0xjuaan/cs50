@@ -9,6 +9,7 @@
 
 
             document.addEventListener('DOMContentLoaded', function(){
+                //MCQ SECTION
 
                 function end_mcq()
                 {
@@ -25,7 +26,7 @@
                 mcq1.addEventListener('click', function(){
                     mcq1.style.backgroundColor = 'rgba(0, 255, 0, 0.62)';
 
-                    let feedback = document.getElementById("feedback");
+                    let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Correct!");
                     feedback.style.textColor = mcq1.style.backgroundColor;
                     end_mcq();
@@ -35,7 +36,7 @@
                 mcq2.addEventListener('click', function(){
 
                     mcq2.style.backgroundColor = 'rgba(255, 0, 0, 0.62)';
-                    let feedback = document.getElementById("feedback");
+                    let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Incorrect");
                     feedback.style.textColor = mcq1.style.backgroundColor;
                     end_mcq();
@@ -45,7 +46,7 @@
                 mcq3.addEventListener('click', function(){
 
                     mcq3.style.backgroundColor = 'rgba(255, 0, 0, 0.62)';
-                    let feedback = document.getElementById("feedback");
+                    let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Incorrect");
                     feedback.style.textColor = mcq1.style.backgroundColor;
                     end_mcq();
@@ -55,11 +56,27 @@
                 mcq4.addEventListener('click', function(){
 
                     mcq4.style.backgroundColor = 'rgba(255, 0, 0, 0.62)';
-                    let feedback = document.getElementById("feedback");
+                    let feedback = document.getElementById("feedback_mcq");
                     feedback.append("Incorrect");
                     feedback.style.textColor = mcq1.style.backgroundColor;
                     end_mcq();
                 })
+
+                //FREE RESPONSE SECTION
+
+                let response = document.getElementById("response");
+                let check = document.getElementById("check");
+                let feedback_fr = document.getElementById("feedback_fr");
+
+                check.addEventListener('click', function()
+                {
+                    if (response.toLowerCase() = 'water')
+                    {
+                        feedback_fr.append('Correct!')
+                        feedback_fr.style.textColor = mcq1.style.backgroundColor;
+                    }
+                }
+
 
 
 
@@ -79,7 +96,7 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                     <h3>How many people are on earth as of 7th March 2023?</h3>
-                    <h3 id = "feedback"></h3>
+                    <h3 id = "feedback_mcq"></h3>
                     <button id = "1"> 8,020,524,385 </button>
                     <button id = "2"> 7,737,205,151 </button>
                     <button id = "3"> 8,095,391,569 </button>
@@ -90,8 +107,9 @@
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <h3>What do adult cows drink?</h3>
-                <input type="text"></input>
-                <button id = "word">Check Answer</button>
+                <h3 id="feedback_fr"></h3>
+                <input id="response"></input>
+                <button id = "check">Check Answer</button>
             </div>
         </div>
     </body>
