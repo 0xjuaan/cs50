@@ -10,5 +10,6 @@
 }
 
 .gdesc {
-    color: red;
+    color: grey;
+    font: "Helvetica Neue, Lucida Grande, sans-serif";
 }
