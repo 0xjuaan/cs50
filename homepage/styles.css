@@ -7,5 +7,8 @@
 .gtitle {
     color: blue;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
+}
 
+.gdesc {
+    color: red;
 }
