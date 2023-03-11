@@ -1,10 +1,11 @@
 .head_link {
     color: green;
     text-align: center;
+    display: inline-block;
 }
 
 .gtitle {
-    color:blue;
+    color: blue;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
 
 }
