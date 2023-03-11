@@ -1,6 +1,9 @@
 
-.form-html {
-    background-color: #121212;
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    text-align: left;
 }
 
 .head_link {
