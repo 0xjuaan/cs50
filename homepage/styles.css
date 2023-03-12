@@ -8,12 +8,11 @@
     text-justify:distribute-all-lines;
 }
 .shoulder {
-    background-image: url("paper.gif");
+    background-image: url("wagwan.png");
     padding: 1rem 2rem;
     color: green;
     text-align: center;
-    justify-content: space-between;
-    text-justify:distribute-all-lines;
+    margin-bottom: 1rem;
 }
 
 body {
