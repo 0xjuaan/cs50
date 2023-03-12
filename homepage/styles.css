@@ -3,7 +3,9 @@
     margin-bottom: 1rem;
     padding: 1rem 2rem;
     color: green;
-    justify-content: space-between
+    text-align: center;
+    justify-content: space-between;
+    text-justify:distribute-all-lines;
 }
 
 body {
