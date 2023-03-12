@@ -7,6 +7,14 @@
     justify-content: space-between;
     text-justify:distribute-all-lines;
 }
+.shoulder {
+    background-image: url("paper.gif");
+    padding: 1rem 2rem;
+    color: green;
+    text-align: center;
+    justify-content: space-between;
+    text-justify:distribute-all-lines;
+}
 
 body {
     background-color: #000;
