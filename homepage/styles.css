@@ -28,6 +28,8 @@ body {
 .gtitle {
     color: #42e7d7;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
+    text-align: left;
+    padding: 1rem;
 }
 
 .gdate {
@@ -37,6 +39,8 @@ body {
 .gdesc {
     color: DimGray;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
+    text-align: left;
+    padding: 1rem;
 }
 
 .blink {
