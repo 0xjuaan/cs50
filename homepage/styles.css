@@ -32,7 +32,9 @@ body {
 }
 
 .gdate {
-
+    font: "Helvetica Neue, Lucida Grande, sans-serif";
+    text-align: left;
+    padding: 1rem;
 }
 
 .gdesc {
