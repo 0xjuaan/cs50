@@ -11,7 +11,7 @@
     color: #fff;
     text-align: center;
     font-family: IBM Plex Mono, sans-serif;
-    margin-bottom: 1rem;
+    margin: 10rem;
     font-size: 100px;
 }
 
@@ -19,7 +19,7 @@ body {
     background-color: #000;
     color: #fff;
     text-align: center;
-    height: 1080px;
+    max-height: 123123123123123px;
     max-width: 1920px;
     margin: auto;
 }
