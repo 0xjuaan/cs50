@@ -40,7 +40,11 @@ body {
     font: "Helvetica Neue, Lucida Grande, sans-serif";
     text-align: left;
     padding: 1rem;
-    
+}
+.desc_img {
+    width: 400px;
+    height: 300px;
+    padding: 1rem;
 }
 
 .blink {
