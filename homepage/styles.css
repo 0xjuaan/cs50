@@ -72,7 +72,11 @@ body {
     outline: none;
 
 }
+.copyright{
+    color: #ebecf0;
+    text-align:center;
 
+}
 a{
     text-decoration: none;
     outline:none;
