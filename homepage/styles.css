@@ -69,4 +69,6 @@ body {
     color: green;
     image-align: right;
     text-decoration: none;
+    outline: none;
+
 }
