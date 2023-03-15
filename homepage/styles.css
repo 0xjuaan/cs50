@@ -61,3 +61,13 @@ body {
     text-decoration: none;
     width: 150px;
 }
+
+.footer {
+    height:250px;
+    background-color: #202528;
+    padding: 1rem 2rem;
+    color: green;
+    text-align: center;
+    justify-content: space-between;
+    text-justify:distribute-all-lines;
+}
