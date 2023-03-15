@@ -67,7 +67,5 @@ body {
     background-color: #202528;
     padding: 1rem 2rem;
     color: green;
-    text-align: center;
-    justify-content: space-between;
-    text-justify:distribute-all-lines;
+    image-align: right;
 }
