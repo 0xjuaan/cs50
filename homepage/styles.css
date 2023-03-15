@@ -67,16 +67,15 @@ body {
     background-color: #202528;
     padding: 1rem 2rem;
     color: green;
-    text-align: right;
     text-decoration: none;
     outline: none;
 
 }
-.copyright{
+.footer .copyright{
     color: #989898;
     text-align: center;
-
 }
+
 a{
     text-decoration: none;
     outline:none;
