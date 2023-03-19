@@ -72,6 +72,9 @@ body {
 
 }
 .copyright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: #989898;
     text-align: center;
 }
