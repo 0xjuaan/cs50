@@ -80,11 +80,15 @@ a{
 }
 
 .ftitles{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
     display: flex;
     color: #42e7d7;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem;
 
 
 }
