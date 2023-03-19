@@ -69,12 +69,15 @@ body {
     color: green;
     text-decoration: none;
     outline: none;
-
-}
-.copyright{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+
+
+}
+.copyright{
+
     color: #989898;
     text-align: center;
 }
@@ -82,4 +85,13 @@ body {
 a{
     text-decoration: none;
     outline:none;
+}
+
+.ftitles{
+    color: #42e7d7;
+    font: "Helvetica Neue, Lucida Grande, sans-serif";
+    text-align: left;
+    padding: 1rem;
+
+
 }
