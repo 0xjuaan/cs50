@@ -66,15 +66,7 @@ body {
     height:250px;
     background-color: #202528;
     padding: 1rem 2rem;
-    color: green;
     text-decoration: none;
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-
 }
 .copyright{
 
@@ -88,9 +80,10 @@ a{
 }
 
 .ftitles{
+    display: flex;
     color: #42e7d7;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
-    text-align: left;
+    justify-content: space-between;
     padding: 1rem;
 
 
