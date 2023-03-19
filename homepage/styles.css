@@ -80,9 +80,7 @@ a{
 }
 
 .ftitles{
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+
 
     display: flex;
     color: #42e7d7;
