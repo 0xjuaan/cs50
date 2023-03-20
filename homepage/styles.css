@@ -75,7 +75,7 @@ body {
     margin-right: auto;
 }
 .copyright{
-    margin-top: 6rem;
+    margin-top: 5rem;
     color: #989898;
     text-align: center;
 }
@@ -98,4 +98,9 @@ a{
     background-color: #202528;
     border-width:1px;
     border-color: #fff;
+}
+
+.tings{
+    display: flex;
+    justify-content: space-between;
 }
