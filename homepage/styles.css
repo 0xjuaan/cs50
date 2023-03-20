@@ -95,5 +95,7 @@ a{
 }
 
 .form{
-    
+    background-color: #202528;
+    border-width:1px;
+    border-color: #fff;
 }
