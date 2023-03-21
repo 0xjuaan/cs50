@@ -117,5 +117,6 @@ a{
 }
 .reco{
     display: flex;
+    flex-direction: column;
 
 }
