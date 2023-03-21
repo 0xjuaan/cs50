@@ -18,7 +18,7 @@
 body {
     background-color: #000;
     color: #fff;
-    max-height: 123123123123123px;
+    max-height: 100%;
     max-width: 1920px;
     margin: auto;
 }
@@ -114,9 +114,15 @@ a{
 .gridspot{
     display: flex;
     justify-content: space-evenly;
+    max-height: 100%;
+    max-width: 1450px;
+    margin:auto;
 }
 .reco{
+    padding: 1rem;
+    background-color: #2f2f2f;
     display: flex;
     flex-direction: column;
+    width: 450px;
 
 }
