@@ -125,7 +125,8 @@ a{
     flex-direction: column;
     border-radius: 20px;
     width: 450px;
-    height: 400px;
+    height: 800px;
+    object-fit: cover;
     flex:1;
     margin: 3rem;
 
@@ -138,6 +139,5 @@ a{
     display: inline-block;
     color: #fff;
     background-color: #000;
-    width:10%;
     margin: 0.2em;
 }
