@@ -124,5 +124,7 @@ a{
     display: flex;
     flex-direction: column;
     width: 450px;
+    border-radius: 20px;
+    margin: 3rem;
 
 }
