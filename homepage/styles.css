@@ -132,6 +132,7 @@ span {
     width: 100%;
     }
 .badge{
+    display: inline-block;
     color: #fff;
     background-color: #000;
 }
