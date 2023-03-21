@@ -128,9 +128,10 @@ a{
     margin: 3rem;
 
 }
-
+span {
+    width: 100%;
+    }
 .badge{
     color: #fff;
     background-color: #000;
-    span width: auto;
 }
