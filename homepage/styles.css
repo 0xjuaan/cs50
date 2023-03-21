@@ -113,5 +113,5 @@ a{
 
 .spotter{
     display: flex;
-    justify-content
+    justify-content: space-evenly;
 }
