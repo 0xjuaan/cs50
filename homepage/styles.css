@@ -111,7 +111,7 @@ a{
     justify-content: space-between;
 }
 
-.spotter{
+.gridspot{
     display: flex;
     justify-content: space-evenly;
 }
