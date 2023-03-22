@@ -76,6 +76,7 @@ body {
 
 .footerBlock {
     margin: 0px 300px;
+    justify-content: center;
 }
 .copyright{
     margin-top: 5rem;
@@ -94,8 +95,6 @@ a{
 
     color: #42e7d7;
     font: "Helvetica Neue, Lucida Grande, sans-serif";
-    padding-left: 3rem;
-    padding-right: 2rem;
 }
 
 .form{
