@@ -50,10 +50,10 @@
                 <form>
                     <input placeholder="Enter your email here" class="form" type="form" id="response"></input>
                     <button type="submit" class="submission" id="submit">Submit</button>
-
+                    <br>
+                    <h8 id="thanks"></h8>
                 </form>
-                <br>
-                <h8 id="thanks"></h8>
+
             </div>
 
             <div class="copyright">
@@ -69,7 +69,7 @@
         let submit = document.getElementById("submit");
 
         submit.addEventListener("click", function(){
-            email.reset();
+            email.value = "";
             thanks.append("Thank you for signing up to the mailing list");
         })
     </script>
