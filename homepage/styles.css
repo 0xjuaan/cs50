@@ -67,6 +67,8 @@ body {
     flex: 1;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
+    
 
     background-color: #292929;
     width: 100%;
