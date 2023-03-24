@@ -75,7 +75,9 @@ body {
 }
 
 .footerBlock {
-    margin: 0px 200px;
+    width:700px;
+    height: auto;
+    text-align: justify;
     justify-content: center;
 }
 .copyright{
