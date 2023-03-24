@@ -77,8 +77,8 @@ body {
 .footerBlock {
     width:40%;
     height: auto;
-    text-align: justify;
-    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 .copyright{
     margin-top: 5rem;
