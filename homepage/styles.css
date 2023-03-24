@@ -164,6 +164,7 @@ a{
     text-align: center;
 }
 
-.goup{
-    margin: 50px 50px;
+.button{
+    height:50px;
+    width:50px;
 }
