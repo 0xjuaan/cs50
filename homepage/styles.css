@@ -68,7 +68,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    
+
 
     background-color: #292929;
     width: 100%;
@@ -94,7 +94,6 @@ a{
 }
 
 .ftitles{
-    text-align: justify;
     justify-content: space-between;
 
     color: #42e7d7;
@@ -166,6 +165,5 @@ a{
 }
 
 .goup{
-    height: 50px;
-    width: 50px;
+    margin: 50px 50px;
 }
