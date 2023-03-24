@@ -48,15 +48,29 @@
             <div class="footerBlock">
                 <h2 class="ftitles">Email List</h2>
                 <br>
-                <input placeholder="Enter your email here" class="form" type="text" id="response"></input>
-                <button class="submission">Submit</button>
-            </div>
+                <form>
+                    <input placeholder="Enter your email here" class="form" type="form" id="response"></input>
+                    <button type="button" class="submission" id="submit">Submit</button>
+                    <br>
+                    <h8 id="thanks" style="color: #42e7d7"></h8>
+                </form>
 
-            <div class="copyright">
-                <h8> Copyright 2023 © Juan (Don) Selvan. All rights reserved.</h8>
             </div>
-        </div>
-
 
     </body>
+
+    <script>
+        let thanks = document.getElementById("thanks");
+        let email = document.getElementById("response");
+        let submit = document.getElementById("submit");
+
+        submit.addEventListener("click", function(){
+            if (email.value != "")
+            {
+                email.value = "";
+            thanks.append("Thank you for signing up to the mailing list!");
+            }
+
+        })
+    </script>
 </html>

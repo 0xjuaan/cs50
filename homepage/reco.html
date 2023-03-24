@@ -54,31 +54,42 @@
 
 
 
-            <div class="footer">
-                <div class="footerBlock">
-                    <h2 class="ftitles">Socials</h2>
+        <div class="footer">
+            <div class="footerBlock">
+                <h2 class="ftitles">Socials</h2>
+                <br>
+                <a href="https://facebook.com" target="_blank"><img src="socials/facebook.png"> </a>
+                <a href="https://github.com" target="_blank"><img src="socials/github.png"> </a>
+                <a href="https://twitter.com" target="_blank"><img src="socials/twitter.png"> </a>
+                <a href="https://linkedin.com" target="_blank"><img src="socials/linkedin.png"> </a>
+            </div>
+            <div class="footerBlock">
+                <h2 class="ftitles">Email List</h2>
+                <br>
+                <form>
+                    <input placeholder="Enter your email here" class="form" type="form" id="response"></input>
+                    <button type="button" class="submission" id="submit">Submit</button>
                     <br>
-                    <a href="https://facebook.com" target="_blank"><img src="socials/facebook.png"> </a>
-                    <a href="https://github.com" target="_blank"><img src="socials/github.png"> </a>
-                    <a href="https://twitter.com" target="_blank"><img src="socials/twitter.png"> </a>
-                    <a href="https://linkedin.com" target="_blank"><img src="socials/linkedin.png"> </a>
-                </div>
-                <div class="footerBlock">
-                    <h2 class="ftitles">Email List</h2>
-                    <br>
-                    <input placeholder="Enter your email here" class="form" type="text" id="response"></input>
-                    <button class="submission">Submit</button>
-                </div>
+                    <h8 id="thanks" style="color: #42e7d7"></h8>
+                </form>
 
-                <div class="copyright">
-                    <h8> Copyright 2023 © Juan (Don) Selvan. All rights reserved.</h8>
-                </div>
             </div>
 
     </body>
 
 
     <script>
+        let thanks = document.getElementById("thanks");
+        let email = document.getElementById("response");
+        let submit = document.getElementById("submit");
 
+        submit.addEventListener("click", function(){
+            if (email.value != "")
+            {
+                email.value = "";
+            thanks.append("Thank you for signing up to the mailing list!");
+            }
+
+        })
     </script>
 </html>
