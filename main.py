@@ -7,8 +7,6 @@ def main():
     print(c)
 
 
-
-
 def fprimes(n):
     p=[]
     for i in range(n):
