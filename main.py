@@ -1,6 +1,5 @@
 def main():
-
-
+    goldy(0)
 
 
 
@@ -28,13 +27,20 @@ def primes(n):
             continue
         p.append(i)
 
-def goldy(n):
+def goldy(n, c):
+
+    if n < 3:
+        return
     primes = primes(n)
     diffs = []
     for i in range(n):
         if i in primes:
             for j in range(-n, 1):
-                -j
+                if i-j == n:
+                    diffs.append(i-j)
+
+    count += 1
+    goldy(diffs(max), count)
 
 
 
