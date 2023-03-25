@@ -1,3 +1,15 @@
+def main():
+    
+
+
+
+
+
+
+
+
+
+
 def diff(x,y):
     return y-x
 
@@ -18,7 +30,7 @@ def primes(n):
 
 def goldy(n):
     primes = primes(n)
-    
+
 
 
 for i in range(100):
@@ -33,3 +45,5 @@ for i in range(100):
     elif i%7==0 and i != 7:
         continue
     print(i)
+
+main()
