@@ -1,5 +1,5 @@
 def main():
-    
+
 
 
 
@@ -30,6 +30,7 @@ def primes(n):
 
 def goldy(n):
     primes = primes(n)
+    
 
 
 
