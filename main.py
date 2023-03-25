@@ -7,11 +7,6 @@ def main():
     print(c)
 
 
-def diff(x,y):
-    if y>x:
-        return y-x
-    if x>=y:
-        return x-y
 
 
 def fprimes(n):
@@ -46,7 +41,7 @@ def goldy(n):
             break
         for j in range(len(primes)):
             if i + primes[len(primes)-1-j] == n:
-                diffs.append(diff(i, primes[len(primes)-1-j]))
+                diffs.append(abs(i - (primes[len(primes)-1-j])))
                 fin = True
                 break
 
