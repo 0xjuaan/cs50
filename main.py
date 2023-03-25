@@ -30,7 +30,12 @@ def primes(n):
 
 def goldy(n):
     primes = primes(n)
-    
+    diffs = []
+    for i in range(n):
+        if i in primes:
+            
+
+
 
 
 
