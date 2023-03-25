@@ -28,18 +28,18 @@ def fprimes(n):
     return p
 
 def goldy(n, c):
-    print(n)
+
     if n < 3:
         return
 
     primes = fprimes(n)
     diffs = []
-        for i in primes:
-            for j in primes:
-                if i + (len(primes)-j) == n:
-                    diffs.append(diff(i,j))
-                    break
-                
+    for i in primes:
+        for j in primes:
+            if i + (len(primes)-j) == n:
+                diffs.append(diff(i,j))
+                break
+
 
 
     print(diffs)
