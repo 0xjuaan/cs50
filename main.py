@@ -1,5 +1,10 @@
+c = 0
 def main():
-    goldy(20, 0)
+
+
+    global c
+    goldy(int(input()))
+    print(c)
 
 
 def diff(x,y):
@@ -26,14 +31,14 @@ def fprimes(n):
 
     return p
 
-def goldy(n, c):
+def goldy(n):
+    global c
 
     if n < 3:
         return
 
     primes = fprimes(n)
     diffs = []
-    print(primes)
     c+=1
     for i in primes:
         for j in range(len(primes)):
@@ -43,7 +48,7 @@ def goldy(n, c):
 
 
 
-    goldy(max(diffs), c)
+    goldy(max(diffs))
 
 
 main()
