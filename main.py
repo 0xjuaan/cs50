@@ -31,25 +31,19 @@ def goldy(n):
         return
 
     primes = fprimes(n)
+    plen = len(primes)
     diffs = []
     c+=1
     fin = False
     for i in primes:
         if fin:
             break
-        for j in range(len(primes)):
-            if i + primes[len(primes)-1-j] == n:
-                diffs.append(abs(i - (primes[len(primes)-1-j])))
+        for j in range(plen):
+            if i + primes[plen-1-j] == n:
+                diffs.append(abs(i - (primes[plen-1-j])))
                 fin = True
                 break
 
-
-
-
-
-
-
     goldy(max(diffs))
-
 
 main()
