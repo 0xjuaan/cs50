@@ -1,6 +1,7 @@
 def diff(x,y):
     return y-x
 
+primes
 
 for i in range(100):
     if i == 1:
