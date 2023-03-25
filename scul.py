@@ -12,11 +12,10 @@ for iy in range(y):
         else:
             val = inp[iy][ix]
             around = [inp[iy][ix-1],inp[iy][ix+1],inp[iy-1][ix],inp[iy+1][ix]]
-            if min(around + [val]) == val and val not in around:
+            if min(around + val) == val and val not in around:
                 print(1, end="")
             else:
                 print(0, end="")
         if ix != x-1:
             print(" ", end="")
     print()
-            
