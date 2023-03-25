@@ -32,8 +32,9 @@ def goldy(n, c):
     diffs = []
     for i in range(n):
         if i in primes:
-            for j in range(n):
-                if (n-j)-i == n:
+            for j in primes:
+                if (len(primes)-j)-i == n:
+                    print(f"{i}, {j}")
                     diffs.append((n-j)-i)
 
     print(diffs)
