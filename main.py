@@ -24,9 +24,10 @@ def fprimes(n):
     return p
 
 def goldy(n, c):
-
+    print(n)
     if n < 3:
         return
+
     primes = fprimes(n)
     diffs = []
     for i in range(n):
@@ -35,6 +36,7 @@ def goldy(n, c):
                 if i-j == n:
                     diffs.append(i-j)
 
+    print(diffs)
     c += 1
     goldy(max(diffs), c)
 
