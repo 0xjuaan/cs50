@@ -1,2 +1,4 @@
-print(list(range(20)))
-print(list(range(20)))
+a = [0,1,2,3,4]
+
+for i in a:
+    print(len(a)-i)
