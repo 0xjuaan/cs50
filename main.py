@@ -34,7 +34,8 @@ def goldy(n):
     for i in range(n):
         if i in primes:
             backward = range(n).reverse()
-            for j in range(n).reverse():
+            for j in range(-n, 1):
+                -j
 
 
 
