@@ -4,7 +4,11 @@ def main():
 
 
 def diff(x,y):
-    return y-x
+    if y>x:
+        return y-x
+    if x>=y:
+        return x-y
+
 
 def fprimes(n):
     p=[]
@@ -33,7 +37,7 @@ def goldy(n, c):
         for i in primes:
             for j in primes:
                 if i + (len(primes)-j) == n:
-                    diffs.append()
+                    diffs.append(diff(i,j))
 
 
     print(diffs)
