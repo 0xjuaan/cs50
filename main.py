@@ -34,6 +34,7 @@ def goldy(n, c):
     primes = fprimes(n)
     diffs = []
     print(primes)
+    c+=1
     for i in primes:
         for j in range(len(primes)):
             if i + primes[len(primes)-1-j] == n:
@@ -42,8 +43,6 @@ def goldy(n, c):
 
 
 
-    print(diffs)
-    c += 1
     goldy(max(diffs), c)
 
 
