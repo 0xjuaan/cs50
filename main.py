@@ -21,6 +21,8 @@ def fprimes(n):
             continue
         p.append(i)
 
+    return p
+
 def goldy(n, c):
 
     if n < 3:
@@ -34,7 +36,7 @@ def goldy(n, c):
                     diffs.append(i-j)
 
     c += 1
-    goldy(diffs(max), count)
+    goldy(max(diffs), c)
 
 
 main()
