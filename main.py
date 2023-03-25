@@ -34,9 +34,10 @@ def goldy(n, c):
 
     primes = fprimes(n)
     diffs = []
+    print(primes)
     for i in primes:
         for j in primes:
-            if i + primes[len(primes)-j-5] == n:
+            if i + primes(j) == n:
                 diffs.append(diff(i,j))
                 break
 
