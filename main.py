@@ -40,11 +40,19 @@ def goldy(n):
     primes = fprimes(n)
     diffs = []
     c+=1
+    fin = False
     for i in primes:
+        if fin:
+            break
         for j in range(len(primes)):
             if i + primes[len(primes)-1-j] == n:
                 diffs.append(diff(i, primes[len(primes)-1-j]))
+                fin = True
                 break
+
+
+
+
 
 
 
