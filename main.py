@@ -1,6 +1,5 @@
 def main():
     goldy(20, 0)
-    print(c)
 
 
 def diff(x,y):
@@ -38,7 +37,7 @@ def goldy(n, c):
     for i in primes:
         for j in range(len(primes)):
             if i + primes[len(primes)-1-j] == n:
-                diffs.append(diff(i,j))
+                diffs.append(diff(i, primes[len(primes)-1-j]))
                 break
 
 
