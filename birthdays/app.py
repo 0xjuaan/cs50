@@ -26,7 +26,11 @@ def after_request(response):
 def index():
     if request.method == "POST":
         # TODO: Add the user's entry into the database
-        db = SQL(sqlite:///birthdays.db)
+        day = request.args.get("day")
+        month = request.args.get("month")
+
+
+
 
         return redirect("/")
 
