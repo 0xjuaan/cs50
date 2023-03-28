@@ -36,7 +36,9 @@
                     <tbody>
                         {%for birthday in birthdays%}
                         <tr>
-                            {{birthday.month}}
+                            <td>{birthday.name}</td>
+                            <td>{birthday.day}</td>
+                            <td>{birthday.month}</td>
                         </tr>
                         {%endfor%}
                     </tbody>
