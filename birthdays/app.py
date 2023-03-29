@@ -31,17 +31,17 @@ def index():
         month = request.form.get("month")
 
         db.execute("INSERT INTO birthdays (name, day, month) VALUES(?, ?, ?)", name, day, month)
-
-
-
-
         return redirect("/")
-
     else:
-
         # TODO: Display the entries in the database on index.html
         birthdays = db.execute("SELECT * FROM birthdays")
 
         return render_template("index.html", birthdays=birthdays)
+
+@app.route("/remove", methods=["POST"])
+def remove():
+    id = request.form.get("id")
+    db.execute("DELETE FROM birthdays WHERE id = ?", id)
+    return redirect("/")
 
 
