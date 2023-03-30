@@ -133,14 +133,21 @@ def register():
         confirmation = request.form.get("confirmation")
         vacant = available(username)
 
-        if password == confirmation and vacant:
+        if password == confirmation and vacant and password and confirmation and username:
+            #Now we have to insert into database
+            db.execute("INSERT INTO users )
+
+
+
+
+
             return render_template("register.html", congrats=f"Great! You are officially registered as {username}")
         elif not vacant and password == confirmation:
             return render_template("register.html", congrats=f"The username '{username}' is taken. Try another one.")
         elif vacant and password != confirmation:
             return render_template("register.html", congrats=f"Passwords don't match.")
         else:
-            return render_template("register.html", congrats=f"Passwords don't match, and the username '{username} is taken.")
+            return render_template("register.html", congrats=f"Passwords don't match, and the username '{username} is taken. Or, you left a field blank")
 
 
 
