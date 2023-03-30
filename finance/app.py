@@ -137,8 +137,10 @@ def register():
             return render_template("register.html", congrats=f"Great! You are officially registered as {username}")
         elif not vacant and password == confirmation:
             return render_template("register.html", congrats=f"The username '{username}' is taken. Try another one.")
-        elif vacant and :
+        elif vacant and password != confirmation:
             return render_template("register.html", congrats=f"Passwords don't match.")
+        else:
+            return render_template("register.html", congrats=f"Passwords don't match, and the username '{username} is taken.")
 
 
 
