@@ -138,7 +138,7 @@ def register():
             hashed = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
             #inputting into database
-            db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?))", username, hashed, usd(10000)
+            db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?))", username, hashed, usd(10000))
             return render_template("register.html", congrats=f"Great! You are officially registered as {username}")
 
 
