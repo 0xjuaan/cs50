@@ -2,17 +2,19 @@
 
 {% block body %}
 <form action="/register" method="POST">
-    <div>
+    <div class="mb-3">
         <input type="text" autofocus name="username" placeholder="Username" class="form-control mx-auto w-auto" autocomplete="off">
     </div>
+
+    <div class="mb-3">
         <input type="text" autofocus name="password" placeholder="Password" class="form-control mx-auto w-auto" autocomplete="off">
-    <div>
-        <input type="text" autofocus name="confirmation" placeholder="Retype Password" class="form-control mx-auto w-auto" autocomplete="off">
-    </div>
-    <div style="justify-content: center">
-        <button class="btn btn-primary" type="submit">Register</button>
-        <h3 style="text-align: center">{{congrats}}</h3>
     </div>
 
+    <div class="mb-3">
+        <input type="text" autofocus name="confirmation" placeholder="Retype Password" class="form-control mx-auto w-auto" autocomplete="off">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Register</button>
+    <h3 style="text-align: center">{{congrats}}</h3>
 </form>
 {% endblock %}
