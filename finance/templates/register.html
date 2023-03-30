@@ -3,16 +3,14 @@
 {% block body %}
 <form action="/register" method="POST">
     <div>
-        <input type="text" autofocus name="username" placeholder="Username">
+        <input type="text" autofocus name="username" placeholder="Username" class="form-control mx-auto w-auto" autocomplete="off">
     </div>
-        <input type="text" autofocus name="password" placeholder="Password">
+        <input type="text" autofocus name="password" placeholder="Password" class="form-control mx-auto w-auto" autocomplete="off">
     <div>
-        <input type="text" autofocus name="confirmation" placeholder="Retype Password">
+        <input type="text" autofocus name="confirmation" placeholder="Retype Password" class="form-control mx-auto w-auto" autocomplete="off">
     </div>
         <button class="btn btn-primary" type="submit">Register</button>
-    <div>
         <h3>{{congrats}}</h3>
-    </div>
 
 
 
