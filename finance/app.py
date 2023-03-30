@@ -134,11 +134,12 @@ def register():
         vacant = available(username)
 
         if password == confirmation and vacant and password and confirmation and username:
-            #Now we have to insert into database
-
             #Hashing password
-            
-            db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?))", username, hashed_password, usd(10000))
+            hashed = werkzeug.security.generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
+
+
+            #inputting into database
+            db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?))", username, hashed, usd(10000))
 
 
 
