@@ -131,9 +131,15 @@ def register():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+        vacant = available(username)
 
-        if password == confirmation and available(username):
-            
+        if password == confirmation and vacant:
+            return render_template("register.html", congrats=f"Great! You are officially registered as {username}")
+        elif not vacant and password == confirmation:
+            return render_template("register.html", congrats=f"The username '{username}' is taken. Try another one.")
+        elif vacant and :
+            return render_template("register.html", congrats=f"Passwords don't match.")
+
 
 
 
