@@ -135,7 +135,7 @@ def register():
 
         if password == confirmation and vacant and password and confirmation and username:
             #Now we have to insert into database
-            db.execute("INSERT INTO users )
+            db.execute("INSERT INTO users (username, hash))
 
 
 
