@@ -113,16 +113,29 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    #Function to check availability of username
+    def available(val):
+        names = db.execute("SELECT * FROM users WHERE username = ?", val)
+        if len(names) > 0:
+            return False
+        else:
+            return True
+
+
+    #If they just got into the site via the link in top-right
     if request.method == "GET":
         return render_template("register.html")
 
+    #If they posted into the form
     elif request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
 
-        if password == confirmation:
+        if password == confirmation and available(username):
             
+
+
 
     return apology("TODO")
 
