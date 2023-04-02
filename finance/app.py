@@ -107,11 +107,11 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
+
     if request.method == "POST":
         symbol = request.form.get("symbol")
         data = lookup(symbol)
-
-
+        return render_template("quoted.html", data=data, price=usd(data["price"]))
 
     else:
         return render_template("quote.html")
@@ -150,6 +150,7 @@ def register():
 
         #Invalid inputs
         elif not vacant and password == confirmation:
+            return apology(f"The username '{username}' is taken. Try another one.")
             return render_template("register.html", congrats=f"The username '{username}' is taken. Try another one.")
         elif vacant and password != confirmation:
             return render_template("register.html", congrats=f"Passwords don't match.")
@@ -167,3 +168,4 @@ def register():
 def sell():
     """Sell shares of stock"""
     return apology("TODO")
+#                     export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
