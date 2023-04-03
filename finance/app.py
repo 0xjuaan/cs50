@@ -50,6 +50,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         
+
     else:
         return render_template("buy.html")
     return apology("TODO")
