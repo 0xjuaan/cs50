@@ -56,7 +56,7 @@ def buy():
         if shares != int(shares) or shares < 1:
             return apology("The number of shares has to be a positive integer")
 
-        db.execute(")
+        db.execute("CREATE TABLE stocks (id INTEGER FOREIGN KEY))
 
 
 
