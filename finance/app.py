@@ -62,7 +62,7 @@ def buy():
         if data["price"]*shares > cash:
             return apology("This order is too expensive.")
 
-
+        
 
 
 
