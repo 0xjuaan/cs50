@@ -50,7 +50,9 @@ def index():
 def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol")
+        data = lookup(symbol)
         shares = request.form.get("shares")
+        if shares
 
 
 
