@@ -23,6 +23,8 @@ Session(app)
 db = SQL("sqlite:///finance.db")
 
 #Creating a table for shares
+ db.execute("CREATE TABLE stocks (id INTEGER FOREIGN KEY REFERENCES users(id), symbol TEXT NOT NULL, shares INTEGER NOT NULL)")
+db.execute("CREATE UNIQUE INDEX symbol ON stocks(symbol)")
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
@@ -52,11 +54,13 @@ def buy():
         symbol = request.form.get("symbol")
         data = lookup(symbol)
         shares = request.form.get("shares")
-
+        cash = db.execute("SELECT cash FROm users WHERE id = ?", session["user_id"])
         if shares != int(shares) or shares < 1:
             return apology("The number of shares has to be a positive integer")
 
-        db.execute("CREATE TABLE stocks (id INTEGER FOREIGN KEY REFERENCES users(id), symbol TEXT NOT NULL, shares INTEGER NOT NULL)" CREATE 
+
+
+
 
 
 
