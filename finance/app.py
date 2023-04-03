@@ -168,4 +168,4 @@ def register():
 def sell():
     """Sell shares of stock"""
     return apology("TODO")
-#                   code 
+#export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
