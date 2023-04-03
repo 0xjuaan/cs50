@@ -49,11 +49,11 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
-        
+
+
 
     else:
         return render_template("buy.html")
-    return apology("TODO")
 
 
 @app.route("/history")
@@ -113,7 +113,6 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-
     if request.method == "POST":
         symbol = request.form.get("symbol")
         data = lookup(symbol)
