@@ -55,8 +55,12 @@ def buy():
         data = lookup(symbol)
         shares = request.form.get("shares")
         cash = db.execute("SELECT cash FROm users WHERE id = ?", session["user_id"])
+
         if shares != int(shares) or shares < 1:
             return apology("The number of shares has to be a positive integer")
+        
+        if data["price"]*shares > cash:
+            return apology("This order is too expensive.")
 
 
 
