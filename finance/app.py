@@ -52,7 +52,10 @@ def buy():
         symbol = request.form.get("symbol")
         data = lookup(symbol)
         shares = request.form.get("shares")
-        if shares
+        if shares != int(shares) or shares < 1:
+            return apology("The number of shares has to be a positive integer")
+        
+
 
 
 
