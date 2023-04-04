@@ -59,7 +59,7 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         #Rendering errors before entering the buy into the database
-        if shares != int(shares) or shares < 1:
+        if not isinstance(shares, int) or shares < 1:
             return apology("The number of shares has to be a positive integer")
 
         if data["price"]*shares > cash:
