@@ -59,7 +59,7 @@ def buy():
             return apology("Use a valid stock symbol")
         #Getting user's cash from database
         cash_dict = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = float(cash_dict['cash'])
+        cash = float(cash_dict[0]['cash'].remove)
 
         #Rendering errors before entering the buy into the database
         if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
