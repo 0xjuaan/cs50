@@ -22,10 +22,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
-#Creating a table for shares
- db.execute("CREATE TABLE stocks (id INTEGER FOREIGN KEY REFERENCES users(id), symbol TEXT NOT NULL, shares INTEGER NOT NULL)")
-db.execute("CREATE UNIQUE INDEX symbol ON stocks(symbol)")
-
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
@@ -56,13 +52,22 @@ def buy():
         shares = request.form.get("shares")
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
+        #Rendering errors before entering the buy into the database
         if shares != int(shares) or shares < 1:
             return apology("The number of shares has to be a positive integer")
 
         if data["price"]*shares > cash:
             return apology("This order is too expensive.")
 
-        
+        #Subtracting the transaction cost from their cash value
+        cash -= shares*data["price"]
+
+        #Checking if they have already bought the stock or not
+        def stock_check(symbol):
+            db.execute("SELECT shares FROM stocks WHERE )
+
+
+
 
 
 
