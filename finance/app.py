@@ -59,7 +59,7 @@ def buy():
             return apology("Use a valid stock symbol")
         #Getting user's cash from database
         cash_dict = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = float(cash_dict[0]['cash'].remove)
+        cash = float(cash_dict[0]['cash'].removeprefix("$"))
 
         #Rendering errors before entering the buy into the database
         if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
@@ -182,7 +182,7 @@ def register():
             hashed = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
             #inputting into database
-            db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?)", username, hashed, usd(10000))
+            db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?)", username, hashed, 10000)
             return render_template("register.html", congrats=f"Great! You are officially registered as {username}")
 
 
