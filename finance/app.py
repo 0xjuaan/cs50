@@ -59,7 +59,7 @@ def buy():
             return apology("Use a valid stock symbol")
         #Getting user's cash from database
         cash_dict = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = float(cash_dict[0]['cash'].removeprefix("$"))
+        cash = float(cash_dict[0]['cash'])
 
         #Rendering errors before entering the buy into the database
         if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
@@ -149,7 +149,7 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         data = lookup(symbol)
-        return render_template("quoted.html", data=data, price=usd(data["price"]))
+        return render_template("quoted.html", data=data, price=data["price"])
 
     else:
         return render_template("quote.html")
