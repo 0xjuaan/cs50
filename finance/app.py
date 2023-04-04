@@ -54,7 +54,7 @@ def buy():
 
         #Getting stock price through API
         data = lookup(symbol)
-
+        print(f"\n\n\n\n\n\n\ndata = {data}\n\n\n\n\n\n")
         #Getting user's cash from database
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
