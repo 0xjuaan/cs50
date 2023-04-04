@@ -46,6 +46,7 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
+    
     if request.method == "POST":
         symbol = request.form.get("symbol")
         data = lookup(symbol)
@@ -75,20 +76,7 @@ def buy():
         else:
             db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ?", shares, session["user_id"])
 
-        
-)
-
-
-
-
-
-
-
-
-
-
-
-    else:
+    else: # If the request method is "GET"
         return render_template("buy.html")
 
 
