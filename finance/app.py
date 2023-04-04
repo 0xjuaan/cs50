@@ -79,7 +79,8 @@ def buy():
         #Checking if they have already bought the stock or not
         def bought_stock(stock_symbol):
             past_shares = db.execute("SELECT shares FROM stocks WHERE symbol = ? AND id = ?", stock_symbol, session["user_id"])
-            if past_shares[0]['shares'] > 0:
+            print(f"\n\n\n\n{past_shares}]\n\n\n")
+            if float(past_shares[0]['shares']) > 0:
                 return True
             else:
                 return False
