@@ -50,7 +50,7 @@ def buy():
     if request.method == "POST":
         #Getting values from the form post
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = float(request.form.get("shares"))
 
         #Getting stock price through API
         data = lookup(symbol)
@@ -59,7 +59,7 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         #Rendering errors before entering the buy into the database
-        if not isinstance(shares, int) or shares < 1:
+        if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
             return apology("The number of shares has to be a positive integer")
 
         if data["price"]*shares > cash:
