@@ -64,14 +64,14 @@ def buy():
 
         #Checking if they have already bought the stock or not
         def bought_stock(stock_symbol):
-            past_shares = db.execute("SELECT shares FROM stocks WHERE symbol = ?", stock_symbol)
-            if len(past_shares) > 0:
+            past_shares = db.execute("SELECT shares FROM stocks WHERE symbol = ? AND id = ?", stock_symbol, session["user_id"])
+            if past_shares > 0:
                 return True
             else:
                 return False
 
         if bought_stock(symbol):
-            db.execute("INSERT INTO stocks (symbol, shares))
+            db.execute("INSERT INTO stocks (symbol, shares, id) VALUES (?, ?, ?)", symbol, shares, session["user_id"])
 
 
 
