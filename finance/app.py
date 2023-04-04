@@ -57,6 +57,7 @@ def buy():
 
         if data == None:
             return apology("Use a valid stock symbol")
+        
         #Getting user's cash from database
         cash_dict = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         cash = float(cash_dict[0]['cash'])
