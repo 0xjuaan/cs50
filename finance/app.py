@@ -63,7 +63,7 @@ def buy():
 
         def fix(money):
             return money.replace("$", "").replace(",", "").replace(".", "")
-        
+
         cash = float(fix(cash_dict[0]['cash']))
 
         #Rendering errors before entering the buy into the database
@@ -79,7 +79,7 @@ def buy():
         #Checking if they have already bought the stock or not
         def bought_stock(stock_symbol):
             past_shares = db.execute("SELECT shares FROM stocks WHERE symbol = ? AND id = ?", stock_symbol, session["user_id"])
-            if past_shares > 0:
+            if past_shares[0]['shares'] > 0:
                 return True
             else:
                 return False
