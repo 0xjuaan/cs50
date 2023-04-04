@@ -58,6 +58,7 @@
         {% endif %}
 
         <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
             {% block login %}{% endblock %}
             {% block register %}{% endblock %}
             {% block quote %}{% endblock %}
