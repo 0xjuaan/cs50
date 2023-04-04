@@ -46,11 +46,16 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    
+
     if request.method == "POST":
+        #Getting values from the form post
         symbol = request.form.get("symbol")
-        data = lookup(symbol)
         shares = request.form.get("shares")
+
+        #Getting stock price through API
+        data = lookup(symbol)
+
+        #Getting user's cash from database
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         #Rendering errors before entering the buy into the database
