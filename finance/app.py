@@ -52,7 +52,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = float(request.form.get("shares"))
 
-        #Getting stock price through API
+        #Getting stock data through API
         data = lookup(symbol)
 
         if data == None:
@@ -64,7 +64,8 @@ def buy():
         if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
             return apology("The number of shares has to be a positive integer")
 
-        if data["price"]*shares > cash:
+        print(f"\n\n\n\n\n{data}\n\n\n\n\n")
+        if float(data["price"])*shares > cash:
             return apology("This order is too expensive.")
 
         #Subtracting the transaction cost from their cash value
