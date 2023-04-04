@@ -72,6 +72,7 @@ def buy():
 
         if bought_stock(symbol):
             db.execute("INSERT INTO stocks (symbol, shares, id) VALUES (?, ?, ?)", symbol, shares, session["user_id"])
+            
 
 
 
