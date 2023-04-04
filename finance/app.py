@@ -57,16 +57,19 @@ def buy():
 
         if data == None:
             return apology("Use a valid stock symbol")
-        
+
         #Getting user's cash from database
         cash_dict = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = float(cash_dict[0]['cash'])
+
+        def fix(money):
+            return money.replace("$", "").replace(",", "").replace(".", "")
+        
+        cash = float(fix(cash_dict[0]['cash']))
 
         #Rendering errors before entering the buy into the database
         if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
             return apology("The number of shares has to be a positive integer")
 
-        print(f"\n\n\n\n\n{cash}\n\n\n\n\n")
         if float(data["price"])*shares > cash:
             return apology("This order is too expensive.")
 
@@ -85,6 +88,8 @@ def buy():
             db.execute("INSERT INTO stocks (symbol, shares, id) VALUES (?, ?, ?)", symbol, shares, session["user_id"])
         else:
             db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ?", shares, session["user_id"])
+
+        return render_template("index.html")
 
     else: # If the request method is "GET"
         return render_template("buy.html")
