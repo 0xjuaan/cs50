@@ -97,7 +97,8 @@ def buy():
             #Updating the cash in 'users'
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
-        return render_template("index.html")
+        # Redirect user to home page
+        return redirect("/")
 
     else: # If the request method is "GET"
         return render_template("buy.html")
