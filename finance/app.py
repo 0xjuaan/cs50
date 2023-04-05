@@ -86,12 +86,12 @@ def buy():
 
         if not bought_stock(symbol):
             db.execute("INSERT INTO stocks (symbol, shares, id) VALUES (?, ?, ?)", symbol, shares, session["user_id"])
-            db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash)
+            db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash, session["user_id"])
         else:
             #Adding to the existing number of shares
             db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ?", shares, session["user_id"])
             #Updating the cash in 'users'
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash)
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
         return render_template("index.html")
 
