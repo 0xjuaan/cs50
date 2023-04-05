@@ -40,7 +40,9 @@ def after_request(response):
 @login_required
 def index():
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
-    
+    for stock in stocks:
+        stock["price"] = lookup(stock["symbol"])["price"]
+        stock["value"] = stock["price"]*stock["shares"]
 
     return render_template("index.html")
 
