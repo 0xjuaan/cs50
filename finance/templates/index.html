@@ -18,13 +18,14 @@
     </thead>
 
     <tbody>
-        {{for i in i}}
+        {{for data in stocks}}
         <tr>
-            <td>wagwan</td>
-            <td>wagwan</td>
-            <td>wagwan</td>
-            <td>wagwan</td>
+            <td>{{data.symbol}}</td>
+            <td>{{data.shares}}</td>
+            <td>{{data.symbol}}</td>
+            <td>{{data.symbol}}</td>
         </tr>
+        {{endfor}}
 
     </tbody>
 
