@@ -89,7 +89,7 @@ def buy():
             db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash, session["user_id"])
         else:
             #Adding to the existing number of shares
-            db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ?", shares, session["user_id"])
+            db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
             #Updating the cash in 'users'
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
