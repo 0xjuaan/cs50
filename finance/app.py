@@ -61,10 +61,10 @@ def buy():
         #Getting user's cash from database
         cash_dict = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        def fix(money):
-            return money.replace("$", "").replace(",", "").replace(".", "")
+        #def fix(money):
+           #return money.replace("$", "").replace(",", "").replace(".", "")
 
-        cash = float(fix(cash_dict[0]['cash']))
+        cash = float(cash_dict[0]['cash'])
 
         #Rendering errors before entering the buy into the database
         if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
