@@ -233,10 +233,12 @@ def register():
 @login_required
 def sell():
     if request.method == "GET":
+        symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
+
+        print(f"\n\n\n\n\n{symbols}\n\n\n\n\n")
 
 
-        
-        return render_template("sell.html", companies=companies)
+        return render_template("sell.html", symbols=symbols)
     """Sell shares of stock"""
     return apology("TODO")
 
