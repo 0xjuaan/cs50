@@ -39,6 +39,8 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
+
+    
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
 
     total_stocks = 0
