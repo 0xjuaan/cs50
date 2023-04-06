@@ -7,7 +7,7 @@
 <form action="/quote" method="post">
 
     <h1 style="text-align: center">Quote</h1>
-    <h5 style="text-align:center">A share of {{data.name}} ({{data.symbol}}) costs {{price}}</h5>
+    <h5 style="text-align:center">A share of {{data.name}} ({{data.symbol}}) costs {{price | usd}}</h5>
 
 </form>
 {% endblock %}
