@@ -21,6 +21,7 @@
         {% for data in stocks %}
         <tr>
             <td>{{ data.symbol }}</td>
+            <td>{{ data.name }}</td>
             <td>{{ data.shares }}</td>
             <td>{{ data.price }}</td>
             <td>{{ data.value }}</td>
@@ -33,9 +34,9 @@
         <tr>
             <td> </td>
             <td> </td>
-            <td></td>
-            <td></td>
-            
+            <td> </td>
+            <td style="font-weight: bold"> {{foot}} </td>
+            <td style="font-weight: bold"> {{foot.value | USD}} </td>
         </tr>
         {% endfor %}
     </tfooter>
