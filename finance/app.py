@@ -44,17 +44,17 @@ def index():
     total_stocks = 0
     for stock in stocks:
         data = lookup(stock["symbol"])
+
         stock["price"] = data["price"]
         stock["name"] = data["name"]
+        stock["value"] = round(stock["price"]*stock["shares"], 2)
 
-        total_stocks += stock["price"]
-
-        stock["value"] = stock["price"]*stock["shares"]
+        total_stocks += stock["value"]
 
     cash = db.execute("SELECT cash FROM users where id = ?", session["user_id"])
 
-    cash_send = {"value": cash[0]['cash']}
-    total = {"value": total_stocks + cash_send['value']}
+    cash_send = {"key": "Cash" , "value": cash[0]['cash']}
+    total = {"key": "GRAND TOTAL" , "value": total_stocks + cash_send['value']}
     footer = []
     footer.append(cash_send)
     footer.append(total)
