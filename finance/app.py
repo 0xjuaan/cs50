@@ -40,18 +40,22 @@ def after_request(response):
 @login_required
 def index():
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
-
-    total = 0
+    data = lookup(stock["symbol"])
+    total_stocks = 0
     for stock in stocks:
-        stock["price"] = lookup(stock["symbol"])["price"]
+        stock["price"] = data["price"]
+        stock["name"] = data["name"]
+
         total += stock["price"]
+
         stock["value"] = stock["price"]*stock["shares"]
 
     cash = db.execute("SELECT cash FROM users where id = ?", session["user_id"])
 
-    footer = {}
-    footer['cash'] = cash['cash']
-    footer['total'] = total
+    total = {"total": total_stocks + cash['cash']}
+    footer = []
+    footer[0] = cash
+    footer[1] = total
 
 
     print(f"\n\n\n\n{cash}\n\n\n\n\n")
