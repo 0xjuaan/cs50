@@ -46,7 +46,7 @@ def index():
 
     #print(f"\n\n\n\n{stocks}\n\n\n\n\n")
 
-    return render_template("index.html")
+    return render_template("index.html", stocks=stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])
