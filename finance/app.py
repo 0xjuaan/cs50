@@ -44,7 +44,7 @@ def index():
         stock["price"] = lookup(stock["symbol"])["price"]
         stock["value"] = stock["price"]*stock["shares"]
 
-    print(f"\n\n\n\n{stocks}\n\n\n\n\n")
+    #print(f"\n\n\n\n{stocks}\n\n\n\n\n")
 
     return render_template("index.html")
 
