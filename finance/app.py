@@ -229,13 +229,18 @@ def register():
 
 
 
-
-    return apology("TODO")
-
-
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+    if request.method == "GET":
+
+
+        
+        return render_template("sell.html", companies=companies)
     """Sell shares of stock"""
     return apology("TODO")
+
+
+
+
 #export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
