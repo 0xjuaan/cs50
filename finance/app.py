@@ -5,11 +5,17 @@ from flask import Flask, flash, redirect, render_template, request, session, url
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
+from datetime import date
+
 
 from helpers import apology, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
+
+#Configure date/time
+today = date.today()
+
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd
@@ -173,7 +179,7 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
         return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
-    
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
