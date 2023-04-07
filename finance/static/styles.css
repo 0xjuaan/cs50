@@ -21,3 +21,10 @@ nav .navbar-brand .green
 {
     color: #2e944b;
 }
+
+CREATE TABLE trades (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES users(id)
+    symbol TEXT NOT NULL
+    shares INTEGER NOT NULL
+    time TEXT NOT NULL);
