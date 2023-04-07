@@ -39,6 +39,11 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
+
+    alert = request.args.get('alert')
+    if not alert:
+        alert = ''
+
     if session.get("user_id") is None:
             return redirect("/login")
 
@@ -65,7 +70,7 @@ def index():
 
     print(f"\n\n\n\n{cash}\n\n\n\n\n")
 
-    return render_template("index.html", stocks=stocks, footer=footer)
+    return render_template("index.html", stocks=stocks, footer=footer, alert=alert)
 
 
 @app.route("/buy", methods=["GET", "POST"])
