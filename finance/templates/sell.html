@@ -6,6 +6,7 @@
 
   <div class="mb-3">
     <select class="dropdown" >
+      <option disabled selected>Stock</option>
       {% for stock in stocks %}
         <option>{{stock.symbol}}</option>
       {% endfor %}
