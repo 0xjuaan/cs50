@@ -181,6 +181,9 @@ def sell():
             #Updating the cash in 'users'
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
+        #Now updating the 'Trades' Database
+        db.execute("INSERT INTO trades (person_id, symbol, shares, time) VALUES (?, ?, ?, ?)", session["user_id"], symbol, -shares, datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+
         return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
 
 @app.route("/login", methods=["GET", "POST"])
