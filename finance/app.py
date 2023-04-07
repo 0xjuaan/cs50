@@ -48,7 +48,7 @@ def index():
 
     alert = request.args.get('alert')
 
-    if session["user_id"] is None:
+    if session["user_id"] is None or session["user_id"] not in db.execute("SELECT id FROM users"):
             return redirect("/login")
 
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
