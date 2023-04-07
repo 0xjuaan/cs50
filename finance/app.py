@@ -42,7 +42,7 @@ def index():
 
     alert = request.args.get('alert')
     if not alert:
-        alert = ''
+        alert = 'Welcome Back'
 
     if session.get("user_id") is None:
             return redirect("/login")
