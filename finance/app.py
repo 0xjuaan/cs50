@@ -161,23 +161,23 @@ def sell():
 
 
         #Making sure they don't over-sell, or under-sell
+        if shares == 0:
+            return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
 
         if shares > int(current_max):
             return apology("Nay mate- you cant sell that many")
 
-        if shares == int(current_max):
-            #Removing the entire position from the database
-            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
-            print(f"\n\n\n\n\n\n\nhere we are\n\n\n\n\n")
-
-        if shares == 0:
-            return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
+        #NOW WE GOOD
 
         #Adding the sold value to their cash
         value = lookup(symbol)['price'] * shares
         cash += value
 
-        #Updating the database
+        if shares == int(current_max):
+            #Removing the entire position from the database
+            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
+            return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
+
         #Updating the shares value (subtraction)
         db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
             #Updating the cash in 'users'
