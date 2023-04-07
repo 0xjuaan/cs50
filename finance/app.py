@@ -120,6 +120,9 @@ def buy():
         if not bought_stock(symbol):
             db.execute("INSERT INTO stocks (symbol, shares, id) VALUES (?, ?, ?)", symbol, shares, session["user_id"])
             db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash, session["user_id"])
+
+            #Update trades database
+            db.execute("INSERT INTO trades (person_id, symbol, shares, time) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         else:
             #Adding to the existing number of shares
             db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
