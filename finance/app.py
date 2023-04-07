@@ -246,6 +246,9 @@ def sell():
         return render_template("sell.html", stocks=symbols)
     else:
         symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
+
+        
 
 
 
