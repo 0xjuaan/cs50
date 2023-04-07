@@ -254,12 +254,23 @@ def sell():
         current_max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)
 
 
+        #Making sure they don't over-sell, or under-sell
+
+        if shares > current_max:
+            return apology("Nay mate- you cant sell that many")
+
+        if shares = 0:
+            return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
+
         #Adding the sold value to their cash
-        cash += lookup(stock[symbol])['price'] * shares
+        value = lookup(stock[symbol])['price'] * shares
+        cash += value
 
         db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
             #Updating the cash in 'users'
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
+
+        return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
 
 
 
