@@ -5,7 +5,7 @@
 <form action="/sell" method="/post">
 
   <div class="mb-3">
-    <select class="dropdown" >
+    <select class="form-select mx-auto w-auto" >
       <option disabled selected>Stock</option>
       {% for stock in stocks %}
         <option>{{stock.symbol}}</option>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="mb-3">
-    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
+    <input min="0" autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
   </div>
 
 
