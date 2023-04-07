@@ -260,6 +260,7 @@ def sell():
             return apology("Nay mate- you cant sell that many")
 
         if shares == int(current_max):
+            #Removing the entire position from the database
             db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
 
         if shares == 0:
@@ -269,6 +270,8 @@ def sell():
         value = lookup(symbol)['price'] * shares
         cash += value
 
+        #Updating the database
+        #Updating the shares value (subtraction)
         db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
             #Updating the cash in 'users'
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
