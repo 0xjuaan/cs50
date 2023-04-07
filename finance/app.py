@@ -123,6 +123,8 @@ def buy():
             db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash, session["user_id"])
 
             #Update trades database
+            print(f"\n\n\ninserting\n\n\n")
+
             db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         else:
             #Adding to the existing number of shares
@@ -131,6 +133,8 @@ def buy():
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
             #Now updating the 'Trades' Database
+            print(f"\n\n\ninserting\n\n\n")
+
             db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
         # Redirect user to home page
@@ -197,6 +201,7 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
         #Now updating the 'Trades' Database
+        print(f"\n\n\ninserting\n\n\n")
         db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, -shares, price, datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
         return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
