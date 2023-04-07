@@ -5,7 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session, url
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
-from datetime import date
+from datetime import date, datetime
 
 
 from helpers import apology, login_required, lookup, usd
@@ -117,7 +117,7 @@ def buy():
             else:
                 return True
 
-        if not bought_stock(symbol):
+        if not bought_stock(symbol): #No position in this stock
             db.execute("INSERT INTO stocks (symbol, shares, id) VALUES (?, ?, ?)", symbol, shares, session["user_id"])
             db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash, session["user_id"])
 
@@ -170,6 +170,7 @@ def sell():
         if shares == int(current_max):
             #Removing the entire position from the database
             db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
+            print()
 
         if shares == 0:
             return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
