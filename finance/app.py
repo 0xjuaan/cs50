@@ -217,17 +217,20 @@ def register():
 
             #inputting into database
             db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?)", username, hashed, 10000)
-            return render_template("login.html", alert=f"Great! You have succesfully registed as {username}")
+
+            rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+            session["user_id"] = rows[0]["id"]
+
+            return render_template("index.html", alert=f"Great! You have succesfully registed as {username}")
 
 
         #Invalid inputs
         elif not vacant and password == confirmation:
             return apology(f"The username '{username}' is taken. Try another one.")
-            return render_template("register.html", congrats=f"The username '{username}' is taken. Try another one.")
         elif vacant and password != confirmation:
-            return render_template("register.html", congrats=f"Passwords don't match.")
+            return apology(f"Passwords don't match.")
         else:
-            return render_template("register.html", congrats=f"Passwords don't match, and the username '{username} is taken. Or, you left a field blank")
+            return apology(f"Passwords don't match, and the username '{username} is taken. Or, you left a field blank")
 
 
 
@@ -236,9 +239,6 @@ def register():
 def sell():
     if request.method == "GET":
         symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
-
-        print(f"\n\n\n\n\n{symbols}\n\n\n\n\n")
-
 
         return render_template("sell.html", symbols=symbols)
     """Sell shares of stock"""
