@@ -175,7 +175,7 @@ def sell():
 
         if shares == int(current_max):
             #Removing the entire position from the database
-            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
+            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)
             return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
 
         #Updating the shares value (subtraction)
