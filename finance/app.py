@@ -242,13 +242,28 @@ def register():
 def sell():
     if request.method == "GET":
         symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
+
         print(f"\n\n\n\n\n{symbols}\n\n\n\n\n")
         return render_template("sell.html", stocks=symbols)
     else:
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
-        
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
+
+        current_max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)
+
+
+        #Adding the sold value to their cash
+        cash += lookup(stock[symbol])['price'] * shares
+
+        db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
+            #Updating the cash in 'users'
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
+
+
+
+
 
 
 
