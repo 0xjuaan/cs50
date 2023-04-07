@@ -259,7 +259,7 @@ def sell():
         if shares > current_max:
             return apology("Nay mate- you cant sell that many")
 
-        if shares = 0:
+        if shares == 0:
             return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
 
         #Adding the sold value to their cash
