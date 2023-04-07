@@ -34,17 +34,5 @@
         </tr>
         {% endfor %}
     </tbody>
-
-    <tfooter>
-        {% for foot in footer %}
-        <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td style="font-weight: bold"> {{foot.key}} </td>
-            <td style="font-weight: bold"> {{foot.value | usd}} </td>
-        </tr>
-        {% endfor %}
-    </tfooter>
 </table>
 {% endblock %}
