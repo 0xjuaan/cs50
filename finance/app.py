@@ -71,8 +71,6 @@ def index():
     footer.append(cash_send)
     footer.append(total)
 
-
-    print(f"\n\n\n\n\n{session['user_id']}\n\n\n\n\n")
     return render_template("index.html", stocks=stocks, footer=footer, alert=alert)
 
 
@@ -169,7 +167,7 @@ def sell():
 
         if shares == int(current_max):
             #Removing the entire position from the database
-            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", (shares, symbol))
+            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
             print(f"\n\n\n\n\n\n\nhere we are\n\n\n\n\n")
 
         if shares == 0:
