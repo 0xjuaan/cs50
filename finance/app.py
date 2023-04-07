@@ -243,9 +243,9 @@ def sell():
     if request.method == "GET":
         symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
 
-        print(f"\n\n\n\n\n{symbols}\n\n\n\n\n")
         return render_template("sell.html", stocks=symbols)
     else:
+
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
@@ -256,10 +256,10 @@ def sell():
 
         #Making sure they don't over-sell, or under-sell
 
-        if shares > current_max:
+        if shares > int(current_max['shares']):
             return apology("Nay mate- you cant sell that many")
 
-        if shares == current_max:
+        if shares == int(current_max['shares']):
             db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
 
         if shares == 0:
