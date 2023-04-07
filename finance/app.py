@@ -127,6 +127,7 @@ def buy():
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
             #Now updating the 'Trades' Database
+            db.execute("INSERT INTO trades (person_id, symbol, shares, time) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares,  )
 
         # Redirect user to home page
         return redirect("/")
