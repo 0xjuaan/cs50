@@ -145,7 +145,7 @@ def buy():
 def history():
     all_trades = db.execute("SELECT * FROM trades")
     print(f"\n\n\n\n\n{all_trades}\n\n\n\n\n")
-    return apology("hehe")
+    return render_template("history.html", trades=all_trades)
 
 
 @app.route("/sell", methods=["GET", "POST"])
