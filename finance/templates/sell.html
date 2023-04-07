@@ -3,7 +3,14 @@
 {% block sell %}
 
 <form action="/sell" method="/post">
-  
+  <select class="dropdown">
+    {% for stock in stocks %}
+      <option>{{stock}}</option>
+    {% endfor %}
+
+
+
+  </select>
 </form>
 
 {% endblock %}

@@ -42,7 +42,7 @@ def index():
 
     alert = request.args.get('alert')
 
-    if session.get("user_id") is None:
+    if session["user_id"] is None:
             return redirect("/login")
 
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
@@ -66,7 +66,7 @@ def index():
     footer.append(total)
 
 
-    print(f"\n\n\n\n{cash}\n\n\n\n\n")
+    print(f"\n\n\n\n{session["user_id"]}\n\n\n\n\n")
 
     return render_template("index.html", stocks=stocks, footer=footer, alert=alert)
 
@@ -243,12 +243,13 @@ def register():
 def sell():
     if request.method == "GET":
         symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
-
-        return render_template("sell.html", symbols=symbols)
+        print(f"\n\n\n\n\n{symbols}\n\n\n\n\n")
+        return render_template("sell.html", stocks=symbols)
     """Sell shares of stock"""
-    return apology("TODO")
 
 
 
 
-#export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
+"""
+export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
+"""
