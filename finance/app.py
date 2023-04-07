@@ -222,7 +222,7 @@ def register():
             rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
             session["user_id"] = rows[0]["id"]
 
-            return redirect(url_for(.index, alert=f"Great! You have succesfully registed as {username}")
+            return redirect(url_for(.index, alert=f"Great! You have succesfully registered as {username}")
 
 
         #Invalid inputs
