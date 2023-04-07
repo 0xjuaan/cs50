@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block index %}
+{% if alert %}
+<div class="alert alert-primary mb-0 text-center" role="alert" style="margin: 0px, 16px">
+    {{alert}}
+</div>
+{% endif %}
+
+
+<h5>{{congrats}}</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Number of Shares</th>
+            <th>Share Price</th>
+            <th>Total Value</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for data in stocks %}
+        <tr>
+            <td>{{ data.symbol }}</td>
+
+            <td>
+                {% if data.name %}
+                    {{ data.name }}
+                {% else %}
+                    Name Not Found
+                {% endif %}
+            </td>
+
+            <td>{{ data.shares }}</td>
+            <td>{{ data.price }}</td>
+            <td>{{ data.value }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    <tfooter>
+        {% for foot in footer %}
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td style="font-weight: bold"> {{foot.key}} </td>
+            <td style="font-weight: bold"> {{foot.value | usd}} </td>
+        </tr>
+        {% endfor %}
+    </tfooter>
+</table>
+{% endblock %}
