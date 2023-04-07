@@ -41,6 +41,7 @@ def after_request(response):
 def index():
     if session.get("user_id") is None:
             return redirect("/login")
+    
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
 
     total_stocks = 0
