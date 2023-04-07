@@ -41,7 +41,7 @@ def after_request(response):
 def index():
     if session.get("user_id") is None:
             return redirect("/login")
-    
+
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
 
     total_stocks = 0
@@ -222,7 +222,7 @@ def register():
             rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
             session["user_id"] = rows[0]["id"]
 
-            return render_template("index.html", alert=f"Great! You have succesfully registed as {username}")
+            return redirect(url_for(.index, alert=f"Great! You have succesfully registed as {username}")
 
 
         #Invalid inputs
