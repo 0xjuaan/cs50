@@ -247,26 +247,26 @@ def sell():
     else:
 
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
 
-        current_max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)
+        current_max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)[0]['shares']
 
 
         #Making sure they don't over-sell, or under-sell
 
-        if shares > int(current_max['shares']):
+        if shares > int(current_max):
             return apology("Nay mate- you cant sell that many")
 
-        if shares == int(current_max['shares']):
-            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
+        if shares == int(current_max):
+            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
 
         if shares == 0:
             return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
 
         #Adding the sold value to their cash
-        value = lookup(stock[symbol])['price'] * shares
+        value = lookup(symbol)['price'] * shares
         cash += value
 
         db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
