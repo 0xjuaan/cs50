@@ -3,14 +3,17 @@
 {% block sell %}
 
 <form action="/sell" method="/post">
-  <select class="dropdown" >
-    {% for stock in stocks %}
-      <option>{{stock.symbol}}</option>
-    {% endfor %}
 
-    <div style="margin: 0px 16px" class="mb-3">
-      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="text">
-    </div>
+  <div class="mb-3">
+    <select class="dropdown" >
+      {% for stock in stocks %}
+        <option>{{stock.symbol}}</option>
+      {% endfor %}
+  </div>
+
+  <div class="mb-3">
+    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="text">
+  </div>
 
 
 
