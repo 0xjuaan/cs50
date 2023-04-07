@@ -123,7 +123,7 @@ def buy():
             db.execute("UPDATE users SET cash = ?  WHERE id = ?", cash, session["user_id"])
 
             #Update trades database
-            db.execute("INSERT INTO trades (person_id, symbol, shares, price time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+            db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
         else:
             #Adding to the existing number of shares
             db.execute("UPDATE stocks SET shares = shares + ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
@@ -131,7 +131,7 @@ def buy():
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
             #Now updating the 'Trades' Database
-            db.execute("INSERT INTO trades (person_id, symbol, shares, price time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+            db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
         # Redirect user to home page
         return redirect("/")
