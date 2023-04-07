@@ -25,12 +25,12 @@
     </thead>
 
     <tbody>
-        {% for data in stocks %}
+        {% for data in trades %}
         <tr>
             <td>{{ data.symbol }}</td>
             <td>{{ data.shares }}</td>
             <td>{{ data.price }}</td>
-            <td>{{ data.value }}</td>
+            <td>{{ data.time }}</td>
         </tr>
         {% endfor %}
     </tbody>
