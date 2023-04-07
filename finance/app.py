@@ -133,7 +133,47 @@ def history():
     """Show history of transactions"""
     return apology("TODO")
 
+@app.route("/sell", methods=["GET", "POST"])
+@login_required
+def sell():
+    if request.method == "GET":
+        symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
 
+        return render_template("sell.html", stocks=symbols)
+    else:
+
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
+
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
+
+        current_max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)[0]['shares']
+
+
+        #Making sure they don't over-sell, or under-sell
+
+        if shares > int(current_max):
+            return apology("Nay mate- you cant sell that many")
+
+        if shares == int(current_max):
+            #Removing the entire position from the database
+            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
+
+        if shares == 0:
+            return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
+
+        #Adding the sold value to their cash
+        value = lookup(symbol)['price'] * shares
+        cash += value
+
+        #Updating the database
+        #Updating the shares value (subtraction)
+        db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
+            #Updating the cash in 'users'
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
+
+        return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
+    
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -237,46 +277,7 @@ def register():
 
 
 
-@app.route("/sell", methods=["GET", "POST"])
-@login_required
-def sell():
-    if request.method == "GET":
-        symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
 
-        return render_template("sell.html", stocks=symbols)
-    else:
-
-        symbol = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
-
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]['cash']
-
-        current_max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)[0]['shares']
-
-
-        #Making sure they don't over-sell, or under-sell
-
-        if shares > int(current_max):
-            return apology("Nay mate- you cant sell that many")
-
-        if shares == int(current_max):
-            #Removing the entire position from the database
-            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
-
-        if shares == 0:
-            return redirect(url_for('index', alert="Well guess you don't wanna sell! Here's your portfolio then"))
-
-        #Adding the sold value to their cash
-        value = lookup(symbol)['price'] * shares
-        cash += value
-
-        #Updating the database
-        #Updating the shares value (subtraction)
-        db.execute("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", shares, session["user_id"], symbol)
-            #Updating the cash in 'users'
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
-
-        return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
 
 
 
