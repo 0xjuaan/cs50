@@ -163,7 +163,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect(url_for("/", alert="Welcome back"))
+        return redirect(url_for("index", alert="Welcome back"))
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
