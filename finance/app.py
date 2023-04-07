@@ -169,7 +169,7 @@ def sell():
 
         if shares == int(current_max):
             #Removing the entire position from the database
-            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", shares, symbol)
+            db.execute("DELETE FROM stocks WHERE id = ? AND symbol = ?", (shares, symbol))
             print(f"\n\n\n\n\n\n\nhere we are\n\n\n\n\n")
 
         if shares == 0:
