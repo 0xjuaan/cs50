@@ -18,7 +18,6 @@
     <thead>
         <tr>
             <th>Symbol</th>
-            <th>Name</th>
             <th>Number of Shares</th>
             <th>Share Price</th>
             <th>Total Value</th>
@@ -29,15 +28,6 @@
         {% for data in stocks %}
         <tr>
             <td>{{ data.symbol }}</td>
-
-            <td>
-                {% if data.name %}
-                    {{ data.name }}
-                {% else %}
-                    Name Not Found
-                {% endif %}
-            </td>
-
             <td>{{ data.shares }}</td>
             <td>{{ data.price }}</td>
             <td>{{ data.value }}</td>
