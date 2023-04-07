@@ -66,8 +66,7 @@ def index():
     footer.append(total)
 
 
-    print(f"\n\n\n\n{session["user_id"]}\n\n\n\n\n")
-
+    print(f"\n\n\n\n\n{session['user_id']}\n\n\n\n\n")
     return render_template("index.html", stocks=stocks, footer=footer, alert=alert)
 
 
