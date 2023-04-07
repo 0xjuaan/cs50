@@ -244,7 +244,8 @@ def sell():
         symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
         print(f"\n\n\n\n\n{symbols}\n\n\n\n\n")
         return render_template("sell.html", stocks=symbols)
-    """Sell shares of stock"""
+    else:
+        symbol = request.form.get("symbol")
 
 
 
