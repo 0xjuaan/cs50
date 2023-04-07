@@ -142,7 +142,8 @@ def buy():
 def history():
     all_trades = db.execute("SELECT * FROM trades")
     print(f"\n\n\n\n\n{all_trades}\n\n\n\n\n")
-    return apology("TODO")
+    return apology("hehe")
+
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
