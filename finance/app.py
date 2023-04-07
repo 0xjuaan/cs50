@@ -217,7 +217,7 @@ def register():
 
             #inputting into database
             db.execute("INSERT INTO users (username, hash, cash) VALUES (?, ?, ?)", username, hashed, 10000)
-            return redirect(url_for('.index', congrats=f"Great! You are officially registered as {username}"))
+            return redirect(url_for('.login', congrats=f"Great! You are officially registered as {username}"))
 
 
         #Invalid inputs
