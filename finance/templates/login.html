@@ -6,8 +6,10 @@
 
 {% block login %}
     <div class="alert alert-primary mb-0 text-center" role="alert">
-        
+        {{alert}}
+        <br>
     </div>
+
     <form action="/login" method="post">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
