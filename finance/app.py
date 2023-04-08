@@ -1,5 +1,7 @@
 import os
-#export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
+"""
+export API_KEY=pk_43a3b169c8f74b93afcad22c6a97cdf0
+"""
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 from flask_session import Session
@@ -147,8 +149,7 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    all_trades = db.execute("SELECT * FROM trades")
-    print(f"\n\n\n\n\n{all_trades}\n\n\n\n\n")
+    all_trades = db.execute("SELECT * FROM trades WHERE person_id = ?", session["user_id"])
     return render_template("history.html", trades=all_trades)
 
 
