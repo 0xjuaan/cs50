@@ -85,6 +85,10 @@ def buy():
         symbol = request.form.get("symbol")
         shares = float(request.form.get("shares"))
 
+
+        if isinstance(shares,str):
+            return apology("Input a number mate")
+
         #Getting stock data through API
         data = lookup(symbol)
 
@@ -100,7 +104,7 @@ def buy():
         cash = float(cash_dict[0]['cash'])
 
         #Rendering errors before entering the buy into the database
-        if isinstance(shares,str) or float(shares) - round(float(shares)) !=0 or float(shares) < 1:
+        if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
             return apology("The number of shares has to be a positive integer")
 
         if float(data["price"])*shares > cash:
