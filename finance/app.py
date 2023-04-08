@@ -86,7 +86,7 @@ def buy():
         shares = request.form.get("shares")
 
 
-        if isinstance(shares,str):
+        if isinstance(shares, str):
             return apology("Input a number mate")
 
         shares = float(shares)
