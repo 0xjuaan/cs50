@@ -83,11 +83,13 @@ def buy():
     if request.method == "POST":
         #Getting values from the form post
         symbol = request.form.get("symbol")
-        shares = float(request.form.get("shares"))
+        shares = request.form.get("shares")
 
 
         if isinstance(shares,str):
             return apology("Input a number mate")
+
+        shares = float(shares)
 
         #Getting stock data through API
         data = lookup(symbol)
