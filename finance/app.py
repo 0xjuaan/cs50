@@ -49,6 +49,7 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
+    global footer_username
     footer_username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     footer_username = footer_username[0]['username']
 
