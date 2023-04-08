@@ -256,7 +256,7 @@ def quote():
         data = lookup(symbol)
 
         if symbol == "" or symbol is None or data is None:
-            return redirect("/login")
+            return apology("Invalid ticker input")
 
         return render_template("quoted.html", data=data, price=data["price"])
 
