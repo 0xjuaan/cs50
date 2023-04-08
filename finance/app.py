@@ -22,13 +22,14 @@ today = date.today()
 # Custom filter
 app.jinja_env.filters["usd"] = usd
 
-# Configure session to use filesystem (instead of signed cookies)
+# Configure session to use filesystem (instead of cookies)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
+
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
@@ -47,6 +48,8 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
+    footer_username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+
 
     alert = request.args.get('alert')
 
@@ -73,12 +76,13 @@ def index():
     footer.append(cash_send)
     footer.append(total)
 
-    return render_template("index.html", stocks=stocks, footer=footer, alert=alert)
+    return render_template("index.html", stocks=stocks, footer=footer, alert=alert, footer_username=footer_username)
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
+
 
     if request.method == "POST":
         #Getting values from the form post
@@ -147,7 +151,7 @@ def buy():
         return redirect(url_for("index", alert=f"Bought {int(shares)} shares of {symbol} for {usd(shares*data['price'])}"))
 
     else: # If the request method is "GET"
-        return render_template("buy.html")
+        return render_template("buy.html", footer_username=footer_username)
 
 
 @app.route("/history")
@@ -163,7 +167,7 @@ def sell():
     if request.method == "GET":
         symbols = db.execute("SELECT symbol FROM stocks WHERE id = ?", session["user_id"])
 
-        return render_template("sell.html", stocks=symbols)
+        return render_template("sell.html", stocks=symbols, footer_username=footer_username)
     else:
 
         symbol = request.form.get("symbol")
@@ -265,10 +269,10 @@ def quote():
         if symbol == "" or symbol is None or data is None:
             return apology("Invalid ticker input")
 
-        return render_template("quoted.html", data=data, price=data["price"])
+        return render_template("quoted.html", data=data, price=data["price"], footer_username=footer_username)
 
     else:
-        return render_template("quote.html")
+        return render_template("quote.html", footer_username=footer_username)
 
 
 @app.route("/register", methods=["GET", "POST"])
