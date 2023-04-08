@@ -144,7 +144,7 @@ def buy():
             db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, shares, data["price"], datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect(url_for("index", alert=f"Sold {shares} shares of {symbol} for {usd(shares*data['price'])}"))
 
     else: # If the request method is "GET"
         return render_template("buy.html")
