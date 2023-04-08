@@ -85,11 +85,12 @@ def buy():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
 
+        #Converting the argument into a number, only if it is not like "foo"
+        try:
+            shares = float(shares)
+        except:
+            return apology("Enter a number mate")
 
-        if isinstance(shares, str):
-            return apology("Input a number mate")
-
-        shares = float(shares)
 
         #Getting stock data through API
         data = lookup(symbol)
