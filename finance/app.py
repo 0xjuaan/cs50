@@ -100,7 +100,7 @@ def buy():
         cash = float(cash_dict[0]['cash'])
 
         #Rendering errors before entering the buy into the database
-        if float(shares) - round(float(shares)) !=0 or float(shares) < 1:
+        if isinstance(shares,str) or float(shares) - round(float(shares)) !=0 or float(shares) < 1:
             return apology("The number of shares has to be a positive integer")
 
         if float(data["price"])*shares > cash:
