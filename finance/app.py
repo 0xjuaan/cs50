@@ -253,6 +253,7 @@ def logout():
 def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
+        if symbol == "" or symbol is None
         data = lookup(symbol)
         return render_template("quoted.html", data=data, price=data["price"])
 
