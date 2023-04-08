@@ -49,7 +49,7 @@ def after_request(response):
 @login_required
 def index():
     footer_username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
-
+    footer_username = footer_username[0]['username']
 
     alert = request.args.get('alert')
 
