@@ -202,7 +202,6 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, session["user_id"])
 
         #Now updating the 'Trades' Database
-        print(f"\n\n\ninserting\n\n\n")
         db.execute("INSERT INTO trades (person_id, symbol, shares, price, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, -shares, price, datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
         return redirect(url_for('index', alert=f"Sold {shares} shares of {symbol} for {usd(value)}"))
@@ -244,7 +243,6 @@ def login():
 
 @app.route("/logout")
 def logout():
-    """Log user out"""
 
     # Forget any user_id
     session.clear()
