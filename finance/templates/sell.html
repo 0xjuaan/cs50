@@ -30,7 +30,7 @@ Sell
 
   choices.addEventListener("change", async function() {
     let response = await fetch('/find?q=' + choices.value);
-    shares.setAttribute("max", response);
+    shares.setAttribute("max", response.json());
 
   } )
 
