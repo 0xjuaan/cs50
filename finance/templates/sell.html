@@ -24,11 +24,6 @@ Sell
 
 </form>
 
-<script>
-  form = document.querySelector('select[name="symbol"]');
-  option = form.options[form.selectedIndex].value;
 
-  let max = await fetch('/sell?q=' + option)
-</script>
 
 {% endblock %}
