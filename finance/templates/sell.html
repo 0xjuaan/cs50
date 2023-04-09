@@ -11,7 +11,7 @@ Sell
     <select class="form-select mx-auto w-auto" name="symbol">
       <option disabled selected>Stock</option>
       {% for stock in stocks %}
-        <option>{{stock.symbol}}</option>
+        <option id="choice">{{stock.symbol}}</option>
       {% endfor %}
     </select>
   </div>
@@ -24,6 +24,8 @@ Sell
 
 </form>
 
-
+<script>
+  choice = document.GetElementById("choice")
+</script>
 
 {% endblock %}
