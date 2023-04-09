@@ -17,7 +17,7 @@ Sell
   </div>
 
   <div class="mb-3">
-    <input min="0" max=response autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
+    <input min="0" autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
   </div>
 
   <button class="btn btn-primary" type="submit">Sell</button>
@@ -30,6 +30,8 @@ Sell
 
   choices.addEventListener("change", async function() {
     let response = await fetch('/find?q=' + choices.value);
+    choice.setAttribute("max", response);
+
   } )
 
 </script>
