@@ -25,7 +25,9 @@ Sell
 </form>
 
 <script>
-  choice = document.GetElementByID()
+  form = document.querySelector('select[name="symbol"]');
+  option = form.options[form.selectedIndex].value;
+  
 </script>
 
 {% endblock %}
