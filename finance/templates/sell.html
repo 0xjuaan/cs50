@@ -25,8 +25,8 @@ Sell
 </form>
 
 <script>
-  choices = document.GetElementByID("choices");
-  choice = document.GetElementByID("choice");
+  choices = document.GetElementById("choices");
+  choice = document.GetElementById("choice");
 
   choices.addEventListener("change", async function() {
     let response = await fetch('/find?q=' + input.value);
