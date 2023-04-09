@@ -8,7 +8,7 @@ Sell
 <form action="/sell" method="post">
 
   <div class="mb-3">
-    <select class="form-select mx-auto w-auto" name="symbol">
+    <select class="form-select mx-auto w-auto" name="symbol" id ="choices">
       <option disabled selected>Stock</option>
       {% for stock in stocks %}
         <option id="choice">{{stock.symbol}}</option>
@@ -25,7 +25,12 @@ Sell
 </form>
 
 <script>
-  choice = document.GetElementById("choice")
+  choices = document.GetElementById("choices");
+  choice = document.GetElementById("choice");
+
+  choices.addEventListener("change", async function() {
+    let response = await fetch('/find?q=' + input.value);
+  } )
 
 </script>
 

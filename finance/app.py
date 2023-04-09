@@ -321,6 +321,12 @@ def register():
 
 
 
+@app.route("/find", methods=["GET"])
+@login_required
+def find():
+    option = request.args.get("q")
+
+    max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], symbol)[0]['shares']
 
 
 
