@@ -29,7 +29,7 @@ Sell
   choice = document.GetElementById("choice");
 
   choices.addEventListener("change", async function() {
-    let response = await fetch('/find?q=' + input.value);
+    let response = await fetch('/find?q=' + choices.value);
   } )
 
 </script>
