@@ -10,6 +10,6 @@ SELECT description FROM crime_scene_reports
 
 --Now I'm thinking to check the bakery tapes
 
-SELECT description FROM crime_scene_reports
+SELECT activity FROM bakery_security_logs
    ...> WHERE day = 28 and month = 7
    ...> and street = 'Humphrey Street';
