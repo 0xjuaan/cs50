@@ -10,7 +10,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import date, datetime
 
 
-
 from helpers import apology, login_required, lookup, usd
 
 # Configure application
@@ -50,6 +49,7 @@ def after_request(response):
 @login_required
 def index():
     global footer_username
+
     footer_username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     footer_username = footer_username[0]['username']
 
@@ -326,8 +326,8 @@ def register():
 def find():
     option = request.args.get("q")
 
-    max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], option)
-    return render_template("sell.html", max=max)
+    max = db.execute("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", session["user_id"], option)[0]['shares']
+    return max
 
 
 

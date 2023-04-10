@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Sell
+Sell {{max_shares}}
 {% endblock %}
 {% block sell %}
 
@@ -17,7 +17,7 @@ Sell
   </div>
 
   <div class="mb-3">
-    <input min="0" max={{max}} autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
+    <input min="0" max={{max_shares}} autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Number of shares" type="number">
   </div>
 
   <button class="btn btn-primary" type="submit">Sell</button>
@@ -29,11 +29,9 @@ Sell
   choice = document.getElementById("choice");
 
   choices.addEventListener("change", async function() {
-    let response = await fetch('/find?q=' + choices.value);
-    shares.setAttribute("max", response.json());
-
-  } )
-
+      let response = await fetch('/find?q=' + choices.value);
+      console.log(response);
+ })
 </script>
 
 {% endblock %}
