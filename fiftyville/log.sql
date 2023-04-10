@@ -15,8 +15,8 @@ SELECT activity, license_plate, minute FROM bakery_security_logs
     and hour = 10 and minute < 45
     ORDER BY minute;
 
-
+SELECT id FROM people WHERE license_plate IN(
     SELECT license_plate FROM bakery_security_logs
     WHERE day >= 28 and month = 7
     and hour = 10 and minute < 45
-    ORDER BY minute;
+    ORDER BY minute);
