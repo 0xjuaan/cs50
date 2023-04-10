@@ -23,7 +23,7 @@ while (initial<final)
     {
         initial += (float) (initial/3) - (float) (initial/4);
         t++;
-        printf("Population after %i year(s) is %i\n", t, initial);
+        //printf("Population after %i year(s) is %i\n", t, initial);
 
     }
     printf("Years: %i\n", t);
