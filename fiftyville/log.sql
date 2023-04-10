@@ -5,8 +5,11 @@ SELECT description FROM crime_scene_reports
    ...> WHERE day = 28 and month = 7
    ...> and street = 'Humphrey Street';
 
---Output:
+--Useful Output:
 --Theft of the CS50 duck took place at 10:15am at the Humphrey Street bakery. Interviews were conducted today with three witnesses who were present at the time – each of their interview transcripts mentions the bakery. |
---| Littering took place at 16:36. No known witnesses.
 
 --Now I'm thinking to check the bakery tapes
+
+SELECT description FROM crime_scene_reports
+   ...> WHERE day = 28 and month = 7
+   ...> and street = 'Humphrey Street';
