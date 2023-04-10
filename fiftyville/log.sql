@@ -10,6 +10,7 @@ SELECT description FROM crime_scene_reports
 
 --Now I'm thinking to check the bakery tapes
 
-SELECT activity FROM bakery_security_logs
-   ...> WHERE day = 28 and month = 7
-   ...> and street = 'Humphrey Street';
+SELECT activity, license_plate, minute FROM bakery_security_logs
+    WHERE day >= 28 and month = 7
+    and hour = 10 and minute < 45
+    ORDER BY minute;
