@@ -59,7 +59,6 @@ def index():
             return redirect("/login")
 
     stocks = db.execute("SELECT symbol,shares FROM stocks where id = ?", session["user_id"])
-    {name: Apple Inc, value,442}
     total_stocks = 0
     for stock in stocks:
         data = lookup(stock["symbol"])
